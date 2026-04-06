@@ -1,0 +1,44 @@
+title: "软件激活教程站"
+description: "专注 AI 软件教程、正版下载与激活指南"
+url: "https://leo11hang.github.io"
+baseurl: ""
+
+# 你的激活站链接，全站引流用
+activation_site: "https://keyvault.686985.xyz"
+activation_text: "立即购买激活码"
+
+author: "站长"
+lang: zh-CN
+
+# 每页文章数
+paginate: 12
+paginate_path: "/page/:num/"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# 文章永久链接格式（SEO友好）
+permalink: /:categories/:title/
+
+# 分类
+categories:
+  - name: "AI教程"
+    slug: "tutorial"
+  - name: "软件下载"
+    slug: "download"
+  - name: "激活教程"
+    slug: "activation"
+  - name: "常见问题"
+    slug: "faq"
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md

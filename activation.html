@@ -1,0 +1,19 @@
+---
+layout: default
+title: "激活教程"
+permalink: /activation/
+---
+
+<div class="container" style="padding-top: 36px;">
+  <div class="breadcrumb">
+    <a href="{{ '/' | relative_url }}">首页</a>
+    <span>/</span>
+    <span style="color: var(--text-primary);">激活教程</span>
+  </div>
+  <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 24px;">🔑 激活教程</h1>
+  <div class="posts-grid">
+    {% for post in site.categories.activation %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+</div>

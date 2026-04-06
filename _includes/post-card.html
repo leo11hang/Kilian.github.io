@@ -1,0 +1,42 @@
+{% assign post = include.post %}
+<a class="post-card" href="{{ post.url | relative_url }}">
+  <div class="post-cover">
+    {% if post.cover %}
+      <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}" loading="lazy" />
+    {% else %}
+      <div class="post-cover-placeholder">
+        {% case post.categories[0] %}
+          {% when 'tutorial' %}🤖
+          {% when 'download' %}💾
+          {% when 'activation' %}🔑
+          {% when 'faq' %}❓
+          {% else %}📄
+        {% endcase %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="post-body">
+    <div class="post-meta">
+      <span class="post-cat cat-{{ post.categories | first }}">
+        {% case post.categories[0] %}
+          {% when 'tutorial' %}AI教程
+          {% when 'download' %}软件下载
+          {% when 'activation' %}激活教程
+          {% when 'faq' %}常见问题
+        {% endcase %}
+      </span>
+      {% if post.pinned %}<span class="post-pinned">📌 置顶</span>{% endif %}
+      <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
+    </div>
+    <div class="post-title">{{ post.title }}</div>
+    {% if post.excerpt %}
+    <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>
+    {% endif %}
+  </div>
+  <div class="post-footer">
+    <span class="read-more">
+      阅读全文
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+    </span>
+  </div>
+</a>

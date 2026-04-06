@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: leo11hang/Kilian.github.io   # ← 改成你的 GitHub 用户名/仓库名
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# 启用编辑预览
+show_preview_links: true
+
+collections:
+  - name: "posts"
+    label: "文章管理"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss" }
+      - label: "分类"
+        name: "categories"
+        widget: "select"
+        options:
+          - { label: "AI教程", value: "tutorial" }
+          - { label: "软件下载", value: "download" }
+          - { label: "激活教程", value: "activation" }
+          - { label: "常见问题", value: "faq" }
+      - label: "标签"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        hint: "输入标签后按回车，如：ChatGPT、Midjourney、激活码"
+      - { label: "封面图", name: "cover", widget: "image", required: false }
+      - { label: "摘要（用于列表页和SEO描述）", name: "excerpt", widget: "text", required: false }
+      - { label: "是否置顶", name: "pinned", widget: "boolean", default: false }
+      - { label: "正文内容", name: "body", widget: "markdown" }

@@ -1,0 +1,106 @@
+---
+layout: default
+title: "首页"
+---
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-tag">🔥 最新 AI 软件资源</div>
+  <h1>AI 软件<em>教程</em>与<em>激活</em>指南</h1>
+  <p>每周更新 ChatGPT、Midjourney、Claude 等主流 AI 软件使用教程与正版激活方案</p>
+  <div class="hero-actions">
+    <a class="btn-hero-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener">
+      🔑 立即购买激活码
+    </a>
+    <a class="btn-hero-secondary" href="#posts">
+      📖 浏览教程
+    </a>
+  </div>
+</section>
+
+<div class="container" id="posts">
+
+  <!-- 置顶文章 -->
+  {% assign pinned = site.posts | where: "pinned", true %}
+  {% if pinned.size > 0 %}
+  <div class="pinned-section">
+    <div class="section-label">📌 置顶推荐</div>
+    <div class="posts-grid">
+      {% for post in pinned limit:3 %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- 分类筛选 -->
+  <div class="cat-tabs">
+    <button class="cat-tab active" onclick="filterPosts('all', this)">全部文章</button>
+    <button class="cat-tab" onclick="filterPosts('tutorial', this)">🤖 AI教程</button>
+    <button class="cat-tab" onclick="filterPosts('download', this)">💾 软件下载</button>
+    <button class="cat-tab" onclick="filterPosts('activation', this)">🔑 激活教程</button>
+    <button class="cat-tab" onclick="filterPosts('faq', this)">❓ 常见问题</button>
+  </div>
+
+  <!-- 文章列表 -->
+  <div class="posts-grid" id="posts-grid">
+    {% assign all_posts = site.posts | where_exp: "post", "post.pinned != true" %}
+    {% for post in all_posts %}
+    <a class="post-card" href="{{ post.url | relative_url }}" data-cat="{{ post.categories | first }}">
+      <div class="post-cover">
+        {% if post.cover %}
+          <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}" loading="lazy" />
+        {% else %}
+          <div class="post-cover-placeholder">
+            {% case post.categories[0] %}
+              {% when 'tutorial' %}🤖
+              {% when 'download' %}💾
+              {% when 'activation' %}🔑
+              {% when 'faq' %}❓
+              {% else %}📄
+            {% endcase %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="post-body">
+        <div class="post-meta">
+          <span class="post-cat cat-{{ post.categories | first }}">
+            {% case post.categories[0] %}
+              {% when 'tutorial' %}AI教程
+              {% when 'download' %}软件下载
+              {% when 'activation' %}激活教程
+              {% when 'faq' %}常见问题
+            {% endcase %}
+          </span>
+          <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
+        </div>
+        <div class="post-title">{{ post.title }}</div>
+        {% if post.excerpt %}
+        <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>
+        {% endif %}
+      </div>
+      <div class="post-footer">
+        <span class="read-more">
+          阅读全文
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+        </span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+</div>
+
+<script>
+function filterPosts(cat, btn) {
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.post-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>

@@ -1,0 +1,19 @@
+---
+layout: default
+title: "软件下载"
+permalink: /download/
+---
+
+<div class="container" style="padding-top: 36px;">
+  <div class="breadcrumb">
+    <a href="{{ '/' | relative_url }}">首页</a>
+    <span>/</span>
+    <span style="color: var(--text-primary);">软件下载</span>
+  </div>
+  <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 24px;">💾 软件下载</h1>
+  <div class="posts-grid">
+    {% for post in site.categories.download %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+</div>
