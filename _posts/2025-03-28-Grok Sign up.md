@@ -13,7 +13,7 @@ pinned: false
 
 Grok 是马斯克旗下 xAI 公司开发的 AI 助手，深度集成 X（原 Twitter）平台，能够实时获取 X 上的最新信息，风格幽默犀利，是目前少数能够访问实时网络数据的 AI 产品之一。
 
-![Grok 界面展示](https://github.com/user-attachments/assets/47741f05-3af8-45bf-9ef0-f1482909b246)
+
 
 ---
 
