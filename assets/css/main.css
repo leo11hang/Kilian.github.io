@@ -428,3 +428,29 @@ img { max-width: 100%; display: block; }
   height: 100%;
   display: block;
 }
+
+/* Hero buttons redesign */
+.hero-btns {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; flex-wrap: wrap;
+}
+.hbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 200px; height: 50px; border-radius: 12px;
+  font-size: 15px; font-weight: 700;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.hbtn-ghost {
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.88);
+}
+.hbtn-ghost:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+.hbtn-primary {
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  color: white;
+  box-shadow: 0 6px 24px rgba(139,92,246,0.5);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.hbtn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(139,92,246,0.65); }

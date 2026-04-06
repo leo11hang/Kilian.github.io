@@ -11,15 +11,8 @@ title: "首页"
     <h1>AI 软件<span class="grad-text">教程</span>与<span class="grad-text">激活</span>指南</h1>
     <p>每周更新 ChatGPT、Midjourney、Claude 等主流 AI 软件使用教程与正版激活方案</p>
     <div class="hero-btns">
-      <a class="hbtn hbtn-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener">
-        🔑 立即购买激活码
-      </a>
-      <a class="hbtn hbtn-ghost" href="#posts">📖 浏览教程</a>
-    </div>
-    <div class="hero-trust">
-      <span>✓ 正版授权</span>
-      <span>✓ 即时发货</span>
-      <span>✓ 售后保障</span>
+      <a class="hbtn hbtn-ghost" href="#posts">浏览教程</a>
+      <a class="hbtn hbtn-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener">🔑 立即购买激活码</a>
     </div>
   </div>
 </section>
@@ -37,14 +30,13 @@ title: "首页"
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
-      <div class="stat-num online-num" id="onlineCount">--</div>
+      <div class="stat-num" id="onlineCount">--</div>
       <div class="stat-label"><span class="online-dot"></span>实时在线</div>
     </div>
   </div>
 </div>
 
 <div class="container" id="posts" style="padding-top:52px;">
-
   {% assign pinned = site.posts | where: "pinned", true %}
   {% if pinned.size > 0 %}
   <div class="pinned-section">
@@ -85,89 +77,6 @@ title: "首页"
   </div>
 </div>
 
-<style>
-/* Hero buttons — 完全重做，等宽对齐 */
-.hero-btns {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.hbtn {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 220px; height: 52px;
-  border-radius: 13px;
-  font-size: 15px; font-weight: 700;
-  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-  white-space: nowrap;
-}
-.hbtn-primary {
-  background: white;
-  color: var(--accent);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
-}
-.hbtn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.28); }
-.hbtn-ghost {
-  background: rgba(255,255,255,0.1);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  color: white;
-}
-.hbtn-ghost:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
-
-/* Trust bar */
-.hero-trust {
-  display: flex; align-items: center; justify-content: center;
-  gap: 20px; flex-wrap: wrap;
-  font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 500;
-}
-
-/* Stats redesign */
-.stats-wrap {
-  display: flex; justify-content: center;
-  padding: 0 1.5rem;
-  margin-top: -26px;
-  position: relative; z-index: 2;
-}
-.stats-bar {
-  display: flex; align-items: center;
-  background: white;
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border);
-  padding: 0 8px;
-  overflow: hidden;
-  width: 100%; max-width: 520px;
-}
-.stat-item {
-  flex: 1; padding: 22px 16px; text-align: center;
-  border-right: none;
-}
-.stat-divider {
-  width: 1px; height: 36px;
-  background: var(--border); flex-shrink: 0;
-}
-.stat-num {
-  font-size: 26px; font-weight: 900; line-height: 1;
-  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.online-num {
-  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.stat-label { font-size: 12px; color: var(--text-muted); margin-top: 5px; font-weight: 500; }
-.online-dot {
-  display: inline-block; width: 6px; height: 6px;
-  background: #22c55e; border-radius: 50%;
-  margin-right: 4px; vertical-align: middle;
-  animation: pg 1.8s ease infinite;
-}
-@keyframes pg {
-  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
-  50% { box-shadow: 0 0 0 4px rgba(34,197,94,0); }
-}
-</style>
-
 <script>
 function filterPosts(cat,btn){
   document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
@@ -179,10 +88,7 @@ function filterPosts(cat,btn){
 (function(){
   var base=Math.floor(Math.random()*80)+120;
   var el=document.getElementById('onlineCount');
-  function tick(){
-    base=Math.max(80,Math.min(350,base+Math.floor(Math.random()*11)-5));
-    if(el)el.textContent=base;
-  }
+  function tick(){ base=Math.max(80,Math.min(350,base+Math.floor(Math.random()*11)-5)); if(el)el.textContent=base; }
   tick(); setInterval(tick,3000);
 })();
 </script>
