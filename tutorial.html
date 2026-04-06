@@ -4,16 +4,24 @@ title: "AI教程"
 permalink: /tutorial/
 ---
 
-<div class="container" style="padding-top: 36px;">
+<div class="container" style="padding-top:40px;">
   <div class="breadcrumb">
     <a href="{{ '/' | relative_url }}">首页</a>
-    <span>/</span>
-    <span style="color: var(--text-primary);">AI教程</span>
+    <span class="breadcrumb-sep">/</span>
+    <span style="color:var(--text-secondary);">AI教程</span>
   </div>
-  <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 24px;">🤖 AI 教程</h1>
+  <h1 style="font-size:24px;font-weight:800;margin-bottom:28px;">🤖 AI 教程</h1>
+  {% assign posts = site.categories.tutorial %}
+  {% if posts.size > 0 %}
   <div class="posts-grid">
-    {% for post in site.categories.tutorial %}
-      {% include post-card.html post=post %}
-    {% endfor %}
+    {% for post in posts %}{% include post-card.html post=post %}{% endfor %}
   </div>
+  {% else %}
+  <div class="empty-state">
+    <div class="empty-icon">🤖</div>
+    <h2>暂无内容</h2>
+    <p>该分类下还没有文章，敬请期待～</p>
+    <a href="{{ '/' | relative_url }}" class="empty-btn">← 返回首页</a>
+  </div>
+  {% endif %}
 </div>

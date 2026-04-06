@@ -75,11 +75,44 @@ title: "首页"
 function filterPosts(cat,btn){
   document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('#posts-grid .post-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});
+  document.querySelectorAll('#posts-grid .post-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
+  });
 }
+
+// 按北京时间段模拟在线人数
 (function(){
-  var base=Math.floor(Math.random()*80)+120,el=document.getElementById('onlineCount');
-  function tick(){base=Math.max(80,Math.min(350,base+Math.floor(Math.random()*11)-5));if(el)el.textContent=base;}
-  tick();setInterval(tick,3000);
+  var el = document.getElementById('onlineCount');
+
+  function getBase() {
+    // 获取北京时间小时数
+    var now = new Date();
+    var bj = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+    var h = bj.getUTCHours();
+
+    // 按时间段设置基础人数
+    if (h >= 0 && h < 6)   return Math.floor(Math.random()*8)  + 3;   // 凌晨 3~10
+    if (h >= 6 && h < 9)   return Math.floor(Math.random()*20) + 15;  // 早晨 15~34
+    if (h >= 9 && h < 12)  return Math.floor(Math.random()*60) + 80;  // 上午 80~139
+    if (h >= 12 && h < 14) return Math.floor(Math.random()*40) + 60;  // 午间 60~99
+    if (h >= 14 && h < 18) return Math.floor(Math.random()*80) + 120; // 下午 120~199
+    if (h >= 18 && h < 22) return Math.floor(Math.random()*100)+ 150; // 晚间 150~249
+    if (h >= 22 && h < 24) return Math.floor(Math.random()*40) + 30;  // 深夜 30~69
+    return 10;
+  }
+
+  var base = getBase();
+
+  function tick() {
+    var delta = Math.floor(Math.random() * 7) - 3; // ±3 小幅波动
+    base = Math.max(1, base + delta);
+    if (el) el.textContent = base;
+  }
+
+  tick();
+  setInterval(tick, 4000);
+
+  // 每小时重新计算基础值（随时间段变化）
+  setInterval(function(){ base = getBase(); }, 60 * 60 * 1000);
 })();
 </script>
