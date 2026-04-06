@@ -79,7 +79,7 @@ img { max-width: 100%; display: block; }
 /* ── Hero ── */
 .hero {
   background: var(--grad-dark);
-  padding: 96px 2rem 100px;
+  padding: 52px 2rem 64px;
   text-align: center; position: relative; overflow: hidden;
 }
 .hero-bg-orb-1 {
