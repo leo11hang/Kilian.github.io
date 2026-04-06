@@ -5,12 +5,15 @@ date: 2026-04-06 10:00:00 +0800
 categories: tutorial
 tags: [ChatGPT, OpenAI, 注册教程, GPT-5]
 excerpt: "手把手教你完成 ChatGPT 账号注册，包括网络环境准备、邮箱验证、手机号验证及常见问题解决。"
+cover: https://github.com/user-attachments/assets/4f2660a1-b35c-4532-8256-26f008621f8b
 pinned: false
 ---
 
 ## ChatGPT 是什么？
 
 ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的 AI 产品之一，支持写作、编程、分析、翻译等几乎所有文字类任务。2026年已全面升级至 GPT-5 系列模型，能力大幅提升。
+
+![ChatGPT 界面展示](https://github.com/user-attachments/assets/4f2660a1-b35c-4532-8256-26f008621f8b)
 
 ---
 
