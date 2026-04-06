@@ -13,7 +13,7 @@ pinned: false
 
 Claude 是 Anthropic 开发的 AI 助手，以超强的长文本理解能力和安全性著称，在写作、代码、分析等任务上表现优异，是目前最受欢迎的 ChatGPT 替代品之一。
 
-![Claude 界面展示](https://github.com/user-attachments/assets/c558f459-834d-4e2e-96a1-6bb7e848e191)
+
 
 ---
 
