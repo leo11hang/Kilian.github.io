@@ -4,8 +4,9 @@ title: "首页"
 ---
 
 <section class="hero">
-  <div class="hero-bg-orb-1"></div>
-  <div class="hero-bg-orb-2"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
   <div class="hero-inner">
     <div class="hero-badge"><span class="hero-badge-dot"></span>持续更新 · 每周新内容</div>
     <h1>AI 软件<span class="grad-text">教程</span>与<span class="grad-text">激活</span>指南</h1>
@@ -19,25 +20,16 @@ title: "首页"
 
 <div class="stats-wrap">
   <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num">{{ site.posts | size }}+</div>
-      <div class="stat-label">精选教程</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">{{ site.posts | size }}+</div><div class="stat-label">精选教程</div></div>
     <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label">内容分类</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">内容分类</div></div>
     <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num" id="onlineCount">--</div>
-      <div class="stat-label"><span class="online-dot"></span>实时在线</div>
-    </div>
+    <div class="stat-item"><div class="stat-num" id="onlineCount">--</div><div class="stat-label"><span class="online-dot"></span>实时在线</div></div>
   </div>
 </div>
 
-<div class="container" id="posts" style="padding-top:52px;">
-  {% assign pinned = site.posts | where: "pinned", true %}
+<div class="container" id="posts" style="padding-top:56px;">
+  {% assign pinned = site.posts | where:"pinned",true %}
   {% if pinned.size > 0 %}
   <div class="pinned-section">
     <div class="section-label">📌 置顶推荐</div>
@@ -71,7 +63,9 @@ title: "首页"
         <div class="post-title">{{ post.title }}</div>
         {% if post.excerpt %}<div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>{% endif %}
       </div>
-      <div class="post-footer"><span class="read-more">阅读全文 <span class="read-more-arrow">→</span></span></div>
+      <div class="post-footer">
+        <span class="read-more">阅读全文 <span class="read-more-arrow">→</span></span>
+      </div>
     </a>
     {% endfor %}
   </div>
@@ -81,14 +75,11 @@ title: "首页"
 function filterPosts(cat,btn){
   document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('#posts-grid .post-card').forEach(c=>{
-    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
-  });
+  document.querySelectorAll('#posts-grid .post-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});
 }
 (function(){
-  var base=Math.floor(Math.random()*80)+120;
-  var el=document.getElementById('onlineCount');
-  function tick(){ base=Math.max(80,Math.min(350,base+Math.floor(Math.random()*11)-5)); if(el)el.textContent=base; }
-  tick(); setInterval(tick,3000);
+  var base=Math.floor(Math.random()*80)+120,el=document.getElementById('onlineCount');
+  function tick(){base=Math.max(80,Math.min(350,base+Math.floor(Math.random()*11)-5));if(el)el.textContent=base;}
+  tick();setInterval(tick,3000);
 })();
 </script>
