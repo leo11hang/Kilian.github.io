@@ -187,6 +187,7 @@ img { max-width: 100%; display: block; }
   .cta-box { flex-direction: column; text-align: center; padding: 24px 20px; }
   .article-wrap { padding: 32px 1.25rem 80px; }
   .float-cta span { display: none; }
+  .float-cta { padding: 0; width: 50px; height: 50px; justify-content: center; border-radius: 50%; }
   .float-cta { padding: 0; width: 50px; justify-content: center; border-radius: 50%; }
   .header-inner { padding: 0 1.25rem; }
 }
@@ -250,9 +251,10 @@ img { max-width: 100%; display: block; }
   /* Container */
   .container { padding: 0 1rem; }
 
-  /* Float CTA — show text on mobile too */
-  .float-cta { bottom: 20px; right: 16px; height: 46px; padding: 0 16px 0 14px; font-size: 13px; }
-  .float-cta span { display: flex; }
+  /* Float CTA mobile */
+  .float-cta { bottom: 20px; right: 16px; width: 52px; height: 52px; padding: 0; border-radius: 50%; justify-content: center; }
+  .float-cta span { display: none; }
+  .float-cta-dot { display: none; }
 
   /* Article */
   .article-wrap { padding: 24px 1rem 80px; }
