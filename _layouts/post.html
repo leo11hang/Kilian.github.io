@@ -4,36 +4,20 @@ layout: default
 
 <div class="article-wrap">
 
-  <!-- 面包屑 -->
   <div class="breadcrumb">
     <a href="{{ '/' | relative_url }}">首页</a>
-    <span>/</span>
+    <span class="breadcrumb-sep">/</span>
     {% if page.categories[0] %}
-    <a href="{{ '/' | relative_url }}{{ page.categories[0] }}/">
-      {% case page.categories[0] %}
-        {% when 'tutorial' %}AI教程
-        {% when 'download' %}软件下载
-        {% when 'activation' %}激活教程
-        {% when 'faq' %}常见问题
-      {% endcase %}
-    </a>
-    <span>/</span>
+    <a href="{{ '/' | relative_url }}{{ page.categories[0] }}/">{% case page.categories[0] %}{% when 'tutorial' %}AI教程{% when 'download' %}软件下载{% when 'activation' %}激活教程{% when 'faq' %}常见问题{% endcase %}</a>
+    <span class="breadcrumb-sep">/</span>
     {% endif %}
-    <span style="color: var(--text-primary);">{{ page.title | truncate: 30 }}</span>
+    <span style="color:var(--text-secondary);">{{ page.title | truncate: 28 }}</span>
   </div>
 
-  <!-- 文章头部 -->
   <header class="article-header">
     <div class="article-cats">
       {% for cat in page.categories %}
-      <span class="post-cat cat-{{ cat }}">
-        {% case cat %}
-          {% when 'tutorial' %}AI教程
-          {% when 'download' %}软件下载
-          {% when 'activation' %}激活教程
-          {% when 'faq' %}常见问题
-        {% endcase %}
-      </span>
+      <span class="post-cat cat-{{ cat }}">{% case cat %}{% when 'tutorial' %}AI教程{% when 'download' %}软件下载{% when 'activation' %}激活教程{% when 'faq' %}常见问题{% endcase %}</span>
       {% endfor %}
     </div>
     <h1 class="article-title">{{ page.title }}</h1>
@@ -43,48 +27,33 @@ layout: default
     </div>
   </header>
 
-  <!-- 封面图 -->
   {% if page.cover %}
-  <div class="article-cover">
-    <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}" />
-  </div>
+  <div class="article-cover"><img src="{{ page.cover | relative_url }}" alt="{{ page.title }}" /></div>
   {% endif %}
 
-  <!-- 引流CTA（文章顶部） -->
   <div class="cta-box">
     <div class="cta-box-icon">🔑</div>
     <div class="cta-box-text">
       <strong>需要正版激活码？</strong>
       <p>安全稳定 · 即时发货 · 售后保障，让你的 AI 软件立刻解锁全部功能</p>
     </div>
-    <a class="btn-cta-box" href="{{ site.activation_site }}" target="_blank" rel="noopener">
-      立即购买 →
-    </a>
+    <a class="btn-cta-box" href="{{ site.activation_site }}" target="_blank" rel="noopener">立即购买 →</a>
   </div>
 
-  <!-- 正文 -->
-  <div class="article-content">
-    {{ content }}
-  </div>
+  <div class="article-content">{{ content }}</div>
 
-  <!-- 引流CTA（文章底部） -->
-  <div class="cta-box" style="margin-top: 40px;">
+  <div class="cta-box" style="margin-top:48px;">
     <div class="cta-box-icon">⚡</div>
     <div class="cta-box-text">
       <strong>教程看完了？一键获取激活码</strong>
       <p>支持多种支付方式 · 自动发货 · 如有问题随时联系客服</p>
     </div>
-    <a class="btn-cta-box" href="{{ site.activation_site }}" target="_blank" rel="noopener">
-      {{ site.activation_text }} →
-    </a>
+    <a class="btn-cta-box" href="{{ site.activation_site }}" target="_blank" rel="noopener">{{ site.activation_text }} →</a>
   </div>
 
-  <!-- 标签 -->
   {% if page.tags.size > 0 %}
   <div class="article-tags">
-    {% for tag in page.tags %}
-    <span class="tag-pill"># {{ tag }}</span>
-    {% endfor %}
+    {% for tag in page.tags %}<span class="tag-pill"># {{ tag }}</span>{% endfor %}
   </div>
   {% endif %}
 

@@ -7,23 +7,25 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 150 }}{% else %}{{ site.description }}{% endif %}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% seo %}
 </head>
 <body>
 
-<!-- ── Header ── -->
 <header class="site-header">
   <div class="header-inner">
     <a class="site-logo" href="{{ '/' | relative_url }}">
-      <div class="logo-dot"></div>
+      <div class="logo-mark">
+        <svg viewBox="0 0 16 16"><path d="M8 1L10.5 6H15L11 9.5L12.5 15L8 12L3.5 15L5 9.5L1 6H5.5L8 1Z"/></svg>
+      </div>
       {{ site.title }}
     </a>
     <nav class="site-nav">
       <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>首页</a>
-      <a href="{{ '/tutorial/' | relative_url }}">AI教程</a>
-      <a href="{{ '/download/' | relative_url }}">软件下载</a>
-      <a href="{{ '/activation/' | relative_url }}">激活教程</a>
-      <a href="{{ '/faq/' | relative_url }}">常见问题</a>
+      <a href="{{ '/tutorial/' | relative_url }}" {% if page.url contains 'tutorial' %}class="active"{% endif %}>AI教程</a>
+      <a href="{{ '/download/' | relative_url }}" {% if page.url contains 'download' %}class="active"{% endif %}>软件下载</a>
+      <a href="{{ '/activation/' | relative_url }}" {% if page.url contains 'activation' %}class="active"{% endif %}>激活教程</a>
+      <a href="{{ '/faq/' | relative_url }}" {% if page.url contains 'faq' %}class="active"{% endif %}>常见问题</a>
     </nav>
     <a class="btn-cta" href="{{ site.activation_site }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 16 16"><path d="M8 1L10.5 6H15L11 9.5L12.5 15L8 12L3.5 15L5 9.5L1 6H5.5L8 1Z"/></svg>
@@ -32,27 +34,22 @@
   </div>
 </header>
 
-<!-- ── Content ── -->
 {{ content }}
 
-<!-- ── Float CTA ── -->
 <a class="float-cta" href="{{ site.activation_site }}" target="_blank" rel="noopener">
   <div class="float-cta-dot"></div>
   <span>🔑 购买激活码</span>
 </a>
 
-<!-- ── Footer ── -->
 <footer class="site-footer">
-  <p>© {{ 'now' | date: "%Y" }} {{ site.title }} · 专注 AI 软件教程与激活指南 · <a href="{{ site.activation_site }}" target="_blank">{{ site.activation_text }}</a></p>
+  <p>© {{ 'now' | date: "%Y" }} {{ site.title }} &nbsp;·&nbsp; 专注 AI 软件教程与激活指南 &nbsp;·&nbsp; <a href="{{ site.activation_site }}" target="_blank">{{ site.activation_text }}</a></p>
 </footer>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
       if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
       }
     });
   }
