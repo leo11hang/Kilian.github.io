@@ -399,3 +399,16 @@ img { max-width: 100%; display: block; }
   .float-cta span { display: none; }
   .float-cta { padding: 0; width: 52px; justify-content: center; border-radius: 50%; }
 }
+
+/* Email button in header */
+.btn-email {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 0 16px; height: 38px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1.5px solid var(--accent-dim);
+  border-radius: 10px; font-size: 13px; font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-email:hover { background: #e5d9ff; transform: translateY(-1px); }
