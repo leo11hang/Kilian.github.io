@@ -203,96 +203,84 @@ img { max-width: 100%; display: block; }
 }
 .empty-btn:hover { opacity: .9; transform: translateY(-1px); }
 
-/* ── Mobile fixes ── */
+/* ── Mobile: 768px ── */
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .hero { padding: 56px 1.5rem 68px; }
+  .stats-wrap { margin: -14px 1.5rem 0; }
+  .posts-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cta-box { flex-direction: column; text-align: center; padding: 24px 20px; }
+  .article-wrap { padding: 32px 1.25rem 80px; }
+  .header-inner { padding: 0 1.25rem; }
+}
+
+/* ── Mobile: 480px ── */
 @media (max-width: 480px) {
-  /* Header */
   .header-inner { padding: 0 1rem; height: 56px; gap: 0; }
   .site-logo { font-size: 14px; gap: 8px; }
   .logo-mark { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; }
   .btn-email { font-size: 11px; padding: 0 10px; height: 32px; gap: 5px; max-width: 190px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-
-  /* Hero */
   .hero { padding: 44px 1.25rem 60px; }
   .hero h1 { font-size: 26px; letter-spacing: -.5px; }
   .hero p { font-size: 14px; margin-bottom: 32px; }
   .hero-badge { font-size: 10px; padding: 4px 12px; margin-bottom: 20px; }
-
-  /* Buttons — side by side, equal width */
   .hero-btns { gap: 10px; flex-wrap: nowrap; }
   .hbtn { width: 46%; height: 46px; font-size: 13px; border-radius: 11px; }
-
-  /* Stats */
   .stats-wrap { margin: -12px 1rem 0; }
   .stats-bar { max-width: 100%; }
   .stat-item { padding: 16px 8px; }
   .stat-num { font-size: 20px; }
   .stat-label { font-size: 10px; }
-
-  /* Cat tabs — horizontal scroll, no wrap */
-  .cat-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 16px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
+  .cat-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .cat-tabs::-webkit-scrollbar { display: none; }
   .cat-tab { flex-shrink: 0; padding: 6px 14px; font-size: 12px; }
-
-  /* Posts grid — single column */
   .posts-grid { grid-template-columns: 1fr; gap: 14px; }
-
-  /* Container */
   .container { padding: 0 1rem; }
-
-
-  /* Article */
   .article-wrap { padding: 24px 1rem 80px; }
   .article-title { font-size: 22px; }
   .cta-box { padding: 20px 16px; gap: 14px; }
   .cta-box-icon { font-size: 32px; }
   .cta-box-text strong { font-size: 15px; }
   .btn-cta-box { width: 100%; justify-content: center; }
-}
 
-
-@media (max-width: 480px) {
-    bottom: 20px; right: 14px;
-    width: 56px; height: 56px;
-    padding: 0;
-    border-radius: 16px;
-    flex-direction: column;
-    gap: 0;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-/* ── Float CTA ── */
-.float-cta {
-  position: fixed; bottom: 28px; right: 28px; z-index: 999;
-  display: flex; align-items: center; gap: 10px;
-  background: var(--grad); color: white;
-  padding: 0 22px 0 18px; height: 50px;
-  border-radius: 100px;
-  box-shadow: 0 8px 28px rgba(109,40,217,.5);
-  font-size: 14px; font-weight: 700;
-  transition: transform .2s, box-shadow .2s;
-  animation: float-in .6s cubic-bezier(.34,1.56,.64,1) 1s both;
-  white-space: nowrap;
-}
-.float-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(109,40,217,.6); }
-.float-cta-dot { width: 8px; height: 8px; background: #86efac; border-radius: 50%; flex-shrink: 0; animation: pulse 1.8s ease infinite; }
-.float-cta-text { display: flex; align-items: center; gap: 6px; }
-
-@media (max-width: 480px) {
+  /* Float CTA — 手机端圆角胶囊 */
   .float-cta {
-    bottom: 20px; right: 14px;
-    padding: 0 16px 0 13px;
-    height: 44px;
-    border-radius: 22px;
-    font-size: 13px;
-    gap: 8px;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 14px !important;
+    left: auto !important;
+    padding: 0 16px 0 12px !important;
+    height: 46px !important;
+    border-radius: 23px !important;
+    font-size: 13px !important;
+    gap: 8px !important;
+    flex-direction: row !important;
+    width: auto !important;
   }
   .float-cta-dot { width: 7px; height: 7px; }
 }
+
+/* ── Float CTA 桌面端 ── */
+.float-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  left: auto;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--grad);
+  color: white;
+  padding: 0 22px 0 18px;
+  height: 50px;
+  border-radius: 100px;
+  box-shadow: 0 8px 28px rgba(109,40,217,.5);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform .2s, box-shadow .2s;
+  animation: float-in .6s cubic-bezier(.34,1.56,.64,1) 1s both;
+}
+.float-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(109,40,217,.6); }
+.float-cta-dot { width: 8px; height: 8px; background: #86efac; border-radius: 50%; flex-shrink: 0; animation: pulse 1.8s ease infinite; }
