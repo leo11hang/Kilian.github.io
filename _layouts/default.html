@@ -45,6 +45,17 @@
 <footer class="site-footer">
   <p>© {{ 'now' | date: "%Y" }} {{ site.title }} · 专注 AI 软件教程与激活指南 · <a href="{{ site.activation_site }}" target="_blank">{{ site.activation_text }}</a></p>
 </footer>
-
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
