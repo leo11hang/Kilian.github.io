@@ -4,13 +4,16 @@ title: "首页"
 ---
 
 <section class="hero">
+  <div class="hero-bg-orb-1"></div>
+  <div class="hero-bg-orb-2"></div>
+  <div class="hero-bg-orb-3"></div>
   <div class="hero-inner">
     <div class="hero-badge"><span class="hero-badge-dot"></span>持续更新 · 每周新内容</div>
     <h1>AI 软件<span class="grad-text">教程</span>与<span class="grad-text">激活</span>指南</h1>
     <p>每周更新 ChatGPT、Midjourney、Claude 等主流 AI 软件使用教程与正版激活方案</p>
     <div class="hero-actions">
       <a class="btn-hero-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener">🔑 立即购买激活码</a>
-      <a class="btn-hero-secondary" href="#posts">📖 浏览教程</a>
+      <a class="btn-hero-secondary" href="#posts">浏览教程</a>
     </div>
   </div>
 </section>
@@ -18,7 +21,10 @@ title: "首页"
 <div class="stats-bar">
   <div class="stat-item"><div class="stat-num">{{ site.posts | size }}+</div><div class="stat-label">精选教程</div></div>
   <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">内容分类</div></div>
-  <div class="stat-item"><div class="stat-num">每周</div><div class="stat-label">更新频率</div></div>
+  <div class="stat-item online-stat-item">
+    <div class="stat-num online-num" id="onlineCount">--</div>
+    <div class="stat-label online-label"><span class="online-dot"></span>实时在线</div>
+  </div>
 </div>
 
 <div class="container" id="posts" style="padding-top:60px;">
@@ -33,11 +39,26 @@ title: "首页"
   {% endif %}
 
   <div class="cat-tabs">
-    <button class="cat-tab active" onclick="filterPosts('all',this)">全部文章</button>
-    <button class="cat-tab" onclick="filterPosts('tutorial',this)">🤖 AI教程</button>
-    <button class="cat-tab" onclick="filterPosts('download',this)">💾 软件下载</button>
-    <button class="cat-tab" onclick="filterPosts('activation',this)">🔑 激活教程</button>
-    <button class="cat-tab" onclick="filterPosts('faq',this)">❓ 常见问题</button>
+    <button class="cat-tab active" onclick="filterPosts('all',this)">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M1 2.5A1.5 1.5 0 012.5 1h3A1.5 1.5 0 017 2.5v3A1.5 1.5 0 015.5 7h-3A1.5 1.5 0 011 5.5v-3zm8 0A1.5 1.5 0 0110.5 1h3A1.5 1.5 0 0115 2.5v3A1.5 1.5 0 0113.5 7h-3A1.5 1.5 0 019 5.5v-3zm-8 8A1.5 1.5 0 012.5 9h3A1.5 1.5 0 017 10.5v3A1.5 1.5 0 015.5 15h-3A1.5 1.5 0 011 13.5v-3zm8 0A1.5 1.5 0 0110.5 9h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 019 13.5v-3z"/></svg>
+      全部文章
+    </button>
+    <button class="cat-tab" onclick="filterPosts('tutorial',this)">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 16A8 8 0 108 0a8 8 0 000 16zm.93-9.412l-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 110-2 1 1 0 010 2z"/></svg>
+      AI 教程
+    </button>
+    <button class="cat-tab" onclick="filterPosts('download',this)">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M.5 9.9a.5.5 0 01.5.5v2.1a1 1 0 001 1h12a1 1 0 001-1v-2.1a.5.5 0 011 0v2.1a2 2 0 01-2 2H2a2 2 0 01-2-2v-2.1a.5.5 0 01.5-.5zM7.646 11.854a.5.5 0 00.708 0l3-3a.5.5 0 00-.708-.708L8.5 10.293V1.5a.5.5 0 00-1 0v8.793L5.354 8.146a.5.5 0 10-.708.708l3 3z"/></svg>
+      软件下载
+    </button>
+    <button class="cat-tab" onclick="filterPosts('activation',this)">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M11.5 2a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM9.05 3a2.5 2.5 0 014.9 0H16v1h-2.05a2.5 2.5 0 01-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM2.05 8a2.5 2.5 0 014.9 0H16v1H6.95a2.5 2.5 0 01-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-2.45 1a2.5 2.5 0 014.9 0H16v1h-2.05a2.5 2.5 0 01-4.9 0H0v-1h9.05z"/></svg>
+      激活教程
+    </button>
+    <button class="cat-tab" onclick="filterPosts('faq',this)">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M5.255 5.786a.237.237 0 00.241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 00.25.246h.811a.25.25 0 00.25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/></svg>
+      常见问题
+    </button>
   </div>
 
   <div class="posts-grid" id="posts-grid">
@@ -56,16 +77,46 @@ title: "首页"
         <div class="post-title">{{ post.title }}</div>
         {% if post.excerpt %}<div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>{% endif %}
       </div>
-      <div class="post-footer"><span class="read-more">阅读全文 →</span></div>
+      <div class="post-footer"><span class="read-more">阅读全文 <span class="read-more-arrow">→</span></span></div>
     </a>
     {% endfor %}
   </div>
 </div>
 
+<style>
+.cat-tab { display: inline-flex; align-items: center; gap: 6px; }
+.online-stat-item { position: relative; }
+.online-dot {
+  display: inline-block; width: 7px; height: 7px;
+  background: #22c55e; border-radius: 50%;
+  margin-right: 4px; vertical-align: middle;
+  animation: pulse-green 1.8s ease infinite;
+}
+@keyframes pulse-green {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  50% { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+}
+</style>
+
 <script>
 function filterPosts(cat,btn){
   document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('#posts-grid .post-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});
+  document.querySelectorAll('#posts-grid .post-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
+  });
 }
+
+// 在线人数模拟
+(function(){
+  var base = Math.floor(Math.random()*80)+120; // 120~200基础人数
+  var el = document.getElementById('onlineCount');
+  function update(){
+    var delta = Math.floor(Math.random()*11)-5; // -5 ~ +5 随机波动
+    base = Math.max(80, Math.min(350, base+delta));
+    if(el) el.textContent = base;
+  }
+  update();
+  setInterval(update, 3000); // 每3秒更新一次
+})();
 </script>
