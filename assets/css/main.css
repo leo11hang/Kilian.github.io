@@ -413,3 +413,18 @@ img { max-width: 100%; display: block; }
   transition: background 0.15s, transform 0.1s;
 }
 .btn-email:hover { background: #e5d9ff; transform: translateY(-1px); }
+
+/* Heatmap decoration */
+.heatmap-deco {
+  width: 100%;
+  height: 68px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 28px;
+  background: #150d30;
+}
+.heatmap-deco canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
