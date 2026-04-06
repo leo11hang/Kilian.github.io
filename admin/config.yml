@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: leo11hang/Kilian.github.io   # ← 改成你的 GitHub 用户名/仓库名
+  name: git-gateway
+  branch: main
   branch: main
 
 media_folder: "assets/images/uploads"
