@@ -14,11 +14,6 @@ layout: default
     <span style="color:var(--text-secondary);">{{ page.title | truncate: 28 }}</span>
   </div>
 
-  <!-- 热力图装饰条 -->
-  <div class="heatmap-deco">
-    <canvas id="heatmapCanvas"></canvas>
-  </div>
-
   <header class="article-header">
     <div class="article-cats">
       {% for cat in page.categories %}
@@ -35,6 +30,15 @@ layout: default
   {% if page.cover %}
   <div class="article-cover"><img src="{{ page.cover | relative_url }}" alt="{{ page.title }}" /></div>
   {% endif %}
+
+  <div class="cta-box">
+    <div class="cta-box-icon">🔑</div>
+    <div class="cta-box-text">
+      <strong>需要正版激活码？</strong>
+      <p>安全稳定 · 即时发货 · 售后保障，让你的 AI 软件立刻解锁全部功能</p>
+    </div>
+    <a class="btn-cta-box" href="{{ site.activation_site }}" target="_blank" rel="noopener">立即购买 →</a>
+  </div>
 
   <div class="article-content">{{ content }}</div>
 
@@ -54,29 +58,3 @@ layout: default
   {% endif %}
 
 </div>
-
-<script>
-(function(){
-  var canvas = document.getElementById('heatmapCanvas');
-  if(!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var wrap = canvas.parentElement;
-  canvas.width = wrap.offsetWidth || 780;
-  canvas.height = 52;
-  var size = 8, gap = 2, step = size + gap;
-  var cols = Math.ceil(canvas.width / step) + 1;
-  var rows = Math.ceil(canvas.height / step) + 1;
-  var colors = ['#13102a','#1e1645','#2d1f6e','#4c1d95','#5b21b6','#6d28d9','#7c3aed','#8b5cf6','#a78bfa','#c4b5fd'];
-  for(var r=0;r<rows;r++){
-    for(var c=0;c<cols;c++){
-      var wave = (Math.sin(c*0.25)*0.5+0.5)*(Math.cos(r*1.2+c*0.15)*0.5+0.5);
-      var v = Math.min(0.99, wave*0.65 + Math.random()*0.35);
-      var ci = Math.round(v*(colors.length-1));
-      ctx.fillStyle = colors[ci];
-      ctx.beginPath();
-      ctx.roundRect(c*step, r*step, size, size, 2);
-      ctx.fill();
-    }
-  }
-})();
-</script>
