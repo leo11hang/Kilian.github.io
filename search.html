@@ -1,0 +1,126 @@
+---
+layout: default
+title: "搜索"
+permalink: /search/
+---
+
+<div class="container" style="padding-top:40px;padding-bottom:80px;">
+  <div class="search-page-header">
+    <h1 class="search-page-title">🔍 搜索文章</h1>
+    <p class="search-page-desc">输入关键词搜索站内所有文章</p>
+  </div>
+
+  <div class="search-box-wrap">
+    <div class="search-box">
+      <svg class="search-box-icon" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="6"/><path d="M15 15l-3.5-3.5"/></svg>
+      <input type="text" id="searchInput" class="search-box-input" placeholder="输入关键词，如：ChatGPT、激活码、注册..." autofocus />
+      <button class="search-box-clear" id="clearBtn" onclick="clearSearch()">✕</button>
+    </div>
+  </div>
+
+  <div id="searchStats" class="search-stats"></div>
+  <div id="searchResults" class="posts-grid"></div>
+  <div id="searchEmpty" class="empty-state" style="display:none;">
+    <div class="empty-icon">🔍</div>
+    <h2>没有找到相关文章</h2>
+    <p>换个关键词试试？</p>
+  </div>
+  <div id="searchDefault" class="search-default">
+    <div class="section-label">📄 全部文章</div>
+    <div id="allPosts" class="posts-grid"></div>
+  </div>
+</div>
+
+<script>
+var allData = [];
+var searchInput = document.getElementById('searchInput');
+var searchResults = document.getElementById('searchResults');
+var searchEmpty = document.getElementById('searchEmpty');
+var searchDefault = document.getElementById('searchDefault');
+var searchStats = document.getElementById('searchStats');
+var clearBtn = document.getElementById('clearBtn');
+
+var catMap = { tutorial:'AI教程', download:'软件下载', activation:'激活教程', faq:'常见问题' };
+var catClass = { tutorial:'cat-tutorial', download:'cat-download', activation:'cat-activation', faq:'cat-faq' };
+
+function renderCard(post) {
+  var cat = post.categories.split(',')[0] || '';
+  return '<a class="post-card" href="' + post.url + '">' +
+    '<div class="post-cover"><div class="post-cover-placeholder">' +
+      (cat==='tutorial'?'🤖':cat==='download'?'💾':cat==='activation'?'🔑':cat==='faq'?'❓':'📄') +
+    '</div></div>' +
+    '<div class="post-body">' +
+      '<div class="post-meta">' +
+        '<span class="post-cat ' + (catClass[cat]||'') + '">' + (catMap[cat]||cat) + '</span>' +
+        '<span class="post-date">' + post.date.slice(5) + '</span>' +
+      '</div>' +
+      '<div class="post-title">' + post.title + '</div>' +
+      '<div class="post-excerpt">' + post.excerpt + '</div>' +
+    '</div>' +
+    '<div class="post-footer"><span class="read-more">阅读全文 <span class="read-more-arrow">→</span></span></div>' +
+  '</a>';
+}
+
+function highlight(text, kw) {
+  if (!kw) return text;
+  var reg = new RegExp('(' + kw.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+  return text.replace(reg, '<mark>$1</mark>');
+}
+
+function doSearch(kw) {
+  kw = kw.trim();
+  clearBtn.style.display = kw ? 'flex' : 'none';
+
+  if (!kw) {
+    searchResults.innerHTML = '';
+    searchEmpty.style.display = 'none';
+    searchDefault.style.display = 'block';
+    searchStats.innerHTML = '';
+    return;
+  }
+
+  searchDefault.style.display = 'none';
+  var kwLow = kw.toLowerCase();
+  var results = allData.filter(function(p) {
+    return p.title.toLowerCase().includes(kwLow) ||
+           p.excerpt.toLowerCase().includes(kwLow) ||
+           p.tags.toLowerCase().includes(kwLow) ||
+           p.categories.toLowerCase().includes(kwLow);
+  });
+
+  searchStats.innerHTML = results.length > 0
+    ? '<span class="search-count">找到 <strong>' + results.length + '</strong> 篇相关文章</span>'
+    : '';
+
+  if (results.length === 0) {
+    searchResults.innerHTML = '';
+    searchEmpty.style.display = 'block';
+  } else {
+    searchEmpty.style.display = 'none';
+    searchResults.innerHTML = results.map(function(p) {
+      var hp = Object.assign({}, p);
+      hp.title = highlight(p.title, kw);
+      hp.excerpt = highlight(p.excerpt, kw);
+      return renderCard(hp);
+    }).join('');
+  }
+}
+
+function clearSearch() {
+  searchInput.value = '';
+  searchInput.focus();
+  doSearch('');
+}
+
+// 加载数据
+fetch('{{ "/search.json" | relative_url }}')
+  .then(function(r){ return r.json(); })
+  .then(function(data) {
+    allData = data;
+    // 渲染全部文章
+    document.getElementById('allPosts').innerHTML = data.map(renderCard).join('');
+  });
+
+searchInput.addEventListener('input', function(){ doSearch(this.value); });
+searchInput.addEventListener('keydown', function(e){ if(e.key==='Escape') clearSearch(); });
+</script>
