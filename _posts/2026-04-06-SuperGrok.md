@@ -5,7 +5,7 @@ date: 2026-04-06 15:00:00 +0800
 categories: activation
 tags: [Grok, SuperGrok, xAI, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 SuperGrok 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
-cover: https://github.com/user-attachments/assets/47741f05-3af8-45bf-9ef0-f1482909b246
+cover: https://github.com/user-attachments/assets/13a368d2-53c7-4101-b0b0-12bda2bcd647
 pinned: false
 ---
 
