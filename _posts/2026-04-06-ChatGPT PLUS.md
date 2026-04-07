@@ -5,7 +5,7 @@ date: 2026-04-06 13:00:00 +0800
 categories: activation
 tags: [ChatGPT, ChatGPT Plus, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 ChatGPT Plus 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
-pinned: true
+pinned: false
 ---
 
 ## 激活前准备
