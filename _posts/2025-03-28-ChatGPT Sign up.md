@@ -5,7 +5,7 @@ date: 2026-04-06 10:00:00 +0800
 categories: tutorial
 tags: [ChatGPT, OpenAI, 注册教程, GPT-5]
 excerpt: "手把手教你完成 ChatGPT 账号注册，包括网络环境准备、邮箱验证、手机号验证及常见问题解决。"
-cover: https://github.com/user-attachments/assets/4f2660a1-b35c-4532-8256-26f008621f8b
+cover: https://github.com/user-attachments/assets/fcf1e289-8945-46ea-a053-ac87f056600a
 pinned: false
 ---
 
