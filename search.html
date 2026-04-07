@@ -45,10 +45,11 @@ var catClass = { tutorial:'cat-tutorial', download:'cat-download', activation:'c
 
 function renderCard(post) {
   var cat = post.categories.split(',')[0] || '';
+  var coverHtml = post.cover
+    ? '<img src="' + post.cover + '" alt="' + post.title + '" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />'
+    : '<div class="post-cover-placeholder">' + (cat==='tutorial'?'🤖':cat==='download'?'💾':cat==='activation'?'🔑':cat==='faq'?'❓':'📄') + '</div>';
   return '<a class="post-card" href="' + post.url + '">' +
-    '<div class="post-cover"><div class="post-cover-placeholder">' +
-      (cat==='tutorial'?'🤖':cat==='download'?'💾':cat==='activation'?'🔑':cat==='faq'?'❓':'📄') +
-    '</div></div>' +
+    '<div class="post-cover">' + coverHtml + '</div>' +
     '<div class="post-body">' +
       '<div class="post-meta">' +
         '<span class="post-cat ' + (catClass[cat]||'') + '">' + (catMap[cat]||cat) + '</span>' +
