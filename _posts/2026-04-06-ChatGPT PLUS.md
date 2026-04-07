@@ -86,3 +86,11 @@ https://chatgpt.com/api/auth/session
 **邮箱**：[kkluv2022@outlook.com](mailto:kkluv2022@outlook.com)
 
 我们会在最短时间内为你解决问题。
+
+---
+
+## 图文版教程
+
+如需查看带截图的详细图文教程，请点击下方链接：
+
+📖 [点击查看完整图文教程](https://jlarkusywq166np5.usttp.larksuite.com/wiki/NtJzwlohOi3SLhkySonuVG9wt4e?from=from_copylink)
