@@ -12,6 +12,9 @@
 </head>
 <body>
 
+<!-- 阅读进度条 -->
+<div id="progress-bar"></div>
+
 <header class="site-header">
   <div class="header-inner">
     <a class="site-logo" href="{{ '/' | relative_url }}">
@@ -20,7 +23,8 @@
       </div>
       {{ site.title }}
     </a>
-    <nav class="site-nav">
+
+    <nav class="site-nav" aria-label="主导航">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>首页</a>
       <a href="{{ '/tutorial/' | relative_url }}"{% if page.url contains 'tutorial' %} class="active"{% endif %}>AI教程</a>
       <a href="{{ '/activation/' | relative_url }}"{% if page.url contains 'activation' %} class="active"{% endif %}>激活教程</a>
@@ -30,14 +34,34 @@
         <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:middle;margin-right:3px"><circle cx="8.5" cy="8.5" r="6"/><path d="M15 15l-3.5-3.5"/></svg>搜索
       </a>
     </nav>
-    <a class="btn-email" href="mailto:kkluv2022@outlook.com">
-      <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-      联系站长
-    </a>
+
+    <div class="header-right">
+      <a class="btn-contact" href="mailto:kkluv2022@outlook.com">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+        联系站长
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
+<!-- 移动端导航抽屉 -->
+<nav class="mobile-nav" id="mobileNav" aria-label="移动端导航">
+  <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>🏠 首页</a>
+  <a href="{{ '/tutorial/' | relative_url }}"{% if page.url contains 'tutorial' %} class="active"{% endif %}>🤖 AI教程</a>
+  <a href="{{ '/activation/' | relative_url }}"{% if page.url contains 'activation' %} class="active"{% endif %}>🔑 激活教程</a>
+  <a href="{{ '/download/' | relative_url }}"{% if page.url contains 'download' %} class="active"{% endif %}>💾 软件下载</a>
+  <a href="{{ '/faq/' | relative_url }}"{% if page.url contains 'faq' %} class="active"{% endif %}>❓ 常见问题</a>
+  <a href="{{ '/search/' | relative_url }}"{% if page.url contains 'search' %} class="active"{% endif %}>🔍 搜索文章</a>
+  <a href="{{ site.activation_site }}" target="_blank" rel="noopener" class="nav-cta">🛒 立即购买激活码</a>
+</nav>
+
 {{ content }}
+
+<!-- 返回顶部 -->
+<button id="back-to-top" aria-label="返回顶部" title="返回顶部">↑</button>
 
 <a class="float-cta" href="{{ site.activation_site }}" target="_blank" rel="noopener">
   <div class="float-cta-dot"></div>
@@ -48,6 +72,62 @@
   <p>© {{ 'now' | date: "%Y" }} {{ site.title }} &nbsp;·&nbsp; 专注 AI 软件教程与激活指南 &nbsp;·&nbsp;
   <a href="{{ site.activation_site }}" target="_blank" rel="noopener">{{ site.activation_text }}</a></p>
 </footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── 移动端菜单 ──────────────────────────────
+  var toggle = document.getElementById('menuToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  var isOpen = false;
+
+  function openMenu() {
+    isOpen = true;
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    mobileNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    isOpen = false;
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', function() {
+    isOpen ? closeMenu() : openMenu();
+  });
+  // 点击菜单链接后关闭
+  mobileNav.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', closeMenu);
+  });
+  // 点击外部关闭
+  document.addEventListener('click', function(e) {
+    if (isOpen && !mobileNav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+  });
+
+  // ── 阅读进度条 ──────────────────────────────
+  var bar = document.getElementById('progress-bar');
+  function updateProgress() {
+    var scrolled = window.scrollY;
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (total > 0 ? (scrolled / total * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // ── 返回顶部 ────────────────────────────────
+  var backBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  backBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+})();
+</script>
 
 </body>
 </html>

@@ -4,12 +4,15 @@ layout: default
 
 {% assign cat = page.categories[0] %}
 {% case cat %}
-  {% when 'tutorial' %}{% assign cat_label = 'AI教程' %}
-  {% when 'download' %}{% assign cat_label = '软件下载' %}
-  {% when 'activation' %}{% assign cat_label = '激活教程' %}
-  {% when 'faq' %}{% assign cat_label = '常见问题' %}
-  {% else %}{% assign cat_label = cat %}
+  {% when 'tutorial'    %}{% assign cat_label = 'AI教程' %}
+  {% when 'download'    %}{% assign cat_label = '软件下载' %}
+  {% when 'activation'  %}{% assign cat_label = '激活教程' %}
+  {% when 'faq'         %}{% assign cat_label = '常见问题' %}
+  {% else               %}{% assign cat_label = cat %}
 {% endcase %}
+
+{% assign words = content | strip_html | number_of_words %}
+{% assign read_mins = words | divided_by: 300 | plus: 1 %}
 
 <div class="article-wrap">
 
@@ -20,7 +23,7 @@ layout: default
     <a href="{{ '/' | relative_url }}{{ cat }}/">{{ cat_label }}</a>
     <span class="breadcrumb-sep">/</span>
     {% endif %}
-    <span style="color:var(--text-secondary)">{{ page.title | truncate: 28 }}</span>
+    <span style="color:var(--text-2)">{{ page.title | truncate: 28 }}</span>
   </div>
 
   <header class="article-header">
@@ -31,6 +34,7 @@ layout: default
     <div class="article-meta">
       <span>📅 {{ page.date | date: "%Y年%m月%d日" }}</span>
       <span>✍️ {{ site.author }}</span>
+      <span class="read-time">🕐 约 {{ read_mins }} 分钟阅读</span>
     </div>
   </header>
 
