@@ -1,0 +1,30 @@
+{% assign cat_slug = include.cat %}
+{% assign cat_posts = site.categories[cat_slug] %}
+{% case cat_slug %}
+  {% when 'tutorial' %}{% assign cat_title = '🤖 AI 教程' %}
+  {% when 'download' %}{% assign cat_title = '💾 软件下载' %}
+  {% when 'activation' %}{% assign cat_title = '🔑 激活教程' %}
+  {% when 'faq' %}{% assign cat_title = '❓ 常见问题' %}
+  {% else %}{% assign cat_title = cat_slug %}
+{% endcase %}
+
+<div class="container" style="padding-top:40px">
+  <div class="breadcrumb">
+    <a href="{{ '/' | relative_url }}">首页</a>
+    <span class="breadcrumb-sep">/</span>
+    <span style="color:var(--text-secondary)">{{ cat_title }}</span>
+  </div>
+  <h1 style="font-size:24px;font-weight:800;margin-bottom:28px">{{ cat_title }}</h1>
+  {% if cat_posts.size > 0 %}
+  <div class="posts-grid">
+    {% for post in cat_posts %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <div class="empty-icon">{{ cat_title | slice: 0 }}</div>
+    <h2>暂无内容</h2>
+    <p>该分类下还没有文章，敬请期待～</p>
+    <a href="{{ '/' | relative_url }}" class="empty-btn">← 返回首页</a>
+  </div>
+  {% endif %}
+</div>
