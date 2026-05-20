@@ -7,9 +7,7 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 150 }}{% else %}{{ site.description }}{% endif %}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}" />
-  <link rel="shortcut icon" href="{{ '/assets/favicon.svg' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% seo %}
 </head>
 <body>
@@ -23,18 +21,18 @@
       {{ site.title }}
     </a>
     <nav class="site-nav">
-      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>首页</a>
-      <a href="{{ '/tutorial/' | relative_url }}" {% if page.url contains 'tutorial' %}class="active"{% endif %}>AI教程</a>
-      <a href="{{ '/download/' | relative_url }}" {% if page.url contains 'download' %}class="active"{% endif %}>软件下载</a>
-      <a href="{{ '/activation/' | relative_url }}" {% if page.url contains 'activation' %}class="active"{% endif %}>激活教程</a>
-      <a href="{{ '/faq/' | relative_url }}" {% if page.url contains 'faq' %}class="active"{% endif %}>常见问题</a>
-      <a href="{{ '/search/' | relative_url }}" {% if page.url contains 'search' %}class="active"{% endif %} class="nav-search-link">
-        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:3px;"><circle cx="8.5" cy="8.5" r="6"/><path d="M15 15l-3.5-3.5"/></svg>搜索
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>首页</a>
+      <a href="{{ '/tutorial/' | relative_url }}"{% if page.url contains 'tutorial' %} class="active"{% endif %}>AI教程</a>
+      <a href="{{ '/activation/' | relative_url }}"{% if page.url contains 'activation' %} class="active"{% endif %}>激活教程</a>
+      <a href="{{ '/download/' | relative_url }}"{% if page.url contains 'download' %} class="active"{% endif %}>软件下载</a>
+      <a href="{{ '/faq/' | relative_url }}"{% if page.url contains 'faq' %} class="active"{% endif %}>常见问题</a>
+      <a href="{{ '/search/' | relative_url }}"{% if page.url contains 'search' %} class="active"{% endif %}>
+        <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:middle;margin-right:3px"><circle cx="8.5" cy="8.5" r="6"/><path d="M15 15l-3.5-3.5"/></svg>搜索
       </a>
     </nav>
     <a class="btn-email" href="mailto:kkluv2022@outlook.com">
-      <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-      kkluv2022@outlook.com
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+      联系站长
     </a>
   </div>
 </header>
@@ -47,17 +45,9 @@
 </a>
 
 <footer class="site-footer">
-  <p>© {{ 'now' | date: "%Y" }} {{ site.title }} &nbsp;·&nbsp; 专注 AI 软件教程与激活指南 &nbsp;·&nbsp; <a href="{{ site.activation_site }}" target="_blank">{{ site.activation_text }}</a></p>
+  <p>© {{ 'now' | date: "%Y" }} {{ site.title }} &nbsp;·&nbsp; 专注 AI 软件教程与激活指南 &nbsp;·&nbsp;
+  <a href="{{ site.activation_site }}" target="_blank" rel="noopener">{{ site.activation_text }}</a></p>
 </footer>
 
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
-      }
-    });
-  }
-</script>
 </body>
 </html>
