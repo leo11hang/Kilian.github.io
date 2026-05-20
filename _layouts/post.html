@@ -2,23 +2,30 @@
 layout: default
 ---
 
+{% assign cat = page.categories[0] %}
+{% case cat %}
+  {% when 'tutorial' %}{% assign cat_label = 'AI教程' %}
+  {% when 'download' %}{% assign cat_label = '软件下载' %}
+  {% when 'activation' %}{% assign cat_label = '激活教程' %}
+  {% when 'faq' %}{% assign cat_label = '常见问题' %}
+  {% else %}{% assign cat_label = cat %}
+{% endcase %}
+
 <div class="article-wrap">
 
   <div class="breadcrumb">
     <a href="{{ '/' | relative_url }}">首页</a>
     <span class="breadcrumb-sep">/</span>
-    {% if page.categories[0] %}
-    <a href="{{ '/' | relative_url }}{{ page.categories[0] }}/">{% case page.categories[0] %}{% when 'tutorial' %}AI教程{% when 'download' %}软件下载{% when 'activation' %}激活教程{% when 'faq' %}常见问题{% endcase %}</a>
+    {% if cat %}
+    <a href="{{ '/' | relative_url }}{{ cat }}/">{{ cat_label }}</a>
     <span class="breadcrumb-sep">/</span>
     {% endif %}
-    <span style="color:var(--text-secondary);">{{ page.title | truncate: 28 }}</span>
+    <span style="color:var(--text-secondary)">{{ page.title | truncate: 28 }}</span>
   </div>
 
   <header class="article-header">
     <div class="article-cats">
-      {% for cat in page.categories %}
-      <span class="post-cat cat-{{ cat }}">{% case cat %}{% when 'tutorial' %}AI教程{% when 'download' %}软件下载{% when 'activation' %}激活教程{% when 'faq' %}常见问题{% endcase %}</span>
-      {% endfor %}
+      <span class="post-cat cat-{{ cat }}">{{ cat_label }}</span>
     </div>
     <h1 class="article-title">{{ page.title }}</h1>
     <div class="article-meta">
@@ -28,7 +35,9 @@ layout: default
   </header>
 
   {% if page.cover %}
-  <div class="article-cover"><img src="{{ page.cover | relative_url }}" alt="{{ page.title }}" /></div>
+  <div class="article-cover">
+    <img src="{{ page.cover }}" alt="{{ page.title }}" loading="lazy" />
+  </div>
   {% endif %}
 
   <div class="cta-box">
@@ -42,7 +51,7 @@ layout: default
 
   <div class="article-content">{{ content }}</div>
 
-  <div class="cta-box" style="margin-top:48px;">
+  <div class="cta-box" style="margin-top:48px">
     <div class="cta-box-icon">⚡</div>
     <div class="cta-box-text">
       <strong>教程看完了？一键获取激活码</strong>
