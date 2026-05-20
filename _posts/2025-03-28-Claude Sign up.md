@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Claude 注册教程：Anthropic AI 账号注册完整指南"
-date: 2026-03-28 11:00:00 +0800
+date: 2025-03-28 11:00:00 +0800
 categories: tutorial
 tags: [Claude, Anthropic, 注册教程, Claude Pro]
 excerpt: "详细介绍 Claude 账号注册流程，包括网络环境配置、邮箱注册、手机验证及 Pro 会员开通方法。"
