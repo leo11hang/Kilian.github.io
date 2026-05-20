@@ -1,27 +1,33 @@
 {% assign post = include.post %}
-<a class="post-card" href="{{ post.url | relative_url }}">
+{% assign cat = post.categories | first %}
+{% case cat %}
+  {% when 'tutorial' %}{% assign cat_label = 'AI教程' %}{% assign cat_icon = '🤖' %}
+  {% when 'download' %}{% assign cat_label = '软件下载' %}{% assign cat_icon = '💾' %}
+  {% when 'activation' %}{% assign cat_label = '激活教程' %}{% assign cat_icon = '🔑' %}
+  {% when 'faq' %}{% assign cat_label = '常见问题' %}{% assign cat_icon = '❓' %}
+  {% else %}{% assign cat_label = cat %}{% assign cat_icon = '📄' %}
+{% endcase %}
+
+<a class="post-card{% if include.data_cat %}" data-cat="{{ cat }}{% endif %}" href="{{ post.url | relative_url }}">
   <div class="post-cover">
     {% if post.cover %}
-      <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}" loading="lazy" />
+      <img src="{{ post.cover }}" alt="{{ post.title }}" loading="lazy" />
     {% else %}
-      <div class="post-cover-placeholder">
-        {% case post.categories[0] %}{% when 'tutorial' %}🤖{% when 'download' %}💾{% when 'activation' %}🔑{% when 'faq' %}❓{% else %}📄{% endcase %}
-      </div>
+      <div class="post-cover-placeholder">{{ cat_icon }}</div>
     {% endif %}
   </div>
   <div class="post-body">
     <div class="post-meta">
-      <span class="post-cat cat-{{ post.categories | first }}">{% case post.categories[0] %}{% when 'tutorial' %}AI教程{% when 'download' %}软件下载{% when 'activation' %}激活教程{% when 'faq' %}常见问题{% endcase %}</span>
+      <span class="post-cat cat-{{ cat }}">{{ cat_label }}</span>
       {% if post.pinned %}<span class="post-pinned">📌 置顶</span>{% endif %}
       <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
     </div>
     <div class="post-title">{{ post.title }}</div>
-    {% if post.excerpt %}<div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>{% endif %}
+    {% if post.excerpt %}
+      <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>
+    {% endif %}
   </div>
   <div class="post-footer">
-    <span class="read-more">
-      阅读全文
-      <span class="read-more-arrow">→</span>
-    </span>
+    <span class="read-more">阅读全文 <span class="read-more-arrow">→</span></span>
   </div>
 </a>
