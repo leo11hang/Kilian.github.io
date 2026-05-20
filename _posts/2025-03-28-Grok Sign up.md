@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Grok 注册教程：xAI 旗下 AI 助手完整注册指南"
-date: 2026-05-20 12:00:00 +0800
+date: 2026-03-28 12:00:00 +0800
 categories: tutorial
 tags: [Grok, xAI, 马斯克, 注册教程, AI助手]
 excerpt: "手把手教你注册 Grok 账号，包括注册方式、免费版与付费版对比及常见问题解答。"
