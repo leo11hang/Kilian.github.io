@@ -377,7 +377,80 @@ img { max-width: 100%; display: block; }
 .article-content code { font-family: "SF Mono", Consolas, monospace; background: var(--accent-lt); color: var(--accent); border: 1px solid #ddd6fe; padding: 2px 7px; border-radius: 5px; font-size: 13.5px; }
 .article-content pre { background: #0f0c29; color: #e0e7ff; border: 1px solid #1e1b4b; border-radius: var(--r); padding: 22px; margin-bottom: 20px; overflow-x: auto; }
 .article-content pre code { background: none; border: none; color: inherit; padding: 0; }
-.article-content blockquote { border-left: 4px solid var(--accent); background: var(--accent-lt); padding: 16px 20px; margin-bottom: 18px; border-radius: 0 10px 10px 0; }
+.article-content blockquote { margin-bottom: 18px; }
+.article-content blockquote p:first-child { margin-top: 0; }
+.article-content blockquote p:last-child  { margin-bottom: 0; }
+
+.article-content blockquote {
+  margin: 0 0 18px;
+  padding: 10px 16px;
+  border-left: 3px solid var(--border);
+  color: var(--text-2);
+  background: var(--surface2);
+  border-radius: 0 var(--r) var(--r) 0;
+}
+.article-content blockquote p { margin: 0; }
+
+.article-content .callout {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  border-radius: var(--r);
+  margin-bottom: 20px;
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+.article-content .callout-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  line-height: 1;
+  opacity: .85;
+}
+.article-content .callout-body { flex: 1; min-width: 0; }
+.article-content .callout-body > p { margin: 0; }
+.article-content .callout-body > p + p { margin-top: 8px; }
+.article-content .callout-body strong { font-weight: 700; }
+
+/* 💡 tip — 紫色系（主色调） */
+.article-content .callout-tip {
+  background: var(--accent-lt);
+  border: 1px solid #c4b5fd;
+  color: #3b0764;
+  border-left: 3px solid var(--accent);
+}
+
+/* ⚠️ warning — 暖琥珀，跟紫色互补 */
+.article-content .callout-warning {
+  background: #fdf8f0;
+  border: 1px solid #f5d89a;
+  color: #6b3e0a;
+  border-left: 3px solid #d97706;
+}
+
+/* ❌ danger — 深玫红，不出戏 */
+.article-content .callout-danger {
+  background: #fdf2f4;
+  border: 1px solid #f0b8c2;
+  color: #6b0f23;
+  border-left: 3px solid #be123c;
+}
+
+/* ℹ️ info — 深色毛玻璃风，跟代码块呼应 */
+.article-content .callout-info {
+  background: rgba(15,12,41,.04);
+  border: 1px solid rgba(15,12,41,.1);
+  color: var(--text-2);
+  border-left: 3px solid var(--accent2);
+}
+
+/* 📌 note — 极简，几乎无色 */
+.article-content .callout-note {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  border-left: 3px solid var(--text-3);
+}
 .article-content img { border-radius: 10px; margin: 18px 0; box-shadow: var(--sh); }
 .article-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .article-content table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 14px; border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); }
