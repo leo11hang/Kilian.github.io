@@ -14,6 +14,7 @@ layout: default
 {% assign words = content | strip_html | number_of_words %}
 {% assign read_mins = words | divided_by: 300 | plus: 1 %}
 
+<div class="post-layout">
 <div class="article-wrap">
 
   <div class="breadcrumb">
@@ -70,7 +71,40 @@ layout: default
   </div>
   {% endif %}
 
+</div><!-- /.article-wrap -->
+
+<aside class="toc-sidebar" id="tocSidebar" aria-label="文章目录">
+  <div class="toc-inner">
+    <div class="toc-title">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/></svg>
+      目录
+    </div>
+    <nav class="toc-nav" id="tocNav"></nav>
+  </div>
+</aside>
+
+</div><!-- /.post-layout -->
+
+<!-- 移动端目录按钮 -->
+<button class="toc-mobile-btn" id="tocMobileBtn" aria-label="打开目录" aria-expanded="false">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/></svg>
+  目录
+</button>
+
+<!-- 移动端目录抽屉 -->
+<div class="toc-drawer" id="tocDrawer" aria-hidden="true">
+  <div class="toc-drawer-inner">
+    <div class="toc-drawer-header">
+      <span class="toc-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/></svg>
+        目录
+      </span>
+      <button class="toc-drawer-close" id="tocDrawerClose" aria-label="关闭目录">✕</button>
+    </div>
+    <nav class="toc-nav" id="tocNavMobile"></nav>
+  </div>
 </div>
+<div class="toc-overlay" id="tocOverlay"></div>
 
 <style>
 .article-content pre {
@@ -226,5 +260,93 @@ layout: default
       + '<div class="callout-body">' + bq.innerHTML + '</div>';
     bq.parentNode.replaceChild(div, bq);
   });
+})();
+
+// ── 文章内导航 TOC ──────────────────────────────────────────
+(function () {
+  var content = document.querySelector('.article-content');
+  var tocNav = document.getElementById('tocNav');
+  var tocNavMobile = document.getElementById('tocNavMobile');
+  var sidebar = document.getElementById('tocSidebar');
+  var mobileBtn = document.getElementById('tocMobileBtn');
+  var drawer = document.getElementById('tocDrawer');
+  var overlay = document.getElementById('tocOverlay');
+  var closeBtn = document.getElementById('tocDrawerClose');
+
+  if (!content || !tocNav) return;
+
+  // 收集 h2 / h3，自动补 id
+  var headings = Array.prototype.slice.call(content.querySelectorAll('h2, h3'));
+  if (headings.length < 2) return; // 不足 2 个不显示
+
+  headings.forEach(function (h, i) {
+    if (!h.id) h.id = 'heading-' + i;
+  });
+
+  // 生成目录 HTML
+  function buildToc(nav) {
+    headings.forEach(function (h) {
+      var a = document.createElement('a');
+      a.href = '#';
+      a.className = 'toc-item toc-' + h.tagName.toLowerCase();
+      a.textContent = h.textContent;
+      a.dataset.id = h.id;
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // 偏移 header 高度
+        var offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 62;
+        setTimeout(function () { window.scrollBy(0, -offset - 12); }, 0);
+        closeDrawer();
+      });
+      nav.appendChild(a);
+    });
+  }
+
+  buildToc(tocNav);
+  buildToc(tocNavMobile);
+  sidebar.style.display = '';
+  mobileBtn.style.display = '';
+
+  // 滚动高亮
+  var lastActive = null;
+  function onScroll() {
+    var offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 62) + 20;
+    var active = null;
+    for (var i = headings.length - 1; i >= 0; i--) {
+      if (headings[i].getBoundingClientRect().top <= offset) {
+        active = headings[i].id;
+        break;
+      }
+    }
+    if (active === lastActive) return;
+    lastActive = active;
+    [tocNav, tocNavMobile].forEach(function (nav) {
+      nav.querySelectorAll('.toc-item').forEach(function (a) {
+        a.classList.toggle('active', a.dataset.id === active);
+      });
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // 移动端抽屉
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    mobileBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  mobileBtn.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
 })();
 </script>
