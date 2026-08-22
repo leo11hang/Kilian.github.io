@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: "post"
 title: "Gemini 注册教程：2026年最新国内注册全流程"
-date: 2025-05-20 10:00:00 +0800
-categories: tutorial
+date: "2026-08-22 10:00:00 +0800"
+categories: "tutorial"
 tags: [Gemini, Google, 注册教程, Gemini 3]
 excerpt: "手把手教你完成 Gemini 账号注册，包括网络环境准备、Google 账号绑定及常见问题解决。"
-cover: https://github.com/user-attachments/assets/bf00058b-9f7a-40f0-a5d1-521feb47ab78
+cover: "https://github.com/user-attachments/assets/bf00058b-9f7a-40f0-a5d1-521feb47ab78"
 pinned: false
 ---
 
