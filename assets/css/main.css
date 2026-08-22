@@ -747,3 +747,73 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
   .cta-box-text strong { font-size: 15px; }
   .btn-cta-box { width: 100%; justify-content: center; }
 }
+
+/* ── SVG icon alignment ───────────────────────── */
+.mobile-nav a svg,
+.float-cta-text svg,
+.section-label svg,
+.article-meta svg,
+.search-page-title svg,
+.post-pinned svg,
+.post-read-time svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.mobile-nav a { display: flex; align-items: center; gap: 10px; }
+.mobile-nav a svg { opacity: .75; }
+
+/* ── Post-card cover placeholder — 分类渐变色 ── */
+.post-cover-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+  color: white;
+}
+/* 默认（兜底） */
+.post-cover-placeholder { background: var(--grad-soft); color: var(--accent); }
+
+/* 按分类：在 .post-card 上加 data-cat，占位符继承 */
+.post-card[data-cat="tutorial"]   .post-cover-placeholder { background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%); color: white; }
+.post-card[data-cat="download"]   .post-cover-placeholder { background: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 100%); color: white; }
+.post-card[data-cat="activation"] .post-cover-placeholder { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; }
+.post-card[data-cat="faq"]        .post-cover-placeholder { background: linear-gradient(135deg, #be185d 0%, #f43f5e 100%); color: white; }
+
+/* 无 data-cat（置顶区卡片）用默认渐变 */
+.post-card:not([data-cat]) .post-cover-placeholder { background: var(--grad); color: white; }
+
+/* ── Post-card read time ──────────────────────── */
+.post-read-time {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 11px; color: var(--text-3); font-weight: 500;
+  margin-left: 2px;
+}
+
+/* ── CTA box icon (SVG use 版尺寸修正) ────────── */
+.cta-box-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,.15);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.cta-box-icon svg { opacity: .95; }
+
+/* ── Empty state icon (SVG use) ─────────────────*/
+.empty-icon {
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  color: var(--text-3);
+}
+
+/* ── search page title icon align ───────────────*/
+.search-page-title {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+/* ── Cat page title ──────────────────────────── */
+.cat-page-title {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 24px; font-weight: 800; margin-bottom: 28px;
+  color: var(--text-1);
+}
+.cat-page-title svg { color: var(--accent); flex-shrink: 0; }
