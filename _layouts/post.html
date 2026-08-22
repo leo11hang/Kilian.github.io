@@ -33,9 +33,7 @@ layout: default
     </div>
     <h1 class="article-title">{{ page.title }}</h1>
     <div class="article-meta">
-      <span>📅 {{ page.date | date: "%Y年%m月%d日" }}</span>
-      <span>✍️ {{ site.author }}</span>
-      <span class="read-time">🕐 约 {{ read_mins }} 分钟阅读</span>
+      <span><svg width="14" height="14" aria-hidden="true" focusable="false"><use href="#ic-clock"/></svg> 约 {{ read_mins }} 分钟阅读</span>
     </div>
   </header>
 
@@ -46,7 +44,7 @@ layout: default
   {% endif %}
 
   <div class="cta-box">
-    <div class="cta-box-icon">🔑</div>
+    <div class="cta-box-icon"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#ic-bolt"/></svg></div>
     <div class="cta-box-text">
       <strong>需要正版激活码？</strong>
       <p>安全稳定 · 即时发货 · 售后保障，让你的 AI 软件立刻解锁全部功能</p>
@@ -57,7 +55,7 @@ layout: default
   <div class="article-content">{{ content }}</div>
 
   <div class="cta-box" style="margin-top:48px">
-    <div class="cta-box-icon">⚡</div>
+    <div class="cta-box-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M11 2L4 11h7l-2 7 7-9h-7l2-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="currentColor" opacity="0.15"/><path d="M11 2L4 11h7l-2 7 7-9h-7l2-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
     <div class="cta-box-text">
       <strong>教程看完了？一键获取激活码</strong>
       <p>支持多种支付方式 · 自动发货 · 如有问题随时联系客服</p>
@@ -76,7 +74,7 @@ layout: default
 <aside class="toc-sidebar" id="tocSidebar" aria-label="文章目录">
   <div class="toc-inner">
     <div class="toc-title">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/></svg>
+      <svg width="14" height="14" aria-hidden="true" focusable="false"><use href="#ic-list"/></svg>
       目录
     </div>
     <nav class="toc-nav" id="tocNav"></nav>
@@ -87,7 +85,7 @@ layout: default
 
 <!-- 移动端目录按钮 -->
 <button class="toc-mobile-btn" id="tocMobileBtn" aria-label="打开目录" aria-expanded="false">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/></svg>
+  <svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#ic-list"/></svg>
   目录
 </button>
 
@@ -96,7 +94,7 @@ layout: default
   <div class="toc-drawer-inner">
     <div class="toc-drawer-header">
       <span class="toc-title">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/></svg>
+        <svg width="14" height="14" aria-hidden="true" focusable="false"><use href="#ic-list"/></svg>
         目录
       </span>
       <button class="toc-drawer-close" id="tocDrawerClose" aria-label="关闭目录">✕</button>
