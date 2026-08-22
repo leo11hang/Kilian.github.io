@@ -64,12 +64,12 @@ https://claude.ai/settings/account
 
 ## 激活完成后可享受的功能
 
-- Claude Sonnet / Opus 完整访问
-- 更高的每日消息发送限额
-- 200K 超长上下文窗口
-- Projects 项目功能支持
-- 高峰期优先响应
-- 新功能抢先体验
+- Claude Sonnet 5 + Opus 5 完整访问（约为免费版5倍使用量）
+- 1M tokens 超长上下文窗口
+- Projects、Artifacts、Memory、Connectors 全功能支持
+- Claude Code、Deep Research、Cowork、Design 完整工具集
+- Microsoft 365 深度集成（Excel、Word、PowerPoint）
+- 高峰期优先响应，新功能抢先体验
 
 ---
 

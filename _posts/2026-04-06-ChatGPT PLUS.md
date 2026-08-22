@@ -64,11 +64,11 @@ https://chatgpt.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- GPT-5.3 / GPT-5.4 Thinking 完整访问
-- 更高的消息发送限额
-- 图像生成、视频生成（Sora）
-- 深度研究（Deep Research）每月 25 次
-- 高峰期优先响应
+- GPT-5.6 Sol 完整访问（Plus 专属旗舰模型，比免费版 Luna 更强）
+- GPT-5.6 Sol 多档思考模式（Medium / High / Extra High），适合复杂推理
+- 图像生成、视频生成（Sora 720p）
+- Deep Research 每月 25 次
+- 高峰期优先响应，无广告
 
 ---
 
