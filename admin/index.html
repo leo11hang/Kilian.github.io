@@ -178,14 +178,13 @@ body {
 .form-group.full{grid-column:1/-1}
 label{font-size:11px;font-weight:600;color:var(--ink2)}
 label .req{color:var(--red);margin-left:2px}
-input[type=text],input[type=url],input[type=datetime-local],select,textarea{
+input[type=text],input[type=url],textarea{
   background:var(--paper2);border:1px solid var(--paper3);border-radius:.6rem;
   color:var(--ink);font-family:'Sora',sans-serif;font-size:13px;
   padding:8px 11px;transition:border-color .15s,box-shadow .15s;
   outline:none;width:100%;
 }
-input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-lt);background:var(--cream)}
-select option{background:var(--cream)}
+input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-lt);background:var(--cream)}
 textarea{resize:vertical;min-height:72px;line-height:1.6}
 .hint{font-size:10px;color:var(--ink4);margin-top:4px;line-height:1.5}
 
@@ -233,6 +232,125 @@ textarea{resize:vertical;min-height:72px;line-height:1.6}
 .modal p{font-size:12px;color:var(--ink3);margin-bottom:18px;line-height:1.7}
 .modal-form{display:flex;flex-direction:column;gap:12px}
 .modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+
+/* ── 自定义下拉选择器 ── */
+.custom-select{position:relative;width:100%}
+.custom-select-trigger{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--paper2);border:1px solid var(--paper3);border-radius:.6rem;
+  color:var(--ink);font-family:'Sora',sans-serif;font-size:13px;
+  padding:8px 11px;cursor:pointer;transition:border-color .15s,box-shadow .15s;
+  user-select:none;
+}
+.custom-select-trigger:hover{border-color:var(--ink4)}
+.custom-select.open .custom-select-trigger,
+.custom-select-trigger:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-lt);background:var(--cream);outline:none}
+.custom-select-arrow{
+  width:16px;height:16px;flex-shrink:0;margin-left:6px;
+  transition:transform .2s;color:var(--ink3);
+  display:flex;align-items:center;justify-content:center;
+}
+.custom-select.open .custom-select-arrow{transform:rotate(180deg)}
+.custom-select-arrow svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.custom-select-dropdown{
+  position:absolute;top:calc(100% + 5px);left:0;right:0;z-index:100;
+  background:var(--cream);border:1px solid var(--paper3);border-radius:.8rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  overflow:hidden;
+  opacity:0;transform:translateY(-6px);pointer-events:none;
+  transition:opacity .15s,transform .15s;
+}
+.custom-select.open .custom-select-dropdown{opacity:1;transform:none;pointer-events:auto}
+.custom-select-option{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 13px;font-size:13px;font-family:'Sora',sans-serif;
+  color:var(--ink2);cursor:pointer;transition:background .1s;
+}
+.custom-select-option:hover{background:var(--paper2)}
+.custom-select-option.selected{
+  color:var(--gold);background:var(--gold-lt);font-weight:600;
+}
+.custom-select-option .opt-dot{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;
+  border:2px solid var(--paper3);transition:all .15s;
+}
+.custom-select-option.selected .opt-dot{background:var(--gold);border-color:var(--gold)}
+.custom-select-option .opt-badge{font-size:10px;padding:1px 7px;border-radius:20px;font-weight:500;margin-left:auto}
+
+/* ── 自定义日期时间选择器 ── */
+.custom-dt{position:relative;width:100%}
+.custom-dt-trigger{
+  display:flex;align-items:center;gap:8px;
+  background:var(--paper2);border:1px solid var(--paper3);border-radius:.6rem;
+  color:var(--ink);font-family:'Sora',sans-serif;font-size:13px;
+  padding:8px 11px;cursor:pointer;transition:border-color .15s,box-shadow .15s;
+  user-select:none;
+}
+.custom-dt-trigger:hover{border-color:var(--ink4)}
+.custom-dt.open .custom-dt-trigger{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-lt);background:var(--cream)}
+.custom-dt-icon{color:var(--ink3);flex-shrink:0;display:flex}
+.custom-dt-icon svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.custom-dt-text{flex:1}
+.custom-dt-text.placeholder{color:var(--ink4)}
+.custom-dt-clear{margin-left:auto;color:var(--ink4);font-size:14px;line-height:1;padding:0 2px;display:none}
+.custom-dt-clear:hover{color:var(--red)}
+.custom-dt-panel{
+  position:absolute;top:calc(100% + 5px);left:0;z-index:100;
+  background:var(--cream);border:1px solid var(--paper3);border-radius:1rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+  padding:16px;width:280px;
+  opacity:0;transform:translateY(-6px);pointer-events:none;
+  transition:opacity .15s,transform .15s;
+}
+.custom-dt.open .custom-dt-panel{opacity:1;transform:none;pointer-events:auto}
+.dt-cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.dt-nav-btn{
+  width:28px;height:28px;border-radius:.5rem;border:1px solid var(--paper3);
+  background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--ink2);transition:all .12s;
+}
+.dt-nav-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-lt)}
+.dt-nav-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.dt-month-label{font-size:13px;font-weight:600;color:var(--ink)}
+.dt-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px}
+.dt-wd{font-size:10px;font-weight:600;color:var(--ink4);text-align:center;padding:2px 0}
+.dt-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.dt-day{
+  aspect-ratio:1;border-radius:.4rem;border:none;background:transparent;
+  font-size:12px;font-family:'Sora',sans-serif;cursor:pointer;
+  color:var(--ink2);transition:all .1s;display:flex;align-items:center;justify-content:center;
+}
+.dt-day:hover:not(:disabled):not(.other-month){background:var(--paper2)}
+.dt-day.today:not(.selected){color:var(--gold);font-weight:700}
+.dt-day.selected{background:var(--ink);color:#f5f0e8;font-weight:600}
+.dt-day.other-month{color:var(--ink4);opacity:.5}
+.dt-day:disabled{opacity:.3;cursor:not-allowed}
+.dt-time-row{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-top:12px;padding-top:12px;border-top:1px solid var(--paper3);
+}
+.dt-time-label{font-size:11px;font-weight:600;color:var(--ink3)}
+.dt-time-sep{font-size:16px;font-weight:700;color:var(--ink3);margin:0 2px}
+.dt-num-wrap{display:flex;flex-direction:column;align-items:center;gap:2px}
+.dt-num-btn{
+  width:22px;height:18px;border:none;background:transparent;cursor:pointer;
+  color:var(--ink3);display:flex;align-items:center;justify-content:center;border-radius:.3rem;
+  transition:all .1s;
+}
+.dt-num-btn:hover{background:var(--paper2);color:var(--gold)}
+.dt-num-btn svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.dt-num-val{
+  width:32px;text-align:center;font-size:14px;font-weight:600;color:var(--ink);
+  font-family:'JetBrains Mono',monospace;background:transparent;border:none;
+  cursor:default;
+}
+.dt-confirm{
+  width:100%;margin-top:12px;padding:7px 0;
+  background:var(--ink);color:#f5f0e8;border:none;border-radius:.6rem;
+  font-size:12px;font-weight:600;font-family:'Sora',sans-serif;cursor:pointer;
+  transition:background .15s;
+}
+.dt-confirm:hover{background:var(--gold)}
 
 /* Toast */
 #toast{position:fixed;bottom:20px;right:20px;z-index:999;display:flex;flex-direction:column;gap:6px;pointer-events:none}
@@ -386,6 +504,27 @@ textarea{resize:vertical;min-height:72px;line-height:1.6}
     <div class="modal-actions">
       <button class="btn btn-ghost" id="deleteCancelBtn">取消</button>
       <button class="btn btn-danger" id="deleteConfirmBtn">确认删除</button>
+    </div>
+  </div>
+</div>
+
+<!-- 插入链接弹窗 -->
+<div class="overlay" id="linkOverlay" style="display:none">
+  <div class="modal">
+    <h3>🔗 插入链接</h3>
+    <div class="modal-form">
+      <div class="form-group">
+        <label>链接地址 <span class="req">*</span></label>
+        <input type="url" id="linkUrlInput" placeholder="https://example.com">
+      </div>
+      <div class="form-group">
+        <label>链接文字</label>
+        <input type="text" id="linkTextInput" placeholder="留空则使用选中文字">
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="linkCancelBtn">取消</button>
+      <button class="btn btn-primary" id="linkConfirmBtn">插入</button>
     </div>
   </div>
 </div>
@@ -703,15 +842,11 @@ function openEditor(post) {
     '</div>',
     '<div class="form-group">',
     '<label>发布日期 <span class="req">*</span></label>',
-    '<input type="datetime-local" id="f_date" value="'+dtVal+'">',
+    '<div id="f_date_wrap"></div>',
     '</div>',
     '<div class="form-group">',
     '<label>分类 <span class="req">*</span></label>',
-    '<select id="f_cat">',
-    Object.keys(CAT_LABEL).map(function(c){
-      return '<option value="'+c+'"'+(fm.categories===c?' selected':'')+'>'+CAT_LABEL[c]+'</option>';
-    }).join(''),
-    '</select>',
+    '<div id="f_cat_wrap"></div>',
     '</div>',
     '<div class="form-group full">',
     '<label>摘要</label>',
@@ -774,6 +909,12 @@ function openEditor(post) {
   ].join('');
 
   showEditor();
+
+  // 初始化自定义组件
+  initCustomSelect('f_cat_wrap', Object.keys(CAT_LABEL).map(function(c){
+    return {value:c, label:CAT_LABEL[c]};
+  }), fm.categories || 'tutorial');
+  initCustomDatetime('f_date_wrap', dtVal);
 
   // 绑定表单事件
   $('tagInput').addEventListener('keydown', onTagKey);
@@ -849,11 +990,24 @@ function mdLine(prefix) {
   ta.focus();
 }
 
+var _linkSel = {s:0, e:0};
 function mdLink() {
-  var url = prompt('请输入链接地址：');
-  if(!url) return;
-  var ta = $('f_body'), s = ta.selectionStart, e = ta.selectionEnd;
-  ta.setRangeText('[' + (ta.value.slice(s,e)||'链接文字') + '](' + url + ')', s, e, 'end');
+  var ta = $('f_body');
+  _linkSel = {s: ta.selectionStart, e: ta.selectionEnd};
+  var selected = ta.value.slice(_linkSel.s, _linkSel.e);
+  $('linkUrlInput').value = '';
+  $('linkTextInput').value = selected;
+  $('linkOverlay').style.display = 'flex';
+  setTimeout(function(){ $('linkUrlInput').focus(); }, 50);
+}
+function closeLinkModal() { $('linkOverlay').style.display = 'none'; }
+function confirmLink() {
+  var url = $('linkUrlInput').value.trim();
+  if(!url) { $('linkUrlInput').style.borderColor='var(--red)'; $('linkUrlInput').focus(); return; }
+  var text = $('linkTextInput').value.trim() || '链接文字';
+  var ta = $('f_body');
+  ta.setRangeText('[' + text + '](' + url + ')', _linkSel.s, _linkSel.e, 'end');
+  closeLinkModal();
   ta.focus();
 }
 
@@ -875,7 +1029,7 @@ function previewMd() {
 // ── 收集表单 ─────────────────────────────────────────────────
 function collectForm() {
   var title = $('f_title').value.trim();
-  var dtRaw = $('f_date').value;
+  var dtRaw = getCustomDatetimeValue('f_date_wrap');
   if(!title) { toast('请填写文章标题', 'err'); return null; }
   if(!dtRaw) { toast('请选择发布日期', 'err'); return null; }
   var dateStr = dtRaw.replace('T',' ') + ':00 +0800';
@@ -883,7 +1037,7 @@ function collectForm() {
     layout:     'post',
     title:      title,
     date:       dateStr,
-    categories: $('f_cat').value,
+    categories: getCustomSelectValue('f_cat_wrap'),
     tags:       tags.slice(),
     excerpt:    $('f_excerpt').value.trim(),
     cover:      $('f_cover').value.trim(),
@@ -1030,6 +1184,11 @@ function init() {
 
   $('settingsOverlay').addEventListener('click', function(e){ if(e.target===this) closeSettings(); });
   $('deleteOverlay').addEventListener('click',   function(e){ if(e.target===this) closeDelete(); });
+  $('linkOverlay').addEventListener('click',     function(e){ if(e.target===this) closeLinkModal(); });
+  $('linkCancelBtn').addEventListener('click', closeLinkModal);
+  $('linkConfirmBtn').addEventListener('click', confirmLink);
+  $('linkUrlInput').addEventListener('keydown', function(e){ if(e.key==='Enter') confirmLink(); if(e.key==='Escape') closeLinkModal(); });
+  $('linkTextInput').addEventListener('keydown', function(e){ if(e.key==='Enter') confirmLink(); if(e.key==='Escape') closeLinkModal(); });
 
   $('catTabs').addEventListener('click', function(e) {
     var btn = e.target.closest('.cat-tab');
@@ -1056,6 +1215,262 @@ function init() {
 
   if(cfg.token && cfg.repo) loadPosts();
   else openSettings();
+}
+
+// ── 自定义下拉选择器 ─────────────────────────────────────────
+// options: [{value, label}]  initialValue: string
+function initCustomSelect(wrapperId, options, initialValue) {
+  var wrap = $(wrapperId);
+  if(!wrap) return;
+  var current = initialValue || options[0].value;
+
+  var catBadgeClass = { tutorial:'cat-tutorial', activation:'cat-activation', download:'cat-download', faq:'cat-faq' };
+
+  function optionHtml(opt, isDropdown) {
+    var cls = 'custom-select-option' + (opt.value === current ? ' selected' : '');
+    var badge = isDropdown ? '<span class="opt-badge ' + (catBadgeClass[opt.value]||'') + '">' + opt.label + '</span>' : '';
+    return '<div class="'+cls+'" data-value="'+opt.value+'">'
+      + (isDropdown ? '<span class="opt-dot"></span>' : '')
+      + opt.label
+      + badge
+      + '</div>';
+  }
+
+  function render() {
+    var curOpt = options.find(function(o){ return o.value === current; }) || options[0];
+    wrap.innerHTML =
+      '<div class="custom-select" id="cs_'+wrapperId+'" tabindex="0">'
+      + '<div class="custom-select-trigger">'
+      + '<span class="opt-badge ' + (catBadgeClass[curOpt.value]||'') + '" style="margin-right:4px"></span>'
+      + curOpt.label
+      + '<span class="custom-select-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>'
+      + '</div>'
+      + '<div class="custom-select-dropdown">'
+      + options.map(function(o){ return optionHtml(o, true); }).join('')
+      + '</div>'
+      + '</div>';
+
+    var cs = wrap.querySelector('.custom-select');
+    var trigger = cs.querySelector('.custom-select-trigger');
+    var dropdown = cs.querySelector('.custom-select-dropdown');
+
+    function open() { cs.classList.add('open'); }
+    function close() { cs.classList.remove('open'); }
+    function toggle() { cs.classList.toggle('open'); }
+
+    trigger.addEventListener('click', function(e){ e.stopPropagation(); toggle(); });
+    cs.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      if(e.key === 'Escape') close();
+    });
+
+    dropdown.querySelectorAll('.custom-select-option').forEach(function(el) {
+      el.addEventListener('click', function(e){
+        e.stopPropagation();
+        current = this.dataset.value;
+        close();
+        render();
+      });
+    });
+
+    document.addEventListener('click', function handler(e){
+      if(!cs.contains(e.target)) { close(); }
+    });
+  }
+
+  render();
+}
+
+function getCustomSelectValue(wrapperId) {
+  var wrap = $(wrapperId);
+  if(!wrap) return '';
+  var selected = wrap.querySelector('.custom-select-option.selected');
+  return selected ? selected.dataset.value : '';
+}
+
+// ── 自定义日期时间选择器 ──────────────────────────────────────
+var _dtState = {};  // keyed by wrapperId
+
+function initCustomDatetime(wrapperId, initialValue) {
+  var wrap = $(wrapperId);
+  if(!wrap) return;
+
+  // 解析初始值 "2025-06-15T14:30" 或 ""
+  var now = new Date();
+  var st = _dtState[wrapperId] = {
+    year:  now.getFullYear(),
+    month: now.getMonth(),   // 0-based
+    day:   now.getDate(),
+    hour:  now.getHours(),
+    min:   now.getMinutes(),
+    hasValue: false
+  };
+
+  if(initialValue) {
+    var parts = initialValue.split('T');
+    var dp = (parts[0]||'').split('-');
+    var tp = (parts[1]||'00:00').split(':');
+    st.year  = parseInt(dp[0])||now.getFullYear();
+    st.month = (parseInt(dp[1])||1) - 1;
+    st.day   = parseInt(dp[2])||1;
+    st.hour  = parseInt(tp[0])||0;
+    st.min   = parseInt(tp[1])||0;
+    st.hasValue = true;
+  }
+
+  renderDt(wrapperId);
+}
+
+function renderDt(wrapperId) {
+  var wrap = $(wrapperId);
+  if(!wrap) return;
+  var st = _dtState[wrapperId];
+
+  var displayText = st.hasValue
+    ? pad2(st.year)+'-'+pad2(st.month+1)+'-'+pad2(st.day)+' '+pad2(st.hour)+':'+pad2(st.min)
+    : '';
+
+  var MONTHS = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+  var WDS = ['日','一','二','三','四','五','六'];
+
+  // 生成日历天数
+  var firstDay = new Date(st.year, st.month, 1).getDay();
+  var daysInMonth = new Date(st.year, st.month+1, 0).getDate();
+  var daysInPrev  = new Date(st.year, st.month, 0).getDate();
+  var todayD = new Date(); var td = todayD.getDate(), tm = todayD.getMonth(), ty = todayD.getFullYear();
+
+  var dayCells = '';
+  // 上月补位
+  for(var i = 0; i < firstDay; i++) {
+    dayCells += '<button class="dt-day other-month" disabled>'+(daysInPrev - firstDay + 1 + i)+'</button>';
+  }
+  // 本月
+  for(var d = 1; d <= daysInMonth; d++) {
+    var isToday = (d===td && st.month===tm && st.year===ty);
+    var isSel   = (st.hasValue && d===st.day && st.month===st.month && st.year===st.year);
+    // note: isSel above is always true for same month; check properly:
+    isSel = st.hasValue && d===st.day;
+    var cls = 'dt-day'+(isToday?' today':'')+(isSel?' selected':'');
+    dayCells += '<button class="'+cls+'" data-d="'+d+'">'+d+'</button>';
+  }
+  // 补满6行
+  var total = firstDay + daysInMonth;
+  var remainder = total % 7 === 0 ? 0 : 7 - (total % 7);
+  for(var n = 1; n <= remainder; n++) {
+    dayCells += '<button class="dt-day other-month" disabled>'+n+'</button>';
+  }
+
+  wrap.innerHTML =
+    '<div class="custom-dt" id="cdt_'+wrapperId+'">'
+    + '<div class="custom-dt-trigger">'
+    + '<span class="custom-dt-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>'
+    + '<span class="custom-dt-text'+(st.hasValue ? '' : ' placeholder')+'">'+(displayText || '选择日期和时间')+'</span>'
+    + (st.hasValue ? '<span class="custom-dt-clear" style="display:block" title="清除">×</span>' : '')
+    + '</div>'
+    + '<div class="custom-dt-panel">'
+    + '<div class="dt-cal-header">'
+    + '<button class="dt-nav-btn" data-nav="-1"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>'
+    + '<span class="dt-month-label">'+st.year+' 年 '+MONTHS[st.month]+'</span>'
+    + '<button class="dt-nav-btn" data-nav="1"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>'
+    + '</div>'
+    + '<div class="dt-weekdays">'+WDS.map(function(w){ return '<div class="dt-wd">'+w+'</div>'; }).join('')+'</div>'
+    + '<div class="dt-days">'+dayCells+'</div>'
+    + '<div class="dt-time-row">'
+    + '<span class="dt-time-label">时间</span>'
+    + numSpinner('h', st.hour, 0, 23)
+    + '<span class="dt-time-sep">:</span>'
+    + numSpinner('m', st.min, 0, 59)
+    + '</div>'
+    + '<button class="dt-confirm">确定</button>'
+    + '</div>'
+    + '</div>';
+
+  var cdt = wrap.querySelector('.custom-dt');
+  var trigger = cdt.querySelector('.custom-dt-trigger');
+  var panel   = cdt.querySelector('.custom-dt-panel');
+  var clearBtn = cdt.querySelector('.custom-dt-clear');
+
+  function openDt()  { cdt.classList.add('open'); }
+  function closeDt() { cdt.classList.remove('open'); }
+
+  trigger.addEventListener('click', function(e){
+    if(e.target.classList.contains('custom-dt-clear')) { e.stopPropagation(); return; }
+    cdt.classList.toggle('open');
+  });
+
+  if(clearBtn) {
+    clearBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      st.hasValue = false;
+      renderDt(wrapperId);
+    });
+  }
+
+  // 月份导航
+  panel.querySelectorAll('.dt-nav-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var dir = parseInt(this.dataset.nav);
+      st.month += dir;
+      if(st.month < 0) { st.month = 11; st.year--; }
+      if(st.month > 11) { st.month = 0; st.year++; }
+      renderDt(wrapperId);
+      openDt();
+    });
+  });
+
+  // 选日期
+  panel.querySelectorAll('.dt-day:not([disabled])').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      st.day = parseInt(this.dataset.d);
+      st.hasValue = true;
+      renderDt(wrapperId);
+      openDt();
+    });
+  });
+
+  // 时间 spinner
+  panel.querySelectorAll('.dt-num-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var field = this.dataset.field;
+      var dir   = parseInt(this.dataset.dir);
+      if(field === 'h') { st.hour = (st.hour + dir + 24) % 24; }
+      if(field === 'm') { st.min  = (st.min  + dir + 60) % 60; }
+      if(st.hasValue) { renderDt(wrapperId); openDt(); }
+      else { renderDt(wrapperId); openDt(); }
+    });
+  });
+
+  // 确定
+  panel.querySelector('.dt-confirm').addEventListener('click', function(e){
+    e.stopPropagation();
+    st.hasValue = true;
+    closeDt();
+    renderDt(wrapperId);
+  });
+
+  // 点外面关闭
+  document.addEventListener('click', function(e){
+    if(!cdt.contains(e.target)) closeDt();
+  });
+}
+
+function numSpinner(field, val, min, max) {
+  return '<div class="dt-num-wrap">'
+    + '<button class="dt-num-btn" data-field="'+field+'" data-dir="1"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>'
+    + '<div class="dt-num-val">'+pad2(val)+'</div>'
+    + '<button class="dt-num-btn" data-field="'+field+'" data-dir="-1"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>'
+    + '</div>';
+}
+
+function pad2(n) { return String(n).padStart(2,'0'); }
+
+function getCustomDatetimeValue(wrapperId) {
+  var st = _dtState[wrapperId];
+  if(!st || !st.hasValue) return '';
+  return st.year+'-'+pad2(st.month+1)+'-'+pad2(st.day)+'T'+pad2(st.hour)+':'+pad2(st.min);
 }
 
 // ── 启动 ─────────────────────────────────────────────────────
