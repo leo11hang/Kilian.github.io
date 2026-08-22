@@ -697,6 +697,9 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
   .toc-sidebar { display: block; }
   .toc-mobile-btn { display: none !important; }
 }
+@media (max-width: 1199px) {
+  .toc-mobile-btn { display: flex; }
+}
 
 /* ── Responsive: 768px ────────────────────────── */
 @media (max-width: 768px) {
@@ -711,7 +714,6 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
   .header-inner { padding: 0 1.25rem; }
   #back-to-top { bottom: 88px; right: 16px; }
   .float-cta { bottom: 20px; right: 14px; padding: 0 16px 0 12px; height: 46px; border-radius: 23px; font-size: 13px; }
-  .toc-mobile-btn { display: flex; }
   .toc-sidebar { display: none !important; }
 }
 
