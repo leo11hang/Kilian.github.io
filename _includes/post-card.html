@@ -1,26 +1,39 @@
 {% assign post = include.post %}
 {% assign cat = post.categories | first %}
 {% case cat %}
-  {% when 'tutorial' %}{% assign cat_label = 'AI教程' %}{% assign cat_icon = '🤖' %}
-  {% when 'download' %}{% assign cat_label = '软件下载' %}{% assign cat_icon = '💾' %}
-  {% when 'activation' %}{% assign cat_label = '激活教程' %}{% assign cat_icon = '🔑' %}
-  {% when 'faq' %}{% assign cat_label = '常见问题' %}{% assign cat_icon = '❓' %}
-  {% else %}{% assign cat_label = cat %}{% assign cat_icon = '📄' %}
+  {% when 'tutorial'   %}{% assign cat_label = 'AI教程'   %}{% assign cat_icon = 'ic-robot'    %}
+  {% when 'download'   %}{% assign cat_label = '软件下载'  %}{% assign cat_icon = 'ic-download'  %}
+  {% when 'activation' %}{% assign cat_label = '激活教程'  %}{% assign cat_icon = 'ic-key'       %}
+  {% when 'faq'        %}{% assign cat_label = '常见问题'  %}{% assign cat_icon = 'ic-faq'       %}
+  {% else              %}{% assign cat_label = cat          %}{% assign cat_icon = 'ic-doc'       %}
 {% endcase %}
 
-<a class="post-card{% if include.data_cat %}" data-cat="{{ cat }}{% endif %}" href="{{ post.url | relative_url }}">
+{% assign _words = post.content | strip_html | number_of_words %}
+{% assign _mins  = _words | divided_by: 300 | plus: 1 %}
+
+<a class="post-card" data-cat="{{ cat }}" href="{{ post.url | relative_url }}">
   <div class="post-cover">
     {% if post.cover %}
       <img src="{{ post.cover }}" alt="{{ post.title }}" loading="lazy" />
     {% else %}
-      <div class="post-cover-placeholder">{{ cat_icon }}</div>
+      <div class="post-cover-placeholder">
+        <svg width="28" height="28" aria-hidden="true" focusable="false"><use href="#{{ cat_icon }}"/></svg>
+      </div>
     {% endif %}
   </div>
   <div class="post-body">
     <div class="post-meta">
       <span class="post-cat cat-{{ cat }}">{{ cat_label }}</span>
-      {% if post.pinned %}<span class="post-pinned">📌 置顶</span>{% endif %}
+      {% if post.pinned %}
+        <span class="post-pinned">
+          <svg width="11" height="11" aria-hidden="true" focusable="false"><use href="#ic-pin"/></svg> 置顶
+        </span>
+      {% endif %}
       <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
+      <span class="post-read-time">
+        <svg width="11" height="11" aria-hidden="true" focusable="false"><use href="#ic-clock"/></svg>
+        {{ _mins }}min
+      </span>
     </div>
     <div class="post-title">{{ post.title }}</div>
     {% if post.excerpt %}
