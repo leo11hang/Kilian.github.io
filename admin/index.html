@@ -1001,10 +1001,9 @@ function loadCfg() {
   } catch(e){}
 }
 
+// 只清 Token 和登录态（敏感信息），仓库名/分支不敏感、保留，下次不用重填
 function clearCfg() {
   try {
-    localStorage.removeItem('ghblog_cfg_meta');
-    localStorage.removeItem('ghblog_cfg');
     localStorage.removeItem('ghblog_token');
     sessionStorage.removeItem('ghblog_token');
     sessionStorage.removeItem('admin_auth');
