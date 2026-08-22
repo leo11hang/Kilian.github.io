@@ -43,29 +43,41 @@ var clearBtn = document.getElementById('clearBtn');
 var catMap = { tutorial:'AI教程', download:'软件下载', activation:'激活教程', faq:'常见问题' };
 var catClass = { tutorial:'cat-tutorial', download:'cat-download', activation:'cat-activation', faq:'cat-faq' };
 
-function renderCard(post) {
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// titleIsSafe/excerptIsSafe: true when the caller has already escaped
+// the text (and optionally wrapped a match in <mark>), e.g. via highlight().
+function renderCard(post, alreadySafe) {
   var cat = post.categories.split(',')[0] || '';
   var coverHtml = post.cover
-    ? '<img src="' + post.cover + '" alt="' + post.title + '" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />'
+    ? '<img src="' + esc(post.cover) + '" alt="' + esc(post.title) + '" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />'
     : '<div class="post-cover-placeholder">' + (cat==='tutorial'?'🤖':cat==='download'?'💾':cat==='activation'?'🔑':cat==='faq'?'❓':'📄') + '</div>';
-  return '<a class="post-card" href="' + post.url + '">' +
+  var title = alreadySafe ? post.title : esc(post.title);
+  var excerpt = alreadySafe ? post.excerpt : esc(post.excerpt);
+  return '<a class="post-card" href="' + esc(post.url) + '">' +
     '<div class="post-cover">' + coverHtml + '</div>' +
     '<div class="post-body">' +
       '<div class="post-meta">' +
-        '<span class="post-cat ' + (catClass[cat]||'') + '">' + (catMap[cat]||cat) + '</span>' +
-        '<span class="post-date">' + post.date.slice(5) + '</span>' +
+        '<span class="post-cat ' + (catClass[cat]||'') + '">' + esc(catMap[cat]||cat) + '</span>' +
+        '<span class="post-date">' + esc(post.date.slice(5)) + '</span>' +
       '</div>' +
-      '<div class="post-title">' + post.title + '</div>' +
-      '<div class="post-excerpt">' + post.excerpt + '</div>' +
+      '<div class="post-title">' + title + '</div>' +
+      '<div class="post-excerpt">' + excerpt + '</div>' +
     '</div>' +
     '<div class="post-footer"><span class="read-more">阅读全文 <span class="read-more-arrow">→</span></span></div>' +
   '</a>';
 }
 
+// Escapes text first, then wraps a matched keyword in <mark>. The result
+// is safe HTML, so pass alreadySafe=true to renderCard when using it.
 function highlight(text, kw) {
-  if (!kw) return text;
-  var reg = new RegExp('(' + kw.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
-  return text.replace(reg, '<mark>$1</mark>');
+  var safe = esc(text);
+  if (!kw) return safe;
+  var reg = new RegExp('(' + esc(kw).replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+  return safe.replace(reg, '<mark>$1</mark>');
 }
 
 function doSearch(kw) {
@@ -102,7 +114,7 @@ function doSearch(kw) {
       var hp = Object.assign({}, p);
       hp.title = highlight(p.title, kw);
       hp.excerpt = highlight(p.excerpt, kw);
-      return renderCard(hp);
+      return renderCard(hp, true);
     }).join('');
   }
 }
