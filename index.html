@@ -13,36 +13,7 @@ title: "首页"
     <p>每周更新 ChatGPT、Midjourney、Claude 等主流 AI 软件使用教程与正版激活方案</p>
     <div class="hero-btns">
       <a class="hbtn hbtn-ghost" href="#posts">浏览教程</a>
-      <a class="hbtn hbtn-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener">🔑 立即购买激活码</a>
-    </div>
-  </div>
-</section>
-
-<div class="stats-wrap">
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num">{{ site.posts | size }}+</div>
-      <div class="stat-label">精选教程</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label">内容分类</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num" id="onlineCount">--</div>
-      <div class="stat-label"><span class="online-dot"></span>实时在线</div>
-    </div>
-  </div>
-</div>
-
-<div class="container" id="posts" style="padding-top:56px">
-
-  {% assign pinned = site.posts | where:"pinned",true %}
-  {% if pinned.size > 0 %}
-  <div class="pinned-section">
-    <div class="section-label">📌 置顶推荐</div>
+      <a class="hbtn hbtn-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#ic-pin"/></svg> 置顶推荐</div>
     <div class="posts-grid">
       {% for post in pinned limit:3 %}{% include post-card.html post=post %}{% endfor %}
     </div>
