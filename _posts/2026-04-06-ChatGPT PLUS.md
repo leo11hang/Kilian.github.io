@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: "post"
 title: "ChatGPT Plus 自助激活教程：卡密激活全流程详解"
-date: 2026-04-06 13:00:00 +0800
-categories: activation
+date: "2026-08-22 13:00:00 +0800"
+categories: "activation"
 tags: [ChatGPT, ChatGPT Plus, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 ChatGPT Plus 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
-cover: https://github.com/user-attachments/assets/4f2660a1-b35c-4532-8256-26f008621f8b
+cover: "https://github.com/user-attachments/assets/4f2660a1-b35c-4532-8256-26f008621f8b"
 pinned: false
 ---
 
