@@ -283,6 +283,18 @@ layout: default
     if (!h.id) h.id = 'heading-' + i;
   });
 
+  // header 实际渲染高度（sticky 占位）
+  function headerH() {
+    var hdr = document.querySelector('.site-header');
+    return hdr ? hdr.getBoundingClientRect().height : 62;
+  }
+
+  // 精确滚动：一次性算出目标 scrollY，不依赖 scrollIntoView 再补偿
+  function scrollToHeading(h) {
+    var top = h.getBoundingClientRect().top + window.scrollY - headerH() - 12;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+
   // 生成目录 HTML
   function buildToc(nav) {
     headings.forEach(function (h) {
@@ -293,11 +305,8 @@ layout: default
       a.dataset.id = h.id;
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // 偏移 header 高度
-        var offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 62;
-        setTimeout(function () { window.scrollBy(0, -offset - 12); }, 0);
-        closeDrawer();
+        closeDrawer();        // 先关抽屉，再滚（避免抽屉占位影响 getBoundingClientRect）
+        requestAnimationFrame(function () { scrollToHeading(h); });
       });
       nav.appendChild(a);
     });
@@ -311,7 +320,7 @@ layout: default
   // 滚动高亮
   var lastActive = null;
   function onScroll() {
-    var offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 62) + 20;
+    var offset = headerH() + 20;
     var active = null;
     for (var i = headings.length - 1; i >= 0; i--) {
       if (headings[i].getBoundingClientRect().top <= offset) {
