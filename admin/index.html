@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>文章管理后台</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 /* ── 变量 ── */
 :root {
@@ -274,6 +273,7 @@ textarea{resize:vertical;min-height:72px;line-height:1.6}
       <span id="connText">未连接</span>
     </div>
     <button class="btn btn-ghost btn-sm" id="settingsBtn">⚙ 设置</button>
+    <button class="btn btn-ghost btn-sm" id="logoutBtn">🚪 退出</button>
     <button class="btn btn-primary btn-sm" id="newBtn">＋ 新建</button>
   </div>
 </div>
@@ -347,12 +347,12 @@ textarea{resize:vertical;min-height:72px;line-height:1.6}
 <div class="overlay" id="settingsOverlay" style="display:none">
   <div class="modal">
     <h3>⚙ GitHub 连接设置</h3>
-    <p>通过 GitHub API 直接读写博客仓库，Token 仅存储在你的浏览器本地。</p>
+    <p>通过 GitHub API 直接读写博客仓库。强烈建议使用 <b>Fine-grained token</b>，只授权这一个仓库的 Contents 读写权限，并设置过期时间（比如90天），而不是能访问你全部仓库的经典 Token。</p>
     <div class="modal-form">
       <div class="form-group">
         <label>GitHub Token <span class="req">*</span></label>
-        <input type="text" id="s_token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
-        <div class="hint">GitHub → Settings → Developer settings → Personal access tokens (classic)，勾选 repo 权限</div>
+        <input type="text" id="s_token" placeholder="github_pat_xxxxxxxxxxxxxxxxxxxx">
+        <div class="hint">GitHub → Settings → Developer settings → Fine-grained tokens → 选择仓库 → Contents: Read and write。用完请设过期时间，别用永久有效的。</div>
       </div>
       <div class="form-group">
         <label>仓库名 <span class="req">*</span></label>
@@ -361,6 +361,14 @@ textarea{resize:vertical;min-height:72px;line-height:1.6}
       <div class="form-group">
         <label>分支</label>
         <input type="text" id="s_branch" placeholder="main">
+      </div>
+      <div class="form-group full">
+        <div class="toggle-row">
+          <label class="toggle"><input type="checkbox" id="s_remember">
+          <span class="tslider"></span></label>
+          <span class="toggle-label">在这台设备记住 Token（关闭浏览器后仍保留）</span>
+        </div>
+        <div class="hint">不勾选：Token 只保留在当前标签页，关闭浏览器/标签页就清除，更安全。仅在你自己的电脑上才建议勾选。</div>
       </div>
     </div>
     <div class="modal-actions">
@@ -391,7 +399,7 @@ var CAT_LABEL = {tutorial:'AI教程', activation:'激活教程', download:'软�
 var FIELD_ORDER = ['layout','title','date','categories','tags','excerpt','cover','pinned'];
 
 // ── 状态 ─────────────────────────────────────────────────────
-var cfg        = {token:'', repo:'', branch:'main'};
+var cfg        = {token:'', repo:'', branch:'main', remember:false};
 var posts      = [];
 var currentIdx = null;
 var tags       = [];
@@ -426,17 +434,50 @@ async function sha256(str) {
   return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
 }
 
+// 简单的失败次数限流：连续错5次后锁定一段时间，拖慢暴力破解/试密码的速度
+var LOCK_KEY = 'admin_pwd_lock';
+function getLock() {
+  try { return JSON.parse(localStorage.getItem(LOCK_KEY) || '{"fails":0,"until":0}'); }
+  catch(e){ return {fails:0, until:0}; }
+}
+function setLock(l) { try { localStorage.setItem(LOCK_KEY, JSON.stringify(l)); } catch(e){} }
+
+function lockRemaining() {
+  var l = getLock();
+  return Math.max(0, l.until - Date.now());
+}
+
+function renderLockState() {
+  var ms = lockRemaining();
+  var btn = $('pwdBtn'), inp = $('pwdInput'), err = $('pwdError');
+  if(ms > 0) {
+    inp.disabled = true; btn.disabled = true;
+    err.textContent = '尝试次数过多，请 ' + Math.ceil(ms/1000) + ' 秒后再试';
+    setTimeout(renderLockState, 1000);
+  } else {
+    inp.disabled = false; btn.disabled = false;
+    if(err.textContent.indexOf('请') === 0 || err.textContent.indexOf('尝试次数') === 0) err.textContent = '';
+  }
+}
+
 async function checkPwd() {
+  if(lockRemaining() > 0) { renderLockState(); return; }
   var val = $('pwdInput').value;
   var err = $('pwdError');
   if(!val) { err.textContent = '请输入密码'; return; }
   var hash = await sha256(val);
   if(hash === PWD_HASH) {
+    setLock({fails:0, until:0});
     sessionStorage.setItem('admin_auth', '1');
     $('lockScreen').style.display = 'none';
     init();
   } else {
-    err.textContent = '密码错误，请重试';
+    var l = getLock();
+    l.fails = (l.fails || 0) + 1;
+    if(l.fails >= 5) { l.until = Date.now() + 60000; l.fails = 0; }
+    setLock(l);
+    if(lockRemaining() > 0) { renderLockState(); }
+    else { err.textContent = '密码错误，请重试'; }
     $('pwdInput').value = '';
     $('pwdInput').focus();
     var inp = $('pwdInput');
@@ -918,6 +959,7 @@ function openSettings() {
   $('s_token').value  = cfg.token  || '';
   $('s_repo').value   = cfg.repo   || '';
   $('s_branch').value = cfg.branch || 'main';
+  $('s_remember').checked = cfg.remember || false;
   $('settingsOverlay').style.display = 'flex';
 }
 function closeSettings() { $('settingsOverlay').style.display = 'none'; }
@@ -925,11 +967,53 @@ function saveSettings() {
   var t = $('s_token').value.trim();
   var r = $('s_repo').value.trim();
   var b = $('s_branch').value.trim() || 'main';
+  var remember = $('s_remember').checked;
   if(!t || !r) { toast('请填写 Token 和仓库名', 'err'); return; }
-  cfg = {token:t, repo:r, branch:b};
-  try { localStorage.setItem('ghblog_cfg', JSON.stringify(cfg)); } catch(e){}
+  cfg = {token:t, repo:r, branch:b, remember:remember};
+  persistCfg();
   closeSettings();
   loadPosts();
+}
+
+// Token 默认只放 sessionStorage（关标签页就清掉）；仓库名/分支不敏感，
+// 一直放 localStorage 方便下次不用重填；只有勾选“记住 Token”才会把
+// Token 也写进 localStorage 长期保留。
+function persistCfg() {
+  try {
+    localStorage.setItem('ghblog_cfg_meta', JSON.stringify({repo:cfg.repo, branch:cfg.branch, remember:cfg.remember}));
+    if(cfg.remember) localStorage.setItem('ghblog_token', cfg.token);
+    else localStorage.removeItem('ghblog_token');
+    sessionStorage.setItem('ghblog_token', cfg.token);
+  } catch(e){}
+}
+
+function loadCfg() {
+  try {
+    var meta = JSON.parse(localStorage.getItem('ghblog_cfg_meta') || 'null');
+    var legacy = JSON.parse(localStorage.getItem('ghblog_cfg') || 'null'); // 兼容旧版本
+    if(legacy && !meta) { meta = legacy; try{ localStorage.removeItem('ghblog_cfg'); }catch(e){} }
+    if(!meta) return;
+    cfg.repo = meta.repo || '';
+    cfg.branch = meta.branch || 'main';
+    cfg.remember = !!meta.remember;
+    var tok = sessionStorage.getItem('ghblog_token') || (cfg.remember ? localStorage.getItem('ghblog_token') : '') || (legacy && legacy.token) || '';
+    cfg.token = tok;
+  } catch(e){}
+}
+
+function clearCfg() {
+  try {
+    localStorage.removeItem('ghblog_cfg_meta');
+    localStorage.removeItem('ghblog_cfg');
+    localStorage.removeItem('ghblog_token');
+    sessionStorage.removeItem('ghblog_token');
+    sessionStorage.removeItem('admin_auth');
+  } catch(e){}
+}
+
+function logout() {
+  clearCfg();
+  location.reload();
 }
 
 // ── 初始化 ───────────────────────────────────────────────────
@@ -937,6 +1021,7 @@ function init() {
   $('settingsBtn').addEventListener('click', openSettings);
   $('settingsCancelBtn').addEventListener('click', closeSettings);
   $('settingsSaveBtn').addEventListener('click', saveSettings);
+  $('logoutBtn').addEventListener('click', logout);
   $('newBtn').addEventListener('click', newPost);
   $('refreshBtn').addEventListener('click', function(){ loadPosts(); });
   $('deleteCancelBtn').addEventListener('click', closeDelete);
@@ -968,10 +1053,7 @@ function init() {
     });
   });
 
-  try {
-    var saved = localStorage.getItem('ghblog_cfg');
-    if(saved) cfg = Object.assign(cfg, JSON.parse(saved));
-  } catch(e) {}
+  loadCfg();
 
   if(cfg.token && cfg.repo) loadPosts();
   else openSettings();
@@ -983,6 +1065,7 @@ window.addEventListener('DOMContentLoaded', function() {
   $('pwdInput').addEventListener('keydown', function(e){ if(e.key==='Enter') checkPwd(); });
   $('pwdInput').addEventListener('focus', function(){ this.style.borderColor='var(--gold)'; this.style.boxShadow='0 0 0 3px var(--gold-lt)'; });
   $('pwdInput').addEventListener('blur',  function(){ this.style.borderColor=''; this.style.boxShadow=''; });
+  renderLockState();
 
   if(sessionStorage.getItem('admin_auth') === '1') {
     $('lockScreen').style.display = 'none';
