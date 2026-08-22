@@ -13,7 +13,42 @@ title: "首页"
     <p>每周更新 ChatGPT、Midjourney、Claude 等主流 AI 软件使用教程与正版激活方案</p>
     <div class="hero-btns">
       <a class="hbtn hbtn-ghost" href="#posts">浏览教程</a>
-      <a class="hbtn hbtn-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#ic-pin"/></svg> 置顶推荐</div>
+      <a class="hbtn hbtn-primary" href="{{ site.activation_site }}" target="_blank" rel="noopener">
+        <svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#ic-key"/></svg>
+        立即购买激活码
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-wrap">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">{{ site.posts | size }}+</div>
+      <div class="stat-label">精选教程</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">内容分类</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num" id="onlineCount">--</div>
+      <div class="stat-label"><span class="online-dot"></span>实时在线</div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="posts" style="padding-top:56px">
+
+  {% assign pinned = site.posts | where:"pinned",true %}
+  {% if pinned.size > 0 %}
+  <div class="pinned-section">
+    <div class="section-label">
+      <svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#ic-pin"/></svg>
+      置顶推荐
+    </div>
     <div class="posts-grid">
       {% for post in pinned limit:3 %}{% include post-card.html post=post %}{% endfor %}
     </div>
@@ -31,7 +66,7 @@ title: "首页"
   <div class="posts-grid" id="posts-grid">
     {% assign all_posts = site.posts | where_exp:"post","post.pinned != true" %}
     {% for post in all_posts %}
-      {% include post-card.html post=post data_cat=true %}
+      {% include post-card.html post=post %}
     {% endfor %}
   </div>
 
@@ -54,13 +89,13 @@ document.getElementById('catTabs').addEventListener('click', function(e) {
 (function() {
   var el = document.getElementById('onlineCount');
   var ranges = [
-    [0,6,   3,  8],   // 凌晨
-    [6,9,   15, 20],  // 早晨
-    [9,12,  80, 60],  // 上午
-    [12,14, 60, 40],  // 午间
-    [14,18, 120,80],  // 下午
-    [18,22, 150,100], // 晚间
-    [22,24, 30, 40],  // 深夜
+    [0,6,   3,  8],
+    [6,9,   15, 20],
+    [9,12,  80, 60],
+    [12,14, 60, 40],
+    [14,18, 120,80],
+    [18,22, 150,100],
+    [22,24, 30, 40],
   ];
   function getBase() {
     var h = new Date(Date.now() + 8*3600000).getUTCHours();
