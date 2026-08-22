@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: "post"
 title: "Claude Pro 自助激活教程：卡密激活全流程详解"
-date: 2026-04-06 14:00:00 +0800
-categories: activation
+date: "2026-08-22 14:00:00 +0800"
+categories: "activation"
 tags: [Claude, Claude Pro, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 Claude Pro 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
-cover: https://github.com/user-attachments/assets/ee58d2f3-7c03-4769-8c9e-cc704eb6e5f7
+cover: "https://github.com/user-attachments/assets/ee58d2f3-7c03-4769-8c9e-cc704eb6e5f7"
 pinned: false
 ---
 
