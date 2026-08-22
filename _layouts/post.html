@@ -164,4 +164,67 @@ layout: default
     });
   });
 })();
+// ── Callout 块自动转换 ──────────────────────────────────────
+(function () {
+  var ICONS = {
+    tip:     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+    warning: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+    danger:  '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+    info:    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+    note:    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+  };
+
+  var MAP = [
+    { keys: ['💡', '提示', 'tip',     'TIP'],                    type: 'tip'     },
+    { keys: ['⚠️', '警告', 'warning', 'WARNING', '注意', '⚠'],  type: 'warning' },
+    { keys: ['❌', '危险', 'danger',  'DANGER',  '错误'],        type: 'danger'  },
+    { keys: ['ℹ️', '信息', 'info',    'INFO',    '说明', 'ℹ'],  type: 'info'    },
+    { keys: ['📌', '备注', 'note',    'NOTE'],                   type: 'note'    },
+  ];
+
+  document.querySelectorAll('.article-content blockquote').forEach(function (bq) {
+    var first = bq.querySelector('p');
+    if (!first) return;
+    var text = first.textContent.trim();
+
+    // 找匹配的关键词
+    var matched = null;
+    var matchedKey = '';
+    for (var i = 0; i < MAP.length; i++) {
+      var m = MAP[i];
+      for (var j = 0; j < m.keys.length; j++) {
+        if (text.startsWith(m.keys[j])) {
+          matched = m;
+          matchedKey = m.keys[j];
+          break;
+        }
+      }
+      if (matched) break;
+    }
+
+    // 没有匹配关键词 → 保留原始 blockquote，不转换
+    if (!matched) return;
+
+    // 用 textContent 的字符长度来截断，避免 innerHTML 替换 emoji 出错
+    var walker = document.createTreeWalker(first, NodeFilter.SHOW_TEXT, null, false);
+    var node, removed = matchedKey.length;
+    while ((node = walker.nextNode()) && removed > 0) {
+      if (node.nodeValue.length <= removed) {
+        removed -= node.nodeValue.length;
+        node.nodeValue = '';
+      } else {
+        node.nodeValue = node.nodeValue.slice(removed).replace(/^[\s:：]+/, '');
+        removed = 0;
+      }
+    }
+    // 清掉段首多余空白
+    first.innerHTML = first.innerHTML.replace(/^[\s:：]+/, '');
+
+    var div = document.createElement('div');
+    div.className = 'callout callout-' + matched.type;
+    div.innerHTML = '<span class="callout-icon">' + ICONS[matched.type] + '</span>'
+      + '<div class="callout-body">' + bq.innerHTML + '</div>';
+    bq.parentNode.replaceChild(div, bq);
+  });
+})();
 </script>
