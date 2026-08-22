@@ -9,6 +9,11 @@
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   {% seo %}
+  {% if page.cover %}
+  <meta property="og:image" content="{{ page.cover }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ page.cover }}" />
+  {% endif %}
 </head>
 <body>
 
