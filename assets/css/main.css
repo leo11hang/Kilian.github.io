@@ -585,23 +585,30 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
   display: flex;
   flex-direction: column;
   gap: 2px;
+  border-left: 2px solid var(--border);
+  margin-left: 2px;
 }
 .toc-item {
   display: block;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text-3);
-  padding: 5px 8px;
-  border-radius: 7px;
+  padding: 5px 12px;
+  border-radius: 0;
   line-height: 1.45;
-  transition: background var(--transition), color var(--transition);
+  transition: color .18s ease, border-color .18s ease, font-weight .15s ease;
   border-left: 2px solid transparent;
+  margin-left: -2px;
   text-decoration: none !important;
+  background: none !important;
 }
-.toc-item:hover { background: var(--accent-lt); color: var(--accent); }
+.toc-item:hover {
+  color: var(--accent);
+  border-left-color: rgba(109,40,217,.3);
+  background: none !important;
+}
 .toc-item.active {
   color: var(--accent);
-  background: var(--accent-lt);
   border-left-color: var(--accent);
   font-weight: 600;
 }
