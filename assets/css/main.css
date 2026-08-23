@@ -466,7 +466,7 @@ img { max-width: 100%; display: block; }
 
 /* ── Back to Top ──────────────────────────────── */
 #back-to-top {
-  position: fixed; bottom: 96px; right: 28px; z-index: 998;
+  position: fixed; bottom: 86px; right: 28px; z-index: 998;
   width: 42px; height: 42px; border-radius: 12px;
   background: white; border: 1.5px solid var(--border);
   color: var(--text-2); font-size: 16px;
@@ -614,8 +614,8 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .toc-mobile-btn {
   display: none;
   position: fixed;
-  bottom: 88px;
-  left: 16px;
+  bottom: 86px;
+  right: 78px;
   z-index: 997;
   align-items: center;
   gap: 6px;
@@ -712,7 +712,8 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
   .cta-box { flex-direction: column; text-align: center; padding: 24px 20px; }
   .article-wrap { padding: 32px 1.25rem 80px; }
   .header-inner { padding: 0 1.25rem; }
-  #back-to-top { bottom: 88px; right: 16px; }
+  #back-to-top { bottom: 74px; right: 14px; }
+  .toc-mobile-btn { bottom: 74px; right: 64px; }
   .float-cta { bottom: 20px; right: 14px; padding: 0 16px 0 12px; height: 46px; border-radius: 23px; font-size: 13px; }
   .toc-sidebar { display: none !important; }
 }
