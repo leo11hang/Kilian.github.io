@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: "post"
 title: "Claude 注册教程：Anthropic AI 账号注册完整指南"
-date: 2025-03-28 11:00:00 +0800
-categories: tutorial
+date: "2025-08-28 11:00:00 +0800"
+categories: "tutorial"
 tags: [Claude, Anthropic, 注册教程, Claude Pro]
 excerpt: "详细介绍 Claude 账号注册流程，包括网络环境配置、邮箱注册、手机验证及 Pro 会员开通方法。"
-cover: https://github.com/user-attachments/assets/c558f459-834d-4e2e-96a1-6bb7e848e191
+cover: "https://github.com/user-attachments/assets/c558f459-834d-4e2e-96a1-6bb7e848e191"
 pinned: false
 ---
 
