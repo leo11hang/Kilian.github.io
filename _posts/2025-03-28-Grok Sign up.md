@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: "post"
 title: "Grok 注册教程：xAI 旗下 AI 助手完整注册指南"
-date: 2025-03-28 12:00:00 +0800
-categories: tutorial
+date: "2025-08-28 12:00:00 +0800"
+categories: "tutorial"
 tags: [Grok, xAI, 马斯克, 注册教程, AI助手]
 excerpt: "手把手教你注册 Grok 账号，包括注册方式、免费版与付费版对比及常见问题解答。"
-cover: https://github.com/user-attachments/assets/47741f05-3af8-45bf-9ef0-f1482909b246
+cover: "https://github.com/user-attachments/assets/47741f05-3af8-45bf-9ef0-f1482909b246"
 pinned: false
 ---
 
