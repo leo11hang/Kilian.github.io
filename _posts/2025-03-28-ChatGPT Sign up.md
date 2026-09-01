@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: "post"
 title: "ChatGPT 注册教程：2026年最新国内注册全流程"
-date: 2025-03-28 10:00:00 +0800
-categories: tutorial
+date: "2025-08-28 10:00:00 +0800"
+categories: "tutorial"
 tags: [ChatGPT, OpenAI, 注册教程, GPT-5]
 excerpt: "手把手教你完成 ChatGPT 账号注册，包括网络环境准备、邮箱验证、手机号验证及常见问题解决。"
-cover: https://github.com/user-attachments/assets/fcf1e289-8945-46ea-a053-ac87f056600a
+cover: "https://github.com/user-attachments/assets/fcf1e289-8945-46ea-a053-ac87f056600a"
 pinned: false
 ---
 
