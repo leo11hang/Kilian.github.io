@@ -64,12 +64,14 @@ https://claude.ai/settings/account
 
 ## 激活完成后可享受的功能
 
-- Claude Sonnet 5 + Opus 5 完整访问（约为免费版5倍使用量）
+- **Claude Fable 5.1**（2026年9月1日发布）、Sonnet 5、Opus 5 完整访问（约为免费版5倍使用量）
 - 1M tokens 超长上下文窗口
 - Projects、Artifacts、Memory、Connectors 全功能支持
 - Claude Code、Deep Research、Cowork、Design 完整工具集
 - Microsoft 365 深度集成（Excel、Word、PowerPoint）
 - 高峰期优先响应，新功能抢先体验
+
+> 📌 **2026年9月1日**：Anthropic 发布 Claude Fable 5.1，Pro 用户即时可用。编程测试（Terminal-Bench 4.0）达到 55.8%，业务自动化（AutomationBench）达到 31.4%，均大幅领先上代。
 
 ---
 
