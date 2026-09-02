@@ -5,7 +5,7 @@ date: "2026-09-02 11:00:00 +0800"
 categories: "activation"
 tags: [Claude, Max, Anthropic, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 Claude Max 5x（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，享受 Pro 5 倍使用额度，支持最新 Fable 5.1 模型。"
-cover: "https://github.com/user-attachments/assets/10e81dde-25f6-4d55-a639-5332afda9412"
+cover: "https://github.com/user-attachments/assets/3ca39222-4fde-4056-8330-02c5bd2a41f4"
 pinned: false
 ---
 
