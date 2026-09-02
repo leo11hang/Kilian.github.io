@@ -5,7 +5,7 @@ date: "2026-09-02 10:00:00 +0800"
 categories: "activation"
 tags: [ChatGPT, Pro, OpenAI, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 ChatGPT Pro 5x（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，畅享 5 倍 Plus 使用额度。"
-cover: "https://github.com/user-attachments/assets/4f2660a1-b35c-4532-8256-26f008621f8b"
+cover: "https://github.com/user-attachments/assets/17cf3037-6973-4fb3-87a3-73703f1cb1ff"
 pinned: false
 ---
 
