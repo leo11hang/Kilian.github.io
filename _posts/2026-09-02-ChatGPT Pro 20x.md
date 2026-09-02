@@ -5,7 +5,7 @@ date: "2026-09-02 10:30:00 +0800"
 categories: "activation"
 tags: [ChatGPT, Pro, OpenAI, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 ChatGPT Pro 20x（$200/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，解锁无限 Sora、约250次 Deep Research 及 1M token 推理上下文。"
-cover: "https://github.com/user-attachments/assets/f7819ca7-856d-4dbb-887d-21a3ebd15432"
+cover: "https://github.com/user-attachments/assets/460fd517-4198-4d84-9033-3214b2a78aec"
 pinned: false
 ---
 
