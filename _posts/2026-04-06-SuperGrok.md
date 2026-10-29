@@ -1,10 +1,10 @@
 ---
 layout: "post"
-title: "SuperGrok 自助激活教程：卡密激活全流程详解"
+title: "Grok X Subscription 自助激活教程：卡密激活全流程详解"
 date: "2026-07-15 15:00:00 +0800"
 categories: "activation"
-tags: [Grok, SuperGrok, xAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 SuperGrok 卡密自助激活全流程，无需信用卡，十分钟内完成激活，支持最新 Grok 4.6 模型。"
+tags: [Grok, X Subscription, SpaceXAI, 激活码, 自助激活, 卡密]
+excerpt: "图文详解 Grok X Subscription 卡密自助激活全流程，无需信用卡，十分钟内完成激活，支持最新 Grok 4.7 模型。"
 cover: "https://github.com/user-attachments/assets/13a368d2-53c7-4101-b0b0-12bda2bcd647"
 pinned: false
 ---
@@ -14,8 +14,10 @@ pinned: false
 在开始激活前，请确保你已经：
 
 - 拥有一个正常可登录的 Grok 账号（可用 X 账号或邮箱独立注册）
-- 已购买 SuperGrok 激活卡密（购买地址见文末）
+- 已购买 Grok X Subscription 激活卡密（购买地址见文末）
 - 保持稳定的网络连接
+
+> ⚠️ **2026年10月12日起**，SpaceXAI 已将 Grok 订阅体系全面升级为「The X Subscription」，新用户激活后享有的是新体系套餐（Free / Plus $8 / Premium $30 / Super $100 / Ultra $200），旧 SuperGrok 系列已停止向新用户销售。
 
 ---
 
@@ -64,24 +66,27 @@ https://grok.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- **Grok 4.7**（2026年9月21日发布）完整访问——当前最新旗舰
-- **Grok 4.6**（2026年8月12日）同样可访问——Artificial Analysis 智能指数评分61
-- **Expert 深度推理模式**无限制
-- **DeepSearch 联网深度搜索**无限制
-- **Imagine 图像生成**（完整版）+ **视频生成**功能
+以 **Premium（$30/月）** 为例（最受欢迎档位，对应旧 SuperGrok $30）：
+
+- **Grok 4.7**（2026年9月21日发布）完整访问——当前最新旗舰，知识截止日期 2026年5月
+- **Expert 深度推理模式**完整支持
+- **DeepSearch 联网深度搜索**完整支持
+- **Imagine 图像生成**（完整版）+ **视频生成**
 - **Grok Bot** 访问（Agent 自动化）
 - **Grok Build** 更强大编程工具
+- **Cursor** 编程工具捆绑访问（The X Subscription 独有）
 - **500K tokens** 超长上下文窗口
 - 实时 X 平台数据访问
-- 响应速度优先，额度大幅高于免费版
-- 年付 $300（约17%优惠）
+- 无广告 X 浏览 + 完整 X 平台权益
+- 约 4x Plus 共享周使用额度
 
-> 📌 **Grok 4.7**（2026年9月21日发布）：当前最新旗舰，知识截止日期 2026年5月，在 Grok Build、Cursor 和 xAI API 全面部署，API 定价：输入 $2/百万 tokens，输出 $6/百万 tokens。
+> 📌 **套餐层级（2026年10月12日起新用户适用）**：
+> - Plus $8/月：基础 Grok + Cursor + 蓝标，1x 基准额度
+> - **Premium $30/月**：完整 Grok（Grok Bot、视频生成）+ Cursor + 无广告 X，4x 额度（推荐）
+> - Super $100/月：Premium 全部功能 + 高峰期优先访问，15x 额度
+> - Ultra $200/月：最高额度（50x）+ 最早新品访问权
 >
-> 📌 **Grok 4.6**（2026年8月12日）：上一代旗舰，1.5万亿参数，Artificial Analysis 智能指数得分61，知识截止日期 2026年2月1日。
->
-> 📌 如需更高额度，**SuperGrok Plus（$100/月）**提供更大周使用池、优先响应和 1080p 视频生成；
-> **SuperGrok Heavy（$300/月）**独家支持 Grok 4 Heavy 16-Agent 并行推理。
+> 📌 **Grok 4.7** API 定价：输入 $2/百万 tokens，输出 $6/百万 tokens（快速版 $4/$12）。
 
 ---
 

@@ -1,0 +1,105 @@
+---
+layout: "post"
+title: "ChatGPT Plus 自助激活教程：卡密激活全流程详解"
+date: "2026-08-01 13:00:00 +0800"
+categories: "activation"
+tags: [ChatGPT, ChatGPT Plus, 激活码, 自助激活, 卡密]
+excerpt: "图文详解 ChatGPT Plus 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
+cover: "https://github.com/user-attachments/assets/e1425c2b-6ffe-4619-8def-5ab32d84c02d"
+pinned: false
+---
+
+## 激活前准备
+
+在开始激活前，请确保你已经：
+
+- 拥有一个正常可登录的 ChatGPT 账号
+- 已购买 ChatGPT Plus 激活卡密（购买地址见文末）
+- 保持稳定的网络连接
+
+---
+
+## 详细激活步骤
+
+### 第一步：登录 ChatGPT
+
+打开浏览器，访问 [chatgpt.com](https://chatgpt.com)，使用你的账号正常登录。
+
+> ⚠️ 请确保完全登录成功后再进行下一步，勿在登录页面操作。
+
+### 第二步：获取 Session 信息
+
+登录成功后，在**同一浏览器**访问以下地址：
+```
+https://chatgpt.com/api/auth/session
+```
+
+页面会显示一段 JSON 格式的字符内容。这是你账号的身份验证信息，用于自动化激活程序识别你的账号。
+
+### 第三步：复制全部内容
+
+将页面中**所有字符内容**全部选中（Ctrl+A），然后复制（Ctrl+C）。
+
+> ⚠️ 必须复制完整内容，不能遗漏任何字符，否则激活会失败。
+
+### 第四步：前往激活站
+
+打开激活站地址：[keyvault.686985.xyz](https://keyvault.686985.xyz)
+
+### 第五步：输入卡密并激活
+
+在激活站页面：
+
+1. 输入你购买的**卡密**
+2. 将第三步复制的 Session 内容粘贴到对应输入框
+3. 点击「**开始激活**」按钮
+
+### 第六步：等待激活完成
+
+系统将自动运行激活程序，**通常在十分钟内完成**。
+
+激活完成后回到 [chatgpt.com](https://chatgpt.com) 刷新页面，即可看到 Plus 会员标识。
+
+---
+
+## 激活完成后可享受的功能
+
+- **GPT-6 Sol** 完整访问（Plus Chat 日常对话主力，2026年10月7日起）
+- **GPT-6 Luna** 在 Free/Go 降级时不受影响（Plus 始终使用 Sol）
+- **GPT-6.1 Sol** 在 ChatGPT Work 和 Codex 中可用（2026年9月29日发布，性能接近 Astra，价格为其五分之一；**普通 Chat 暂不开放**）
+- **GPT-6 Astra** 在 ChatGPT Work 和 Codex 中有限使用（2026年9月3日发布的 OpenAI 旗舰；如需在 Chat 中直接使用须升级至 Pro 100）
+- **GPT-6.1 Terra** 在 ChatGPT Work 和 Codex 中可用（2026年10月26日发布，computer use 中阶模型，速度提升约3倍）
+- 图像生成更高额度
+- 视频生成（Sora 720p 短片）
+- **Deep Research** 完整访问
+- 高峰期优先响应，无广告
+
+> 📌 **2026年9月29日 DevDay**：OpenAI 推出 Pro 500（$500/月），是唯一包含 Astra Ultrafast 和 GPT-6.1 Sol Ultrafast 的消费者套餐，且无每5小时限制。Pro 100（$100/月）起可在 Chat 对话框直接使用 GPT-6 Astra（显示为「GPT-6 Pro」标签）。
+>
+> 📌 **Pro 200 注意**：新订阅者自2026年10月30日起 Work/Codex 额度从20倍降至约10倍，2026年10月29日前的老订户不受影响。
+
+---
+
+## 如何购买卡密
+
+**购买地址**：[keyvault.686985.xyz](https://keyvault.686985.xyz)
+
+支持多种支付方式，自动发货，购买后即时收到卡密。
+
+---
+
+## 售后与支持
+
+激活过程中遇到任何问题，请联系售后：
+
+**邮箱**：[kkluv2022@outlook.com](mailto:kkluv2022@outlook.com)
+
+我们会在最短时间内为你解决问题。
+
+---
+
+## 图文版教程
+
+如需查看带截图的详细图文教程，请点击下方链接：
+
+📖 [点击查看完整图文教程](https://jlarkusywq166np5.usttp.larksuite.com/wiki/NtJzwlohOi3SLhkySonuVG9wt4e?from=from_copylink)
