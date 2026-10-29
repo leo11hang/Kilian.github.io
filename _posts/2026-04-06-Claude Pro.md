@@ -64,14 +64,18 @@ https://claude.ai/settings/account
 
 ## 激活完成后可享受的功能
 
-- **Claude Fable 5.1**（2026年9月1日发布）、Sonnet 5、Opus 5 完整访问（约为免费版5倍使用量）
+- **Claude Sonnet 5.5**（2026年9月28日）、**Opus 5.5**（2026年9月22日）、**Fable 5.1**（2026年9月1日）完整访问（约为免费版5倍使用量）
+- **Fable 5.1** 通过用量积分访问（Pro 用量充裕时可用）
 - 1M tokens 超长上下文窗口
 - Projects、Artifacts、Memory、Connectors 全功能支持
 - Claude Code、Deep Research、Cowork、Design 完整工具集
 - Microsoft 365 深度集成（Excel、Word、PowerPoint）
 - 高峰期优先响应，新功能抢先体验
 
-> 📌 **2026年9月1日**：Anthropic 发布 Claude Fable 5.1，Pro 用户即时可用。编程测试（Terminal-Bench 4.0）达到 55.8%，业务自动化（AutomationBench）达到 31.4%，均大幅领先上代。
+> 📌 **2026年10月最新模型**：5.5 系列（Haiku 5.5、Sonnet 5.5、Opus 5.5）已全面取代旧版成为当前主力。
+> Opus 5.5 在大多数任务上接近 Fable 5.1 水准，且比旧版 Opus 5 便宜约40%，是 Pro 用户处理复杂任务的首选。
+>
+> 📌 **2026年5月6日更新**：Anthropic 将 Pro 的 5 小时滚动窗口额度翻倍，并取消了峰值时段限速。
 
 ---
 

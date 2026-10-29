@@ -4,7 +4,7 @@ title: "SuperGrok 自助激活教程：卡密激活全流程详解"
 date: "2026-07-15 15:00:00 +0800"
 categories: "activation"
 tags: [Grok, SuperGrok, xAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 SuperGrok 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
+excerpt: "图文详解 SuperGrok 卡密自助激活全流程，无需信用卡，十分钟内完成激活，支持最新 Grok 4.6 模型。"
 cover: "https://github.com/user-attachments/assets/13a368d2-53c7-4101-b0b0-12bda2bcd647"
 pinned: false
 ---
@@ -64,13 +64,25 @@ https://grok.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- Grok 4.5 分阶段接入（当前旗舰，SuperGrok Heavy 为全量保障）
-- Big Brain 深度推理模式无限制
-- DeepSearch 联网深度搜索无限制
-- Aurora 图像生成（完整版）+ 视频生成功能
-- 500K tokens 超长上下文窗口
+- **Grok 4.6**（2026年8月12日发布）完整访问——当前旗舰，Artificial Analysis 智能指数评分61
+- **Expert 深度推理模式**无限制
+- **DeepSearch 联网深度搜索**无限制
+- **Imagine 图像生成**（完整版）+ **视频生成**功能
+- **Grok Bot** 访问（Agent 自动化）
+- **Grok Build** 更强大编程工具
+- **500K tokens** 超长上下文窗口
 - 实时 X 平台数据访问
 - 响应速度优先，额度大幅高于免费版
+- 年付 $300（约17%优惠）
+
+> 📌 **Grok 4.6 主要亮点（2026年8月12日发布）**：
+> - 1.5万亿参数，Artificial Analysis 智能指数得分61
+> - 在 Grok Build、Cursor 和 xAI API 全面部署
+> - 知识截止日期：2026年2月1日
+> - API 定价：输入 $2/百万 tokens，输出 $6/百万 tokens（500K 上下文以内）
+>
+> 📌 如需更高额度，**SuperGrok Plus（$100/月）**提供更大周使用池、优先响应和 1080p 视频生成；
+> **SuperGrok Heavy（$300/月）**独家支持 Grok 4 Heavy 16-Agent 并行推理。
 
 ---
 
