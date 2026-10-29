@@ -4,24 +4,28 @@ title: "ChatGPT Pro 5x 自助激活教程：卡密激活全流程详解"
 date: "2026-09-02 10:00:00 +0800"
 categories: "activation"
 tags: [ChatGPT, Pro, OpenAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 ChatGPT Pro 5x（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，畅享 5 倍 Plus 使用额度。"
+excerpt: "图文详解 ChatGPT Pro 5x（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，畅享约 5 倍 Plus 使用额度，支持 GPT-6 Astra 对话访问。"
 cover: "https://github.com/user-attachments/assets/76305932-7765-4492-9f68-f1a4df966609"
 pinned: false
 ---
 
 ## 什么是 ChatGPT Pro 5x？
 
-ChatGPT Pro 5x 是 OpenAI 于 **2026年4月9日** 推出的中间档位订阅，定价 **$100/月**，提供相当于 ChatGPT Plus **5 倍**的使用额度，同时包含 Pro 计划的核心模型访问权限（GPT-5.6 Sol Pro、Codex、Deep Research 等）。
+ChatGPT Pro 5x（官方名称 **Pro $100/月**）是 OpenAI 面向重度用户的入门 Pro 档位，
+定价 **$100/月**，提供约相当于 ChatGPT Plus **5 倍**的使用额度，并支持在普通对话中直接使用
+GPT-6 Astra（以「GPT-6 Pro」标签呈现）。
 
-**Pro 5x vs Plus vs Pro 20x 快速对比：**
+**Pro 5x vs Plus vs Pro 10x vs Pro 25x 快速对比：**
 
-| 功能 | Plus ($20) | **Pro 5x ($100)** | Pro 20x ($200) |
-|------|------------|-------------------|----------------|
-| 主力模型 | GPT-5.6 Sol | GPT-5.6 Sol Pro | GPT-5.6 Sol Pro |
-| 使用额度 | 1x | **5x Plus** | 20x Plus |
-| Deep Research | 25次/月 | 更多 | 约250次/月 |
-| Sora 视频生成 | 有限 | ✅ | ✅ 无限 |
-| 优先计算资源 | ❌ | ✅ | ✅ |
+| 功能 | Plus ($20) | **Pro 5x ($100)** | Pro 10x ($200) | Pro 25x ($500) |
+|------|------------|-------------------|----------------|----------------|
+| 日常对话模型 | GPT-6.1 Sol | GPT-6.1 Sol + **GPT-6 Astra（直接对话）** | 同 Pro 100 | 同 Pro 100 |
+| 使用额度 | 1x | **约5x Plus** | 约10x Plus | 约25x Plus |
+| GPT-6 Astra 位置 | Work/Codex 有限使用 | **对话框直接可用（周限额）** | 对话框（更高额度）| 对话框（最高，无每5小时限制）|
+| Astra Ultrafast | ❌ | ❌ | ❌ | ✅ 专属（约8倍标准速度）|
+| Deep Research | 完整版 | 更高配额 | 更高配额 | 最高配额 |
+| Sora 视频生成 | 有限 | ✅ | ✅ | ✅ |
+| 优先计算资源 | ❌ | ✅ | ✅ | ✅ 最高 |
 
 ---
 
@@ -80,13 +84,18 @@ https://chatgpt.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- **GPT-5.6 Sol Pro** 完整访问（比 Plus 的 Sol 标准版更强）
-- **5 倍 Plus 使用额度**，大幅减少触限频率
+- **GPT-6 Astra** 在对话框中直接访问（以「GPT-6 Pro」标签呈现，有每周使用限额）
+- **GPT-6.1 Sol** 完整访问
+- **约5倍 Plus 使用额度**，大幅减少触限频率
 - **Codex 编程助手**（完整访问）
-- **Deep Research** 更高配额（超过 Plus 的 25次/月）
-- **Sora 视频生成**（有限额度）
+- **Deep Research** 更高配额（超过 Plus）
+- **Sora 视频生成**（完整访问）
 - **Agent Mode / Operator**（任务自动化）
 - 优先计算资源，高峰期不排队
+
+> 📌 **2026年9月29日 DevDay 更新**：OpenAI 新增 Pro 25x（$500/月），该档位是唯一包含
+> Astra Ultrafast 推理（约8倍标准速度）的消费者套餐，且无每5小时额度限制。
+> Pro 5x 仍是最具性价比的 Pro 入门选择。
 
 ---
 
