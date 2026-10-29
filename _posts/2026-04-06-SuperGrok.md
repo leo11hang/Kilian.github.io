@@ -1,21 +1,24 @@
 ---
 layout: "post"
-title: "SuperGrok 自助激活教程：卡密激活全流程详解"
+title: "SuperGrok / The X Subscription 自助激活教程：卡密激活全流程详解"
 date: "2026-07-15 15:00:00 +0800"
 categories: "activation"
 tags: [Grok, SuperGrok, xAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 SuperGrok 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
+excerpt: "图文详解 SuperGrok / The X Subscription 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
 cover: "https://github.com/user-attachments/assets/13a368d2-53c7-4101-b0b0-12bda2bcd647"
 pinned: false
 ---
+
 
 ## 激活前准备
 
 在开始激活前，请确保你已经：
 
 - 拥有一个正常可登录的 Grok 账号（可用 X 账号或邮箱独立注册）
-- 已购买 SuperGrok 激活卡密（购买地址见文末）
+- 已购买 SuperGrok / The X Subscription 激活卡密（购买地址见文末）
 - 保持稳定的网络连接
+
+> 📌 **2026年10月12日起**：xAI 将订阅体系统一为 **The X Subscription**（Plus $8 / Premium $30 / Super $100 / Ultra $200），旧 SuperGrok 停止向新用户开放。激活流程保持不变。
 
 ---
 
@@ -58,19 +61,19 @@ https://grok.com/api/auth/session
 
 系统将自动运行激活程序，**通常在十分钟内完成**。
 
-激活完成后回到 [grok.com](https://grok.com) 刷新页面，即可看到 SuperGrok 会员标识。
+激活完成后回到 [grok.com](https://grok.com) 刷新页面，即可看到订阅会员标识。
 
 ---
 
 ## 激活完成后可享受的功能
 
-- Grok 4.5 分阶段接入（当前旗舰，SuperGrok Heavy 为全量保障）
-- Big Brain 深度推理模式无限制
-- DeepSearch 联网深度搜索无限制
-- Aurora 图像生成（完整版）+ 视频生成功能
-- 500K tokens 超长上下文窗口
-- 实时 X 平台数据访问
-- 响应速度优先，额度大幅高于免费版
+激活的具体权益取决于你购买的卡密档位：
+
+| 激活档位 | 对应权益 |
+|---------|---------|
+| SuperGrok / Premium | 最新旗舰 Grok 模型完整访问、Big Brain 推理、DeepSearch 无限制、Aurora 图像生成（完整版）+ 视频生成、500K tokens 超长上下文、实时 X 平台数据 |
+| SuperGrok Plus / Super | 以上所有功能 + 更高优先级 + 大幅提升的使用额度 |
+| SuperGrok Heavy / Ultra | 最高额度、Grok 当前可用模型 全量访问、最高优先级响应 |
 
 ---
 
@@ -97,3 +100,7 @@ https://grok.com/api/auth/session
 如需查看带截图的详细图文教程，请点击下方链接：
 
 📖 [点击查看完整图文教程](https://jlarkusywq166np5.usttp.larksuite.com/docx/WJg9dORdCoV88Ax9ZnauuTYht4g?from=from_copylink)
+
+
+
+

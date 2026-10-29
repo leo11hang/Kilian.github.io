@@ -8,20 +8,17 @@ excerpt: "手把手教你完成 Gemini 账号注册，包括网络环境准备�
 cover: "https://github.com/user-attachments/assets/bf00058b-9f7a-40f0-a5d1-521feb47ab78"
 pinned: false
 ---
-
 ## Gemini 是什么？
 
-Gemini 是 Google 开发的 AI 对话助手，是目前 ChatGPT 最强劲的竞争对手之一，支持写作、编程、
-分析、多模态理解等任务。2026年已全面升级至 Gemini 3 系列模型，在代码生成和长文本理解方面
-表现尤为突出，并深度整合 Gmail、Docs、Sheets 等 Google 全家桶。
+Gemini 是 Google 的 AI 助手，可用于问答、写作、编程、文件分析和多模态任务。Google 持续发布新模型与功能，实际可用型号会因地区、账号和套餐不同而变化；请以 Gemini 模型选择器显示为准。
 
 ---
 
 ## 注册前的准备
 
-- **稳定的网络环境**：需全程保持连接，建议使用美国或日本节点
-- **Google 账号**：Gemini 直接使用 Google 账号登录，无需单独注册
-- **海外邮箱（可选）**：如还没有 Google 账号，注册时需准备 Gmail 或其他邮箱
+- **Google 账号**：Gemini 使用 Google 账号登录，无需单独注册
+- **可用地区**：部分 Gemini 功能和 Google AI 订阅只在指定地区开放
+- **付款方式**：如需升级套餐，提前确认账号支持的付款方式和当地价格
 
 ---
 
@@ -29,72 +26,52 @@ Gemini 是 Google 开发的 AI 对话助手，是目前 ChatGPT 最强劲的竞�
 
 ### 第一步：准备 Google 账号
 
-访问 [accounts.google.com](https://accounts.google.com)，使用已有的 Google 账号登录，
-或点击「创建账号」新建一个。
-
-> 如果你已有 Gmail 邮箱，直接跳到第二步。
+访问 [accounts.google.com](https://accounts.google.com)，登录现有账号，或按 Google 指引创建新账号。
 
 ### 第二步：访问 Gemini 官网
 
-打开 [gemini.google.com](https://gemini.google.com)，点击右上角「登录」，使用你的
-Google 账号完成授权。
+打开 [gemini.google.com](https://gemini.google.com)，使用 Google 账号登录。
 
-### 第三步：同意服务条款
+### 第三步：完成首次设置
 
-首次进入时会弹出使用条款页面，阅读后点击「同意」即可进入主界面。
+按页面提示阅读并接受服务条款，检查隐私和数据设置。
 
 ### 第四步：选择使用模式
 
-登录后默认使用 **Gemini 3 Flash** 免费版。如需切换到 Pro 模型，点击左上角模型选择
-菜单进行切换（付费版专属）。
+使用模型选择器确认当前账号可用的模型；模型和功能可能按地区及账号分批开放。
 
 ### 第五步：开始使用
 
-在底部输入框输入你的问题，即可开始对话。Gemini 支持文字、图片、文档等多种输入形式。
+在对话框输入问题，可按页面提示上传图片、文档或其他支持的文件。
 
 ---
 
-## 免费版 vs AI Pro vs AI Ultra 对比
+## 各版本功能对比（2026年10月最新）
 
-| 功能 | 免费版 | AI Pro（$19.99/月）| AI Ultra（$200/月）|
-|------|--------|-------------------|-------------------|
-| 主力模型 | Gemini 3 Flash（有限额度）| Gemini 3.1 Pro | Gemini 3.1 Pro + Deep Think |
-| 使用限额 | 每5小时刷新，超出后降级至 Flash-Lite | 大幅提升 | Pro 的20倍使用额度 |
-| Deep Research | 每月5次 | 每天20次 | 最高额度 |
-| 图像生成 | 每天约20张 | Imagen 高清版 | Imagen 最高质量 |
-| 视频生成 | ❌ 不支持 | Veo 3.1 Fast | Veo 3.1 完整版 |
-| Google 生态集成 | 基础 | Gmail、Docs、Drive 深度集成 | 同 Pro |
-| 上下文窗口 | 标准 | 100万 tokens | 100万 tokens |
-| 存储空间 | 15GB | 2TB Google One | 20TB Google One |
-| YouTube Premium | ❌ | Lite 版（部分地区）| 完整版 |
-| 优先响应 | ❌ | ✅ | ✅ 最高优先 |
+以下为美国官网常见月价；不同地区、税费和账号页面可能不同。额度为相对值，不是固定提问次数。
 
-> 📌 **2026年5月 Google I/O 更新**：使用限额从「每日次数上限」改为「按算力消耗」计算，
-> 复杂任务（如视频生成、Deep Research）消耗更多额度，简单对话消耗极少，每5小时刷新一次
-> 直至达到每周上限。
+| 功能 | 免费版 | AI Plus | AI Pro | AI Ultra 5x | AI Ultra 20x |
+|------|--------|---------|--------|-------------|--------------|
+| 官网月价（美国） | $0 | $9.99 | $19.99 | $99.99 起 | 以账号页面为准 |
+| Gemini 使用额度 | 标准 | 标准的 2 倍 | 标准的 4 倍 | Pro 的 5 倍 | Pro 的 20 倍 |
+| 上下文窗口 | 32K tokens | 128K tokens | 1M tokens | 1M tokens | 1M tokens |
+| Google One 储存 | 15 GB | 以地区页面为准 | 5 TB | 20 TB | 30 TB |
+| 模型与工具 | 基础访问 | 更多 Flash 与创作工具 | Gemini 4 Argon、Pro 模型及 Deep Research 等扩展额度 | 更高模型和工具限额 | 最高模型和工具限额 |
+
+> 📌 Google 官方不承诺统一的每日请求数。模型、上下文和额度会随任务、文件、Deep Research、视频生成及地区开放情况变化，请以[官方使用限制说明](https://support.google.com/gemini/answer/16275805)和[Google AI 方案页](https://one.google.com/about/plans?hl=en_US)为准。
 
 ---
 
 ## 常见问题
 
-**Q：打开 gemini.google.com 显示「该服务在你所在地区不可用」怎么办？**
-切换网络节点后刷新页面，选择美国、日本或新加坡节点成功率较高。
+**Q：为什么我的模型或额度和别人的不同？**
+模型、功能和用量会按地区、账号资格、订阅档位及分批开放情况变化，请以登录后的页面为准。
 
-**Q：登录后看不到 Gemini 3.1 Pro 选项？**
-Pro 模型需要订阅 Google AI Pro（$19.99/月）才可解锁，免费版使用 Gemini 3 Flash。
+**Q：AI Plus 和 AI Pro 有什么区别？**
+AI Plus 提供标准额度的 2 倍，AI Pro 提供 4 倍额度及更高模型/工具访问；具体权益以当地套餐页为准。
 
-**Q：免费版每天能发多少消息？**
-免费版采用按算力消耗的动态限额，简单对话次数较多，使用 Deep Research 或图像生成
-会消耗更多额度，每5小时刷新一次。
+**Q：AI Ultra 两档有什么区别？**
+Ultra 5x 和 Ultra 20x 分别提供 AI Pro 的 5 倍和 20 倍使用额度，储存与价格以账号页面显示为准。
 
-**Q：Gemini 和 Google 账号绑定，会影响我的 Gmail 吗？**
-不会。Gemini 仅使用账号进行身份验证，不会主动读取 Gmail 内容，除非你主动开启
-Workspace 集成功能。
-
----
-
-## 升级 AI Pro 会员
-
-注册完成后如需升级，可通过 [one.google.com](https://one.google.com) 订阅
-Google AI Pro，支持信用卡付款。国内用户如无法绑卡，可使用支持境外支付的虚拟信用卡
-完成订阅。
+**Q：如何升级 AI Pro 或 AI Ultra？**
+前往 [Google One AI 套餐页](https://one.google.com/about/plans?hl=en_US)，选择所在地区可用的方案，核对价格、储存、计费周期后按页面完成付款。

@@ -1,28 +1,31 @@
 ---
 layout: "post"
-title: "ChatGPT Pro 5x 自助激活教程：卡密激活全流程详解"
+title: "ChatGPT Pro 100 自助激活教程：卡密激活全流程详解"
 date: "2026-09-02 10:00:00 +0800"
 categories: "activation"
 tags: [ChatGPT, Pro, OpenAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 ChatGPT Pro 5x（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，畅享 5 倍 Plus 使用额度。"
+excerpt: "图文详解 ChatGPT Pro 100（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，畅享更大使用额度及 GPT-6 Astra 访问权限。"
 cover: "https://github.com/user-attachments/assets/76305932-7765-4492-9f68-f1a4df966609"
 pinned: false
 ---
 
-## 什么是 ChatGPT Pro 5x？
 
-ChatGPT Pro 5x 是 OpenAI 于 **2026年4月9日** 推出的中间档位订阅，定价 **$100/月**，提供相当于 ChatGPT Plus **5 倍**的使用额度，同时包含 Pro 计划的核心模型访问权限（GPT-5.6 Sol Pro、Codex、Deep Research 等）。
+## 什么是 ChatGPT Pro 100？
 
-**Pro 5x vs Plus vs Pro 20x 快速对比：**
+ChatGPT Pro 100 是 OpenAI 的个人 Pro 方案，官网美国标价 **$100/月**。相比 Plus，它提供更高的 Pro 模型与工具使用额度。OpenAI 没有公布所有模型统一的固定消息数；使用量会受模型、任务、推理设置和工具影响。
 
-| 功能 | Plus ($20) | **Pro 5x ($100)** | Pro 20x ($200) |
-|------|------------|-------------------|----------------|
-| 主力模型 | GPT-5.6 Sol | GPT-5.6 Sol Pro | GPT-5.6 Sol Pro |
-| 使用额度 | 1x | **5x Plus** | 20x Plus |
-| Deep Research | 25次/月 | 更多 | 约250次/月 |
-| Sora 视频生成 | 有限 | ✅ | ✅ 无限 |
-| 优先计算资源 | ❌ | ✅ | ✅ |
+**Pro 100 与其他档位对比：**
 
+| 套餐 | 美国官网月价 | 模型/额度差异 |
+|------|------:|------|
+| Plus | $20 | GPT-6 正在向符合条件的付费用户开放；使用额度高于免费版。 |
+| **Pro 100** | **$100** | 比 Plus 更高的使用额度；可使用 GPT-6 Pro。 |
+| Pro 200 | $200 | 比 Pro 100 更多额度；可使用 Pro 模型。 |
+| Pro 25x / Pro 500 | $500 | Pro 档最高额度；仅此档包含适用场景下的 Ultrafast。 |
+
+Pro 100 不包含 Ultrafast。Work 和 Codex 的 Pro 使用按计划额度运行，目前 Pro 100 没有五小时上限，但仍有包含额度和其他限制。API 用量另行计费。
+
+官方说明：[ChatGPT Pro 档位](https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers)、[GPT-6 模型可用范围](https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt)。
 ---
 
 ## 激活前准备
@@ -30,7 +33,7 @@ ChatGPT Pro 5x 是 OpenAI 于 **2026年4月9日** 推出的中间档位订阅，
 在开始激活前，请确保你已经：
 
 - 拥有一个正常可登录的 ChatGPT 账号
-- 已购买 ChatGPT Pro 5x 激活卡密（购买地址见文末）
+- 已购买 ChatGPT Pro 100 激活卡密（购买地址见文末）
 - 保持稳定的网络连接
 
 ---
@@ -43,7 +46,7 @@ ChatGPT Pro 5x 是 OpenAI 于 **2026年4月9日** 推出的中间档位订阅，
 
 > ⚠️ 请确保完全登录成功后再进行下一步，勿在登录页面操作。
 
-### 第二步：获取 Session 信息
+### 第二步：确认账号和订阅档位
 
 登录成功后，在**同一浏览器**访问以下地址：
 ```
@@ -52,7 +55,7 @@ https://chatgpt.com/api/auth/session
 
 页面会显示一段 JSON 格式的字符内容。这是你账号的身份验证信息，用于自动化激活程序识别你的账号。
 
-### 第三步：复制全部内容
+### 第三步：前往激活站
 
 将页面中**所有字符内容**全部选中（Ctrl+A），然后复制（Ctrl+C）。
 
@@ -80,10 +83,10 @@ https://chatgpt.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- **GPT-5.6 Sol Pro** 完整访问（比 Plus 的 Sol 标准版更强）
-- **5 倍 Plus 使用额度**，大幅减少触限频率
+- **GPT-6 Sol + GPT-6 Astra** 完整访问
+- 相当于 Plus **Pro 100**使用额度，大幅减少触限频率
 - **Codex 编程助手**（完整访问）
-- **Deep Research** 更高配额（超过 Plus 的 25次/月）
+- **Deep Research** 使用额度高于 Plus，具体上限以账号页面显示为准
 - **Sora 视频生成**（有限额度）
 - **Agent Mode / Operator**（任务自动化）
 - 优先计算资源，高峰期不排队
@@ -113,3 +116,12 @@ https://chatgpt.com/api/auth/session
 如需查看带截图的详细图文教程，请点击下方链接：
 
 📖 [点击查看完整图文教程](https://jlarkusywq166np5.usttp.larksuite.com/wiki/NtJzwlohOi3SLhkySonuVG9wt4e?from=from_copylink)
+
+
+
+
+
+
+
+
+

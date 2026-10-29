@@ -9,6 +9,7 @@ cover: "https://github.com/user-attachments/assets/ee58d2f3-7c03-4769-8c9e-cc704
 pinned: false
 ---
 
+
 ## 激活前准备
 
 在开始激活前，请确保你已经：
@@ -64,14 +65,15 @@ https://claude.ai/settings/account
 
 ## 激活完成后可享受的功能
 
-- **Claude Fable 5.1**（2026年9月1日发布）、Sonnet 5、Opus 5 完整访问（约为免费版5倍使用量）
+- **Claude Fable 5.1**、**Sonnet 5.5**、**Opus 5.5**、**Haiku 5.5** 完整访问（约为免费版5倍使用量）
 - 1M tokens 超长上下文窗口
 - Projects、Artifacts、Memory、Connectors 全功能支持
 - Claude Code、Deep Research、Cowork、Design 完整工具集
 - Microsoft 365 深度集成（Excel、Word、PowerPoint）
 - 高峰期优先响应，新功能抢先体验
+- 年付优惠：$17/月（$200/年）
 
-> 📌 **2026年9月1日**：Anthropic 发布 Claude Fable 5.1，Pro 用户即时可用。编程测试（Terminal-Bench 4.0）达到 55.8%，业务自动化（AutomationBench）达到 31.4%，均大幅领先上代。
+> 📌 **2026年10月最新模型**：Pro 用户现可访问 **Claude Fable 5.1**（旗舰，Terminal-Bench 55.8%）、**Opus 5.5**（顶级推理）、**Sonnet 5.5**（高性价比）和 **Haiku 5.5**（轻量快速），全面覆盖不同场景需求。
 
 ---
 
@@ -98,3 +100,8 @@ https://claude.ai/settings/account
 如需查看带截图的详细图文教程，请点击下方链接：
 
 📖 [点击查看完整图文教程](https://jlarkusywq166np5.usttp.larksuite.com/docx/JhUNdY2rtoIzjzxl3ApuHhFptVh?from=from_copylink)
+
+
+
+
+
