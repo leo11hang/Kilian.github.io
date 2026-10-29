@@ -1,21 +1,21 @@
 ---
 layout: "post"
-title: "ChatGPT Pro 20x 自助激活教程：卡密激活全流程详解"
+title: "ChatGPT Pro 10x 自助激活教程：卡密激活全流程详解"
 date: "2026-09-02 10:30:00 +0800"
 categories: "activation"
 tags: [ChatGPT, Pro, OpenAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 ChatGPT Pro 20x（$200/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，解锁无限 Sora、约250次 Deep Research 及 1M token 推理上下文。"
+excerpt: "图文详解 ChatGPT Pro 10x（$200/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，解锁无限 Sora、约250次 Deep Research 及 1M token 推理上下文。"
 cover: "https://github.com/user-attachments/assets/460fd517-4198-4d84-9033-3214b2a78aec"
 pinned: false
 ---
 
-## 什么是 ChatGPT Pro 20x？
+## 什么是 ChatGPT Pro 10x？
 
-ChatGPT Pro 20x 是 OpenAI 面向个人用户的**最高档位**订阅，定价 **$200/月**，提供相当于 ChatGPT Plus **20 倍**的使用额度。前身是 2024年底推出的原版 $200 Pro 计划，于 **2026年4月9日** 在双档位改版中更名为「Pro 20x」。
+ChatGPT Pro 10x 是 OpenAI 面向个人用户的**最高档位**订阅，定价 **$200/月**，提供相当于 ChatGPT Plus **10 倍**的使用额度。前身是 2024年底推出的原版 $200 Pro 计划，于 **2026年4月9日** 在双档位改版中更名为「Pro 10x」。
 
-**Pro 20x 核心功能一览：**
+**Pro 10x 核心功能一览：**
 
-| 功能 | Plus ($20) | Pro 5x ($100) | **Pro 20x ($200)** |
+| 功能 | Plus ($20) | Pro 5x ($100) | **Pro 10x ($200)** |
 |------|------------|---------------|---------------------|
 | 使用额度 | 1x | 5x Plus | **20x Plus** |
 | GPT-5.6 Sol Pro | 部分 | ✅ | ✅ |
@@ -32,7 +32,7 @@ ChatGPT Pro 20x 是 OpenAI 面向个人用户的**最高档位**订阅，定价 
 在开始激活前，请确保你已经：
 
 - 拥有一个正常可登录的 ChatGPT 账号
-- 已购买 ChatGPT Pro 20x 激活卡密（购买地址见文末）
+- 已购买 ChatGPT Pro 10x 激活卡密（购买地址见文末）
 - 保持稳定的网络连接
 
 ---
