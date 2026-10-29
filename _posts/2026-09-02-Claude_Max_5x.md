@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "Claude Max 5x 自助激活教程：卡密激活全流程详解"
-date: "2026-09-02 11:00:00 +0800"
+date: "2026-10-29 11:00:00 +0800"
 categories: "activation"
 tags: [Claude, Max, Anthropic, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 Claude Max 5x（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，享受 Pro 5 倍使用额度，支持最新 5.5 系列模型。"
