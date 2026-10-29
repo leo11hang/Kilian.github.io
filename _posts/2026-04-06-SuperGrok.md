@@ -64,7 +64,8 @@ https://grok.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- **Grok 4.6**（2026年8月12日发布）完整访问——当前旗舰，Artificial Analysis 智能指数评分61
+- **Grok 4.7**（2026年9月21日发布）完整访问——当前最新旗舰
+- **Grok 4.6**（2026年8月12日）同样可访问——Artificial Analysis 智能指数评分61
 - **Expert 深度推理模式**无限制
 - **DeepSearch 联网深度搜索**无限制
 - **Imagine 图像生成**（完整版）+ **视频生成**功能
@@ -75,11 +76,9 @@ https://grok.com/api/auth/session
 - 响应速度优先，额度大幅高于免费版
 - 年付 $300（约17%优惠）
 
-> 📌 **Grok 4.6 主要亮点（2026年8月12日发布）**：
-> - 1.5万亿参数，Artificial Analysis 智能指数得分61
-> - 在 Grok Build、Cursor 和 xAI API 全面部署
-> - 知识截止日期：2026年2月1日
-> - API 定价：输入 $2/百万 tokens，输出 $6/百万 tokens（500K 上下文以内）
+> 📌 **Grok 4.7**（2026年9月21日发布）：当前最新旗舰，知识截止日期 2026年5月，在 Grok Build、Cursor 和 xAI API 全面部署，API 定价：输入 $2/百万 tokens，输出 $6/百万 tokens。
+>
+> 📌 **Grok 4.6**（2026年8月12日）：上一代旗舰，1.5万亿参数，Artificial Analysis 智能指数得分61，知识截止日期 2026年2月1日。
 >
 > 📌 如需更高额度，**SuperGrok Plus（$100/月）**提供更大周使用池、优先响应和 1080p 视频生成；
 > **SuperGrok Heavy（$300/月）**独家支持 Grok 4 Heavy 16-Agent 并行推理。

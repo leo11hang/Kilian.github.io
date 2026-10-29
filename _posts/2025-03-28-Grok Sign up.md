@@ -13,8 +13,7 @@ pinned: false
 
 Grok 是马斯克旗下 xAI 公司（已并入 SpaceXAI）开发的 AI 助手，深度集成 X（原 Twitter）平台，
 能够实时获取 X 上的最新信息，风格幽默犀利，是目前少数能够访问实时网络数据的 AI 产品之一。
-当前最新旗舰为 **Grok 4.6**（2026年8月12日发布），支持 Expert 推理模式、视频生成、
-AI 语音伴侣及 500K tokens 超长上下文，在 Grok Build、Cursor 和 API 全面可用。
+当前最新旗舰为 **Grok 4.7**（2026年9月21日发布），支持 Expert 推理模式、视频生成、AI 语音伴侣及 500K tokens 超长上下文，在 Grok Build、Cursor 和 API 全面可用。Grok 4.6（2026年8月12日）为上一代旗舰。
 
 ---
 
@@ -68,8 +67,7 @@ Grok 目前有两个访问入口：
 | 上下文窗口 | 标准 | 标准 | 500K tokens | 500K tokens | 500K tokens |
 | 年付优惠 | — | $100/年（约17%优惠）| $300/年（约17%优惠）| $1,000/年 | — |
 
-> 📌 **Grok 4.6**（2026年8月12日发布，xAI 更名 SpaceXAI 后首发）是当前消费者旗舰，
-> Artificial Analysis 智能指数得分61，在 Grok Build、Cursor 和 xAI API 全面可用。
+> 📌 **Grok 4.7**（2026年9月21日发布）是当前最新旗舰，知识截止日期 2026年5月，在 Grok Build、Cursor 和 xAI API 全面可用。**Grok 4.6**（2026年8月12日，Artificial Analysis 智能指数61）为上一代旗舰。
 > SuperGrok Heavy 还独家支持 Grok 4 Heavy 16-Agent 并行推理模式。
 >
 > 📌 **X Premium+（$40/月）**包含 SuperGrok 级别 Grok 访问权，适合同时重度使用 X 社交平台的用户。

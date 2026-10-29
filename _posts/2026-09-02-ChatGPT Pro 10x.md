@@ -88,8 +88,9 @@ https://chatgpt.com/api/auth/session
 ## 激活完成后可享受的功能
 
 - **GPT-6 Astra** 在对话框中直接访问（以「GPT-6 Pro」标签呈现，比 Pro 5x 更高周限额）
-- **GPT-6.1 Sol** 完整访问
+- **GPT-6 Sol** 完整访问（2026年10月7日起正式上线）
 - **约10倍 Plus 使用额度**（2026年10月30日起新订阅者）
+- **GPT-6.1 Terra** 在 ChatGPT Work 和 Codex 中可用（2026年10月26日发布，computer use 中阶模型）
 - **Sora 视频生成**（完整访问）
 - **Deep Research** 高配额（超过 Pro 5x）
 - **Agent Mode / Operator / Codex** 高配额
@@ -98,6 +99,8 @@ https://chatgpt.com/api/auth/session
 > 📌 **与 Pro 25x 的区别**：Pro 25x（$500/月）是唯一包含 Astra Ultrafast 推理（约8倍标准速度）
 > 的消费者套餐，且无每5小时限制，使用额度约为25倍。如每天重度使用 Work/Codex，可考虑升级；
 > 中度重度用户 Pro 10x 性价比更高。
+>
+> 📌 **GPT-6.1 Terra**（2026年10月26日）：OpenAI 最新 computer use 中阶模型，Pro 10x 用户可在 Work 和 Codex 中使用，速度提升约3倍，成本较 GPT-6.1 Sol 低50%。
 
 ---
 

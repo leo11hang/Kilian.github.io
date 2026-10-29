@@ -64,17 +64,18 @@ https://chatgpt.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- **GPT-6.1 Sol** 完整访问（Plus 日常对话主力模型）
+- **GPT-6 Sol** 完整访问（Plus 日常对话主力模型，2026年10月7日起取代 GPT-5.6 Sol）
 - **GPT-6 Astra** 在 ChatGPT Work 和 Codex 中有限使用（2026年9月3日发布的 OpenAI 旗舰）
 - GPT-6.1 Sol 多档思考模式，适合复杂推理
 - 图像生成更高额度
 - 视频生成（Sora 720p，5秒短片）
+- **GPT-6.1 Terra** 在 ChatGPT Work 和 Codex 中可用（2026年10月26日发布，computer use 中阶模型）
 - **Deep Research** 完整访问
 - 高峰期优先响应，无广告
 
-> 📌 **2026年10月最新**：OpenAI 于 2026年9月29日（DevDay）推出 Pro 500（$500/月），
-> 是唯一包含 Astra Ultrafast 推理的消费者套餐。Plus 用户可在 Work/Codex 中估计每5小时使用 5–45 次 Astra，额度不固定。
-> 如需在普通对话中直接使用 GPT-6 Astra，需升级至 Pro 100 及以上。
+> 📌 **2026年10月最新**：OpenAI 于 2026年9月29日（DevDay）推出 Pro 500（$500/月），是唯一包含 Astra Ultrafast 推理的消费者套餐。Plus 用户可在 Work/Codex 中估计每5小时使用 5–45 次 Astra，额度不固定。如需在普通对话中直接使用 GPT-6 Astra，需升级至 Pro 100 及以上。
+>
+> 📌 **GPT-6.1 Terra**（2026年10月26日）：OpenAI 最新中阶模型，专为 computer use 和视觉推理设计，速度比 GPT-5.6 Terra 提升约3倍，价格较 GPT-6.1 Sol 低50%（$1/百万输入 tokens，$5/百万输出 tokens），Plus 用户可在 Work 和 Codex 中使用。
 
 ---
 

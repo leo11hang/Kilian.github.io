@@ -86,8 +86,9 @@ https://chatgpt.com/api/auth/session
 
 - **GPT-6 Astra** 在对话框直接访问，**无每5小时限制**（三档 Pro 中唯一）
 - **Astra Ultrafast** 专属推理——约8倍标准速度，Codex 中约300 tokens/秒
-- **GPT-6.1 Sol** 完整访问
+- **GPT-6 Sol** 完整访问（2026年10月7日起正式上线）
 - **约25倍 Plus 使用额度**，基本不触限
+- **GPT-6.1 Terra** 在 ChatGPT Work 和 Codex 中可用（2026年10月26日发布，computer use 中阶模型，最高优先级）
 - **Sora 视频生成**（完整访问）
 - **Deep Research** 最高配额
 - **Agent Mode / Operator / Codex** 最高配额
@@ -96,6 +97,8 @@ https://chatgpt.com/api/auth/session
 > 📌 **Pro 25x 核心差异**：相比 Pro 10x（$200/月），Pro 25x 的核心优势不只是额度更多，
 > 而是独家 **Astra Ultrafast** 加速推理和**无5小时滚动窗口限制**——如果你全天运行
 > Codex Agent 或大量使用 ChatGPT Work，这两点才是真正的价值所在。
+>
+> 📌 **GPT-6.1 Terra**（2026年10月26日）：Pro 25x 用户可在 Work 和 Codex 中以最高优先级使用，成本较 GPT-6.1 Sol 低50%，适合高频 computer use 和大规模自动化任务。
 
 ---
 

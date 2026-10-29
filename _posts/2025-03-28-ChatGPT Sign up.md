@@ -54,7 +54,7 @@ ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的
 
 | 功能 | 免费版（$0）| Go（$8/月）| Plus（$20/月）|
 |------|------------|-----------|--------------|
-| 主力模型 | GPT-6 Luna（无限文字对话）| GPT-6 Luna（更高限额）| GPT-6.1 Sol + GPT-6 Astra（Work/Codex）|
+| 主力模型 | GPT-6 Luna（无限文字对话）| GPT-6 Luna（更高限额）| GPT-6 Sol + GPT-6 Astra（Work/Codex）|
 | 图像生成 | 每天约2～3张 | 更高额度 | 更高额度 |
 | 联网深度研究 | 有限 | 有限 | ✅ Deep Research 完整版 |
 | 视频生成（Sora）| ❌ | ❌ | ✅ 720p 短片 |
@@ -65,8 +65,8 @@ ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的
 > 📌 **2026年10月最新套餐层级**：Free（$0）→ Go（$8/月）→ Plus（$20/月）→ Pro 100（$100/月，5倍 Plus 额度）
 > → Pro 200（$200/月，10倍额度）→ **Pro 500**（$500/月，25倍额度，2026年9月29日 DevDay 新增，含 Astra Ultrafast）。
 >
-> 📌 **2026年10月最新模型**：GPT-6 Luna（免费/Go 默认，2026年10月8日起）、GPT-6.1 Sol（Plus 日常对话主力）、
-> GPT-6 Astra（2026年9月3日发布，Pro/Business/Enterprise 旗舰）。
+> 📌 **2026年10月最新模型**：GPT-6 Luna（免费/Go 默认，2026年10月8日起）、GPT-6 Sol（Plus/Pro 日常对话主力，2026年10月7日起取代 GPT-5.6 Sol）、
+> GPT-6 Astra（2026年9月3日发布，Pro/Business/Enterprise 旗舰）、**GPT-6.1 Terra**（2026年10月26日发布，中阶 computer use 模型，速度提升约3倍，价格较 GPT-6.1 Sol 低50%，在 ChatGPT Work 和 Codex 中可用）。
 >
 > 📌 **Pro 200 注意**：2026年9月29日起 Pro 200 重新开放注册，但新订阅者的 Work 和 Codex 使用额度从 20倍降至 10倍（自10月30日起生效，老订户过渡期至10月29日）。
 
@@ -88,8 +88,7 @@ ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的
 
 **Q：GPT-6 Astra 和 GPT-6.1 Sol 有什么区别？**  
 GPT-6 Astra 是 OpenAI 当前旗舰（2026年9月3日发布），Plus 用户可在 Work 和 Codex 中有限使用，
-Pro 及以上用户在对话框直接可用（以「GPT-6 Pro」标签显示）。GPT-6.1 Sol 是 Plus 日常对话的主力模型，
-性价比更高，速度更快。
+Pro 及以上用户在对话框直接可用（以「GPT-6 Pro」标签显示）。GPT-6 Sol 是 Plus/Pro 日常对话的主力模型（2026年10月7日起正式取代 GPT-5.6 Sol），性价比更高，速度更快。GPT-6.1 Terra（10月26日）则是专为 computer use 和视觉推理优化的中阶模型，在 Work 和 Codex 中可用。
 
 ---
 

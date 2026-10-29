@@ -19,7 +19,7 @@ GPT-6 Astra（以「GPT-6 Pro」标签呈现）。
 
 | 功能 | Plus ($20) | **Pro 5x ($100)** | Pro 10x ($200) | Pro 25x ($500) |
 |------|------------|-------------------|----------------|----------------|
-| 日常对话模型 | GPT-6.1 Sol | GPT-6.1 Sol + **GPT-6 Astra（直接对话）** | 同 Pro 100 | 同 Pro 100 |
+| 日常对话模型 | GPT-6 Sol | GPT-6 Sol + **GPT-6 Astra（直接对话）** | 同 Pro 100 | 同 Pro 100 |
 | 使用额度 | 1x | **约5x Plus** | 约10x Plus | 约25x Plus |
 | GPT-6 Astra 位置 | Work/Codex 有限使用 | **对话框直接可用（周限额）** | 对话框（更高额度）| 对话框（最高，无每5小时限制）|
 | Astra Ultrafast | ❌ | ❌ | ❌ | ✅ 专属（约8倍标准速度）|
@@ -85,7 +85,8 @@ https://chatgpt.com/api/auth/session
 ## 激活完成后可享受的功能
 
 - **GPT-6 Astra** 在对话框中直接访问（以「GPT-6 Pro」标签呈现，有每周使用限额）
-- **GPT-6.1 Sol** 完整访问
+- **GPT-6 Sol** 完整访问（2026年10月7日起正式上线）
+- **GPT-6.1 Terra** 在 ChatGPT Work 和 Codex 中可用（2026年10月26日发布）
 - **约5倍 Plus 使用额度**，大幅减少触限频率
 - **Codex 编程助手**（完整访问）
 - **Deep Research** 更高配额（超过 Plus）
@@ -96,6 +97,8 @@ https://chatgpt.com/api/auth/session
 > 📌 **2026年9月29日 DevDay 更新**：OpenAI 新增 Pro 25x（$500/月），该档位是唯一包含
 > Astra Ultrafast 推理（约8倍标准速度）的消费者套餐，且无每5小时额度限制。
 > Pro 5x 仍是最具性价比的 Pro 入门选择。
+>
+> 📌 **GPT-6.1 Terra**（2026年10月26日）：专为 computer use 和视觉推理设计的中阶模型，Pro 5x 用户可在 Work 和 Codex 中使用，价格较 GPT-6.1 Sol 低50%。
 
 ---
 
