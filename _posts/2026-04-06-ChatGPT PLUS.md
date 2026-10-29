@@ -9,7 +9,6 @@ cover: "https://github.com/user-attachments/assets/e1425c2b-6ffe-4619-8def-5ab32
 pinned: false
 ---
 
-
 ## 激活前准备
 
 在开始激活前，请确保你已经：
@@ -65,13 +64,11 @@ https://chatgpt.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- **GPT-6 Sol** 完整访问（Plus 专属，比免费版 GPT-6 Luna 更强）
-- GPT-6 Astra（仅在 Work 模式和 Codex 中）
-- 图像生成、视频生成（Sora，有限额度）
+- GPT-5.6 Sol 完整访问（Plus 专属旗舰模型，比免费版 Luna 更强）
+- GPT-5.6 Sol 多档思考模式（Medium / High / Extra High），适合复杂推理
+- 图像生成、视频生成（Sora 720p）
 - Deep Research 每月 25 次
 - 高峰期优先响应，无广告
-
-> 📌 **2026年10月7日**：Plus 用户已切换至 **GPT-6 Sol** 作为主力对话模型，较免费版的 GPT-6 Luna 能力更强，适合复杂推理和专业任务。
 
 ---
 
@@ -98,7 +95,3 @@ https://chatgpt.com/api/auth/session
 如需查看带截图的详细图文教程，请点击下方链接：
 
 📖 [点击查看完整图文教程](https://jlarkusywq166np5.usttp.larksuite.com/wiki/NtJzwlohOi3SLhkySonuVG9wt4e?from=from_copylink)
-
-
-
-
