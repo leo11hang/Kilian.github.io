@@ -39,6 +39,9 @@
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   background: var(--bg);
   color: var(--text-1);
@@ -494,7 +497,7 @@ img { max-width: 100%; display: block; }
 .float-cta-dot { width: 8px; height: 8px; background: #86efac; border-radius: 50%; flex-shrink: 0; animation: pulse 1.8s ease infinite; }
 
 /* ── Footer ───────────────────────────────────── */
-.site-footer { background: var(--grad-hero); color: rgba(255,255,255,.38); text-align: center; padding: 36px 2rem; font-size: 13px; font-weight: 500; }
+.site-footer { margin-top: auto; background: var(--grad-hero); color: rgba(255,255,255,.38); text-align: center; padding: 36px 2rem; font-size: 13px; font-weight: 500; }
 .site-footer a { color: rgba(255,255,255,.55); transition: color var(--transition); }
 .site-footer a:hover { color: white; }
 
