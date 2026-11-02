@@ -269,7 +269,7 @@ img { max-width: 100%; display: block; }
 .online-dot { display: inline-block; width: 6px; height: 6px; background: var(--green); border-radius: 50%; margin-right: 4px; vertical-align: middle; animation: pg 1.8s ease infinite; }
 
 /* ── Layout ───────────────────────────────────── */
-.container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+.container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
 
 /* ── Section Label ────────────────────────────── */
 .section-label {
