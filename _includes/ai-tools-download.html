@@ -129,7 +129,7 @@
     <span class="download-summary-copy"><strong class="download-accordion-name">Grok Bot</strong><span class="download-accordion-hint">AI Agent 桌面任务执行助手</span></span>
     <span class="download-accordion-toggle" aria-hidden="true"></span>
   </summary>
-  <section class="ai-tools-content" aria-label="Grok Bot 桌面版下载选项">
+  <section class="ai-tools-content grokbot-download-content" aria-label="Grok Bot 桌面版下载选项" data-grokbot-feed-url="https://cc-switch-release.leowishe.workers.dev/grokbot" data-grokbot-upstream-base="https://api2.cursor.sh/updates/api/download/stable/" data-grokbot-fallback="https://x.ai/bot">
     <div class="cc-download-heading">
       <div><h2>下载选项</h2></div>
       <a class="cc-release-link download-source-link" href="https://x.ai/bot" target="_blank" rel="noopener noreferrer">
@@ -137,22 +137,25 @@
         <span>官方网站</span>
       </a>
     </div>
-    <div class="cc-release-meta">Grok Bot 0.78.1 · 当前稳定版</div>
-    <div class="download-source-note">桌面版支持 macOS、Windows 与 Linux；安装包来自 Grok Bot 官方下载页面。</div>
+    <div class="cc-release-meta" data-grokbot-version>正在读取官方当前版本…</div>
+    <div class="download-source-note">安装包地址每日从 Grok Bot 官方更新 Feed 同步；如暂时无法读取，请前往官方网站下载。</div>
     <div class="ai-download-options">
-      <a href="https://downloads.cursor.com/grokbot/stable/darwin-arm64/0.78.1/Grok_Bot_0.78.1.dmg">macOS Apple 芯片</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/darwin-x64/0.78.1/Grok_Bot_0.78.1_x64.dmg">macOS Intel</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/win32-x64/0.78.1/Grok_Bot_0.78.1_Setup.exe">Windows x64</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/win32-arm64/0.78.1/Grok_Bot_0.78.1_Setup.exe">Windows ARM64</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/72e130b4e6be3fdc47b97e809b6b420908ce2dd8/linux/x64/grok-bot_0.78.1_amd64.deb">Linux x64 .deb</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/72e130b4e6be3fdc47b97e809b6b420908ce2dd8/linux/arm64/grok-bot_0.78.1_arm64.deb">Linux ARM64 .deb</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/72e130b4e6be3fdc47b97e809b6b420908ce2dd8/linux/x64/Grok_Bot_0.78.1.rpm">Linux x64 .rpm</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/72e130b4e6be3fdc47b97e809b6b420908ce2dd8/linux/arm64/Grok_Bot_0.78.1.rpm">Linux ARM64 .rpm</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/72e130b4e6be3fdc47b97e809b6b420908ce2dd8/linux/x64/Grok_Bot_0.78.1.AppImage">Linux x64 AppImage</a>
-      <a href="https://downloads.cursor.com/grokbot/stable/72e130b4e6be3fdc47b97e809b6b420908ce2dd8/linux/arm64/Grok_Bot_0.78.1.AppImage">Linux ARM64 AppImage</a>
+      <a data-grokbot-platform="darwin-arm64" data-grokbot-field="downloadUrl" href="https://x.ai/bot">macOS Apple 芯片</a>
+      <a data-grokbot-platform="darwin-x64" data-grokbot-field="downloadUrl" href="https://x.ai/bot">macOS Intel</a>
+      <a data-grokbot-platform="win32-x64-user" data-grokbot-field="downloadUrl" href="https://x.ai/bot">Windows x64</a>
+      <a data-grokbot-platform="win32-arm64-user" data-grokbot-field="downloadUrl" href="https://x.ai/bot">Windows ARM64</a>
+      <a data-grokbot-platform="linux-x64" data-grokbot-field="debUrl" href="https://x.ai/bot">Linux x64 .deb</a>
+      <a data-grokbot-platform="linux-arm64" data-grokbot-field="debUrl" href="https://x.ai/bot">Linux ARM64 .deb</a>
+      <a data-grokbot-platform="linux-x64" data-grokbot-field="rpmUrl" href="https://x.ai/bot">Linux x64 .rpm</a>
+      <a data-grokbot-platform="linux-arm64" data-grokbot-field="rpmUrl" href="https://x.ai/bot">Linux ARM64 .rpm</a>
+      <a data-grokbot-platform="linux-x64" data-grokbot-field="downloadUrl" href="https://x.ai/bot">Linux x64 AppImage</a>
+      <a data-grokbot-platform="linux-arm64" data-grokbot-field="downloadUrl" href="https://x.ai/bot">Linux ARM64 AppImage</a>
     </div>
+    <p class="ai-download-note" data-grokbot-status aria-live="polite">正在同步各平台官方安装包地址…</p>
   </section>
 </details>
+
+<script src="{{ '/assets/js/grokbot-download-links.js' | relative_url }}" defer></script>
 
 <details class="download-accordion ai-product-accordion" name="download-products">
   <summary>
