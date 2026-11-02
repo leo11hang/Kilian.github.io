@@ -847,12 +847,17 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-download-status.is-error { color: #b91c1c; }
 .cc-download-error { color: #b91c1c; margin-top: 12px; }
 .cc-download-error a { color: var(--accent); text-decoration: underline; }
-.cc-platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 18px; }
-.cc-platform-card { min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: var(--r); background: white; box-shadow: var(--sh); }
-.cc-platform-card h3 { display: inline; margin: 0; font-size: 15px; font-weight: 800; }
-.cc-arch { display: inline-block; margin-left: 8px; padding: 2px 8px; color: var(--accent); background: var(--accent-lt); border-radius: 100px; font-size: 11px; font-weight: 700; }
-.cc-asset-name { overflow-wrap: anywhere; color: var(--text-3); font-size: 11px; line-height: 1.5; margin: 9px 0 13px; }
-.cc-download-button { display: flex; align-items: center; justify-content: center; min-height: 40px; padding: 8px 12px; color: white; background: var(--grad); border-radius: 9px; font-size: 13px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
+.cc-platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); align-items: start; gap: 14px; margin-top: 18px; }
+.cc-platform-card { min-width: 0; padding: 17px; border: 1px solid var(--border); border-radius: var(--r); background: white; box-shadow: var(--sh); }
+.cc-platform-card > h3 { margin: 0 0 12px; font-size: 16px; font-weight: 800; }
+.cc-arch-group + .cc-arch-group { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+.cc-arch { display: inline-block; margin: 0 0 8px; padding: 3px 9px; color: var(--accent); background: var(--accent-lt); border-radius: 100px; font-size: 11px; font-weight: 700; }
+.cc-asset-list { display: grid; gap: 7px; }
+.cc-asset-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 10px; background: var(--surface2); border-radius: 9px; }
+.cc-asset-detail { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cc-asset-detail strong { color: var(--text-2); font-size: 11px; }
+.cc-asset-detail span { overflow-wrap: anywhere; color: var(--text-3); font-size: 10px; line-height: 1.4; }
+.cc-download-button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-height: 32px; padding: 6px 11px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
 .cc-download-button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(109,40,217,.24); }
 @media (max-width: 600px) {
   .cc-download { padding: 20px 16px; }
