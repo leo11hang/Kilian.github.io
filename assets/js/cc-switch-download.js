@@ -1,6 +1,15 @@
 (function () {
   'use strict';
 
+  document.querySelectorAll('.download-accordion').forEach(function (accordion) {
+    accordion.addEventListener('toggle', function () {
+      if (!accordion.open) return;
+      document.querySelectorAll('.download-accordion[open]').forEach(function (other) {
+        if (other !== accordion) other.open = false;
+      });
+    });
+  });
+
   document.querySelectorAll('.cc-download').forEach(function (panel) {
   if (panel.dataset.initialized === 'true') return;
   panel.dataset.initialized = 'true';
