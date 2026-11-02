@@ -831,7 +831,7 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cat-page-title svg { color: var(--accent); flex-shrink: 0; }
 
 /* ── Download software accordions ─────────────── */
-.download-accordions { display: grid; gap: 14px; margin: 0 0 30px; }
+.download-accordions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 14px; margin: 0 0 30px; }
 .download-accordion { min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--r-lg); background: rgba(255,255,255,.72); box-shadow: var(--sh); }
 .download-accordion > summary { display: flex; align-items: center; gap: 16px; min-height: 96px; padding: 18px 20px; cursor: pointer; list-style: none; }
 .download-accordion > summary::-webkit-details-marker { display: none; }
@@ -851,7 +851,12 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .download-accordion-toggle { display: grid; place-items: center; width: 36px; height: 36px; margin-left: auto; border: 1px solid var(--border); border-radius: 11px; background: white; color: var(--accent); flex: 0 0 auto; }
 .download-accordion-toggle::before { content: '+'; font-size: 22px; line-height: 1; }
 .download-accordion[open] .download-accordion-toggle::before { content: '−'; }
-.download-accordion[open] > summary { border-bottom: 1px solid var(--border); }
+.download-accordion[open] { border-color: var(--accent-dim); background: #fff; }
+.download-accordion[open] > summary { border-bottom: 0; }
+.download-shared-panel { grid-column: 1 / -1; min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--r-lg); background: linear-gradient(135deg, #fff 0%, #f8f7ff 100%); box-shadow: var(--sh); }
+.download-shared-panel[hidden], .download-content-store[hidden] { display: none; }
+.download-shared-panel > .cc-download { margin: 0; border: 0; border-radius: 0; box-shadow: none; }
+.download-shared-panel > .uu-download-content, .download-shared-panel > .ai-tools-content { border-top: 0; }
 .download-accordion .cc-download { margin: 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; box-shadow: none; }
 .uu-download-content { padding: 26px; border-top: 1px solid var(--border); background: linear-gradient(135deg, #fff 0%, #f8f7ff 100%); }
 .download-source-brand { display: inline-grid; place-items: center; width: 16px; height: 16px; flex: 0 0 16px; color: var(--accent); font-size: 11px; font-weight: 900; line-height: 1; }
@@ -943,6 +948,7 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-download-button { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-width: 76px; min-height: 32px; padding: 6px 12px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
 .cc-download-button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(109,40,217,.24); }
 @media (max-width: 600px) {
+  .download-accordions { grid-template-columns: minmax(0, 1fr); }
   .download-accordion > summary { min-height: 82px; padding: 12px 14px; gap: 12px; }
   .download-product-icon { width: 48px; height: 48px; border-radius: 13px; }
   .uu-download-content { padding: 14px; }
