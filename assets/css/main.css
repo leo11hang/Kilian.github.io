@@ -833,10 +833,10 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 /* ── Download software accordions ─────────────── */
 .download-accordions { display: grid; gap: 14px; margin: 0 0 30px; }
 .download-accordion { min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--r-lg); background: rgba(255,255,255,.72); box-shadow: var(--sh); }
-.download-accordion > summary { display: flex; align-items: center; gap: 14px; min-height: 88px; padding: 16px 20px; cursor: pointer; list-style: none; }
+.download-accordion > summary { display: flex; align-items: center; gap: 16px; min-height: 96px; padding: 18px 20px; cursor: pointer; list-style: none; }
 .download-accordion > summary::-webkit-details-marker { display: none; }
 .download-accordion > summary:hover { background: linear-gradient(110deg, rgba(237,233,255,.55), transparent 75%); }
-.download-product-icon { display: grid; place-items: center; width: 44px; height: 44px; padding: 5px; border: 1px solid var(--border); border-radius: 13px; background: white; flex: 0 0 auto; box-shadow: 0 2px 8px rgba(109,40,217,.08); }
+.download-product-icon { display: grid; place-items: center; width: 56px; height: 56px; padding: 5px; border: 1px solid var(--border); border-radius: 15px; background: white; flex: 0 0 auto; box-shadow: 0 2px 8px rgba(109,40,217,.08); }
 .download-product-icon img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
 .cc-product-icon { background: linear-gradient(145deg, #fff, #f6f2ff); }
 .clash-product-icon { background: linear-gradient(145deg, #fff, #fff1f4); }
@@ -891,8 +891,8 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-download-button { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-width: 76px; min-height: 32px; padding: 6px 12px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
 .cc-download-button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(109,40,217,.24); }
 @media (max-width: 600px) {
-  .download-accordion > summary { min-height: 78px; padding: 12px 14px; gap: 11px; }
-  .download-product-icon { width: 40px; height: 40px; border-radius: 12px; }
+  .download-accordion > summary { min-height: 82px; padding: 12px 14px; gap: 12px; }
+  .download-product-icon { width: 48px; height: 48px; border-radius: 13px; }
   .download-accordion-name { font-size: 18px; }
   .download-accordion-hint { font-size: 12px; }
   .cc-download { padding: 20px 16px; }
