@@ -857,12 +857,13 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-platform-panel[hidden] { display: none; }
 .cc-arch-group + .cc-arch-group { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
 .cc-arch { display: inline-block; margin: 0 0 8px; padding: 3px 9px; color: var(--accent); background: var(--accent-lt); border-radius: 100px; font-size: 11px; font-weight: 700; }
-.cc-asset-list { display: grid; gap: 7px; }
-.cc-asset-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 10px; background: var(--surface2); border-radius: 9px; }
+.cc-asset-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr)); gap: 10px; }
+.cc-asset-item { display: flex; flex-direction: column; align-items: stretch; justify-content: space-between; gap: 12px; min-width: 0; min-height: 112px; padding: 13px; background: linear-gradient(145deg, #fff, var(--surface2)); border: 1px solid var(--border); border-radius: 12px; transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition); }
+.cc-asset-item:hover { transform: translateY(-2px); border-color: #c4b5fd; box-shadow: var(--sh); }
 .cc-asset-detail { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.cc-asset-detail strong { color: var(--text-2); font-size: 11px; }
-.cc-asset-detail span { overflow-wrap: anywhere; color: var(--text-3); font-size: 10px; line-height: 1.4; }
-.cc-download-button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-height: 32px; padding: 6px 11px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
+.cc-asset-detail strong { color: var(--accent); font-size: 11px; letter-spacing: .03em; }
+.cc-asset-detail span { overflow-wrap: anywhere; color: var(--text-3); font-size: 10px; line-height: 1.45; }
+.cc-download-button { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-width: 76px; min-height: 32px; padding: 6px 12px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
 .cc-download-button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(109,40,217,.24); }
 @media (max-width: 600px) {
   .cc-download { padding: 20px 16px; }
