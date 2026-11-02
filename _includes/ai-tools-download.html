@@ -9,7 +9,33 @@
       <a href="https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi">Windows 安装器（Microsoft Store）</a>
       <a href="https://persistent.oaistatic.com/codex-app-prod/ChatGPT.dmg">macOS DMG</a>
     </div>
-    <p class="ai-download-note">Windows 安装器会由 Microsoft Store 完成应用获取；macOS 提供官方 DMG 直链。</p>
+    <details class="ai-cli-tutorial">
+      <summary>Windows 命令行安装教程</summary>
+      <div class="ai-cli-method">
+        <strong>方式一：WinGet 安装</strong>
+        <p>适合可以访问 Microsoft Store 源、但希望通过命令安装的情况。用 PowerShell 运行：</p>
+        <pre><code>winget install --id 9PLM9XGG6VKS -s msstore</code></pre>
+      </div>
+      <div class="ai-cli-method">
+        <strong>方式二：官方 MSIX 离线部署</strong>
+        <p>如果设备无法访问 Store 源，可下载匹配架构的官方安装包和许可证文件：</p>
+        <div class="ai-download-options">
+          <a href="https://persistent.oaistatic.com/codex-app-prod/ChatGPT-x64.msix">Windows x64 MSIX</a>
+          <a href="https://persistent.oaistatic.com/codex-app-prod/ChatGPT-arm64.msix">Windows ARM64 MSIX</a>
+          <a href="https://persistent.oaistatic.com/codex-app-prod/ChatGPT-License.xml">官方许可证 XML</a>
+        </div>
+        <ol>
+          <li>下载一个对应架构的 MSIX 和许可证 XML，放在同一文件夹。</li>
+          <li>将它们分别重命名为 <code>ChatGPT.msix</code> 和 <code>ChatGPT-License.xml</code>。</li>
+          <li>在该文件夹打开“以管理员身份运行”的 PowerShell，执行：</li>
+        </ol>
+        <pre><code>Add-AppxProvisionedPackage -Online `
+  -PackagePath .\ChatGPT.msix `
+  -LicensePath .\ChatGPT-License.xml `
+  -Regions all</code></pre>
+      </div>
+      <p class="ai-download-note">离线部署需要管理员权限；安装包为 OpenAI 官方 Store 签名版本，应用使用时仍需联网。OpenAI 暂未提供独立 MSI 或非 Store EXE 安装包。macOS 提供官方 DMG 直链。</p>
+    </details>
   </section>
 </details>
 
@@ -48,16 +74,18 @@
     <span class="download-summary-copy"><strong class="download-accordion-name">Google Antigravity</strong><span class="download-accordion-hint">Google AI 编程 IDE</span></span>
     <span class="download-accordion-toggle" aria-hidden="true"></span>
   </summary>
-  <section class="ai-tools-content" aria-label="Google Antigravity 下载选项">
+  <section class="ai-tools-content" aria-label="Google Antigravity 下载选项" data-live-download-feed="https://cc-switch-release.leowishe.workers.dev/antigravity" data-official-download-url="https://antigravity.google/download">
     <div class="ai-download-options">
-      <a href="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.28.2-5937220255875072/windows-x64/Antigravity-x64.exe">Windows x64</a>
-      <a href="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.28.2-5937220255875072/windows-arm/Antigravity-arm64.exe">Windows ARM64</a>
-      <a href="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.28.2-5937220255875072/darwin-arm/Antigravity.dmg">macOS Apple 芯片</a>
-      <a href="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.28.2-5937220255875072/darwin-x64/Antigravity.dmg">macOS Intel</a>
+      <a data-live-asset="windows-x64" href="https://antigravity.google/download">Windows x64</a>
+      <a data-live-asset="windows-arm64" href="https://antigravity.google/download">Windows ARM64</a>
+      <a data-live-asset="macos-arm64" href="https://antigravity.google/download">macOS Apple 芯片</a>
+      <a data-live-asset="macos-x64" href="https://antigravity.google/download">macOS Intel</a>
     </div>
-    <p class="ai-download-note">此官方安装地址含版本号，发布新版后需同步更新。</p>
+    <p class="ai-download-note" data-live-download-status aria-live="polite">正在读取 Google 官方最新安装包地址…</p>
   </section>
 </details>
+
+<script src="{{ '/assets/js/live-download-links.js' | relative_url }}" defer></script>
 
 <details class="download-accordion ai-product-accordion" name="download-products">
   <summary>
@@ -67,13 +95,13 @@
   </summary>
   <section class="ai-tools-content" aria-label="Cursor 下载选项">
     <div class="ai-download-options">
-      <a href="https://api2.cursor.sh/updates/download/golden/win32-x64/cursor/3.27">Windows x64</a>
-      <a href="https://api2.cursor.sh/updates/download/golden/win32-arm64/cursor/3.27">Windows ARM64</a>
-      <a href="https://api2.cursor.sh/updates/download/golden/darwin-arm64/cursor/3.27">macOS ARM64</a>
-      <a href="https://api2.cursor.sh/updates/download/golden/darwin-x64/cursor/3.27">macOS x64</a>
-      <a href="https://api2.cursor.sh/updates/download/golden/darwin-universal/cursor/3.27">macOS 通用版</a>
-      <a href="https://api2.cursor.sh/updates/download/golden/linux-x64-deb/cursor/3.27">Linux x64 .deb</a>
-      <a href="https://api2.cursor.sh/updates/download/golden/linux-arm64-deb/cursor/3.27">Linux ARM64 .deb</a>
+      <a href="https://api2.cursor.sh/updates/download/golden/win32-x64/cursor/latest">Windows x64</a>
+      <a href="https://api2.cursor.sh/updates/download/golden/win32-arm64/cursor/latest">Windows ARM64</a>
+      <a href="https://api2.cursor.sh/updates/download/golden/darwin-arm64/cursor/latest">macOS ARM64</a>
+      <a href="https://api2.cursor.sh/updates/download/golden/darwin-x64/cursor/latest">macOS x64</a>
+      <a href="https://api2.cursor.sh/updates/download/golden/darwin-universal/cursor/latest">macOS 通用版</a>
+      <a href="https://api2.cursor.sh/updates/download/golden/linux-x64-deb/cursor/latest">Linux x64 .deb</a>
+      <a href="https://api2.cursor.sh/updates/download/golden/linux-arm64-deb/cursor/latest">Linux ARM64 .deb</a>
     </div>
   </section>
 </details>
