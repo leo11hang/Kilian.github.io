@@ -833,13 +833,17 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 /* ── Download software accordions ─────────────── */
 .download-accordions { display: grid; gap: 14px; margin: 0 0 30px; }
 .download-accordion { min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--r-lg); background: rgba(255,255,255,.72); box-shadow: var(--sh); }
-.download-accordion > summary { display: flex; align-items: center; gap: 14px; min-height: 72px; padding: 16px 20px; cursor: pointer; list-style: none; }
+.download-accordion > summary { display: flex; align-items: center; gap: 16px; min-height: 112px; padding: 20px 24px; cursor: pointer; list-style: none; }
 .download-accordion > summary::-webkit-details-marker { display: none; }
-.download-accordion > summary::after { content: '+'; display: grid; place-items: center; width: 30px; height: 30px; margin-left: auto; border-radius: 9px; background: var(--accent-lt); color: var(--accent); font-size: 20px; font-weight: 600; flex: 0 0 auto; }
-.download-accordion[open] > summary::after { content: '−'; }
-.download-accordion > summary:hover { background: rgba(237,233,255,.55); }
-.download-accordion-name { font-size: 17px; font-weight: 800; color: var(--text-1); }
-.download-accordion-hint { color: var(--text-3); font-size: 12px; }
+.download-accordion > summary:hover { background: linear-gradient(110deg, rgba(237,233,255,.55), transparent 75%); }
+.download-summary-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 0; }
+.download-summary-copy .cc-download-eyebrow { margin: 0; }
+.download-accordion-name { font-size: 21px; line-height: 1.35; font-weight: 850; color: var(--text-1); }
+.download-accordion-hint { color: var(--text-3); font-size: 13px; }
+.download-accordion-toggle { display: grid; place-items: center; width: 36px; height: 36px; margin-left: auto; border: 1px solid var(--border); border-radius: 11px; background: white; color: var(--accent); flex: 0 0 auto; }
+.download-accordion-toggle::before { content: '+'; font-size: 22px; line-height: 1; }
+.download-accordion[open] .download-accordion-toggle::before { content: '−'; }
+.download-accordion[open] > summary { border-bottom: 1px solid var(--border); }
 .download-accordion .cc-download { margin: 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; box-shadow: none; }
 
 /* ── CC Switch release downloads ──────────────── */
@@ -884,8 +888,9 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-download-button { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-width: 76px; min-height: 32px; padding: 6px 12px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
 .cc-download-button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(109,40,217,.24); }
 @media (max-width: 600px) {
-  .download-accordion > summary { min-height: 64px; padding: 13px 15px; flex-wrap: wrap; gap: 5px 10px; }
-  .download-accordion-hint { width: 100%; padding-right: 36px; }
+  .download-accordion > summary { min-height: 96px; padding: 16px; }
+  .download-accordion-name { font-size: 18px; }
+  .download-accordion-hint { font-size: 12px; }
   .cc-download { padding: 20px 16px; }
   .cc-download-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
   .cc-download-heading h2 { font-size: 19px; }
