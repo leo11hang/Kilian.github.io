@@ -20,6 +20,10 @@
     {{ cat_name }}
   </h1>
 
+  {% if cat_slug == 'download' %}
+    {% include cc-switch-download.html %}
+  {% endif %}
+
   {% if cat_posts.size > 0 %}
     <div class="posts-grid">
       {% for post in cat_posts %}{% include post-card.html post=post %}{% endfor %}
