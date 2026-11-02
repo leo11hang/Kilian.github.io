@@ -6,6 +6,7 @@
 
   // Replace with a Cloudflare Worker URL when one is available.
   var apiUrl = panel.dataset.apiUrl;
+  var workerUrl = (panel.dataset.workerUrl || '').trim();
   var releaseUrl = panel.dataset.releaseUrl;
   var meta = panel.querySelector('[data-release-meta]');
   var status = panel.querySelector('[data-download-status]');
@@ -74,11 +75,14 @@
     return card;
   }
 
-  fetch(apiUrl, { headers: { Accept: 'application/vnd.github+json' } })
-    .then(function (response) {
-      if (!response.ok) throw new Error('GitHub API 返回 ' + response.status);
+  function fetchRelease(url) {
+    return fetch(url, { headers: { Accept: 'application/vnd.github+json' } }).then(function (response) {
+      if (!response.ok) throw new Error('Release API 返回 ' + response.status);
       return response.json();
-    })
+    });
+  }
+
+  (workerUrl ? fetchRelease(workerUrl).catch(function () { return fetchRelease(apiUrl); }) : fetchRelease(apiUrl))
     .then(function (release) {
       var assets = (release.assets || []).filter(isInstaller);
       var groups = { Windows: {}, macOS: {}, Linux: {} };
