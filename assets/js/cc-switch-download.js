@@ -9,6 +9,7 @@
   var releaseUrl = panel.dataset.releaseUrl;
   var meta = panel.querySelector('[data-release-meta]');
   var status = panel.querySelector('[data-download-status]');
+  var tabs = panel.querySelector('[data-platform-tabs]');
   var grid = panel.querySelector('[data-platform-grid]');
 
   function architecture(name) {
@@ -97,8 +98,30 @@
       var published = release.published_at ? new Date(release.published_at) : null;
       meta.textContent = version + (published && !isNaN(published) ? ' · 发布于 ' + published.toLocaleDateString() : '');
       grid.replaceChildren();
-      Object.keys(groups).forEach(function (os) {
-        if (Object.keys(groups[os]).length) grid.appendChild(makePlatformCard(os, groups[os]));
+      var availablePlatforms = Object.keys(groups).filter(function (os) { return Object.keys(groups[os]).length; });
+      availablePlatforms.forEach(function (os, index) {
+        var tab = document.createElement('button');
+        tab.type = 'button';
+        tab.className = 'cc-platform-tab' + (index === 0 ? ' is-active' : '');
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+        tab.textContent = os;
+        var card = makePlatformCard(os, groups[os]);
+        card.classList.add('cc-platform-panel');
+        card.setAttribute('role', 'tabpanel');
+        card.hidden = index !== 0;
+        tab.addEventListener('click', function () {
+          tabs.querySelectorAll('.cc-platform-tab').forEach(function (button) {
+            var active = button === tab;
+            button.classList.toggle('is-active', active);
+            button.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          grid.querySelectorAll('.cc-platform-panel').forEach(function (panelCard) {
+            panelCard.hidden = panelCard !== card;
+          });
+        });
+        tabs.appendChild(tab);
+        grid.appendChild(card);
       });
       status.textContent = '选择对应系统与架构的安装包；下载地址来自 GitHub 官方 Release。';
       status.classList.add('is-success');
