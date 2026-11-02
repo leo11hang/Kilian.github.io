@@ -34,24 +34,42 @@
     return /\.(exe|msi|msix|dmg|pkg|appimage|deb|rpm|flatpak)$/.test(name) || /\.app\.tar\.(gz|zst)$/.test(name);
   }
 
-  function makeCard(asset, os) {
+  function makePlatformCard(os, architectures) {
     var card = document.createElement('article');
     card.className = 'cc-platform-card';
     var title = document.createElement('h3');
     title.textContent = os;
-    var arch = document.createElement('span');
-    arch.className = 'cc-arch';
-    arch.textContent = architecture(asset.name);
-    var filename = document.createElement('p');
-    filename.className = 'cc-asset-name';
-    filename.textContent = asset.name;
-    var link = document.createElement('a');
-    link.className = 'cc-download-button';
-    link.href = asset.browser_download_url;
-    link.textContent = '下载 ' + os + ' 版';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    card.append(title, arch, filename, link);
+    card.appendChild(title);
+    Object.keys(architectures).forEach(function (archName) {
+      var group = document.createElement('div');
+      group.className = 'cc-arch-group';
+      var arch = document.createElement('h4');
+      arch.className = 'cc-arch';
+      arch.textContent = archName;
+      var list = document.createElement('div');
+      list.className = 'cc-asset-list';
+      architectures[archName].forEach(function (asset) {
+        var item = document.createElement('div');
+        item.className = 'cc-asset-item';
+        var detail = document.createElement('div');
+        detail.className = 'cc-asset-detail';
+        var format = document.createElement('strong');
+        format.textContent = asset.name.match(/\.(appimage|deb|rpm|flatpak|dmg|pkg|msi|msix|exe)(?:$|\.)/i)?.[1]?.toUpperCase() || '安装包';
+        var filename = document.createElement('span');
+        filename.textContent = asset.name;
+        detail.append(format, filename);
+        var link = document.createElement('a');
+        link.className = 'cc-download-button';
+        link.href = asset.browser_download_url;
+        link.textContent = '下载';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        item.append(detail, link);
+        list.appendChild(item);
+      });
+      group.append(arch, list);
+      card.appendChild(group);
+    });
     return card;
   }
 
@@ -62,12 +80,17 @@
     })
     .then(function (release) {
       var assets = (release.assets || []).filter(isInstaller);
-      var groups = { Windows: [], macOS: [], Linux: [] };
+      var groups = { Windows: {}, macOS: {}, Linux: {} };
       assets.forEach(function (asset) {
         var os = platform(asset.name);
-        if (os) groups[os].push(asset);
+        if (!os) return;
+        var arch = architecture(asset.name);
+        if (!groups[os][arch]) groups[os][arch] = [];
+        groups[os][arch].push(asset);
       });
-      var count = Object.keys(groups).reduce(function (total, os) { return total + groups[os].length; }, 0);
+      var count = Object.keys(groups).reduce(function (total, os) {
+        return total + Object.keys(groups[os]).reduce(function (subtotal, arch) { return subtotal + groups[os][arch].length; }, 0);
+      }, 0);
       if (!count) throw new Error('此 Release 暂无可识别的安装包');
 
       var version = release.tag_name || release.name || '最新版本';
@@ -75,7 +98,7 @@
       meta.textContent = version + (published && !isNaN(published) ? ' · 发布于 ' + published.toLocaleDateString() : '');
       grid.replaceChildren();
       Object.keys(groups).forEach(function (os) {
-        groups[os].forEach(function (asset) { grid.appendChild(makeCard(asset, os)); });
+        if (Object.keys(groups[os]).length) grid.appendChild(makePlatformCard(os, groups[os]));
       });
       status.textContent = '选择对应系统与架构的安装包；下载地址来自 GitHub 官方 Release。';
       status.classList.add('is-success');
