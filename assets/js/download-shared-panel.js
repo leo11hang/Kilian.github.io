@@ -11,21 +11,54 @@
   contentStore.className = 'download-content-store';
   contentStore.hidden = true;
 
-  var panel = document.createElement('div');
-  panel.className = 'download-shared-panel';
-  panel.id = 'download-shared-panel';
-  panel.setAttribute('role', 'region');
-  panel.setAttribute('aria-label', '所选软件的下载详情');
-  panel.hidden = true;
+  var rows = [];
+  products.forEach(function (product, index) {
+    var rowIndex = Math.floor(index / 2);
+    if (!rows[rowIndex]) {
+      var panel = document.createElement('div');
+      panel.className = 'download-shared-panel';
+      panel.id = 'download-shared-panel-' + (rowIndex + 1);
+      panel.setAttribute('role', 'region');
+      panel.setAttribute('aria-label', '本行软件的下载详情');
+      panel.hidden = true;
+      rows[rowIndex] = { products: [], panel: panel };
+    }
+    rows[rowIndex].products.push(product);
+    product._sharedDownloadRow = rows[rowIndex];
+  });
+
+  rows.forEach(function (row) {
+    row.products[row.products.length - 1].after(row.panel);
+  });
 
   var activeProduct = null;
+  var mobileLayout = window.matchMedia('(max-width: 600px)');
+
+  function placePanel(row, product) {
+    if (mobileLayout.matches && product) {
+      product.after(row.panel);
+    } else {
+      row.products[row.products.length - 1].after(row.panel);
+    }
+  }
+
+  function closeActiveProduct() {
+    if (!activeProduct) return;
+    var activeRow = activeProduct._sharedDownloadRow;
+    activeProduct.open = false;
+    activeProduct.querySelector(':scope > summary').setAttribute('aria-expanded', 'false');
+    contentStore.appendChild(activeProduct._sharedDownloadContent);
+    activeRow.panel.hidden = true;
+    activeProduct = null;
+  }
 
   products.forEach(function (product) {
     var summary = product.querySelector(':scope > summary');
     var content = product.querySelector(':scope > section');
-    if (!summary || !content) return;
+    var row = product._sharedDownloadRow;
+    if (!summary || !content || !row) return;
 
-    summary.setAttribute('aria-controls', panel.id);
+    summary.setAttribute('aria-controls', row.panel.id);
     summary.setAttribute('aria-expanded', 'false');
     product._sharedDownloadContent = content;
     contentStore.appendChild(content);
@@ -33,30 +66,24 @@
     summary.addEventListener('click', function (event) {
       event.preventDefault();
       var wasActive = activeProduct === product;
+      closeActiveProduct();
+      if (wasActive) return;
 
-      if (activeProduct) {
-        activeProduct.open = false;
-        activeProduct.querySelector(':scope > summary').setAttribute('aria-expanded', 'false');
-        contentStore.appendChild(activeProduct._sharedDownloadContent);
-        activeProduct = null;
-      }
-
-      if (wasActive) {
-        panel.hidden = true;
-        return;
-      }
-
+      placePanel(row, product);
       product.open = true;
       summary.setAttribute('aria-expanded', 'true');
-      panel.appendChild(content);
-      panel.hidden = false;
+      row.panel.appendChild(content);
+      row.panel.hidden = false;
       activeProduct = product;
       window.requestAnimationFrame(function () {
-        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        row.panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       });
     });
   });
 
+  window.addEventListener('resize', function () {
+    if (activeProduct) placePanel(activeProduct._sharedDownloadRow, activeProduct);
+  });
+
   grid.appendChild(contentStore);
-  grid.appendChild(panel);
 }());
