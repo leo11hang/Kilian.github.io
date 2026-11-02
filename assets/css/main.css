@@ -836,8 +836,11 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .download-accordion > summary { display: flex; align-items: center; gap: 16px; min-height: 112px; padding: 20px 24px; cursor: pointer; list-style: none; }
 .download-accordion > summary::-webkit-details-marker { display: none; }
 .download-accordion > summary:hover { background: linear-gradient(110deg, rgba(237,233,255,.55), transparent 75%); }
+.download-product-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 15px; flex: 0 0 auto; box-shadow: 0 5px 14px rgba(109,40,217,.18); }
+.download-product-icon svg { width: 27px; height: 27px; fill: none; stroke: white; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.cc-product-icon { background: linear-gradient(135deg, #8b5cf6, #5b4be8); }
+.clash-product-icon { background: linear-gradient(135deg, #fb7185, #e11d48); }
 .download-summary-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 0; }
-.download-summary-copy .cc-download-eyebrow { margin: 0; }
 .download-accordion-name { font-size: 21px; line-height: 1.35; font-weight: 850; color: var(--text-1); }
 .download-accordion-hint { color: var(--text-3); font-size: 13px; }
 .download-accordion-toggle { display: grid; place-items: center; width: 36px; height: 36px; margin-left: auto; border: 1px solid var(--border); border-radius: 11px; background: white; color: var(--accent); flex: 0 0 auto; }
@@ -888,7 +891,9 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-download-button { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-width: 76px; min-height: 32px; padding: 6px 12px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
 .cc-download-button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(109,40,217,.24); }
 @media (max-width: 600px) {
-  .download-accordion > summary { min-height: 96px; padding: 16px; }
+  .download-accordion > summary { min-height: 88px; padding: 14px; gap: 12px; }
+  .download-product-icon { width: 44px; height: 44px; border-radius: 13px; }
+  .download-product-icon svg { width: 23px; height: 23px; }
   .download-accordion-name { font-size: 18px; }
   .download-accordion-hint { font-size: 12px; }
   .cc-download { padding: 20px 16px; }
