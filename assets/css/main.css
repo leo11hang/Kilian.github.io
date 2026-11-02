@@ -867,6 +867,29 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .uu-platform-action { color: var(--accent); font-size: 11px; font-weight: 650; }
 .uu-beta-badge { display: inline-block; margin-left: 5px; padding: 2px 6px; border-radius: 100px; background: #fff7ed; color: #c2410c; font-size: 9px; vertical-align: 1px; }
 .uu-official-note { margin: 12px 0 0; color: var(--text-3); font-size: 11px; }
+.ai-tools-product-icon { color: #6d28d9; font-size: 16px; font-weight: 900; letter-spacing: -.06em; }
+.ai-tools-content { padding: 20px; border-top: 1px solid var(--border); background: rgba(255,255,255,.5); }
+.ai-tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 12px; }
+.ai-tool-card { display: grid; grid-template-columns: 42px minmax(0,1fr); grid-template-rows: auto auto; align-items: center; gap: 10px 12px; min-width: 0; min-height: 100px; padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: white; box-shadow: var(--sh); transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition); }
+.ai-tool-card:hover { transform: translateY(-2px); border-color: var(--accent-dim); box-shadow: var(--sh-lg); }
+.ai-tool-mark { grid-column: 1; grid-row: 1; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; color: white; font-size: 13px; font-weight: 850; letter-spacing: -.04em; }
+.chatgpt-mark { background: linear-gradient(135deg,#20a37f,#087e66); }
+.claude-mark { background: linear-gradient(135deg,#df8d5d,#bc5d39); }
+.gemini-mark { background: linear-gradient(135deg,#4285f4,#9b72cb 55%,#d96570); }
+.cursor-mark { background: linear-gradient(135deg,#30343b,#111318); }
+.antigravity-mark { background: linear-gradient(135deg,#4285f4,#8e63ce); }
+.opencode-mark { background: linear-gradient(135deg,#23252b,#545866); }
+.perplexity-mark { background: linear-gradient(135deg,#21a6a0,#096e73); }
+.comet-mark { background: linear-gradient(135deg,#6478ef,#a56de0); }
+.grok-mark { background: linear-gradient(135deg,#111,#434343); }
+.ai-tool-copy { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.ai-tool-copy strong { color: var(--text-1); font-size: 13px; line-height: 1.35; }
+.ai-tool-copy small { color: var(--text-3); font-size: 11px; line-height: 1.4; }
+.ai-tool-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 7px; padding-top: 2px; }
+.ai-tool-actions a { display: inline-flex; align-items: center; min-height: 29px; padding: 5px 9px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface2); color: var(--accent); font-size: 10px; font-weight: 750; line-height: 1.2; }
+.ai-tool-actions a:hover { border-color: var(--accent-dim); background: var(--accent-lt); }
+.ai-tool-web-label { grid-column: 1 / -1; color: var(--text-3); font-size: 11px; font-weight: 700; }
+.ai-tools-note { margin: 14px 2px 0; color: var(--text-3); font-size: 11px; line-height: 1.55; }
 
 /* ── CC Switch release downloads ──────────────── */
 .cc-download {
@@ -913,6 +936,9 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
   .download-accordion > summary { min-height: 82px; padding: 12px 14px; gap: 12px; }
   .download-product-icon { width: 48px; height: 48px; border-radius: 13px; }
   .uu-download-content { padding: 14px; }
+  .ai-tools-content { padding: 14px; }
+  .ai-tool-card { grid-template-columns: 40px minmax(0,1fr); gap: 9px 10px; padding: 12px; }
+  .ai-tool-mark { width: 40px; height: 40px; }
   .download-accordion-name { font-size: 18px; }
   .download-accordion-hint { font-size: 12px; }
   .cc-download { padding: 20px 16px; }
