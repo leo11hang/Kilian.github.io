@@ -23,11 +23,17 @@
   {% if cat_slug == 'download' %}
     <div class="download-accordions">
       <details class="download-accordion">
-        <summary><span class="download-accordion-name">CC Switch</span><span class="download-accordion-hint">查看最新版本与下载选项</span></summary>
+        <summary>
+          <span class="download-summary-copy"><span class="cc-download-eyebrow">GITHUB RELEASE</span><strong class="download-accordion-name">CC Switch 最新版</strong><span class="download-accordion-hint">跨平台管理 Claude Code、Codex 与 Gemini CLI 配置</span></span>
+          <span class="download-accordion-toggle" aria-hidden="true"></span>
+        </summary>
         {% include cc-switch-download.html %}
       </details>
       <details class="download-accordion">
-        <summary><span class="download-accordion-name">Clash Verge Rev</span><span class="download-accordion-hint">查看最新版本与下载选项</span></summary>
+        <summary>
+          <span class="download-summary-copy"><span class="cc-download-eyebrow">GITHUB RELEASE</span><strong class="download-accordion-name">Clash Verge Rev 最新版</strong><span class="download-accordion-hint">跨平台网络代理客户端</span></span>
+          <span class="download-accordion-toggle" aria-hidden="true"></span>
+        </summary>
         {% include clash-verge-download.html %}
       </details>
     </div>
