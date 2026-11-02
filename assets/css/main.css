@@ -851,9 +851,17 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .download-accordion-toggle { display: grid; place-items: center; width: 36px; height: 36px; margin-left: auto; border: 1px solid var(--border); border-radius: 11px; background: white; color: var(--accent); flex: 0 0 auto; }
 .download-accordion-toggle::before { content: '+'; font-size: 22px; line-height: 1; }
 .download-accordion[open] .download-accordion-toggle::before { content: '−'; }
-.download-accordion[open] { border-color: var(--accent-dim); background: #fff; }
-.download-accordion[open] > summary { border-bottom: 0; }
-.download-shared-panel { grid-column: 1 / -1; min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--r-lg); background: linear-gradient(135deg, #fff 0%, #f8f7ff 100%); box-shadow: var(--sh); }
+.download-accordion[open] { border-color: var(--accent-dim); background: #fff; box-shadow: 0 0 0 3px rgba(109,40,217,.10), var(--sh-lg); }
+.download-accordion[open] > summary { border-bottom: 0; background: linear-gradient(110deg, rgba(237,233,255,.72), rgba(255,255,255,.92)); }
+.download-shared-panel { position: relative; grid-column: 1 / -1; min-width: 0; overflow: hidden; border: 1px solid #c4b5fd; border-radius: var(--r-lg); background: linear-gradient(135deg, #fff 0%, #f8f7ff 100%); box-shadow: 0 12px 30px rgba(109,40,217,.12); }
+.download-shared-panel::before { position: absolute; z-index: 1; top: 0; right: 0; left: 0; height: 3px; background: var(--grad); content: ''; }
+.download-panel-context { display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 4px 22px; border-bottom: 1px solid rgba(196,181,253,.45); background: linear-gradient(90deg, rgba(237,233,255,.78), rgba(255,255,255,.78)); }
+.download-panel-marker { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(109,40,217,.10); }
+.download-panel-product { color: var(--text-1); font-size: 12px; font-weight: 800; }
+.download-panel-label { margin-left: auto; padding: 3px 9px; border: 1px solid rgba(196,181,253,.65); border-radius: 100px; background: #fff; color: var(--accent); font-size: 10px; font-weight: 750; }
+.download-shared-panel.is-opening { animation: download-panel-enter 200ms ease-out both; }
+@keyframes download-panel-enter { from { opacity: 0; transform: translateY(-7px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .download-shared-panel.is-opening { animation: none; } }
 .download-shared-panel[hidden], .download-content-store[hidden] { display: none; }
 .download-shared-panel > .cc-download { margin: 0; border: 0; border-radius: 0; box-shadow: none; }
 .download-shared-panel > .uu-download-content, .download-shared-panel > .ai-tools-content { border-top: 0; }
