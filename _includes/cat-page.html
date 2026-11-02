@@ -28,7 +28,7 @@
     <div class="posts-grid">
       {% for post in cat_posts %}{% include post-card.html post=post %}{% endfor %}
     </div>
-  {% else %}
+  {% elsif cat_slug != 'download' %}
     <div class="empty-state">
       <div class="empty-icon">
         <svg width="48" height="48" aria-hidden="true" focusable="false"><use href="#{{ cat_icon_id }}"/></svg>
