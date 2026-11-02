@@ -21,7 +21,16 @@
   </h1>
 
   {% if cat_slug == 'download' %}
-    {% include cc-switch-download.html %}
+    <div class="download-accordions">
+      <details class="download-accordion">
+        <summary><span class="download-accordion-name">CC Switch</span><span class="download-accordion-hint">查看最新版本与下载选项</span></summary>
+        {% include cc-switch-download.html %}
+      </details>
+      <details class="download-accordion">
+        <summary><span class="download-accordion-name">Clash Verge Rev</span><span class="download-accordion-hint">查看最新版本与下载选项</span></summary>
+        {% include clash-verge-download.html %}
+      </details>
+    </div>
   {% endif %}
 
   {% if cat_posts.size > 0 %}
