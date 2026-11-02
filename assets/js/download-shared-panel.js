@@ -66,6 +66,7 @@
     summary.addEventListener('click', function (event) {
       event.preventDefault();
       var wasActive = activeProduct === product;
+      var productTopBefore = product.getBoundingClientRect().top;
       closeActiveProduct();
       if (wasActive) return;
 
@@ -76,7 +77,9 @@
       row.panel.hidden = false;
       activeProduct = product;
       window.requestAnimationFrame(function () {
-        row.panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        var productTopAfter = product.getBoundingClientRect().top;
+        var topShift = productTopAfter - productTopBefore;
+        if (Math.abs(topShift) > 1) window.scrollTo(0, window.scrollY + topShift);
       });
     });
   });
