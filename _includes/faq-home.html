@@ -1,0 +1,68 @@
+{% assign faq_data = site.data.faq %}
+{% assign faq_questions = faq_data.questions %}
+{% assign faq_answer_count = 0 %}
+{% for question in faq_questions %}
+  {% if question.answer and question.answer != "" %}{% assign faq_answer_count = faq_answer_count | plus: 1 %}{% endif %}
+{% endfor %}
+
+<section class="faq-intro" aria-label="知识库简介">
+  <p>面向 AI 用户的使用指南与常见问题解答</p>
+  <div class="faq-stats" aria-label="知识库统计">
+    <span><strong>{{ faq_data.categories.size }}</strong> 个知识分类</span>
+    <span><strong>{{ faq_questions.size }}</strong> 个问题目录</span>
+    <span><strong>{{ faq_answer_count }}</strong> 条答案草稿</span>
+  </div>
+  <form class="faq-search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+    <svg width="19" height="19" aria-hidden="true" focusable="false"><use href="#ic-search"/></svg>
+    <input type="search" name="q" placeholder="搜索问题、答案或关键词…" aria-label="搜索 AI 知识库和文章" />
+    <button type="submit">搜索</button>
+  </form>
+</section>
+
+<section class="faq-categories-section" aria-labelledby="faq-categories-title">
+  <div class="faq-section-heading">
+    <div>
+      <h2 id="faq-categories-title" class="faq-section-title">知识分类</h2>
+      <p>按主题查找 AI 使用问题与答案</p>
+    </div>
+  </div>
+  <div class="faq-category-grid">
+    {% for category in faq_data.categories %}
+      {% assign category_questions = faq_questions | where: "category", category.id %}
+      {% assign category_answers = 0 %}
+      {% for question in category_questions %}
+        {% if question.answer and question.answer != "" %}{% assign category_answers = category_answers | plus: 1 %}{% endif %}
+      {% endfor %}
+      <a class="faq-category-card" href="{{ '/faq/categories/' | append: category.slug | append: '/' | relative_url }}">
+        <span class="faq-category-index">{{ category.id }}</span>
+        <span class="faq-category-copy">
+          <strong>{{ category.name | escape }}</strong>
+          <span>{{ category.description | escape }}</span>
+        </span>
+        <span class="faq-category-count">{{ category_answers }}/{{ category_questions.size }} 条有答案</span>
+        <span class="faq-category-arrow" aria-hidden="true">›</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% assign recommended_ids = "faq-001,faq-005,faq-014,faq-021,faq-028,faq-036,faq-048" | split: "," %}
+<section class="faq-recommended" aria-labelledby="faq-recommended-title">
+  <div class="faq-section-heading">
+    <div>
+      <h2 id="faq-recommended-title" class="faq-section-title">推荐阅读</h2>
+      <p>从基础概念、文件使用和常见限制开始</p>
+    </div>
+  </div>
+  <div class="faq-recommended-list">
+    {% for question_id in recommended_ids %}
+      {% assign question = faq_questions | where: "id", question_id | first %}
+      {% if question %}
+        <a class="faq-recommended-item" href="{{ '/faq/questions/' | append: question.id | append: '/' | relative_url }}">
+          <span>{{ question.question | escape }}</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

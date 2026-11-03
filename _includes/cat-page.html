@@ -4,7 +4,7 @@
   {% when 'tutorial'   %}{% assign cat_name = 'AI 教程'  %}{% assign cat_icon_id = 'ic-robot'    %}
   {% when 'download'   %}{% assign cat_name = '软件下载'  %}{% assign cat_icon_id = 'ic-download'  %}
   {% when 'activation' %}{% assign cat_name = '激活教程'  %}{% assign cat_icon_id = 'ic-key'       %}
-  {% when 'faq'        %}{% assign cat_name = '常见问题'  %}{% assign cat_icon_id = 'ic-faq'       %}
+  {% when 'faq'        %}{% assign cat_name = 'AI Knowledge Base'  %}{% assign cat_icon_id = 'ic-faq'       %}
   {% else              %}{% assign cat_name = cat_slug    %}{% assign cat_icon_id = 'ic-doc'       %}
 {% endcase %}
 
@@ -20,22 +20,34 @@
     {{ cat_name }}
   </h1>
 
-  {% if cat_slug == 'download' %}
-    {% include download-software-cards.html %}
-  {% endif %}
+  {% if cat_slug == 'faq' %}
+    {% include faq-home.html %}
+    {% if cat_posts.size > 0 %}
+      <section class="faq-legacy-articles" aria-labelledby="faq-legacy-title">
+        <h2 id="faq-legacy-title" class="faq-section-title">常见问题文章</h2>
+        <div class="posts-grid">
+          {% for post in cat_posts %}{% include post-card.html post=post %}{% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% else %}
+    {% if cat_slug == 'download' %}
+      {% include download-software-cards.html %}
+    {% endif %}
 
-  {% if cat_posts.size > 0 %}
-    <div class="posts-grid">
-      {% for post in cat_posts %}{% include post-card.html post=post %}{% endfor %}
-    </div>
-  {% elsif cat_slug != 'download' %}
-    <div class="empty-state">
-      <div class="empty-icon">
-        <svg width="48" height="48" aria-hidden="true" focusable="false"><use href="#{{ cat_icon_id }}"/></svg>
+    {% if cat_posts.size > 0 %}
+      <div class="posts-grid">
+        {% for post in cat_posts %}{% include post-card.html post=post %}{% endfor %}
       </div>
-      <h2>暂无内容</h2>
-      <p>该分类下还没有文章，敬请期待～</p>
-      <a href="{{ '/' | relative_url }}" class="empty-btn">← 返回首页</a>
-    </div>
+    {% elsif cat_slug != 'download' %}
+      <div class="empty-state">
+        <div class="empty-icon">
+          <svg width="48" height="48" aria-hidden="true" focusable="false"><use href="#{{ cat_icon_id }}"/></svg>
+        </div>
+        <h2>暂无内容</h2>
+        <p>该分类下还没有文章，敬请期待～</p>
+        <a href="{{ '/' | relative_url }}" class="empty-btn">← 返回首页</a>
+      </div>
+    {% endif %}
   {% endif %}
 </div>
