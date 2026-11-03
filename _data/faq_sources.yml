@@ -1,0 +1,816 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-03",
+  "source_record_schema": [
+    "source_url",
+    "source_type",
+    "author",
+    "published_at",
+    "verified_at",
+    "product",
+    "version",
+    "supporting_claim",
+    "counter_evidence",
+    "verification_status"
+  ],
+  "verification_status_guide": {
+    "official_page_opened": "已打开官方原始页面",
+    "official_search_excerpt": "通过搜索索引读取到官方页面摘要/正文片段，未完整逐段打开",
+    "public_page_opened": "已打开公开原始社区页面",
+    "search_snippet_only_direct_open_403": "搜索索引可见有限片段，原帖直连访问受限（403）"
+  },
+  "sources": [
+    {
+      "id": "google-genai-glossary",
+      "source_url": "https://developers.google.com/machine-learning/glossary/generative",
+      "source_type": "official_developer_glossary",
+      "author": "Google for Developers",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "General AI",
+      "version": "",
+      "supporting_claim": "对生成式 AI、LLM、Agent、上下文窗口、Few-shot 等术语给出基础定义。",
+      "counter_evidence": "属于官方技术词汇表；术语边界仍可能因研究社区或产品语境而不同。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-001",
+        "faq-002",
+        "faq-003",
+        "faq-004",
+        "faq-006",
+        "faq-008",
+        "faq-020",
+        "faq-026",
+        "faq-033",
+        "faq-034",
+        "faq-038"
+      ]
+    },
+    {
+      "id": "google-ml-glossary",
+      "source_url": "https://developers.google.com/machine-learning/glossary",
+      "source_type": "official_developer_glossary",
+      "author": "Google for Developers",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "General AI",
+      "version": "",
+      "supporting_claim": "解释 Token、Prompt、分词器及模型相关术语。",
+      "counter_evidence": "部分术语以 Google 教学语境定义，不代表所有实现完全相同。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-002",
+        "faq-005",
+        "faq-008",
+        "faq-013",
+        "faq-026"
+      ]
+    },
+    {
+      "id": "google-llm-course",
+      "source_url": "https://developers.google.com/machine-learning/crash-course/llm",
+      "source_type": "official_developer_course",
+      "author": "Google for Developers",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "LLM",
+      "version": "",
+      "supporting_claim": "介绍语言模型根据上下文对 Token/序列建模的基础原理。",
+      "counter_evidence": "教学材料为概念说明，不涵盖所有架构与训练流程。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-003"
+      ]
+    },
+    {
+      "id": "openai-tokens",
+      "source_url": "https://help.openai.com/en/articles/4936856-what-are-tokens",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI models",
+      "version": "",
+      "supporting_claim": "说明 Token 是模型处理文本的单位，计数依模型、编码和语言而变。",
+      "counter_evidence": "OpenAI 产品说明只直接适用于其模型，不应据此推定其他模型计数相同。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-003",
+        "faq-005",
+        "faq-006",
+        "faq-038"
+      ]
+    },
+    {
+      "id": "openai-tokenizer",
+      "source_url": "https://platform.openai.com/tokenizer",
+      "source_type": "official_tool",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI models",
+      "version": "",
+      "supporting_claim": "可观察文本在 OpenAI tokenizer 中如何分割以及 Token 数量。",
+      "counter_evidence": "工具计数仅对应其选择的编码/模型，不是其他供应商的计数保证。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-005"
+      ]
+    },
+    {
+      "id": "anthropic-context",
+      "source_url": "https://support.anthropic.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-ai-plans",
+      "source_type": "official_help_center",
+      "author": "Anthropic",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude",
+      "version": "",
+      "supporting_claim": "说明 Claude 的上下文窗口产品规则及其随计划变化的可能性。",
+      "counter_evidence": "具体数值会随模型、套餐和时间变化；必须以当前页面和账号为准。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-006",
+        "faq-007",
+        "faq-009",
+        "faq-038"
+      ]
+    },
+    {
+      "id": "reddit-context",
+      "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1r2p398/are_we_overusing_context_windows_instead_of/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Local LLM / RAG",
+      "version": "",
+      "supporting_claim": "讨论者分享长上下文可能增加成本、检索噪声及中段信息找回困难的工程体验。",
+      "counter_evidence": "单个技术讨论及自述实验，不代表全部模型；不作为普遍性能定律。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-006",
+        "faq-038"
+      ]
+    },
+    {
+      "id": "github-context",
+      "source_url": "https://github.com/run-llama/llama_index/discussions/23253",
+      "source_type": "community_github",
+      "author": "LlamaIndex 社区参与者",
+      "published_at": "2026-09-26",
+      "verified_at": "2026-11-03",
+      "product": "LlamaIndex / hosted LLM",
+      "version": "",
+      "supporting_claim": "开发者讨论模型卡标注窗口与服务实际可用上下文可能不一致，并提出测量与预算策略。",
+      "counter_evidence": "一个开源项目讨论，核心数值是发帖者自述测试，不能推广到所有服务商。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-006",
+        "faq-038"
+      ]
+    },
+    {
+      "id": "x-context-comment",
+      "source_url": "https://x.com/IntuitMachine/status/2001610974340469016",
+      "source_type": "social_x_expert_commentary",
+      "author": "Carlos E. Perez",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "LLM context / reasoning",
+      "version": "",
+      "supporting_claim": "搜索索引可见一条关于长上下文、信息位置与多路推理的个人评论；仅作为待核验观点线索。",
+      "counter_evidence": "X 原帖直连访问返回 403；未核实完整上下文及所引研究，不作为事实证据。",
+      "verification_status": "search_snippet_only_direct_open_403",
+      "question_refs": [
+        "faq-006"
+      ]
+    },
+    {
+      "id": "openai-capabilities",
+      "source_url": "https://help.openai.com/en/articles/9260256-chatgpt-capabilities-overview",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "概览 ChatGPT 的文件、图像、音频、联网及其他能力取决于当期产品功能。",
+      "counter_evidence": "功能和可用范围因计划、地区、工作区设置及更新时间而异。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-007",
+        "faq-009",
+        "faq-012",
+        "faq-023",
+        "faq-026"
+      ]
+    },
+    {
+      "id": "gemini-upload",
+      "source_url": "https://support.google.com/gemini/answer/14903178?hl=en-gb",
+      "source_type": "official_help_center",
+      "author": "Google Gemini Help",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Gemini Apps",
+      "version": "",
+      "supporting_claim": "说明 Gemini 可分析部分文档、表格、图片、视频等文件，并受上传与上下文限制。",
+      "counter_evidence": "产品限制持续变化；不能据此说明 ChatGPT 或 Claude 的上传能力。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-007",
+        "faq-009",
+        "faq-021",
+        "faq-022",
+        "faq-023"
+      ]
+    },
+    {
+      "id": "x-grok",
+      "source_url": "https://help.x.com/en/using-x/about-grok",
+      "source_type": "official_help_center",
+      "author": "X Help Center",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Grok",
+      "version": "",
+      "supporting_claim": "官方介绍 Grok 产品与数据处理控制。",
+      "counter_evidence": "Grok 功能、模型和政策会更新；本文不作静态模型排名。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-007"
+      ]
+    },
+    {
+      "id": "openai-truth",
+      "source_url": "https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "官方说明模型可能犯错、遗漏或产生虚构内容，重要信息应核验。",
+      "counter_evidence": "该说明以 ChatGPT 为对象，其他服务仍需各自查证。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-004",
+        "faq-012",
+        "faq-015"
+      ]
+    },
+    {
+      "id": "openai-prompt",
+      "source_url": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI models",
+      "version": "",
+      "supporting_claim": "建议明确背景、目标、约束、输出格式，使用示例并迭代提示。",
+      "counter_evidence": "指南针对 OpenAI 模型与 API；提示建议效果会随模型和任务变化。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-013",
+        "faq-014",
+        "faq-015",
+        "faq-016",
+        "faq-020"
+      ]
+    },
+    {
+      "id": "reddit-prompt-context",
+      "source_url": "https://www.reddit.com/r/PromptEngineering/comments/1v2ywcg/better-prompts-help-better-context-helps-way-more/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "LLM prompting",
+      "version": "",
+      "supporting_claim": "一位用户分享其工作体验：提供项目背景、约束和目标有时比反复改写措辞更有帮助。",
+      "counter_evidence": "一个人的经验分享，帖子未提供对照实验，不能作为因果结论。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-014",
+        "faq-015"
+      ]
+    },
+    {
+      "id": "anthropic-prompting",
+      "source_url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables",
+      "source_type": "official_developer_docs",
+      "author": "Anthropic",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude models",
+      "version": "",
+      "supporting_claim": "Anthropic 指南涉及明确指令、上下文、示例、格式与工具调用。",
+      "counter_evidence": "指南主要针对 Claude，具体推荐会随模型版本变化。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-016",
+        "faq-033",
+        "faq-034"
+      ]
+    },
+    {
+      "id": "reddit-fewshot",
+      "source_url": "https://www.reddit.com/r/PromptEngineering/comments/1g8uisl/incontext_learning_best_practices/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户 dancleary544",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "In-context learning",
+      "version": "",
+      "supporting_claim": "发帖者建议少样本示例保持相关、格式一致并覆盖不同情况。",
+      "counter_evidence": "帖子未提供独立实验验证；作为实践建议，不作为效果保证。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-019"
+      ]
+    },
+    {
+      "id": "openai-upload",
+      "source_url": "https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "列明 ChatGPT 文件/音频上传能力和平台限制，说明限制可能依套餐/功能而异。",
+      "counter_evidence": "动态限制会调整，账号页面和最新帮助页优先于旧数值。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-021",
+        "faq-022"
+      ]
+    },
+    {
+      "id": "reddit-upload",
+      "source_url": "https://www.reddit.com/r/ChatGPT/comments/1rbjfke/file_upload_limit_in_plus_version/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT file uploads",
+      "version": "",
+      "supporting_claim": "讨论者报告上传上限和临时错误的实际体验，评论对具体限制与原因存在不确定或互相矛盾说法。",
+      "counter_evidence": "帖子含 AI 生成的解释和未经证实的支持转述；不得引用其固定文件数作为事实。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-021",
+        "faq-022"
+      ]
+    },
+    {
+      "id": "reddit-longpdf",
+      "source_url": "https://www.reddit.com/r/ChatGPT/comments/1wn5p2o/psa_past_a_certain_length_chatgpt_doesnt_read/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户 u/Ok_Negotiation_2587",
+      "published_at": "2026-10",
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT file analysis",
+      "version": "",
+      "supporting_claim": "用户报告长 PDF 总结可能遗漏特定章节，并分享按章节提问/分段的个人工作方法。",
+      "counter_evidence": "单一产品体验和用户推断，内部实现未由官方确认；建议只作为风险提醒。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-022"
+      ]
+    },
+    {
+      "id": "openai-search",
+      "source_url": "https://help.openai.com/en/articles/9237897-chatgpt-search",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Search",
+      "version": "",
+      "supporting_claim": "说明 ChatGPT 搜索可用于获取较新的网络信息并附来源链接。",
+      "counter_evidence": "搜索可用性依账号、工作区与套餐；搜索结果仍需核验。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-012",
+        "faq-028",
+        "faq-029"
+      ]
+    },
+    {
+      "id": "openai-api-current-info",
+      "source_url": "https://help.openai.com/en/articles/6639781-do-the-openai-api-models-have-knowledge-of-current-events",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI API",
+      "version": "",
+      "supporting_claim": "说明模型训练知识有截止时间，API 可启用 Web Search 等工具获取当前信息。",
+      "counter_evidence": "只说明 OpenAI API 的工具机制，不代表每个聊天产品默认联网。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-028"
+      ]
+    },
+    {
+      "id": "openai-deep-research",
+      "source_url": "https://help.openai.com/en/articles/10500283-deep-research",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Deep Research",
+      "version": "",
+      "supporting_claim": "说明深度研究会规划多步网络/指定站点研究并生成带来源链接的报告。",
+      "counter_evidence": "功能、配额与可用来源随计划和设置变化；有来源不等于来源必然支持结论。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-029"
+      ]
+    },
+    {
+      "id": "openai-limits",
+      "source_url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT / Codex",
+      "version": "",
+      "supporting_claim": "说明 ChatGPT 使用额度取决于计划、模型和任务，额度规则会变化。",
+      "counter_evidence": "页面动态变化；不能把某个账户额度外推给所有用户。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-036",
+        "faq-041"
+      ]
+    },
+    {
+      "id": "anthropic-usage",
+      "source_url": "https://support.anthropic.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "source_type": "official_help_center",
+      "author": "Anthropic",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude",
+      "version": "",
+      "supporting_claim": "区分 Claude 的使用限制与上下文/长度限制，并说明模型和计划会影响用量。",
+      "counter_evidence": "产品政策持续更新，以页面当前内容及账户显示为准。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-021",
+        "faq-036",
+        "faq-041"
+      ]
+    },
+    {
+      "id": "reddit-claude-usage",
+      "source_url": "https://www.reddit.com/r/ClaudeAI/comments/1w9i1iv/claude_pro_token_usage_has_increased_dramatically/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude Pro",
+      "version": "",
+      "supporting_claim": "发帖者自述最近感到用量上升，并描述长对话、任务和重置窗口体验。",
+      "counter_evidence": "该帖及自动生成摘要不是用量遥测；评论存在相反体验，不能推断普遍涨价或后台改变。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-036"
+      ]
+    },
+    {
+      "id": "openai-api-rate-limits",
+      "source_url": "https://developers.openai.com/api/docs/guides/rate-limits",
+      "source_type": "official_developer_docs",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI API",
+      "version": "",
+      "supporting_claim": "说明 API 可分别限制 RPM、TPM、每日请求/Token、图片等，并给出退避建议。",
+      "counter_evidence": "仅适用于 OpenAI API；具体限额按组织、项目、模型和用量层级变化。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-037"
+      ]
+    },
+    {
+      "id": "openai-api-429",
+      "source_url": "https://help.openai.com/en/articles/5955604-troubleshooting-api-rate-limits-and-429-errors",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI API",
+      "version": "",
+      "supporting_claim": "区分 API 429 的速率、余额、支出和组织用量原因，并建议遵循 Retry-After 与退避。",
+      "counter_evidence": "HTTP 429 具体含义依错误响应体；不要只凭状态码归因。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-037",
+        "faq-041"
+      ]
+    },
+    {
+      "id": "reddit-api-rate",
+      "source_url": "https://www.reddit.com/r/OpenAI/comments/1nv856m/why_does_the_api_fail_40_of_the_time_for_our_data/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户与评论者",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI API",
+      "version": "",
+      "supporting_claim": "开发者讨论提到需先区分 API 错误、输出解析失败、模型差异与速率限制。",
+      "counter_evidence": "讨论年代较早且个案背景有限；技术细节以当前 API 文档为准。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-037"
+      ]
+    },
+    {
+      "id": "openai-supported-regions",
+      "source_url": "https://help.openai.com/en/articles/7947663-chatgpt-supported-countries",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "列出 ChatGPT 当前支持的国家/地区并提示列表会更新。",
+      "counter_evidence": "地区列表动态，不能据此概括其他服务商。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-042"
+      ]
+    },
+    {
+      "id": "openai-unsupported-regions",
+      "source_url": "https://help.openai.com/en/articles/9131992-chatgpt-and-api-services-in-unsupported-countries-and-territories",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT / OpenAI API",
+      "version": "",
+      "supporting_claim": "说明从未支持地区访问可能出现访问问题或账号限制。",
+      "counter_evidence": "只对应 OpenAI 服务，且要对照最新支持地区政策。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-042"
+      ]
+    },
+    {
+      "id": "openai-error-guide",
+      "source_url": "https://help.openai.com/en/articles/7996703-troubleshooting-chatgpt-error-messages",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "将 Something went wrong、Network Error 等与本地网络、扩展或服务端问题联系，并提供排查步骤。",
+      "counter_evidence": "通用排查指南不能单独定位某个用户的故障根因。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-043",
+        "faq-045"
+      ]
+    },
+    {
+      "id": "openai-status",
+      "source_url": "https://status.openai.com/",
+      "source_type": "official_status_page",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI services",
+      "version": "",
+      "supporting_claim": "可查看 OpenAI 产品组件的当前状态与已报告事件。",
+      "counter_evidence": "聚合状态不保证反映每个用户、地区、套餐或单一请求；事件更新可能有延迟。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-043",
+        "faq-045"
+      ]
+    },
+    {
+      "id": "reddit-outage",
+      "source_url": "https://www.reddit.com/r/ChatGPT/comments/1xax527/servers_downoutage/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT service",
+      "version": "",
+      "supporting_claim": "社区有人报告同一时段无法使用或读取文件，随后表示恢复。",
+      "counter_evidence": "用户帖子不能确认故障范围与根因；应与官方状态页交叉核验。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-043"
+      ]
+    },
+    {
+      "id": "openai-slow-response",
+      "source_url": "https://help.openai.com/en/articles/9047779-why-is-my-chatgpt-taking-so-long-to-respond",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "建议排查浏览器扩展、设备、网络和官方状态以定位响应变慢。",
+      "counter_evidence": "不能仅凭变慢判断服务端过载；此指南仅适用于 ChatGPT。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-044"
+      ]
+    },
+    {
+      "id": "openai-network",
+      "source_url": "https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT / Codex",
+      "version": "",
+      "supporting_claim": "说明部分功能依赖 WebSocket，并建议检查网络代理、防火墙与跨网络表现。",
+      "counter_evidence": "具体网络要求随产品、客户端及企业网络变化。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-043",
+        "faq-045"
+      ]
+    },
+    {
+      "id": "openai-login",
+      "source_url": "https://help.openai.com/en/articles/7426629-why-cant-i-log-in-to-chatgpt",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "提供登录环境变化、浏览器、Cookie 和网络验证相关排查建议。",
+      "counter_evidence": "不能公开验证平台内部风控具体算法。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-046"
+      ]
+    },
+    {
+      "id": "openai-data-controls",
+      "source_url": "https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "说明模型改进、聊天历史、临时聊天及个人与受管理工作区的数据控制差异。",
+      "counter_evidence": "政策会变化；具体设置可受地区、账号类型和组织管理影响。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-048",
+        "faq-049",
+        "faq-052"
+      ]
+    },
+    {
+      "id": "openai-temporary",
+      "source_url": "https://help.openai.com/en/articles/8914046-temporary-chat-faq",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Temporary Chat",
+      "version": "",
+      "supporting_claim": "说明临时聊天不进常规历史、不创建/更新记忆、不用于改进模型，但可能出于安全保留最多 30 天。",
+      "counter_evidence": "仅适用于 ChatGPT；其余平台临时模式保留规则不同。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-048"
+      ]
+    },
+    {
+      "id": "openai-memory",
+      "source_url": "https://help.openai.com/en/articles/8590148-memory-in-chatgpt",
+      "source_type": "official_help_center",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Memory",
+      "version": "",
+      "supporting_claim": "说明记忆与聊天记录/训练控制不同，并介绍查看、删除和关闭记忆的设置。",
+      "counter_evidence": "功能因计划、地区、平台和工作区设置而异。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-048",
+        "faq-049",
+        "faq-052"
+      ]
+    },
+    {
+      "id": "gemini-privacy",
+      "source_url": "https://support.google.com/gemini/answer/13594961?hl=en",
+      "source_type": "official_privacy_notice",
+      "author": "Google Gemini Help",
+      "published_at": "2026-10-13",
+      "verified_at": "2026-11-03",
+      "product": "Gemini Apps",
+      "version": "",
+      "supporting_claim": "说明 Gemini 数据采集、活动设置、人工审核、数据保留和连接应用规则。",
+      "counter_evidence": "说明适用于已登录 Gemini Apps 的对应情形；地区、账户与功能会影响处理规则。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-048",
+        "faq-049"
+      ]
+    },
+    {
+      "id": "openai-api-errors",
+      "source_url": "https://developers.openai.com/api/docs/guides/error-codes",
+      "source_type": "official_developer_docs",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI API",
+      "version": "",
+      "supporting_claim": "解释 OpenAI API 错误类别、认证、权限、限额及服务错误。",
+      "counter_evidence": "定义针对 OpenAI API，不能直接代表全部 HTTP 服务实现。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-055",
+        "faq-056"
+      ]
+    },
+    {
+      "id": "anthropic-upload",
+      "source_url": "https://support.anthropic.com/en/articles/8241126-upload-files-to-claude",
+      "source_type": "official_help_center",
+      "author": "Anthropic",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude",
+      "version": "",
+      "supporting_claim": "说明 Claude 文件上传格式和当前文件处理限制。",
+      "counter_evidence": "限制动态调整且不同产品计划可能不同。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-021"
+      ]
+    },
+    {
+      "id": "reddit-verify",
+      "source_url": "https://www.reddit.com/r/ChatGPT/comments/1oj9s97/how_do_you_actually_verify_what_chatgpt_tells_you/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户与评论者",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT factual answers",
+      "version": "",
+      "supporting_claim": "用户讨论指出引用可能不存在、链接可能不支持对应说法，并建议打开来源核实。",
+      "counter_evidence": "主观体验和单一讨论；不提供幻觉发生率的统计估计。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-059"
+      ]
+    },
+    {
+      "id": "mcp-introduction",
+      "source_url": "https://modelcontextprotocol.io/introduction",
+      "source_type": "official_protocol_docs",
+      "author": "Model Context Protocol maintainers",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Model Context Protocol",
+      "version": "",
+      "supporting_claim": "官方协议介绍将 MCP 定义为连接 AI 应用与外部系统的数据源、工具和工作流的开放标准。",
+      "counter_evidence": "具体安全性取决于客户端、服务器实现、权限配置与数据处理方式。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-065"
+      ]
+    },
+    {
+      "id": "reddit-tempchat",
+      "source_url": "https://www.reddit.com/r/cybersecurity/comments/1mmfm9e/chatgpt_temporary_chat_feature_remembers_chat/",
+      "source_type": "community_reddit",
+      "author": "Reddit 用户",
+      "published_at": "2025-08-10",
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Temporary Chat",
+      "version": "",
+      "supporting_claim": "一名用户称其临时聊天内容似乎在其他会话中被提及，评论和后续说明仍无法独立确认具体原因。",
+      "counter_evidence": "这是单个未验证报告，与 OpenAI 当前关于临时聊天不写入记忆的官方说明并不一致；不能据此断言产品存在普遍记忆泄漏。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-052"
+      ]
+    }
+  ]
+}

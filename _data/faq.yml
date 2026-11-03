@@ -1,0 +1,1655 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-03",
+  "evidence_levels": {
+    "S": "多源独立验证形成的稳定共识",
+    "A": "官方或专业资料支持，结论适用范围明确",
+    "B": "社区中存在重复报告但仍需产品/样本边界",
+    "C": "单个用户经验，仅作线索",
+    "pending": "证据不足或来源无法访问"
+  },
+  "categories": [
+    {
+      "id": "01",
+      "slug": "ai-basics",
+      "name": "AI 基础与原理",
+      "description": "人工智能、生成式 AI、语言模型与上下文等基础概念。"
+    },
+    {
+      "id": "02",
+      "slug": "models",
+      "name": "AI 模型与选择",
+      "description": "模型类别、能力差异、模型选择与产品边界。"
+    },
+    {
+      "id": "03",
+      "slug": "prompting",
+      "name": "提示词与对话",
+      "description": "提示词设计、格式控制、多轮沟通与输出差异。"
+    },
+    {
+      "id": "04",
+      "slug": "files-multimodal",
+      "name": "文件与多模态",
+      "description": "文件上传、图像、音频、视频与多模态输入。"
+    },
+    {
+      "id": "05",
+      "slug": "applications",
+      "name": "AI 功能与实际应用",
+      "description": "联网搜索、深度研究、智能体与办公编程应用。"
+    },
+    {
+      "id": "06",
+      "slug": "limits",
+      "name": "额度与使用限制",
+      "description": "用量、速率限制、上下文窗口与额度耗尽后的处理。"
+    },
+    {
+      "id": "07",
+      "slug": "network",
+      "name": "网络与访问",
+      "description": "地区可用性、加载、网络错误与服务状态排查。"
+    },
+    {
+      "id": "08",
+      "slug": "privacy",
+      "name": "账号与隐私",
+      "description": "聊天保存、模型训练、临时聊天、记忆与文件安全。"
+    },
+    {
+      "id": "09",
+      "slug": "troubleshooting",
+      "name": "错误与问题排查",
+      "description": "常见错误提示、HTTP 状态码、文件上传与回答中断。"
+    },
+    {
+      "id": "10",
+      "slug": "advanced",
+      "name": "AI 效率与进阶技巧",
+      "description": "工作流、RAG、知识库、MCP 与效率实践。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "faq-001",
+      "category": "01",
+      "question": "什么是人工智能（AI）？",
+      "answer": "人工智能（AI）是让计算机系统完成通常需要人类智能参与的任务的一类方法与技术，例如识别信息、预测、生成内容、规划或辅助决策。它不是单一程序或某种有意识的“机器大脑”；不同系统可能使用规则、统计学习、神经网络或这些方法的组合。",
+      "keywords": [
+        "人工智能",
+        "AI",
+        "定义",
+        "机器学习"
+      ],
+      "related_questions": [
+        "faq-002",
+        "faq-008"
+      ],
+      "sources": [
+        "google-genai-glossary"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-002",
+      "category": "01",
+      "question": "什么是生成式人工智能（Generative AI）？",
+      "answer": "生成式 AI 是能够根据输入生成新内容的模型或系统，输出可以是文字、代码、图片、音频或视频。生成结果是模型根据训练与当前上下文计算出来的内容，不等同于从数据库中复制一条确定答案；内容是否准确仍需核验。",
+      "keywords": [
+        "生成式人工智能",
+        "Generative AI",
+        "内容生成"
+      ],
+      "related_questions": [
+        "faq-003",
+        "faq-026"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "google-ml-glossary"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-003",
+      "category": "01",
+      "question": "什么是大语言模型（LLM）？",
+      "answer": "大语言模型（LLM）是通过大量文本等数据训练、能够处理和生成语言的模型类别。“大”通常指模型规模或训练规模较大，并没有一个对所有机构通用的参数量门槛。现代 LLM 常把文本切分为 Token，并依据上下文预测后续 Token；实际产品通常还会加入指令微调、安全策略、检索或工具等组件。",
+      "keywords": [
+        "LLM",
+        "大语言模型",
+        "Token",
+        "语言模型"
+      ],
+      "related_questions": [
+        "faq-001",
+        "faq-005",
+        "faq-008"
+      ],
+      "sources": [
+        "google-llm-course",
+        "google-genai-glossary",
+        "openai-tokens"
+      ],
+      "confidence_level": "S",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-004",
+      "category": "01",
+      "question": "AI 是如何理解和回答问题的？",
+      "answer": "聊天模型先把你的问题、对话历史及可用文件或工具结果编码成模型输入，再计算可能的输出并逐步生成回答。这里的“理解”是对模式和上下文进行计算，不代表它像人一样具有意识或自动确认事实。若产品启用了搜索、文件检索或代码工具，回答还可能使用这些工具返回的信息。",
+      "keywords": [
+        "AI 原理",
+        "回答生成",
+        "上下文",
+        "工具调用"
+      ],
+      "related_questions": [
+        "faq-003",
+        "faq-028",
+        "faq-059"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "openai-truth"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-005",
+      "category": "01",
+      "question": "什么是 Token？为什么 AI 会使用 Token？",
+      "answer": "Token 是模型处理文本的基本片段，可能对应一个字、一个词的一部分、标点或空格；它不等于固定长度的汉字或英文单词。模型用 Token 序列表示输入和输出，便于训练与计算。相同文字在不同模型或编码器中可能得到不同 Token 数，因此估算额度或上下文时应使用对应平台的说明或分词工具。",
+      "keywords": [
+        "Token",
+        "分词",
+        "计费",
+        "输入长度"
+      ],
+      "related_questions": [
+        "faq-003",
+        "faq-006",
+        "faq-038"
+      ],
+      "sources": [
+        "openai-tokens",
+        "openai-tokenizer",
+        "google-ml-glossary"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-006",
+      "category": "01",
+      "question": "什么是上下文窗口（Context Window）？",
+      "answer": "上下文窗口是某个模型在一次请求中能够共同处理的信息容量，通常以 Token 计。它可能包含系统指令、当前提问、历史对话、附加文件或检索片段以及留给回答的空间；产品可能采用压缩、检索或分段等策略，所以界面中的聊天长度不一定等于模型窗口。窗口更大也不保证模型能同等可靠地利用每个位置的信息。",
+      "keywords": [
+        "上下文窗口",
+        "Context Window",
+        "Token 限制",
+        "长对话"
+      ],
+      "related_questions": [
+        "faq-005",
+        "faq-038",
+        "faq-039"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "openai-tokens",
+        "anthropic-context",
+        "reddit-context",
+        "github-context",
+        "x-context-comment"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-007",
+      "category": "02",
+      "question": "ChatGPT、Claude、Gemini 和 Grok 有什么区别？",
+      "answer": "它们是不同厂商提供的模型与产品体系，差异会随具体模型、版本、套餐和地区变化。比较时不要只看品牌：先确定任务，再对照当前模型说明、可用工具（搜索、文件、代码等）、上下文与额度、数据控制、价格和你自己的代表性任务测试。任何一方都不能仅凭名称被概括为始终最好。",
+      "keywords": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Grok",
+        "模型比较"
+      ],
+      "related_questions": [
+        "faq-009",
+        "faq-012"
+      ],
+      "sources": [
+        "openai-capabilities",
+        "anthropic-context",
+        "gemini-upload",
+        "x-grok"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-008",
+      "category": "02",
+      "question": "什么是 AI 模型？模型与 AI 产品有什么区别？",
+      "answer": "AI 模型是从数据中训练得到、可接收输入并产生预测或生成结果的计算系统。AI 产品则是面向用户的完整服务，可能把一个或多个模型与界面、账号、搜索、文件存储、记忆、安全规则及第三方工具组合起来。因此，同一模型可以被不同产品以不同功能、限制和体验提供；同一产品也可能切换或路由到不同模型。",
+      "keywords": [
+        "AI 模型",
+        "AI 产品",
+        "模型服务",
+        "应用"
+      ],
+      "related_questions": [
+        "faq-003",
+        "faq-007",
+        "faq-009"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "google-ml-glossary"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-009",
+      "category": "02",
+      "question": "不同 AI 模型的能力有什么区别？",
+      "answer": "模型之间会在推理、写作、代码、速度、多模态、长上下文、工具调用、成本和语言表现上各有侧重，能力还会因版本与产品配置而变。公开基准可帮助筛选，但不一定代表你的真实任务。建议用相同输入、明确评分标准，测试准确性、可验证性、响应时间和额度消耗，并记录测试日期与模型版本。",
+      "keywords": [
+        "模型能力",
+        "基准测试",
+        "推理",
+        "多模态"
+      ],
+      "related_questions": [
+        "faq-007",
+        "faq-010",
+        "faq-012"
+      ],
+      "sources": [
+        "openai-capabilities",
+        "anthropic-context",
+        "gemini-upload"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-010",
+      "category": "02",
+      "question": "推理模型（Reasoning Model）是什么？",
+      "answer": "",
+      "keywords": [
+        "推理模型",
+        "Reasoning Model",
+        "思考模式"
+      ],
+      "related_questions": [
+        "faq-009",
+        "faq-036",
+        "faq-012"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-011",
+      "category": "02",
+      "question": "什么是开源模型和闭源模型？",
+      "answer": "",
+      "keywords": [
+        "开源模型",
+        "开放权重",
+        "闭源模型",
+        "许可证"
+      ],
+      "related_questions": [
+        "faq-008",
+        "faq-012"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-012",
+      "category": "02",
+      "question": "如何选择适合自己的 AI 模型？",
+      "answer": "先列出常做任务、是否需要联网或文件分析、隐私要求、预算和设备条件，再用同一组真实任务比较候选模型。记录结果是否正确、能否引用来源、是否遵守格式、完成速度及额度消耗。对重要事实要求可查证的出处；遇到医疗、法律、财务等高影响决定，应再查权威资料或咨询专业人士。",
+      "keywords": [
+        "模型选择",
+        "AI 工具",
+        "任务测试",
+        "预算"
+      ],
+      "related_questions": [
+        "faq-007",
+        "faq-009",
+        "faq-010"
+      ],
+      "sources": [
+        "openai-capabilities",
+        "openai-search",
+        "openai-truth"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-013",
+      "category": "03",
+      "question": "什么是 Prompt（提示词）？",
+      "answer": "Prompt（提示词）是提供给生成模型的输入，可以是问题、指令、背景资料、示例，也可以包含图片或音频等内容。提示词的作用是为模型提供当前任务的目标和上下文；它不是一条能保证模型执行正确的程序。",
+      "keywords": [
+        "Prompt",
+        "提示词",
+        "输入",
+        "指令"
+      ],
+      "related_questions": [
+        "faq-014",
+        "faq-016",
+        "faq-017"
+      ],
+      "sources": [
+        "openai-prompt",
+        "google-ml-glossary"
+      ],
+      "confidence_level": "S",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-014",
+      "category": "03",
+      "question": "如何编写高质量的 AI 提示词？",
+      "answer": "把提示词写成一份简短任务说明：交代目标、必要背景、限制条件、读者或使用场景、期望格式，并提供可信材料。复杂任务先要一个草稿，再指出具体缺漏并迭代；不要用冗长角色设定代替事实背景。涉及准确性时要求模型区分已知、推断和未知，并核对引用来源。",
+      "keywords": [
+        "提示词技巧",
+        "Prompt Engineering",
+        "背景",
+        "输出要求"
+      ],
+      "related_questions": [
+        "faq-013",
+        "faq-015",
+        "faq-016",
+        "faq-018"
+      ],
+      "sources": [
+        "openai-prompt",
+        "reddit-prompt-context"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-015",
+      "category": "03",
+      "question": "为什么 AI 有时无法准确理解我的问题？",
+      "answer": "常见原因包括问题有歧义、关键信息或约束缺失、上下文太长、文件内容没有被正确提取，或模型本身能力与任务不匹配。可以补充目标、对象、时间范围、输入材料和“不允许做什么”，并让模型先复述任务或列出不确定点。即使提示清楚，模型也可能误解或生成错误内容。",
+      "keywords": [
+        "理解偏差",
+        "提示词",
+        "上下文",
+        "错误回答"
+      ],
+      "related_questions": [
+        "faq-014",
+        "faq-019",
+        "faq-059"
+      ],
+      "sources": [
+        "openai-prompt",
+        "openai-truth",
+        "reddit-prompt-context"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-016",
+      "category": "03",
+      "question": "如何让 AI 按照指定格式输出内容？",
+      "answer": "直接写出格式约束，并提供一个小样例通常更可靠。例如说明字段名称、顺序、语言、长度、是否允许额外文字，再给一段符合要求的示例。若产品或 API 提供结构化输出或 JSON Schema，严格机器处理时优先使用该功能；普通提示词只能提高遵循概率，仍应验证输出。",
+      "keywords": [
+        "格式输出",
+        "JSON",
+        "表格",
+        "结构化输出"
+      ],
+      "related_questions": [
+        "faq-013",
+        "faq-014",
+        "faq-019"
+      ],
+      "sources": [
+        "openai-prompt",
+        "anthropic-prompting"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-017",
+      "category": "03",
+      "question": "如何让 AI 扮演特定角色或专家？",
+      "answer": "",
+      "keywords": [
+        "角色提示",
+        "专家角色",
+        "Persona",
+        "提示词"
+      ],
+      "related_questions": [
+        "faq-013",
+        "faq-014",
+        "faq-059"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-018",
+      "category": "03",
+      "question": "如何通过多轮对话逐步完善结果？",
+      "answer": "",
+      "keywords": [
+        "多轮对话",
+        "迭代",
+        "修订",
+        "工作流程"
+      ],
+      "related_questions": [
+        "faq-014",
+        "faq-015",
+        "faq-039",
+        "faq-061"
+      ],
+      "sources": [],
+      "confidence_level": "A",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-019",
+      "category": "03",
+      "question": "什么是 Few-shot Prompting（少样本提示）？",
+      "answer": "",
+      "keywords": [
+        "Few-shot",
+        "少样本提示",
+        "示例",
+        "In-context Learning"
+      ],
+      "related_questions": [
+        "faq-013",
+        "faq-014",
+        "faq-016"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-020",
+      "category": "03",
+      "question": "为什么同一个问题每次得到的回答都不一样？",
+      "answer": "生成模型通常会在多个可能输出中进行选择，因此即使问题相同也可能出现措辞或细节差异。变化还可能来自模型版本、产品路由、上下文、联网结果或采样参数。需要稳定结果时，固定模型和输入、明确格式与评估标准；可用 API 的应用再控制随机性相关参数，但这仍不保证所有自然语言回答完全一致。",
+      "keywords": [
+        "回答不同",
+        "随机性",
+        "采样",
+        "模型版本"
+      ],
+      "related_questions": [
+        "faq-009",
+        "faq-014",
+        "faq-059"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "openai-prompt"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-021",
+      "category": "04",
+      "question": "AI 可以读取 PDF、Word 和 Excel 文件吗？",
+      "answer": "许多 AI 产品支持上传部分 PDF、文档、表格或图片，但支持的格式、账号权限、大小、数量和解析能力各不相同，且会随产品与套餐变化。表格中的公式、扫描版 PDF、复杂排版或嵌入图片可能无法完整提取。上传后可让 AI 先列出识别到的页数、工作表或关键字段，再抽查原文。",
+      "keywords": [
+        "文件上传",
+        "PDF",
+        "Word",
+        "Excel",
+        "文档分析"
+      ],
+      "related_questions": [
+        "faq-022",
+        "faq-023",
+        "faq-027"
+      ],
+      "sources": [
+        "openai-upload",
+        "gemini-upload",
+        "anthropic-usage",
+        "reddit-upload",
+        "anthropic-upload"
+      ],
+      "confidence_level": "S",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-022",
+      "category": "04",
+      "question": "如何让 AI 总结长篇文档？",
+      "answer": "先确认平台能处理该文件，再指定总结目的、目标读者、长度与重点；要求结论引用页码、章节或原文片段。超长文档可按章节分段总结，最后综合各段，并让模型核对矛盾和遗漏。不要仅因模型声称“读完”就认定覆盖了全文，应抽查关键章节与数字。",
+      "keywords": [
+        "长文档总结",
+        "PDF",
+        "分段",
+        "引用核验"
+      ],
+      "related_questions": [
+        "faq-021",
+        "faq-006",
+        "faq-059"
+      ],
+      "sources": [
+        "openai-upload",
+        "gemini-upload",
+        "reddit-upload",
+        "reddit-longpdf"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-023",
+      "category": "04",
+      "question": "AI 能识别图片中的文字和内容吗？",
+      "answer": "支持视觉输入的模型可以描述图片、识别部分文字或回答图像问题，但效果受清晰度、字体、语言、旋转、遮挡和版式影响。小字、密集表格、手写内容及精确计数尤其容易出错。若结果用于报表、合同或凭证，应让模型指出不确定区域，并与原图逐项核对。",
+      "keywords": [
+        "图片识别",
+        "OCR",
+        "视觉模型",
+        "截图"
+      ],
+      "related_questions": [
+        "faq-024",
+        "faq-026"
+      ],
+      "sources": [
+        "openai-capabilities",
+        "gemini-upload"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-024",
+      "category": "04",
+      "question": "AI 可以分析图表、截图和数据吗？",
+      "answer": "",
+      "keywords": [
+        "图表分析",
+        "截图",
+        "数据分析",
+        "可视化"
+      ],
+      "related_questions": [
+        "faq-021",
+        "faq-023",
+        "faq-032"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-025",
+      "category": "04",
+      "question": "AI 可以处理音频和视频吗？",
+      "answer": "",
+      "keywords": [
+        "音频",
+        "视频",
+        "转录",
+        "多模态"
+      ],
+      "related_questions": [
+        "faq-026",
+        "faq-027"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-026",
+      "category": "04",
+      "question": "什么是多模态 AI？",
+      "answer": "多模态 AI 能处理两种或更多类型的信息，例如文字、图片、声音或视频。不同系统可能把多种输入映射到同一模型，也可能由多个专用组件协作；“支持多模态”不代表每种格式、分辨率或任务都支持，也不等于跨模态理解没有误差。使用前要查看当前产品支持说明并用样例验证。",
+      "keywords": [
+        "多模态 AI",
+        "图像",
+        "音频",
+        "视频"
+      ],
+      "related_questions": [
+        "faq-002",
+        "faq-023",
+        "faq-025"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "google-ml-glossary",
+        "openai-capabilities"
+      ],
+      "confidence_level": "S",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-027",
+      "category": "04",
+      "question": "上传文件时有哪些格式和大小限制？",
+      "answer": "",
+      "keywords": [
+        "文件大小",
+        "格式限制",
+        "上传次数",
+        "配额"
+      ],
+      "related_questions": [
+        "faq-021",
+        "faq-022",
+        "faq-036",
+        "faq-057"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-028",
+      "category": "05",
+      "question": "AI 可以联网搜索实时信息吗？",
+      "answer": "只有在产品当前提供并启用了网页搜索，或应用通过 API 配置了搜索工具时，模型才可能检索新网页。未启用搜索时，回答主要依据模型已有知识，可能过时。联网也不保证检索完整或来源正确；查看引用链接、发布时间和原始内容，并把动态结论与模型的解释分开核验。",
+      "keywords": [
+        "联网搜索",
+        "实时信息",
+        "引用",
+        "搜索工具"
+      ],
+      "related_questions": [
+        "faq-029",
+        "faq-059"
+      ],
+      "sources": [
+        "openai-search",
+        "openai-api-current-info"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-029",
+      "category": "05",
+      "question": "什么是 AI 深度研究（Deep Research）？",
+      "answer": "深度研究通常指系统围绕一个复杂问题分阶段搜索、阅读多来源资料，再综合成带来源链接的报告。它比一次普通搜索耗时更多，且结果受可访问网站、查询范围、引用准确性和套餐额度影响。阅读报告时仍应打开关键原始来源，确认引用确实支持对应结论。功能名称与限制因产品而异。",
+      "keywords": [
+        "Deep Research",
+        "深度研究",
+        "多来源",
+        "研究报告"
+      ],
+      "related_questions": [
+        "faq-028",
+        "faq-059"
+      ],
+      "sources": [
+        "openai-deep-research",
+        "openai-search"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-030",
+      "category": "05",
+      "question": "AI 能够生成图片吗？",
+      "answer": "",
+      "keywords": [
+        "AI 生成图片",
+        "图像生成",
+        "编辑图片"
+      ],
+      "related_questions": [
+        "faq-002",
+        "faq-026",
+        "faq-031"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-031",
+      "category": "05",
+      "question": "AI 能够生成视频和音频吗？",
+      "answer": "",
+      "keywords": [
+        "视频生成",
+        "音频生成",
+        "语音合成",
+        "音乐"
+      ],
+      "related_questions": [
+        "faq-025",
+        "faq-026",
+        "faq-030"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-032",
+      "category": "05",
+      "question": "AI 可以编写、检查和调试代码吗？",
+      "answer": "",
+      "keywords": [
+        "AI 编程",
+        "调试代码",
+        "代码审查",
+        "测试"
+      ],
+      "related_questions": [
+        "faq-009",
+        "faq-014",
+        "faq-034"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-033",
+      "category": "05",
+      "question": "什么是 AI Agent（智能体）？",
+      "answer": "AI Agent（智能体）是能围绕目标处理输入、选择步骤，并在授权范围内调用工具或执行动作的软件系统。它通常由模型、指令、工具、状态或循环控制组成。Agent 的自主程度各不相同；能“计划”不意味着计划正确，能调用工具也不意味着获得无限权限，因此要设置访问范围、确认步骤和可审计记录。",
+      "keywords": [
+        "AI Agent",
+        "智能体",
+        "工具调用",
+        "自主执行"
+      ],
+      "related_questions": [
+        "faq-034",
+        "faq-065"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "anthropic-prompting"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-034",
+      "category": "05",
+      "question": "AI 可以自动执行任务吗？",
+      "answer": "可以，但前提是产品或集成提供了相应工具和权限，例如读写文件、操作浏览器或调用业务 API。纯聊天模型通常只生成建议；执行动作的是外部工具或 Agent 工作流。开始自动化前限制权限与数据范围，对发送消息、付款、删除或发布等高影响动作要求人工确认，并保留操作日志和撤销方式。",
+      "keywords": [
+        "自动执行",
+        "Agent",
+        "自动化",
+        "权限控制"
+      ],
+      "related_questions": [
+        "faq-033",
+        "faq-062",
+        "faq-065"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "anthropic-prompting"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-035",
+      "category": "05",
+      "question": "AI 可以帮助处理日常办公和数据分析吗？",
+      "answer": "",
+      "keywords": [
+        "办公效率",
+        "数据分析",
+        "文档",
+        "自动化"
+      ],
+      "related_questions": [
+        "faq-032",
+        "faq-034",
+        "faq-066"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-036",
+      "category": "06",
+      "question": "为什么 AI 会限制使用次数？",
+      "answer": "服务商通过套餐额度、速率限制或工具配额管理计算资源、服务稳定性和滥用风险；额度制度由具体产品决定。一次使用也可能因模型、输入长度、输出长度、文件、搜索或推理工具而消耗不同资源。用户端的套餐消息上限与开发者 API 的请求/Token 速率限制不是同一件事。",
+      "keywords": [
+        "使用次数",
+        "AI 额度",
+        "套餐限制",
+        "资源"
+      ],
+      "related_questions": [
+        "faq-037",
+        "faq-039",
+        "faq-040",
+        "faq-041"
+      ],
+      "sources": [
+        "openai-limits",
+        "anthropic-usage",
+        "reddit-claude-usage"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-037",
+      "category": "06",
+      "question": "什么是 Rate Limit（速率限制）？",
+      "answer": "Rate Limit 是服务在一段时间内允许的请求或资源用量上限。以 OpenAI API 为例，可能分别限制每分钟请求数、Token 数、每日请求数或图片数量；触发时常见 429，但该状态码也可能代表余额或支出限制。应读取错误码和平台控制台，降低突发请求并按 Retry-After 退避，而不是无间隔重试。",
+      "keywords": [
+        "Rate Limit",
+        "速率限制",
+        "RPM",
+        "TPM",
+        "HTTP 429"
+      ],
+      "related_questions": [
+        "faq-036",
+        "faq-041",
+        "faq-055"
+      ],
+      "sources": [
+        "openai-api-rate-limits",
+        "openai-api-429",
+        "reddit-api-rate"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-038",
+      "category": "06",
+      "question": "什么是 Context Window 和 Token Limit？",
+      "answer": "Context Window 是模型单次可处理输入与生成内容的总上下文容量；Token Limit 则可能指输入上限、输出上限、套餐额度或 API 速率中的 Token 数，需看具体界面或文档语境。它们不是同一项限制：一个长请求可能撞上上下文窗口，而短时间大量请求可能触发每分钟 Token 速率限制。",
+      "keywords": [
+        "Context Window",
+        "Token Limit",
+        "上下文",
+        "Token 额度"
+      ],
+      "related_questions": [
+        "faq-005",
+        "faq-006",
+        "faq-037",
+        "faq-039"
+      ],
+      "sources": [
+        "google-genai-glossary",
+        "openai-tokens",
+        "anthropic-context",
+        "reddit-context",
+        "github-context"
+      ],
+      "confidence_level": "S",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-039",
+      "category": "06",
+      "question": "为什么长对话会消耗更多使用额度？",
+      "answer": "",
+      "keywords": [
+        "长对话",
+        "Token 消耗",
+        "历史上下文",
+        "使用额度"
+      ],
+      "related_questions": [
+        "faq-006",
+        "faq-036",
+        "faq-038"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-040",
+      "category": "06",
+      "question": "为什么不同 AI 模型的使用限制不同？",
+      "answer": "",
+      "keywords": [
+        "模型额度差异",
+        "计算资源",
+        "套餐",
+        "用量"
+      ],
+      "related_questions": [
+        "faq-009",
+        "faq-036",
+        "faq-041"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-041",
+      "category": "06",
+      "question": "达到使用上限后应该怎么办？",
+      "answer": "先辨认提示的是套餐消息额度、上下文窗口、API 速率限制，还是余额/支出限制，并查看预计重置时间。套餐额度通常需等待重置或使用页面提供的其他模型/功能；上下文超限可缩短输入或拆分任务；API 429 应依官方错误说明降速重试，计费类错误则检查余额和项目限额。不要重复提交敏感请求来“试探”额度。",
+      "keywords": [
+        "达到上限",
+        "额度重置",
+        "429",
+        "故障处理"
+      ],
+      "related_questions": [
+        "faq-036",
+        "faq-037",
+        "faq-038"
+      ],
+      "sources": [
+        "openai-limits",
+        "openai-api-429",
+        "anthropic-usage"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-042",
+      "category": "07",
+      "question": "为什么部分 AI 服务在某些地区无法访问？",
+      "answer": "不同服务会根据法律合规、产品发布范围、网络基础设施和账号政策设置地区可用范围。服务商可能限制未支持地区的访问，旅行、网络出口或账号验证也会影响判断。先查服务的最新官方支持地区和条款；不要仅凭网页打不开就推断是封锁、账号违规或服务故障。",
+      "keywords": [
+        "地区限制",
+        "服务可用性",
+        "账号验证",
+        "网络访问"
+      ],
+      "related_questions": [
+        "faq-043",
+        "faq-046",
+        "faq-047"
+      ],
+      "sources": [
+        "openai-supported-regions",
+        "openai-unsupported-regions"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-043",
+      "category": "07",
+      "question": "为什么 AI 网页一直加载或无法打开？",
+      "answer": "原因可能在服务端故障、网络连接、DNS、代理或安全过滤、浏览器扩展、Cookie/脚本、WebSocket 连接或账号验证。先看官方状态页，再用隐私窗口、其他浏览器或另一网络对比；记录错误提示和发生时间。若只有一台设备或一种网络失败，更可能是本地链路问题，但仍需逐项排查。",
+      "keywords": [
+        "页面加载",
+        "无法访问",
+        "浏览器",
+        "网络故障"
+      ],
+      "related_questions": [
+        "faq-045",
+        "faq-047",
+        "faq-054"
+      ],
+      "sources": [
+        "openai-error-guide",
+        "openai-network",
+        "openai-status",
+        "reddit-outage"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-044",
+      "category": "07",
+      "question": "为什么 AI 回复速度突然变慢？",
+      "answer": "",
+      "keywords": [
+        "回复变慢",
+        "延迟",
+        "网络",
+        "服务负载"
+      ],
+      "related_questions": [
+        "faq-043",
+        "faq-047"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-045",
+      "category": "07",
+      "question": "为什么 AI 对话过程中会出现 Network Error？",
+      "answer": "Network Error 表示当前请求未能稳定完成，可能是本地网络中断、代理/防火墙阻断长连接、浏览器扩展干扰，也可能是服务端临时问题。先保存草稿并检查状态页，然后尝试刷新、新对话、禁用相关扩展或切换网络；若错误可重复，记录时间、请求编号和网络环境并联系官方支持。",
+      "keywords": [
+        "Network Error",
+        "网络错误",
+        "WebSocket",
+        "连接中断"
+      ],
+      "related_questions": [
+        "faq-043",
+        "faq-044",
+        "faq-054"
+      ],
+      "sources": [
+        "openai-error-guide",
+        "openai-network",
+        "openai-status"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-046",
+      "category": "07",
+      "question": "为什么更换网络或 IP 后需要重新验证？",
+      "answer": "",
+      "keywords": [
+        "IP 变化",
+        "重新验证",
+        "登录安全",
+        "账号保护"
+      ],
+      "related_questions": [
+        "faq-042",
+        "faq-043",
+        "faq-047"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-047",
+      "category": "07",
+      "question": "如何判断 AI 平台是否正在发生服务故障？",
+      "answer": "",
+      "keywords": [
+        "服务故障",
+        "状态页",
+        "outage",
+        "故障判断"
+      ],
+      "related_questions": [
+        "faq-043",
+        "faq-044",
+        "faq-045"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-048",
+      "category": "08",
+      "question": "AI 平台会保存我的聊天记录吗？",
+      "answer": "是否保存、保存多久以及谁能访问，取决于具体平台、账号类型、聊天模式、组织设置和当地政策。常规聊天可能出现在历史记录中；删除、临时聊天或企业账号通常有不同保留规则。查阅对应服务的隐私政策与数据控制页面，并区分“用于提供服务/安全保存”和“用于改进模型训练”这两种用途。",
+      "keywords": [
+        "聊天记录",
+        "数据保留",
+        "隐私政策",
+        "账号类型"
+      ],
+      "related_questions": [
+        "faq-049",
+        "faq-050",
+        "faq-051",
+        "faq-053"
+      ],
+      "sources": [
+        "openai-data-controls",
+        "openai-temporary",
+        "openai-memory",
+        "gemini-privacy"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-049",
+      "category": "08",
+      "question": "AI 会使用我的对话内容训练模型吗？",
+      "answer": "不同服务、账号类型和设置的处理方式不同，不能把一家平台的规则套用到所有 AI。以 ChatGPT 为例，个人账号可在 Data Controls 管理模型改进选项；Business、Enterprise、Edu 等受管理工作区默认规则不同。应阅读所用产品的最新隐私说明，并分别检查训练、记忆、反馈、人工审核和数据保留设置。",
+      "keywords": [
+        "模型训练",
+        "对话隐私",
+        "Data Controls",
+        "企业账号"
+      ],
+      "related_questions": [
+        "faq-048",
+        "faq-051",
+        "faq-052"
+      ],
+      "sources": [
+        "openai-data-controls",
+        "openai-memory",
+        "gemini-privacy"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-050",
+      "category": "08",
+      "question": "如何删除 AI 聊天记录？",
+      "answer": "",
+      "keywords": [
+        "删除聊天记录",
+        "删除数据",
+        "隐私设置",
+        "记忆"
+      ],
+      "related_questions": [
+        "faq-048",
+        "faq-049",
+        "faq-052"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-051",
+      "category": "08",
+      "question": "什么是临时聊天（Temporary Chat）？",
+      "answer": "",
+      "keywords": [
+        "临时聊天",
+        "Temporary Chat",
+        "隐私",
+        "数据保留"
+      ],
+      "related_questions": [
+        "faq-048",
+        "faq-049",
+        "faq-052"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-052",
+      "category": "08",
+      "question": "什么是 AI 记忆（Memory）？",
+      "answer": "记忆是部分 AI 产品用来在不同会话间保留或引用偏好、事实或历史内容的个性化功能；它与当前对话的上下文窗口、聊天历史及模型训练设置是不同概念。用户通常可查看、修改或关闭部分记忆功能，但关闭记忆不一定会删除聊天记录。具体能力与控制项要按产品和账号查看。",
+      "keywords": [
+        "AI 记忆",
+        "Memory",
+        "个性化",
+        "聊天历史"
+      ],
+      "related_questions": [
+        "faq-048",
+        "faq-049",
+        "faq-050",
+        "faq-051"
+      ],
+      "sources": [
+        "openai-memory",
+        "openai-data-controls",
+        "reddit-tempchat"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-03",
+      "status": "research_draft_community_gaps",
+      "research_notes": "已形成官方资料支撑的中文答案草稿；X 专家覆盖不完整，社区样本为定性个案，需按报告补充后再发布。"
+    },
+    {
+      "id": "faq-053",
+      "category": "08",
+      "question": "上传个人文件给 AI 是否安全？",
+      "answer": "",
+      "keywords": [
+        "文件隐私",
+        "上传安全",
+        "敏感信息",
+        "数据控制"
+      ],
+      "related_questions": [
+        "faq-048",
+        "faq-049",
+        "faq-051"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-054",
+      "category": "09",
+      "question": "AI 提示 Something went wrong 怎么办？",
+      "answer": "",
+      "keywords": [
+        "Something went wrong",
+        "通用错误",
+        "排查",
+        "状态页"
+      ],
+      "related_questions": [
+        "faq-043",
+        "faq-045",
+        "faq-047"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-055",
+      "category": "09",
+      "question": "HTTP 401、403 和 429 分别代表什么？",
+      "answer": "",
+      "keywords": [
+        "HTTP 401",
+        "HTTP 403",
+        "HTTP 429",
+        "API 错误"
+      ],
+      "related_questions": [
+        "faq-037",
+        "faq-041",
+        "faq-056"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-056",
+      "category": "09",
+      "question": "HTTP 500、502 和 503 有什么区别？",
+      "answer": "",
+      "keywords": [
+        "HTTP 500",
+        "HTTP 502",
+        "HTTP 503",
+        "服务器错误"
+      ],
+      "related_questions": [
+        "faq-047",
+        "faq-054",
+        "faq-055"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-057",
+      "category": "09",
+      "question": "为什么 AI 上传文件失败？",
+      "answer": "",
+      "keywords": [
+        "上传失败",
+        "文件格式",
+        "文件大小",
+        "配额"
+      ],
+      "related_questions": [
+        "faq-021",
+        "faq-027",
+        "faq-043"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-058",
+      "category": "09",
+      "question": "为什么 AI 无法生成回答或突然中断？",
+      "answer": "",
+      "keywords": [
+        "回答中断",
+        "无法生成",
+        "超时",
+        "额度"
+      ],
+      "related_questions": [
+        "faq-036",
+        "faq-043",
+        "faq-045",
+        "faq-054"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-059",
+      "category": "09",
+      "question": "为什么 AI 提供的答案有时不准确？",
+      "answer": "",
+      "keywords": [
+        "幻觉",
+        "错误答案",
+        "引用核验",
+        "事实检查"
+      ],
+      "related_questions": [
+        "faq-004",
+        "faq-014",
+        "faq-028",
+        "faq-029"
+      ],
+      "sources": [],
+      "confidence_level": "A",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-060",
+      "category": "10",
+      "question": "如何让 AI 更好地理解自己的工作需求？",
+      "answer": "",
+      "keywords": [
+        "工作需求",
+        "背景信息",
+        "约束",
+        "验收标准"
+      ],
+      "related_questions": [
+        "faq-014",
+        "faq-015",
+        "faq-061"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-061",
+      "category": "10",
+      "question": "如何建立长期使用的 AI 工作流程？",
+      "answer": "",
+      "keywords": [
+        "AI 工作流程",
+        "流程设计",
+        "提示词模板",
+        "复核"
+      ],
+      "related_questions": [
+        "faq-060",
+        "faq-062",
+        "faq-066"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-062",
+      "category": "10",
+      "question": "什么是 AI 工作流（AI Workflow）？",
+      "answer": "",
+      "keywords": [
+        "AI Workflow",
+        "工作流",
+        "自动化",
+        "工具调用"
+      ],
+      "related_questions": [
+        "faq-033",
+        "faq-034",
+        "faq-061"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-063",
+      "category": "10",
+      "question": "什么是 RAG（检索增强生成）？",
+      "answer": "",
+      "keywords": [
+        "RAG",
+        "检索增强生成",
+        "向量检索",
+        "知识库"
+      ],
+      "related_questions": [
+        "faq-064",
+        "faq-065"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-064",
+      "category": "10",
+      "question": "什么是知识库？如何让 AI 使用自己的资料？",
+      "answer": "",
+      "keywords": [
+        "知识库",
+        "私有资料",
+        "RAG",
+        "文件检索"
+      ],
+      "related_questions": [
+        "faq-021",
+        "faq-022",
+        "faq-063"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-065",
+      "category": "10",
+      "question": "什么是 MCP？它能为 AI 带来什么能力？",
+      "answer": "",
+      "keywords": [
+        "MCP",
+        "Model Context Protocol",
+        "工具",
+        "连接器"
+      ],
+      "related_questions": [
+        "faq-033",
+        "faq-034",
+        "faq-063"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    },
+    {
+      "id": "faq-066",
+      "category": "10",
+      "question": "如何使用 AI 提高学习、办公和编程效率？",
+      "answer": "",
+      "keywords": [
+        "AI 效率",
+        "学习",
+        "办公",
+        "编程",
+        "人机协作"
+      ],
+      "related_questions": [
+        "faq-032",
+        "faq-035",
+        "faq-060",
+        "faq-061"
+      ],
+      "sources": [],
+      "confidence_level": "待验证",
+      "last_verified": "",
+      "status": "outline_only",
+      "research_notes": "已纳入问题目录；本阶段未列入用户指定首批优先研究编号。"
+    }
+  ]
+}
