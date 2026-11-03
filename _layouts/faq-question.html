@@ -4,7 +4,7 @@ layout: default
 {% assign question = page.faq_question %}
 {% assign category = page.faq_category %}
 {% assign level = question.confidence_level | default: 'pending' %}
-{% if question.status == 'research_draft_community_gaps' %}{% assign display_evidence = '社区资料核验中' %}
+{% if question.status == 'research_draft_community_gaps' %}{% assign display_evidence = '官方资料已核对' %}
 {% elsif question.status != 'published' %}{% assign display_evidence = '待验证' %}
 {% else %}
   {% case level %}
@@ -23,7 +23,7 @@ layout: default
   </nav>
 
   <header class="faq-article-header">
-    <a class="faq-back-link" href="{{ '/faq/' | relative_url }}">← 返回问题列表</a>
+    <a class="faq-back-link" href="{{ '/faq/' | relative_url }}">返回问题库</a>
     <p class="faq-eyebrow">{{ category.name | escape }}</p>
     <h1>{{ question.question | escape }}</h1>
     <div class="faq-article-meta">
@@ -62,7 +62,9 @@ layout: default
                     {% case source.source_type %}
                       {% when 'community_reddit' %}<span class="faq-source-type">Reddit 讨论</span>
                       {% when 'community_github' %}<span class="faq-source-type">GitHub 社区</span>
-                      {% when 'social_x_expert_commentary' %}<span class="faq-source-type">X 专业观点</span>
+                      {% when 'social_x_expert_commentary' %}<span class="faq-source-type">{% if source.verification_status == 'search_snippet_only_direct_open_403' %}X 搜索线索{% else %}X 专业观点{% endif %}</span>
+                      {% when 'technical_standard' %}<span class="faq-source-type">技术标准</span>
+                      {% when 'research_paper' %}<span class="faq-source-type">研究论文</span>
                       {% else %}<span class="faq-source-type">官方资料</span>
                     {% endcase %}
                   </div>
@@ -103,7 +105,7 @@ layout: default
       <h2>问题信息</h2>
       <dl>
         <dt>主题</dt><dd><a href="{{ '/faq/categories/' | append: category.slug | append: '/' | relative_url }}">{{ category.name | escape }}</a></dd>
-        <dt>证据状态</dt><dd>{{ display_evidence | escape }}</dd>
+        <dt>资料状态</dt><dd>{{ display_evidence | escape }}</dd>
         {% if question.keywords.size > 0 %}<dt>关键词</dt><dd class="faq-keyword-list">{% for keyword in question.keywords %}<span>{{ keyword | escape }}</span>{% endfor %}</dd>{% endif %}
       </dl>
     </aside>

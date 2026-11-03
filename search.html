@@ -76,11 +76,11 @@ permalink: /search/
       (date ? '<span class="post-date">' + esc(date.slice(5)) + '</span>' : '') +
       '</div><div class="post-title">' + highlight(item.title, keyword) + '</div>' +
       '<div class="post-excerpt">' + highlight(item.excerpt, keyword) + '</div></div>' +
-      '<div class="post-footer"><span class="read-more">阅读全文 <span class="read-more-arrow">→</span></span></div></a>';
+      '<div class="post-footer"><span class="read-more">阅读全文</span></div></a>';
   }
   function faqStatus(status) {
     if (status === 'published') return ['已发布', 'faq-status-published'];
-    if (status === 'research_draft_community_gaps') return ['研究草稿 · 社区证据待补', 'faq-status-draft'];
+    if (status === 'research_draft_community_gaps') return ['资料整理中', 'faq-status-draft'];
     return ['待研究', 'faq-status-pending'];
   }
   function renderFaq(item, keyword) {
@@ -90,7 +90,7 @@ permalink: /search/
       '<span class="faq-status-badge ' + status[1] + '">' + status[0] + '</span></div>' +
       '<h2>' + highlight(item.title, keyword) + '</h2>' +
       '<p>' + highlight(item.excerpt, keyword) + '</p>' +
-      '<span class="faq-search-read">查看问题 →</span></a>';
+      '<span class="faq-search-read">打开问题</span></a>';
   }
   function render(item, keyword) { return item.kind === 'faq' ? renderFaq(item, keyword) : renderPost(item, keyword); }
 

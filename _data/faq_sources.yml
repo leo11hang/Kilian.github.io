@@ -39,6 +39,7 @@
         "faq-004",
         "faq-006",
         "faq-008",
+        "faq-010",
         "faq-020",
         "faq-026",
         "faq-033",
@@ -98,7 +99,8 @@
         "faq-003",
         "faq-005",
         "faq-006",
-        "faq-038"
+        "faq-038",
+        "faq-039"
       ]
     },
     {
@@ -203,7 +205,9 @@
         "faq-009",
         "faq-012",
         "faq-023",
-        "faq-026"
+        "faq-026",
+        "faq-030",
+        "faq-032"
       ]
     },
     {
@@ -223,7 +227,11 @@
         "faq-009",
         "faq-021",
         "faq-022",
-        "faq-023"
+        "faq-023",
+        "faq-024",
+        "faq-025",
+        "faq-027",
+        "faq-057"
       ]
     },
     {
@@ -257,7 +265,8 @@
       "question_refs": [
         "faq-004",
         "faq-012",
-        "faq-015"
+        "faq-015",
+        "faq-059"
       ]
     },
     {
@@ -277,7 +286,9 @@
         "faq-014",
         "faq-015",
         "faq-016",
-        "faq-020"
+        "faq-020",
+        "faq-060",
+        "faq-066"
       ]
     },
     {
@@ -311,8 +322,11 @@
       "verification_status": "official_search_excerpt",
       "question_refs": [
         "faq-016",
+        "faq-017",
+        "faq-018",
         "faq-033",
-        "faq-034"
+        "faq-034",
+        "faq-060"
       ]
     },
     {
@@ -345,7 +359,13 @@
       "verification_status": "official_search_excerpt",
       "question_refs": [
         "faq-021",
-        "faq-022"
+        "faq-022",
+        "faq-024",
+        "faq-025",
+        "faq-027",
+        "faq-035",
+        "faq-057",
+        "faq-064"
       ]
     },
     {
@@ -544,7 +564,8 @@
       "counter_evidence": "地区列表动态，不能据此概括其他服务商。",
       "verification_status": "official_search_excerpt",
       "question_refs": [
-        "faq-042"
+        "faq-042",
+        "faq-046"
       ]
     },
     {
@@ -577,7 +598,11 @@
       "verification_status": "official_page_opened",
       "question_refs": [
         "faq-043",
-        "faq-045"
+        "faq-045",
+        "faq-046",
+        "faq-054",
+        "faq-057",
+        "faq-058"
       ]
     },
     {
@@ -594,7 +619,11 @@
       "verification_status": "official_page_opened",
       "question_refs": [
         "faq-043",
-        "faq-045"
+        "faq-044",
+        "faq-045",
+        "faq-047",
+        "faq-054",
+        "faq-058"
       ]
     },
     {
@@ -677,7 +706,8 @@
       "question_refs": [
         "faq-048",
         "faq-049",
-        "faq-052"
+        "faq-052",
+        "faq-053"
       ]
     },
     {
@@ -693,7 +723,8 @@
       "counter_evidence": "仅适用于 ChatGPT；其余平台临时模式保留规则不同。",
       "verification_status": "official_search_excerpt",
       "question_refs": [
-        "faq-048"
+        "faq-048",
+        "faq-051"
       ]
     },
     {
@@ -711,6 +742,7 @@
       "question_refs": [
         "faq-048",
         "faq-049",
+        "faq-050",
         "faq-052"
       ]
     },
@@ -728,7 +760,10 @@
       "verification_status": "official_page_opened",
       "question_refs": [
         "faq-048",
-        "faq-049"
+        "faq-049",
+        "faq-050",
+        "faq-051",
+        "faq-053"
       ]
     },
     {
@@ -761,7 +796,10 @@
       "counter_evidence": "限制动态调整且不同产品计划可能不同。",
       "verification_status": "official_search_excerpt",
       "question_refs": [
-        "faq-021"
+        "faq-021",
+        "faq-027",
+        "faq-057",
+        "faq-064"
       ]
     },
     {
@@ -793,6 +831,7 @@
       "counter_evidence": "具体安全性取决于客户端、服务器实现、权限配置与数据处理方式。",
       "verification_status": "official_page_opened",
       "question_refs": [
+        "faq-062",
         "faq-065"
       ]
     },
@@ -809,7 +848,373 @@
       "counter_evidence": "这是单个未验证报告，与 OpenAI 当前关于临时聊天不写入记忆的官方说明并不一致；不能据此断言产品存在普遍记忆泄漏。",
       "verification_status": "public_page_opened",
       "question_refs": [
+        "faq-051",
         "faq-052"
+      ]
+    },
+    {
+      "id": "openai-reasoning-best-practices",
+      "source_url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices",
+      "source_type": "official_developer_docs",
+      "author": "OpenAI",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI API Reasoning Models",
+      "version": "",
+      "supporting_claim": "OpenAI 对推理模型适用任务及提示方式的说明；强调模型类型各有适用场景。",
+      "counter_evidence": "面向 API 模型的开发文档；产品 UI 名称、模型和可用限额可能不同。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-010"
+      ]
+    },
+    {
+      "id": "hf-model-license",
+      "source_url": "https://huggingface.co/docs/hub/main/repositories-licenses",
+      "source_type": "official_developer_docs",
+      "author": "Hugging Face",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Hugging Face Hub",
+      "version": "",
+      "supporting_claim": "说明模型仓库通过 license 声明使用许可，并提示使用模型/代码/数据前应查看具体许可。",
+      "counter_evidence": "平台帮助资料不是法律意见；具体模型可能含附加许可或限制。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-011"
+      ]
+    },
+    {
+      "id": "reddit-openweights-license",
+      "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1w89zyn/open_weight_open_source/",
+      "source_type": "community_reddit",
+      "author": "r/LocalLLaMA 用户",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Open weights vs open source",
+      "version": "",
+      "supporting_claim": "社区讨论指出可下载权重与完整开源并非同一概念；也存在对开放模型价值与定义的不同看法。",
+      "counter_evidence": "观点性讨论，不是法律定义或模型清单；按单个模型许可证核验。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-011"
+      ]
+    },
+    {
+      "id": "google-prompting-strategies",
+      "source_url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "source_type": "official_developer_docs",
+      "author": "Google AI for Developers",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Gemini API",
+      "version": "",
+      "supporting_claim": "官方提示指南定义 few-shot，并建议示例格式一致、选择合适数量并通过迭代测试。",
+      "counter_evidence": "指导主要针对 Gemini API；不同模型对示例数量的最佳选择会不同。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-017",
+        "faq-018",
+        "faq-019"
+      ]
+    },
+    {
+      "id": "reddit-claude-workflow",
+      "source_url": "https://www.reddit.com/r/ClaudeAI/comments/1ufchrt/any_tip_from_technical_people_to_us_nontechnicals/",
+      "source_type": "community_reddit",
+      "author": "r/ClaudeAI 用户",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude",
+      "version": "",
+      "supporting_claim": "一个公开讨论的高赞回复建议像给承包人交接那样提供目标、限制和完成标准，分步协作并逐步验证。",
+      "counter_evidence": "个人经验，不能证明对所有任务或所有模型均能提升效果，也不是代表性抽样。",
+      "verification_status": "public_page_opened",
+      "question_refs": [
+        "faq-018",
+        "faq-060",
+        "faq-061"
+      ]
+    },
+    {
+      "id": "x-dotey-role-prompt",
+      "source_url": "https://x.com/dotey/status/1693839769619292164",
+      "source_type": "social_x_expert_commentary",
+      "author": "宝玉（@dotey）",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "通用提示词",
+      "version": "",
+      "supporting_claim": "搜索索引可见其讨论用角色提示与上下文示例塑造角色回答。",
+      "counter_evidence": "X 原帖直连返回 403；未核对完整上下文，不作为效果实证或专家共识，仅保留为待复核线索。",
+      "verification_status": "search_snippet_only_direct_open_403",
+      "question_refs": [
+        "faq-017"
+      ]
+    },
+    {
+      "id": "openai-images",
+      "source_url": "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+      "source_type": "official_help_center",
+      "author": "OpenAI Help Center",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Images",
+      "version": "",
+      "supporting_claim": "官方说明 ChatGPT Images 可创建新图、编辑上传图像，入口和可用性会随产品计划变化。",
+      "counter_evidence": "只说明 ChatGPT 当前产品功能，不可外推到其他模型或账户。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-030"
+      ]
+    },
+    {
+      "id": "openai-voice",
+      "source_url": "https://help.openai.com/en/articles/20001274-chatgpt-voice",
+      "source_type": "official_help_center",
+      "author": "OpenAI Help Center",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Voice",
+      "version": "",
+      "supporting_claim": "官方介绍 ChatGPT 语音模式、转写/实时语音与视频相关能力，并指出可用功能依套餐、地区、版本和设置而异。",
+      "counter_evidence": "功能动态变化；此来源区分语音对话/理解，不代表可普遍生成视频或音乐。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-025",
+        "faq-031"
+      ]
+    },
+    {
+      "id": "gemini-video-generation",
+      "source_url": "https://support.google.com/gemini/answer/16126339",
+      "source_type": "official_help_center",
+      "author": "Google Gemini Apps Help",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Gemini",
+      "version": "",
+      "supporting_claim": "官方帮助页说明 Gemini 中的视频生成功能及可用方式。",
+      "counter_evidence": "功能、地区、套餐和配额会变化；具体账号请查看页面及产品内说明。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-031"
+      ]
+    },
+    {
+      "id": "openai-data-analysis",
+      "source_url": "https://help.openai.com/en/articles/9213685-extracting-insights-with-chatgpt-data-analysis",
+      "source_type": "official_help_center",
+      "author": "OpenAI Help Center",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT Data Analysis",
+      "version": "",
+      "supporting_claim": "官方说明 ChatGPT 可交互查看表格数据、分析趋势并生成图表。",
+      "counter_evidence": "数据分析结果和图表仍需对照原始数据验证；功能视账号可用性而定。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-024",
+        "faq-035"
+      ]
+    },
+    {
+      "id": "openai-usage-limits",
+      "source_url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+      "source_type": "official_help_center",
+      "author": "OpenAI Help Center",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT and Codex",
+      "version": "",
+      "supporting_claim": "官方说明用量受所选模型和任务影响，并提供查看用量及达到限制后的处理入口。",
+      "counter_evidence": "针对 ChatGPT/Codex 当前体验；额度会变更，不能推广到其他服务。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-039",
+        "faq-040",
+        "faq-058"
+      ]
+    },
+    {
+      "id": "anthropic-model-usage",
+      "source_url": "https://support.anthropic.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "source_type": "official_help_center",
+      "author": "Anthropic Support",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude",
+      "version": "",
+      "supporting_claim": "Anthropic 说明 Claude 用量和长度限制与产品使用方式有关。",
+      "counter_evidence": "具体限制按当前计划、模型和会话变化；不代表其他平台规则。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-040"
+      ]
+    },
+    {
+      "id": "anthropic-status",
+      "source_url": "https://anthropic.statuspage.io/",
+      "source_type": "official_status_page",
+      "author": "Anthropic Status",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude and Claude API",
+      "version": "",
+      "supporting_claim": "Anthropic 状态页按 claude.ai、Claude Console、API 等组件展示运行状态与历史事件。",
+      "counter_evidence": "状态页显示总体服务状态，未必覆盖个别账号、地区或特定请求。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-047"
+      ]
+    },
+    {
+      "id": "google-service-status",
+      "source_url": "https://status.cloud.google.com/",
+      "source_type": "official_status_page",
+      "author": "Google Cloud Service Health",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Google Cloud services",
+      "version": "",
+      "supporting_claim": "Google 官方服务健康页提供 Cloud 服务状态和事件信息。",
+      "counter_evidence": "不是所有消费者 Gemini 客户端问题都必然显示在该页；还应看产品专属状态页和账号诊断。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-047"
+      ]
+    },
+    {
+      "id": "openai-delete-chats",
+      "source_url": "https://help.openai.com/en/articles/8809935-deleting-and-archiving-chats-in-chatgpt",
+      "source_type": "official_help_center",
+      "author": "OpenAI Help Center",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "ChatGPT",
+      "version": "",
+      "supporting_claim": "官方说明归档不会删除聊天；删除后通常安排在 30 天内永久删除，存在安全/法律等例外。",
+      "counter_evidence": "只适用于 ChatGPT 当前规则；记忆、资料库文件和工作区保留策略需要分别检查。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-050"
+      ]
+    },
+    {
+      "id": "anthropic-consumer-data",
+      "source_url": "https://privacy.anthropic.com/en/articles/10023580-is-my-data-used-for-model-training",
+      "source_type": "official_privacy_notice",
+      "author": "Anthropic Privacy Center",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Claude consumer products",
+      "version": "",
+      "supporting_claim": "官方说明消费者产品的数据使用模型改进与用户选择、特定安全复核等条件有关。",
+      "counter_evidence": "规则针对消费者产品；Work、API、工作区和地区条款可能不同，需看对应产品条款。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-053"
+      ]
+    },
+    {
+      "id": "rfc9110-status-codes",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "source_type": "technical_standard",
+      "author": "IETF RFC 9110",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "HTTP",
+      "version": "",
+      "supporting_claim": "标准定义了 HTTP 401、403、500、502 和 503 状态码的语义。",
+      "counter_evidence": "429 定义在 RFC 6585；实际 API 还可能用错误响应体区分额度、认证和策略原因。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-055",
+        "faq-056"
+      ]
+    },
+    {
+      "id": "rfc6585-429",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc6585.html",
+      "source_type": "technical_standard",
+      "author": "IETF RFC 6585",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "HTTP",
+      "version": "",
+      "supporting_claim": "标准定义 429 Too Many Requests，可用于表示用户在一定时间内发送过多请求。",
+      "counter_evidence": "服务方如何计算速率和额度由具体产品/API 规定。",
+      "verification_status": "official_search_excerpt",
+      "question_refs": [
+        "faq-055"
+      ]
+    },
+    {
+      "id": "google-ml-development-phases",
+      "source_url": "https://developers.google.com/machine-learning/managing-ml-projects/phases",
+      "source_type": "official_developer_docs",
+      "author": "Google for Developers",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "Machine Learning workflow",
+      "version": "",
+      "supporting_claim": "Google ML 项目指南描述规划、实验、流水线建设、生产化和持续监控等阶段。",
+      "counter_evidence": "这是机器学习项目工程指南，不等于所有办公任务或无代码 AI 工作流的固定模板。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-061",
+        "faq-062",
+        "faq-066"
+      ]
+    },
+    {
+      "id": "openai-retrieval-guide",
+      "source_url": "https://developers.openai.com/api/docs/guides/retrieval",
+      "source_type": "official_developer_docs",
+      "author": "OpenAI API Docs",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "OpenAI Retrieval",
+      "version": "",
+      "supporting_claim": "官方指南说明向量存储/检索可搜索文件并将结果作为上下文供模型生成回答。",
+      "counter_evidence": "这是 OpenAI API 实现指南，不是所有 RAG 系统的唯一架构，也不保证检索内容正确。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-063",
+        "faq-064"
+      ]
+    },
+    {
+      "id": "rag-original-paper",
+      "source_url": "https://arxiv.org/abs/2005.11401",
+      "source_type": "research_paper",
+      "author": "Patrick Lewis et al.",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "RAG research",
+      "version": "",
+      "supporting_claim": "原始 RAG 研究提出结合预训练生成模型与外部非参数检索记忆的技术路线。",
+      "counter_evidence": "论文结果受实验数据和设定限制；不能据此保证生产系统的准确率。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-063"
+      ]
+    },
+    {
+      "id": "github-review-ai-code",
+      "source_url": "https://docs.github.com/en/copilot/tutorials/review-ai-generated-code",
+      "source_type": "official_developer_docs",
+      "author": "GitHub Docs",
+      "published_at": null,
+      "verified_at": "2026-11-03",
+      "product": "GitHub Copilot",
+      "version": "",
+      "supporting_claim": "GitHub 指南强调结合人工专业判断审阅 AI 生成代码，尤其是遗留代码和较大变更。",
+      "counter_evidence": "特定于 GitHub Copilot 指南；人工审阅仍不能替代自动化测试和安全流程。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-032",
+        "faq-066"
       ]
     }
   ]

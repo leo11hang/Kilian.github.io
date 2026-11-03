@@ -25,7 +25,10 @@
         <h2 id="faq-browser-title">常见问题</h2>
         <p data-faq-result-count aria-live="polite">共 {{ faq_questions.size }} 个问题</p>
       </div>
-      <a class="faq-global-search-link" href="{{ '/search/' | relative_url }}">搜索全站内容 <span aria-hidden="true">→</span></a>
+      <a class="faq-global-search-link" href="{{ '/search/' | relative_url }}">
+        <svg width="15" height="15" aria-hidden="true" focusable="false"><use href="#ic-search"/></svg>
+        <span>搜索全站内容</span>
+      </a>
     </div>
 
     <div class="faq-topic-tabs" aria-label="按主题筛选问题" role="group">
@@ -46,6 +49,6 @@
 <section class="faq-data-unavailable" role="status">
   <span class="faq-data-unavailable-icon" aria-hidden="true">?</span>
   <div><h2>问题内容暂时无法显示</h2><p>请稍后再试，也可以先使用全站搜索浏览内容。</p></div>
-  <a href="{{ '/search/' | relative_url }}">前往搜索 <span aria-hidden="true">→</span></a>
+  <a href="{{ '/search/' | relative_url }}" class="faq-global-search-link">搜索全站内容</a>
 </section>
 {% endif %}

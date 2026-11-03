@@ -24,7 +24,7 @@
           <div class="faq-qa-answer">{{ question.answer | escape | newline_to_br }}</div>
           <div class="faq-qa-footer">
             <span>{% if question.sources.size > 0 %}参考 {{ question.sources.size }} 条资料{% else %}资料持续整理中{% endif %}{% if question.last_verified %} · 核验于 {{ question.last_verified | escape }}{% endif %}</span>
-            <a href="{{ '/faq/questions/' | append: question.id | append: '/' | relative_url }}">查看来源记录 <span aria-hidden="true">→</span></a>
+            <a href="{{ '/faq/questions/' | append: question.id | append: '/' | relative_url }}">查看资料详情</a>
           </div>
         {% else %}
           <div class="faq-qa-pending"><strong>答案正在整理</strong><span>这个问题已收录，完成资料核验后会在这里更新。</span></div>
