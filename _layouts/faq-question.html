@@ -3,14 +3,13 @@ layout: default
 ---
 {% assign question = page.faq_question %}
 {% assign category = page.faq_category %}
-{% assign evidence_guide = site.data.faq.evidence_levels %}
 {% assign level = question.confidence_level | default: 'pending' %}
-{% if question.status == 'research_draft_community_gaps' %}{% assign display_evidence = '待补充社区证据；当前仅展示已登记的来源和研究草稿。' %}
-{% elsif question.status != 'published' %}{% assign display_evidence = '待验证；答案尚未完成研究。' %}
+{% if question.status == 'research_draft_community_gaps' %}{% assign display_evidence = '社区资料核验中' %}
+{% elsif question.status != 'published' %}{% assign display_evidence = '待验证' %}
 {% else %}
   {% case level %}
     {% when 'S' %}{% assign display_evidence = '多源验证' %}
-    {% when 'A' %}{% assign display_evidence = '官方或专业资料支持' %}
+    {% when 'A' %}{% assign display_evidence = '官方或专业资料' %}
     {% when 'B' %}{% assign display_evidence = '社区反馈' %}
     {% when 'C' %}{% assign display_evidence = '个案经验' %}
     {% else %}{% assign display_evidence = '待验证' %}
@@ -24,15 +23,15 @@ layout: default
   </nav>
 
   <header class="faq-article-header">
-    <a class="faq-back-link" href="{{ '/faq/categories/' | append: category.slug | append: '/' | relative_url }}">← {{ category.name | escape }}</a>
+    <a class="faq-back-link" href="{{ '/faq/' | relative_url }}">← 返回问题列表</a>
     <p class="faq-eyebrow">{{ category.name | escape }}</p>
     <h1>{{ question.question | escape }}</h1>
     <div class="faq-article-meta">
       <span class="faq-status-badge {% if question.status == 'published' %}faq-status-published{% elsif question.answer and question.answer != '' %}faq-status-draft{% else %}faq-status-pending{% endif %}">
-        {% if question.status == 'published' %}已发布{% elsif question.answer and question.answer != '' %}研究草稿 · 社区证据待补{% else %}目录条目 · 答案待研究{% endif %}
+        {% if question.status == 'published' %}已发布{% elsif question.answer and question.answer != '' %}资料整理中{% else %}答案待补{% endif %}
       </span>
-      {% if question.last_verified %}<span>核验记录：{{ question.last_verified | escape }}</span>{% endif %}
-      <span class="faq-evidence-level">证据状态：{{ display_evidence | escape }}</span>
+      {% if question.last_verified %}<span>核验于 {{ question.last_verified | escape }}</span>{% endif %}
+      {% if question.sources.size > 0 %}<span>{{ question.sources.size }} 条参考资料</span>{% endif %}
     </div>
   </header>
 
@@ -40,24 +39,19 @@ layout: default
     <div class="faq-answer-content">
       {% if question.answer and question.answer != '' %}
         <section class="faq-answer-section" aria-labelledby="faq-answer-title">
-          <h2 id="faq-answer-title">{% if question.status == 'published' %}答案{% else %}当前答案草稿{% endif %}</h2>
+          <h2 id="faq-answer-title">回答</h2>
           <div class="faq-answer-text">{{ question.answer | escape | newline_to_br }}</div>
         </section>
       {% else %}
         <section class="faq-pending-panel" aria-labelledby="faq-pending-title">
-          <h2 id="faq-pending-title">答案待研究</h2>
-          <p>该问题已纳入知识目录，现阶段尚无经过整理的答案。我们会在完成资料核验后补充内容。</p>
+          <h2 id="faq-pending-title">答案待补</h2>
+          <p>这个问题已收录，答案整理完成后会在这里更新。</p>
         </section>
-      {% endif %}
-
-      {% if question.research_notes and question.research_notes != '' %}
-        <aside class="faq-research-note"><strong>研究状态：</strong>{{ question.research_notes | escape }}</aside>
       {% endif %}
 
       {% if page.faq_sources.size > 0 and question.sources.size > 0 %}
         <section class="faq-sources-section" aria-labelledby="faq-sources-title">
-          <h2 id="faq-sources-title">参考资料与核验记录</h2>
-          <p class="faq-source-caveat">来源用于追溯答案依据；社区材料仅按登记的核验状态展示，不代表已形成社区共识。</p>
+          <h2 id="faq-sources-title">参考来源</h2>
           <ol class="faq-source-list">
             {% for source_id in question.sources %}
               {% assign source = page.faq_sources | where: 'id', source_id | first %}
@@ -66,24 +60,24 @@ layout: default
                   <div class="faq-source-heading">
                     <a href="{{ source.source_url | escape }}" target="_blank" rel="noopener noreferrer">{{ source.author | default: source.product | default: source.source_url | escape }}</a>
                     {% case source.source_type %}
-                      {% when 'community_reddit' %}<span class="faq-source-type">Reddit 社区讨论</span>
-                      {% when 'community_github' %}<span class="faq-source-type">GitHub 技术社区</span>
+                      {% when 'community_reddit' %}<span class="faq-source-type">Reddit 讨论</span>
+                      {% when 'community_github' %}<span class="faq-source-type">GitHub 社区</span>
                       {% when 'social_x_expert_commentary' %}<span class="faq-source-type">X 专业观点</span>
                       {% else %}<span class="faq-source-type">官方资料</span>
                     {% endcase %}
                   </div>
                   <p>{{ source.supporting_claim | escape }}</p>
-                  {% if source.counter_evidence and source.counter_evidence != '' %}<p class="faq-source-limit"><strong>范围与限制：</strong>{{ source.counter_evidence | escape }}</p>{% endif %}
+                  {% if source.counter_evidence and source.counter_evidence != '' %}<p class="faq-source-limit"><strong>范围说明：</strong>{{ source.counter_evidence | escape }}</p>{% endif %}
                   <div class="faq-source-meta">
                     {% if source.product and source.product != '' %}<span>{{ source.product | escape }}</span>{% endif %}
                     {% if source.version and source.version != '' %}<span>版本 {{ source.version | escape }}</span>{% endif %}
                     {% if source.published_at %}<span>发布于 {{ source.published_at | escape }}</span>{% endif %}
                     {% if source.verified_at %}<span>核验于 {{ source.verified_at | escape }}</span>{% endif %}
                     {% case source.verification_status %}
-                      {% when 'official_page_opened' %}<span>已打开官方原始页面</span>
-                      {% when 'official_search_excerpt' %}<span>仅核验到官方页面搜索摘要</span>
-                      {% when 'public_page_opened' %}<span>已打开公开原始页面</span>
-                      {% when 'search_snippet_only_direct_open_403' %}<span>仅检索到摘要，原页面 403，待核验</span>
+                      {% when 'official_page_opened' %}<span>已打开原始页面</span>
+                      {% when 'official_search_excerpt' %}<span>搜索摘要核验</span>
+                      {% when 'public_page_opened' %}<span>已打开公开页面</span>
+                      {% when 'search_snippet_only_direct_open_403' %}<span>原页面 403，待核验</span>
                       {% else %}<span>{{ source.verification_status | replace: '_', ' ' | escape }}</span>
                     {% endcase %}
                   </div>
@@ -96,7 +90,7 @@ layout: default
 
       {% if page.faq_related_questions.size > 0 %}
         <section class="faq-related-section" aria-labelledby="faq-related-title">
-          <h2 id="faq-related-title">延伸阅读</h2>
+          <h2 id="faq-related-title">相关问题</h2>
           <ul>
             {% for related in page.faq_related_questions %}
               <li><a href="{{ related.page_url | relative_url }}">{{ related.question | escape }}</a></li>
@@ -108,10 +102,8 @@ layout: default
     <aside class="faq-article-aside">
       <h2>问题信息</h2>
       <dl>
-        <dt>分类</dt><dd><a href="{{ '/faq/categories/' | append: category.slug | append: '/' | relative_url }}">{{ category.name | escape }}</a></dd>
-        <dt>状态</dt><dd>{% if question.status == 'published' %}已发布{% elsif question.answer and question.answer != '' %}研究草稿，社区证据待补{% else %}待研究{% endif %}</dd>
+        <dt>主题</dt><dd><a href="{{ '/faq/categories/' | append: category.slug | append: '/' | relative_url }}">{{ category.name | escape }}</a></dd>
         <dt>证据状态</dt><dd>{{ display_evidence | escape }}</dd>
-        {% if question.last_verified %}<dt>最后核验</dt><dd>{{ question.last_verified | escape }}</dd>{% endif %}
         {% if question.keywords.size > 0 %}<dt>关键词</dt><dd class="faq-keyword-list">{% for keyword in question.keywords %}<span>{{ keyword | escape }}</span>{% endfor %}</dd>{% endif %}
       </dl>
     </aside>

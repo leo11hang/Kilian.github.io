@@ -1,0 +1,35 @@
+<div class="faq-question-list" data-faq-question-list>
+  {% for question in include.questions %}
+    {% assign question_category = include.categories | where: 'id', question.category | first %}
+    {% assign keyword_text = question.keywords | join: ' ' %}
+    {% assign question_search_text = question.question | append: ' ' | append: question.answer | append: ' ' | append: keyword_text | append: ' ' | append: question_category.name | append: ' ' | append: question_category.description %}
+    <details class="faq-qa-item" data-faq-item data-faq-topic-value="{{ question.category }}" data-faq-search="{{ question_search_text | downcase | escape }}">
+      <summary>
+        <span class="faq-qa-number">{{ question.id | remove: 'faq-' }}</span>
+        <span class="faq-qa-heading">
+          <strong>{{ question.question | escape }}</strong>
+          <span>{{ question_category.name | escape }}</span>
+        </span>
+        {% if question.status == 'published' %}
+          <span class="faq-qa-status faq-qa-status-published">已发布</span>
+        {% elsif question.answer and question.answer != '' %}
+          <span class="faq-qa-status faq-qa-status-review">资料整理中</span>
+        {% else %}
+          <span class="faq-qa-status faq-qa-status-pending">答案待补</span>
+        {% endif %}
+        <span class="faq-qa-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="faq-qa-content">
+        {% if question.answer and question.answer != '' %}
+          <div class="faq-qa-answer">{{ question.answer | escape | newline_to_br }}</div>
+          <div class="faq-qa-footer">
+            <span>{% if question.sources.size > 0 %}参考 {{ question.sources.size }} 条资料{% else %}资料持续整理中{% endif %}{% if question.last_verified %} · 核验于 {{ question.last_verified | escape }}{% endif %}</span>
+            <a href="{{ '/faq/questions/' | append: question.id | append: '/' | relative_url }}">查看来源记录 <span aria-hidden="true">→</span></a>
+          </div>
+        {% else %}
+          <div class="faq-qa-pending"><strong>答案正在整理</strong><span>这个问题已收录，完成资料核验后会在这里更新。</span></div>
+        {% endif %}
+      </div>
+    </details>
+  {% endfor %}
+</div>
