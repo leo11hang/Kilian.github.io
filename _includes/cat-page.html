@@ -21,28 +21,7 @@
   </h1>
 
   {% if cat_slug == 'download' %}
-    <div class="download-accordions">
-      <details class="download-accordion" name="download-products">
-        <summary>
-          <span class="download-product-icon clash-product-icon"><img src="{{ '/assets/images/software-logos/clash-verge.png' | relative_url }}" alt="Clash Verge Rev 官方图标" loading="lazy"></span>
-          <span class="download-summary-copy"><strong class="download-accordion-name">Clash Verge Rev</strong><span class="download-accordion-hint">跨平台网络代理客户端</span></span>
-          <span class="download-accordion-toggle" aria-hidden="true"></span>
-        </summary>
-        {% include clash-verge-download.html %}
-      </details>
-      {% include uu-remote-download.html %}
-      <details class="download-accordion" name="download-products">
-        <summary>
-          <span class="download-product-icon cc-product-icon"><img src="{{ '/assets/images/software-logos/cc-switch.png' | relative_url }}" alt="CC Switch 官方图标" loading="lazy"></span>
-          <span class="download-summary-copy"><strong class="download-accordion-name">CC Switch</strong><span class="download-accordion-hint">管理 Claude Code、Codex 与 Gemini CLI 配置</span></span>
-          <span class="download-accordion-toggle" aria-hidden="true"></span>
-        </summary>
-        {% include cc-switch-download.html %}
-      </details>
-      {% include vscode-download.html %}
-      {% include ai-tools-download.html %}
-      <script src="{{ '/assets/js/download-shared-panel.js' | relative_url }}" defer></script>
-    </div>
+    {% include download-software-cards.html %}
   {% endif %}
 
   {% if cat_posts.size > 0 %}
