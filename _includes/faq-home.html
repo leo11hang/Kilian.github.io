@@ -34,8 +34,13 @@
     <div class="faq-topic-tabs" aria-label="按主题筛选问题" role="group">
       <button type="button" class="is-active" aria-pressed="true" data-faq-topic="all">全部 <span>{{ faq_questions.size }}</span></button>
       {% for category in faq_data.categories %}
-        {% assign category_questions = faq_questions | where: 'category', category.id %}
-        <button type="button" aria-pressed="false" data-faq-topic="{{ category.id }}">{{ category.name | escape }} <span>{{ category_questions.size }}</span></button>
+        {% assign category_question_count = 0 %}
+        {% for question in faq_questions %}
+          {% if question.category == category.id %}
+            {% assign category_question_count = category_question_count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        <button type="button" aria-pressed="false" data-faq-topic="{{ category.id }}">{{ category.name | escape }} <span>{{ category_question_count }}</span></button>
       {% endfor %}
     </div>
 
