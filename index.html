@@ -67,6 +67,10 @@ title: "首页"
     {% include download-software-cards.html %}
   </div>
 
+  <div id="home-faq-module" style="display:none">
+    {% include faq-home.html %}
+  </div>
+
   <div class="posts-grid" id="posts-grid">
     {% assign all_posts = site.posts | where_exp:"post","post.pinned != true" %}
     {% for post in all_posts %}
@@ -85,7 +89,9 @@ document.getElementById('catTabs').addEventListener('click', function(e) {
   document.querySelectorAll('.cat-tab').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
   var downloadModule = document.getElementById('home-download-module');
+  var faqModule = document.getElementById('home-faq-module');
   if (downloadModule) downloadModule.style.display = cat === 'download' ? '' : 'none';
+  if (faqModule) faqModule.style.display = cat === 'faq' ? '' : 'none';
   document.querySelectorAll('#posts-grid .post-card').forEach(function(c) {
     c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
   });
