@@ -1,0 +1,160 @@
+---
+layout: default
+title: "Google 账号与安全验证常见排障图文指南"
+description: "按步骤处理 Google Authenticator、2FA 验证码、付款资料和 Google Play / Gemini 订阅到期问题。"
+permalink: /faq/google-account-security-guide/
+---
+<article class="container faq-page gemini-guide-page">
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="{{ '/' | relative_url }}">首页</a><span class="breadcrumb-sep">/</span>
+    <a href="{{ '/faq/' | relative_url }}">AI Knowledge Base</a><span class="breadcrumb-sep">/</span>
+    <a href="{{ '/faq/categories/google-account-security/' | relative_url }}">Google 账号与安全验证常见排障</a><span class="breadcrumb-sep">/</span>
+    <span aria-current="page">图文指南</span>
+  </nav>
+
+  <header class="gemini-guide-hero">
+    <span class="faq-eyebrow">GOOGLE ACCOUNT · GEMINI SUBSCRIPTION</span>
+    <h1>账号验证、付款与订阅问题图文指南</h1>
+    <p>从验证器绑定到订阅状态，按购买渠道逐步检查。页面中的按钮会打开对应的 Google 官方管理入口。</p>
+    <div class="gemini-guide-quicklinks" aria-label="Google 官方管理入口">
+      <a href="https://myaccount.google.com/security" target="_blank" rel="noopener noreferrer">Google 账号安全设置</a>
+      <a href="https://payments.google.com/gp/w/home/settings" target="_blank" rel="noopener noreferrer">付款资料设置</a>
+      <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener noreferrer">Google Play 订阅管理</a>
+    </div>
+  </header>
+
+  <aside class="gemini-guide-safety" aria-label="安全提醒">
+    <strong>先看这条安全提醒</strong>
+    <p>不要把验证器设置密钥、动态验证码或备用码交给他人。不要为了排查订阅报错而随意关闭付款资料；关闭付款资料可能影响 Google 服务购买和付款记录。</p>
+  </aside>
+
+  <nav class="gemini-guide-toc" aria-label="本页目录">
+    <a href="#authenticator">验证器选项</a>
+    <a href="#payments-profile">付款资料提示</a>
+    <a href="#totp">验证码不匹配</a>
+    <a href="#key-types">密钥、动态码与备用码</a>
+    <a href="#subscription-end-date">查看订阅到期时间</a>
+  </nav>
+
+  <section class="gemini-guide-section" id="authenticator">
+    <div class="gemini-guide-section-heading"><span>01</span><div><p>Google 账号安全</p><h2>找不到 Google Authenticator 选项</h2></div></div>
+    <p>先确认当前登录的是需要设置验证器的 Google 账号。进入账号安全设置后，查看“两步验证”是否已开启；按页面提示添加 Authenticator，并在原设置页面完成验证码确认。只在手机应用里添加密钥，并不会自动完成 Google 账号的绑定。</p>
+    <ol class="gemini-guide-steps">
+      <li><strong>打开账号安全</strong><span>进入 Google 账号的“安全性”设置。</span></li>
+      <li><strong>进入两步验证</strong><span>如果尚未开启，先按账号页面的流程完成开启。</span></li>
+      <li><strong>添加验证器并确认</strong><span>扫描二维码或输入设置密钥，再回到账号页面输入新生成的验证码。</span></li>
+    </ol>
+    <div class="gemini-guide-note">Google 说明，Authenticator 可能需要一段时间才会显示为可用的登录方式；工作、学校或组织账号也可能受管理员策略限制。请以你当前账号页面为准。</div>
+    <figure class="gemini-guide-figure">
+      <img src="{{ '/assets/images/faq/gemini-subscription/01-authenticator-option.png' | relative_url }}" alt="Google Authenticator 选项排查问题的参考说明截图" loading="lazy" />
+      <figcaption>问题参考截图，不是 Google 账号设置页面的实时截图。</figcaption>
+    </figure>
+    <p class="gemini-guide-links"><a href="https://support.google.com/accounts/answer/185839?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方：开启两步验证</a><a href="https://support.google.com/accounts/answer/1066447?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方：设置 Authenticator</a></p>
+  </section>
+
+  <section class="gemini-guide-section" id="payments-profile">
+    <div class="gemini-guide-section-heading"><span>02</span><div><p>Google 付款资料</p><h2>提示“请关闭所有付款资料后重试”</h2></div></div>
+    <p>这条提示的具体原因要结合触发它的产品页面和账号状态判断；Google 的公开帮助资料没有为这句提示给出统一的修复步骤。先确认登录账号、付款资料和国家/地区，再按页面指引或联系 Google 支持。</p>
+    <div class="gemini-guide-compare">
+      <div><span class="gemini-guide-label">移除付款方式</span><strong>只删除某张卡或付款方式</strong><p>付款资料和交易记录仍可保留；适用于不再使用某个付款方式等情况。</p></div>
+      <div class="gemini-guide-compare-danger"><span class="gemini-guide-label">关闭付款资料</span><strong>关闭整个 Google 付款资料</strong><p>可能影响 Google Play、Google One 等服务购买，并移除付款和交易信息；关闭后不能重新开启原资料。</p></div>
+    </div>
+    <div class="gemini-guide-action-row">
+      <a class="gemini-guide-action" href="https://payments.google.com/gp/w/home/settings" target="_blank" rel="noopener noreferrer">前往设置</a>
+      <button class="gemini-guide-copy" type="button" data-copy-link="https://payments.google.com/gp/w/home/settings">复制链接</button>
+      <span class="gemini-guide-copy-status" aria-live="polite"></span>
+    </div>
+    <p class="gemini-guide-action-hint">打开前先确认当前账号；付款资料设置页中可能包含多个资料。</p>
+    <div class="gemini-guide-note gemini-guide-note-warning">不要为了绕过提示添加虚假银行卡或测试卡，也不要在未确认影响前关闭付款资料。Google 官方建议，若只是担心银行卡安全，可考虑移除该付款方式，而不是关闭整个资料。</div>
+    <p class="gemini-guide-links"><a href="https://support.google.com/googlepay/answer/7643930?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方：关闭付款资料前需要了解的影响</a></p>
+  </section>
+
+  <section class="gemini-guide-section" id="totp">
+    <div class="gemini-guide-section-heading"><span>03</span><div><p>动态验证码</p><h2>2FA 验证码不匹配</h2></div></div>
+    <p>按顺序检查下面几项，通常无需删除账号或反复重新绑定：</p>
+    <ol class="gemini-guide-checklist">
+      <li><strong>确认账号和服务</strong><span>选择为当前网站/账号生成的那一条验证码。</span></li>
+      <li><strong>及时输入新验证码</strong><span>验证码会周期性更新，过期后请等待下一组再输入。</span></li>
+      <li><strong>校准设备时间</strong><span>在手机系统中开启自动日期、时间和时区。</span></li>
+      <li><strong>完成绑定确认</strong><span>如果刚添加密钥，回到发起绑定的网页输入验证码并提交。</span></li>
+    </ol>
+    <div class="gemini-guide-note">Google Authenticator 7.0 起使用设备操作系统时间；应用内的旧版“时间校正”选项已移除。</div>
+    <figure class="gemini-guide-figure">
+      <img src="{{ '/assets/images/faq/gemini-subscription/03-totp-mismatch.png' | relative_url }}" alt="2FA 验证码不匹配排查内容的参考说明截图" loading="lazy" />
+      <figcaption>问题参考截图；实际菜单名称可能随设备系统和应用版本变化。</figcaption>
+    </figure>
+    <p class="gemini-guide-links"><a href="https://support.google.com/accounts/answer/1066447?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方：Authenticator 验证码错误排查</a></p>
+  </section>
+
+  <section class="gemini-guide-section" id="key-types">
+    <div class="gemini-guide-section-heading"><span>04</span><div><p>绑定字段辨认</p><h2>密钥、动态码和备用码不是同一种东西</h2></div></div>
+    <div class="gemini-guide-code-types">
+      <article><span class="gemini-guide-code-icon">KEY</span><h3>设置密钥</h3><p>在绑定验证器时由服务提供，或以二维码形式展示。添加到验证器后，用它生成动态码。长度和字符格式由服务决定。</p></article>
+      <article><span class="gemini-guide-code-icon">TOTP</span><h3>动态验证码</h3><p>验证器按设置密钥和设备时间生成的短时验证码，用于登录，或在绑定网页上完成验证。</p></article>
+      <article><span class="gemini-guide-code-icon">BACKUP</span><h3>备用码</h3><p>无法使用常规验证方式时的应急登录凭据。Google 账号备用码为 8 位数字，每个只能使用一次。</p></article>
+    </div>
+    <div class="gemini-guide-note gemini-guide-note-warning">截图中出现的“32 位密钥”只是特定示例，不能当成所有网站的固定格式。不要将真实密钥、动态码或备用码放进公开截图或发给他人。</div>
+    <p class="gemini-guide-links"><a href="https://support.google.com/accounts/answer/185839?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方：两步验证方式</a><a href="https://support.google.com/accounts/answer/1187538?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方：备用码</a></p>
+  </section>
+
+  <section class="gemini-guide-section" id="subscription-end-date">
+    <div class="gemini-guide-section-heading"><span>05</span><div><p>订阅状态</p><h2>查看 Google Play 或 Gemini 订阅到期时间</h2></div></div>
+    <p>先确认购买订阅时使用的 Google 账号和购买渠道。Google Play 只显示由该账号通过 Google Play 管理的订阅；通过 Google One 或其他渠道开通的方案，应回对应平台查看。</p>
+    <div class="gemini-guide-subscription-paths">
+      <div class="gemini-guide-subscription-card">
+        <span>Google Play</span><strong>管理 Play 订阅</strong><small>查看订阅状态与下一次续费信息</small>
+        <div class="gemini-guide-action-row">
+          <a class="gemini-guide-action" href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener noreferrer">前往订阅管理</a>
+          <button class="gemini-guide-copy" type="button" data-copy-link="https://play.google.com/store/account/subscriptions">复制链接</button>
+          <span class="gemini-guide-copy-status" aria-live="polite"></span>
+        </div>
+      </div>
+      <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer"><span>Google AI / Gemini</span><strong>打开“管理订阅”</strong><small>跳转到 Google One 会员设置查看方案</small></a>
+    </div>
+    <ol class="gemini-guide-steps">
+      <li><strong>登录购买账号</strong><span>切换到实际购买订阅的 Google 账号。</span></li>
+      <li><strong>查看订阅状态</strong><span>区分“下次续费日”和“已取消后可使用至”的日期。</span></li>
+      <li><strong>按购买渠道管理</strong><span>Google Play 购买从 Play 管理；Google AI 方案按 Gemini/Google One 页面管理。</span></li>
+    </ol>
+    <div class="gemini-guide-note">只想确认下次扣款或当前状态，不必先取消订阅。若你已经决定停止自动续费，Google Play 订阅通常仍可使用到当前已付费周期结束；具体日期以该订阅页面显示为准。不同购买渠道、预付费或分期方案可能有不同规则。</div>
+    <figure class="gemini-guide-figure">
+      <img src="{{ '/assets/images/faq/gemini-subscription/05-subscription-expiry.png' | relative_url }}" alt="Google 订阅到期日问题的参考说明截图" loading="lazy" />
+      <figcaption>问题参考截图。取消续费只适用于你确实要停止后续扣款的情况，不是查询日期的前置步骤。</figcaption>
+    </figure>
+    <p class="gemini-guide-links"><a href="https://support.google.com/googleplay/answer/7018481?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google Play 官方：取消与管理订阅</a><a href="https://support.google.com/gemini/answer/14517446?hl=zh-Hans" target="_blank" rel="noopener noreferrer">Google 官方：管理 Gemini 方案</a></p>
+  </section>
+
+  <footer class="gemini-guide-footer">
+    <span>页面核验日期：2026 年 11 月 4 日。Google 的界面、方案和地区可用性可能调整，请以对应账号的官方页面为准。</span>
+    <a href="{{ '/faq/categories/google-account-security/' | relative_url }}">返回 Google 账号与安全验证常见排障</a>
+  </footer>
+</article>
+<script>
+(function () {
+  'use strict';
+  document.querySelectorAll('.gemini-guide-page [data-copy-link]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var value = button.getAttribute('data-copy-link');
+      var status = button.closest('.gemini-guide-action-row, .gemini-guide-subscription-card').querySelector('.gemini-guide-copy-status');
+      var copyText = function () {
+        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(value);
+        var field = document.createElement('textarea');
+        field.value = value;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        var copied = document.execCommand('copy');
+        document.body.removeChild(field);
+        return copied ? Promise.resolve() : Promise.reject(new Error('copy failed'));
+      };
+      copyText().then(function () {
+        status.textContent = '链接已复制';
+      }).catch(function () {
+        status.textContent = '复制失败，请点击旁边的按钮打开链接';
+      });
+    });
+  });
+}());
+</script>
