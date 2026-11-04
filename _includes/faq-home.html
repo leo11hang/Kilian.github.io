@@ -47,6 +47,18 @@
     {% include faq-question-items.html questions=faq_questions categories=faq_data.categories %}
     <p class="faq-empty-state" data-faq-empty hidden>没有找到匹配的问题。试试其他关键词，或切换到「全部」主题。</p>
     <button class="faq-load-more" type="button" data-faq-more hidden>显示更多问题</button>
+    {% assign google_security_category = faq_data.categories | where: 'slug', 'google-account-security' | first %}
+    {% if google_security_category %}
+      {% assign google_security_guide_url = google_security_category.tutorial_url | default: 'https://my.feishu.cn/wiki/YCC3wYDQ6iKtGzk4CYgcVOasnZg' %}
+      <aside class="faq-category-guide-link" data-faq-guide-topic="{{ google_security_category.id }}" aria-label="飞书图文教程" hidden>
+        <span class="faq-category-guide-icon" aria-hidden="true">飞书</span>
+        <span class="faq-category-guide-copy">
+          <strong>配套图文教程</strong>
+          <span>这是专为本分类准备的完整教程，内容托管在飞书文档中。</span>
+        </span>
+        <a class="faq-category-guide-action" href="{{ google_security_guide_url | escape }}" target="_blank" rel="noopener noreferrer">打开飞书图文教程</a>
+      </aside>
+    {% endif %}
   </section>
 </div>
 <script src="{{ '/assets/js/faq-browser.js' | relative_url }}" defer></script>
