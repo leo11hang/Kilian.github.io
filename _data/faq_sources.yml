@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03",
+  "updated_at": "2026-11-04",
   "source_record_schema": [
     "source_url",
     "source_type",
@@ -1215,6 +1215,105 @@
       "question_refs": [
         "faq-032",
         "faq-066"
+      ]
+    },
+    {
+      "id": "google-account-2step",
+      "source_url": "https://support.google.com/accounts/answer/185839?hl=en",
+      "source_type": "official_help_center",
+      "author": "Google Account Help",
+      "published_at": null,
+      "verified_at": "2026-11-04",
+      "product": "Google Account",
+      "version": "",
+      "supporting_claim": "说明如何开启两步验证、添加验证方式，并指出组织账号可能需要管理员协助。",
+      "counter_evidence": "可用验证方式与界面会随账号类型及安全状态变化；请以当前账号设置为准。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-067",
+        "faq-069",
+        "faq-070"
+      ]
+    },
+    {
+      "id": "google-authenticator",
+      "source_url": "https://support.google.com/accounts/answer/1066447?hl=en",
+      "source_type": "official_help_center",
+      "author": "Google Account Help",
+      "published_at": null,
+      "verified_at": "2026-11-04",
+      "product": "Google Authenticator",
+      "version": "7.0+ time behavior noted by Google",
+      "supporting_claim": "说明 Authenticator 设置流程、验证码错误排查、设备系统时间要求，以及 7.0 起使用操作系统时间。",
+      "counter_evidence": "Authenticator 的可用性可能因账号安全状态而延迟；不同第三方验证器的界面与实现可能不同。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-067",
+        "faq-069"
+      ]
+    },
+    {
+      "id": "google-payments-profile",
+      "source_url": "https://support.google.com/googlepay/answer/7643930?hl=en",
+      "source_type": "official_help_center",
+      "author": "Google Pay Help",
+      "published_at": null,
+      "verified_at": "2026-11-04",
+      "product": "Google payments profile",
+      "version": "",
+      "supporting_claim": "说明关闭付款资料会影响 Google 产品购买与付款记录，并提醒关闭后无法恢复原资料。",
+      "counter_evidence": "各地区的付款资料功能与页面可能有差异；该说明不代表付款资料必须关闭才能解决订阅错误。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-068"
+      ]
+    },
+    {
+      "id": "google-backup-codes",
+      "source_url": "https://support.google.com/accounts/answer/1187538?hl=en",
+      "source_type": "official_help_center",
+      "author": "Google Account Help",
+      "published_at": null,
+      "verified_at": "2026-11-04",
+      "product": "Google Account 2-Step Verification",
+      "version": "",
+      "supporting_claim": "说明 Google 账号备用码为 8 位数字、每个只能使用一次，并用于登录时的备用验证步骤。",
+      "counter_evidence": "备用码规则特指 Google 账号；其他网站或服务的备用码格式可能不同。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-070"
+      ]
+    },
+    {
+      "id": "google-play-subscriptions",
+      "source_url": "https://support.google.com/googleplay/answer/7018481?hl=en",
+      "source_type": "official_help_center",
+      "author": "Google Play Help",
+      "published_at": null,
+      "verified_at": "2026-11-04",
+      "product": "Google Play subscriptions",
+      "version": "",
+      "supporting_claim": "说明需使用购买订阅的 Google 账号管理订阅；取消后通常可继续使用已付费周期，并可在订阅页查看续费信息。",
+      "counter_evidence": "预付费方案、分期付款、地区规则和非 Google Play 购买的 Gemini 方案可能有不同终止规则。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-071"
+      ]
+    },
+    {
+      "id": "google-gemini-plan",
+      "source_url": "https://support.google.com/gemini/answer/14517446?hl=en",
+      "source_type": "official_help_center",
+      "author": "Gemini Apps Help",
+      "published_at": null,
+      "verified_at": "2026-11-04",
+      "product": "Google AI plans / Gemini Apps",
+      "version": "",
+      "supporting_claim": "说明 Google AI 方案通过 Google One 管理，以及如何从 Gemini 打开订阅管理并取消方案。",
+      "counter_evidence": "可用方案和订阅入口会受地区、购买渠道与当前账号状态影响。",
+      "verification_status": "official_page_opened",
+      "question_refs": [
+        "faq-071"
       ]
     }
   ]
