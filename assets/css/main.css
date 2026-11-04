@@ -1291,3 +1291,99 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
+
+/* Gemini subscription FAQ: category guide entry and illustrated walkthrough. */
+.faq-category-guide-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 18px;
+  padding: 15px 17px;
+  border: 1px solid #ded4ff;
+  border-radius: 14px;
+  background: linear-gradient(105deg, #fff 0%, #f8f5ff 100%);
+  box-shadow: var(--sh);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.faq-category-guide-link:hover { transform: translateY(-1px); border-color: var(--accent-dim); box-shadow: var(--sh-lg); }
+.faq-category-guide-icon { display: grid; flex: 0 0 auto; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--accent-lt); color: var(--accent); font-size: 15px; font-weight: 750; }
+.faq-category-guide-copy { display: grid; min-width: 0; gap: 3px; }
+.faq-category-guide-copy strong { color: var(--text-1); font-size: 14px; }
+.faq-category-guide-copy > span { color: var(--text-3); font-size: 12px; line-height: 1.5; }
+.faq-category-guide-action { flex: 0 0 auto; margin-left: auto; padding: 8px 11px; border: 1px solid var(--border); border-radius: 9px; background: #fff; color: var(--accent); font-size: 11px; font-weight: 700; }
+
+.gemini-guide-page { padding-top: 40px; padding-bottom: 80px; }
+.gemini-guide-hero { margin: 23px 0 18px; padding: 30px; border: 1px solid var(--border); border-radius: var(--r-lg); background: radial-gradient(circle at 94% 7%, rgba(167,139,250,.17), transparent 30%), linear-gradient(135deg, #fff 0%, #faf9ff 100%); box-shadow: var(--sh); }
+.gemini-guide-hero h1 { margin: 5px 0 8px; color: var(--text-1); font-size: clamp(25px, 3.1vw, 36px); line-height: 1.28; }
+.gemini-guide-hero > p { max-width: 760px; margin: 0; color: var(--text-3); font-size: 14px; line-height: 1.75; }
+.gemini-guide-quicklinks { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 19px; }
+.gemini-guide-quicklinks a, .gemini-guide-action { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 13px; border: 1px solid var(--border); border-radius: 10px; background: #fff; color: var(--accent); font-size: 12px; font-weight: 700; transition: border-color var(--transition), background var(--transition); }
+.gemini-guide-quicklinks a:hover, .gemini-guide-action:hover { border-color: var(--accent-dim); background: var(--accent-lt); }
+.gemini-guide-safety { margin: 0 0 16px; padding: 15px 18px; border: 1px solid #f0d29a; border-radius: 12px; background: #fffaf0; }
+.gemini-guide-safety strong { color: #875500; font-size: 13px; }
+.gemini-guide-safety p { margin: 5px 0 0; color: var(--text-2); font-size: 13px; line-height: 1.75; }
+.gemini-guide-toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 19px; padding: 13px; border: 1px solid var(--border); border-radius: 13px; background: rgba(255,255,255,.72); }
+.gemini-guide-toc a { padding: 7px 10px; border-radius: 8px; background: var(--surface2); color: var(--text-2); font-size: 11px; transition: color var(--transition), background var(--transition); }
+.gemini-guide-toc a:hover { background: var(--accent-lt); color: var(--accent); }
+.gemini-guide-section { scroll-margin-top: 88px; margin: 0 0 18px; padding: 24px; border: 1px solid var(--border); border-radius: var(--r-lg); background: rgba(255,255,255,.88); box-shadow: var(--sh); }
+.gemini-guide-section-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 16px; }
+.gemini-guide-section-heading > span { display: grid; flex: 0 0 auto; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: var(--accent-lt); color: var(--accent); font-size: 12px; font-weight: 750; font-variant-numeric: tabular-nums; }
+.gemini-guide-section-heading p { margin: 0 0 2px; color: var(--accent); font-size: 10px; font-weight: 750; letter-spacing: .06em; }
+.gemini-guide-section-heading h2 { margin: 0; color: var(--text-1); font-size: clamp(18px, 2.1vw, 23px); line-height: 1.4; }
+.gemini-guide-section > p { margin: 0 0 14px; color: var(--text-2); font-size: 14px; line-height: 1.85; }
+.gemini-guide-steps, .gemini-guide-checklist { display: grid; gap: 9px; margin: 15px 0; padding: 0; list-style: none; counter-reset: guide-step; }
+.gemini-guide-steps li, .gemini-guide-checklist li { display: grid; grid-template-columns: minmax(125px, .32fr) minmax(0, 1fr); gap: 12px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: #fff; color: var(--text-2); font-size: 12px; line-height: 1.65; counter-increment: guide-step; }
+.gemini-guide-steps li strong, .gemini-guide-checklist li strong { color: var(--text-1); }
+.gemini-guide-steps li::before, .gemini-guide-checklist li::before { content: counter(guide-step, decimal-leading-zero); grid-column: 1; grid-row: 1; color: var(--accent); font-size: 10px; font-weight: 750; }
+.gemini-guide-steps li strong, .gemini-guide-checklist li strong { grid-column: 1; grid-row: 2; }
+.gemini-guide-steps li span, .gemini-guide-checklist li span { grid-column: 2; grid-row: 1 / span 2; }
+.gemini-guide-note { margin: 14px 0; padding: 12px 15px; border: 1px solid #dfe6f2; border-radius: 10px; background: #f7f9fc; color: var(--text-2); font-size: 12px; line-height: 1.75; }
+.gemini-guide-note-warning { border-color: #f0d29a; background: #fffaf0; }
+.gemini-guide-figure { margin: 16px 0; padding: 10px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+.gemini-guide-figure img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.gemini-guide-figure figcaption { margin: 8px 3px 1px; color: var(--text-3); font-size: 10px; line-height: 1.55; }
+.gemini-guide-links { display: flex; flex-wrap: wrap; gap: 9px; margin: 13px 0 0 !important; }
+.gemini-guide-links a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--accent); font-size: 11px; font-weight: 700; }
+.gemini-guide-links a:hover { border-color: var(--accent-dim); background: var(--accent-lt); }
+.gemini-guide-compare, .gemini-guide-code-types, .gemini-guide-subscription-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; margin: 15px 0; }
+.gemini-guide-compare > div, .gemini-guide-code-types article, .gemini-guide-subscription-paths > a, .gemini-guide-subscription-card { display: grid; align-content: start; gap: 7px; min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+.gemini-guide-compare strong, .gemini-guide-code-types h3, .gemini-guide-subscription-paths strong { margin: 0; color: var(--text-1); font-size: 14px; }
+.gemini-guide-compare p, .gemini-guide-code-types p, .gemini-guide-subscription-paths small { margin: 0; color: var(--text-3); font-size: 12px; line-height: 1.7; }
+.gemini-guide-label { width: fit-content; padding: 4px 8px; border-radius: 99px; background: var(--accent-lt); color: var(--accent); font-size: 10px; font-weight: 700; }
+.gemini-guide-compare-danger { border-color: #f0d29a !important; background: #fffaf0 !important; }
+.gemini-guide-compare-danger .gemini-guide-label { background: #fff0cf; color: #875500; }
+.gemini-guide-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 5px; }
+.gemini-guide-action { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 0 12px; border-color: var(--accent-dim); background: var(--accent); color: #fff; }
+.gemini-guide-action:hover { background: #5a22bd; color: #fff; }
+.gemini-guide-copy { min-height: 36px; padding: 0 12px; border: 1px solid var(--border); border-radius: 9px; background: #fff; color: var(--accent); cursor: pointer; font: inherit; font-size: 11px; font-weight: 700; }
+.gemini-guide-copy:hover { border-color: var(--accent-dim); background: var(--accent-lt); }
+.gemini-guide-copy-status { color: var(--text-3); font-size: 10px; }
+.gemini-guide-action-hint { margin: 4px 0 12px !important; color: var(--text-3) !important; font-size: 11px !important; }
+.gemini-guide-code-types { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gemini-guide-code-icon { display: grid; place-items: center; width: fit-content; min-width: 48px; height: 28px; padding: 0 7px; border-radius: 8px; background: var(--accent-lt); color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: .03em; }
+.gemini-guide-subscription-paths > a { transition: border-color var(--transition), background var(--transition); }
+.gemini-guide-subscription-paths > a:hover { border-color: var(--accent-dim); background: #faf8ff; }
+.gemini-guide-subscription-paths > a > span, .gemini-guide-subscription-card > span { color: var(--accent); font-size: 10px; font-weight: 750; }
+.gemini-guide-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 2px; color: var(--text-3); font-size: 11px; line-height: 1.7; }
+.gemini-guide-footer a { flex: 0 0 auto; color: var(--accent); font-weight: 700; }
+@media (max-width: 760px) {
+  .gemini-guide-page { padding-top: 24px; }
+  .gemini-guide-hero { padding: 22px 18px; }
+  .gemini-guide-section { padding: 18px 15px; }
+  .gemini-guide-code-types { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .faq-category-guide-link { align-items: flex-start; gap: 10px; padding: 12px; }
+  .faq-category-guide-icon { width: 34px; height: 34px; }
+  .faq-category-guide-copy strong { font-size: 12px; }
+  .faq-category-guide-copy > span { font-size: 10px; }
+  .faq-category-guide-action { display: none; }
+  .gemini-guide-toc { gap: 6px; padding: 10px; }
+  .gemini-guide-toc a { font-size: 10px; }
+  .gemini-guide-steps li, .gemini-guide-checklist li { grid-template-columns: 30px minmax(0, 1fr); gap: 2px 8px; }
+  .gemini-guide-steps li::before, .gemini-guide-checklist li::before { grid-column: 1; grid-row: 1; }
+  .gemini-guide-steps li strong, .gemini-guide-checklist li strong { grid-column: 2; grid-row: 1; }
+  .gemini-guide-steps li span, .gemini-guide-checklist li span { grid-column: 2; grid-row: 2; }
+  .gemini-guide-compare, .gemini-guide-subscription-paths { grid-template-columns: 1fr; }
+  .gemini-guide-footer { align-items: flex-start; flex-direction: column; }
+}
