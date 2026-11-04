@@ -9,6 +9,7 @@
     var count = browser.querySelector('[data-faq-result-count]');
     var empty = browser.querySelector('[data-faq-empty]');
     var more = browser.querySelector('[data-faq-more]');
+    var topicGuide = browser.querySelector('[data-faq-guide-topic]');
     var selectedTopic = 'all';
     var pageSize = 12;
     var visibleLimit = pageSize;
@@ -41,6 +42,9 @@
           : '共 ' + matches.length + ' 个问题';
       }
       if (empty) empty.hidden = matches.length !== 0;
+      if (topicGuide) {
+        topicGuide.hidden = selectedTopic !== topicGuide.getAttribute('data-faq-guide-topic') || matches.length === 0;
+      }
       if (more) {
         more.hidden = matches.length <= visibleLimit;
         more.textContent = matches.length > visibleLimit
