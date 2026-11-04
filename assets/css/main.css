@@ -1457,6 +1457,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .faq-google-takeaway > span { color: #ffd166; font-size: 17px; }
 .faq-google-takeaway p { margin: 0; }
 .faq-category-guide-link { margin: 24px 0 0; }
+.faq-category-guide-link[hidden] { display: none; }
 .faq-category-guide-action { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; text-decoration: none; }
 @media (max-width: 700px) {
   .faq-google-comparison-grid { grid-template-columns: 1fr; }
