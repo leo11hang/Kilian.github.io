@@ -34,14 +34,15 @@ layout: default
   {% include faq-question-items.html questions=questions categories=site.data.faq.categories %}
   <p class="faq-empty-state" data-faq-empty hidden>没有找到匹配的问题，请换个关键词试试。</p>
   <button class="faq-load-more" type="button" data-faq-more hidden>显示更多问题</button>
-  {% if category.tutorial_url %}
-    <aside class="faq-category-guide-link" aria-label="配套图文教程">
-      <span class="faq-category-guide-icon" aria-hidden="true">文</span>
+  {% if category.slug == 'google-account-security' %}
+    {% assign guide_url = category.tutorial_url | default: 'https://my.feishu.cn/wiki/YCC3wYDQ6iKtGzk4CYgcVOasnZg' %}
+    <aside class="faq-category-guide-link" aria-label="飞书图文教程">
+      <span class="faq-category-guide-icon" aria-hidden="true">飞书</span>
       <span class="faq-category-guide-copy">
-        <strong>{{ category.tutorial_label | default: '配套图文教程' | escape }}</strong>
-        <span>完整图文教程位于飞书文档，点击即可查看。</span>
+        <strong>配套图文教程</strong>
+        <span>这是专为本分类准备的完整教程，内容托管在飞书文档中。</span>
       </span>
-      <a class="faq-category-guide-action" href="{{ category.tutorial_url | escape }}" target="_blank" rel="noopener noreferrer">查看飞书教程</a>
+      <a class="faq-category-guide-action" href="{{ guide_url | escape }}" target="_blank" rel="noopener noreferrer">打开飞书图文教程</a>
     </aside>
   {% endif %}
 </main>
