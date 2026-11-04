@@ -1,0 +1,74 @@
+{% assign google_answer = include.answer_data %}
+<div class="faq-google-answer">
+  {% if google_answer.badges.size > 0 %}
+    <div class="faq-google-answer-badges" aria-label="问题标签">
+      {% for badge in google_answer.badges %}<span class="faq-google-badge faq-google-badge-{{ badge.tone | default: 'blue' }}">{{ badge.text | escape }}</span>{% endfor %}
+    </div>
+  {% endif %}
+  {% if google_answer.intro and google_answer.intro != '' %}<p class="faq-google-answer-intro">{{ google_answer.intro | escape }}</p>{% endif %}
+
+  {% for block in google_answer.blocks %}
+    {% case block.type %}
+      {% when 'comparison' %}
+        <section class="faq-google-block faq-google-comparison" aria-label="{{ block.title | escape }}">
+          <h3><span class="faq-google-block-icon" aria-hidden="true">!</span>{{ block.title | escape }}：</h3>
+          <div class="faq-google-comparison-grid">
+            {% for item in block.items %}
+              <div class="faq-google-comparison-item faq-google-tone-{{ item.tone | default: 'neutral' }}">
+                <span class="faq-google-status-icon" aria-hidden="true">{% if item.tone == 'danger' %}×{% elsif item.tone == 'success' %}✓{% else %}i{% endif %}</span>
+                <span>{{ item.text | escape }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      {% when 'callout' %}
+        <aside class="faq-google-block faq-google-callout faq-google-tone-{{ block.tone | default: 'neutral' }}">
+          <h3><span class="faq-google-block-icon" aria-hidden="true">{% if block.tone == 'warning' %}!{% elsif block.tone == 'green' %}✓{% elsif block.tone == 'purple' %}i{% else %}i{% endif %}</span>{{ block.title | escape }}：</h3>
+          <p>{{ block.text | escape }}</p>
+        </aside>
+      {% when 'steps' %}
+        <section class="faq-google-block faq-google-steps">
+          <h3><span class="faq-google-block-icon" aria-hidden="true">≡</span>{{ block.title | escape }}：</h3>
+          <ol>
+            {% for item in block.items %}
+              <li>
+                <span class="faq-google-step-number">{{ forloop.index }}</span>
+                <div><strong>{{ item.title | escape }}</strong><span>{{ item.text | escape }}{% if item.url %} <a class="faq-google-inline-link" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{{ item.url | escape }}</a>{% endif %}</span></div>
+              </li>
+            {% endfor %}
+          </ol>
+        </section>
+      {% when 'action_link' %}
+        <section class="faq-google-block faq-google-action-link faq-google-tone-{{ block.tone | default: 'blue' }}">
+          <svg class="faq-google-link-symbol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.07 0l3-3A5 5 0 0 0 13 2.93l-1.72 1.71M14 11a5 5 0 0 0-7.07 0l-3 3A5 5 0 0 0 11 21.07l1.71-1.72"/></svg>
+          <span class="faq-google-action-title">{{ block.title | escape }}：</span>
+          <div class="faq-google-action-buttons">
+            <a href="{{ block.url | escape }}" target="_blank" rel="noopener noreferrer">{{ block.open_label | escape }}</a>
+            <button type="button" data-copy-url="{{ block.url | escape }}">{{ block.copy_label | escape }}</button>
+            <span class="faq-google-copy-status" aria-live="polite"></span>
+          </div>
+        </section>
+      {% when 'numbered_cards' %}
+        <section class="faq-google-block faq-google-numbered-cards" aria-label="排查步骤">
+          {% for item in block.items %}
+            <article>
+              <span class="faq-google-step-number">{{ forloop.index }}</span>
+              <div><h4>{{ item.title | escape }}</h4><p>{{ item.text | escape }}</p></div>
+            </article>
+          {% endfor %}
+        </section>
+      {% when 'cards' %}
+        <section class="faq-google-block faq-google-info-cards" aria-label="凭证类型说明">
+          {% for item in block.items %}
+            <article class="faq-google-tone-{{ item.tone | default: 'blue' }}">
+              <div class="faq-google-info-card-heading"><h4>{{ item.badge | escape }}</h4><span>{{ item.title | escape }}</span></div>
+              <p>{{ item.text | escape }}</p>
+              <div class="faq-google-example">{{ item.example | escape }}</div>
+            </article>
+          {% endfor %}
+        </section>
+      {% when 'takeaway' %}
+        <aside class="faq-google-block faq-google-takeaway"><span aria-hidden="true">✦</span><p>{{ block.text | escape }}</p></aside>
+    {% endcase %}
+  {% endfor %}
+</div>

@@ -21,7 +21,12 @@
       </summary>
       <div class="faq-qa-content">
         {% if question.answer and question.answer != '' %}
-          <div class="faq-qa-answer">{{ question.answer | escape | newline_to_br }}</div>
+          {% assign google_answer = site.data.faq_google_answers | where: 'id', question.id | first %}
+          {% if google_answer %}
+            {% include faq-google-answer.html question=question answer_data=google_answer %}
+          {% else %}
+            <div class="faq-qa-answer">{{ question.answer | escape | newline_to_br }}</div>
+          {% endif %}
           <div class="faq-qa-footer">
             <span>{% if question.sources.size > 0 %}参考 {{ question.sources.size }} 条资料{% else %}资料持续整理中{% endif %}{% if question.last_verified %} · 核验于 {{ question.last_verified | escape }}{% endif %}</span>
             <a href="{{ '/faq/questions/' | append: question.id | append: '/' | relative_url }}">查看资料详情</a>

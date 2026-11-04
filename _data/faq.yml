@@ -74,8 +74,8 @@
       "slug": "google-account-security",
       "name": "Google 账号与安全验证常见排障",
       "description": "Google 账号两步验证、付款资料，以及 Google Play / Gemini 订阅相关问题。",
-      "tutorial_url": "/faq/google-account-security-guide/",
-      "tutorial_label": "查看完整图文指南"
+      "tutorial_url": "https://my.feishu.cn/wiki/YCC3wYDQ6iKtGzk4CYgcVOasnZg",
+      "tutorial_label": "Google 账号与安全验证完整图文教程"
     }
   ],
   "questions": [
@@ -1778,7 +1778,7 @@
       "id": "faq-067",
       "category": "11",
       "question": "找不到 Google Authenticator 选项怎么办？",
-      "answer": "先确认登录的是要启用验证器的 Google 账号，再进入账号安全设置，检查两步验证是否已经开启。若尚未开启，先按页面步骤开启；之后在两步验证设置中选择验证器并完成二维码/密钥绑定和验证码确认。仅在 Authenticator App 里添加一个密钥，不代表 Google 账号已经完成绑定。\n\nGoogle 说明，Authenticator 可能需要最多 7 天才会显示为可用的登录验证选项。若是工作、学校或组织账号，设置也可能由管理员控制。请以账号安全页面当前显示为准。",
+      "answer": "关键概念避坑：仅在 Authenticator App 中添加绑定密钥，不等于 Google 账号总开关已经正式开启两步验证。\n\n排查与解决步骤：1. 登录 Google 账号管理后台 https://myaccount.google.com/security。2. 在“登录 Google 的方式”中找到“两步验证”选项。3. 确认两步验证总状态显示为“已开启（On）”。4. 添加验证器后，回到网页输入新生成的验证码，并点击“开启”或“完成”保存；只扫码后关闭页面不会完成绑定。",
       "keywords": [
         "Google Authenticator",
         "身份验证器选项",
@@ -1801,7 +1801,7 @@
       "id": "faq-068",
       "category": "11",
       "question": "提示“请关闭所有付款资料后重试”怎么办？",
-      "answer": "先确认当前登录的 Google 账号和付款资料是否正确，并按页面提示查看具体受影响的付款资料。移除银行卡/付款方式，与关闭整个付款资料不是一回事。\n\n不要把关闭付款资料当作常规的第一步：Google 说明，关闭会永久移除付款与交易信息，关闭后不能重新开启，也可能无法继续购买 Google Play、Google One 等 Google 服务。若问题仍存在，请先查阅 Google 官方帮助或联系 Google 支持；不要为了绕过提示添加虚假的银行卡或测试卡。",
+      "answer": "核心认知区别：删除付款方式或银行卡，不等于关闭付款资料（Payments Profile）。单纯解绑卡片，付款资料主体仍然存在，因此相关区域或资料限制不一定会解除。\n\n付款资料设置直达地址：https://payments.google.com/gp/w/home/settings。正确关闭流程：1. 打开设置并确认登录的是需要处理的 Google 账号。2. 在页面中找到“关闭付款资料”（Close payments profile）；入口位置可能随页面版本变化。3. 阅读 Google 页面显示的影响，选择原因并按提示提交。\n\n如果页面没有显示已绑定的付款方式，但换区或更改资料时仍出现该提示，请核对账号和付款资料状态，并联系 Google 支持。不要添加虚假银行卡或测试卡，也不要提交不真实的付款信息。",
       "keywords": [
         "付款资料",
         "Payments Profile",
@@ -1822,7 +1822,7 @@
       "id": "faq-069",
       "category": "11",
       "question": "Google Authenticator 的 2FA 验证码不匹配怎么办？",
-      "answer": "先检查是否选中了正确的账号与服务，并在当前验证码失效前输入。然后确认手机的日期、时间及时区设置正确，建议开启系统的自动设置时间。若刚绑定验证器，回到发起绑定的服务完成验证码确认步骤；只在验证器中添加密钥不会自动完成该服务的绑定。\n\nGoogle Authenticator 7.0 起已移除应用内的时间校正功能，验证码使用设备操作系统时间。不要把动态验证码发给他人；若仍无法登录，使用服务提供的账号恢复流程。",
+      "answer": "输入 Authenticator 上显示的 6 位动态数字后，如果系统提示错误或不匹配，先检查两项：1. 未完成网页端的最后保存——添加 Google Authenticator 后，必须回到发起绑定的网页点击“下一步”，输入新生成的验证码并完成确认；直接关闭网页可能导致绑定未建立。2. 手机系统时间不同步——动态验证码（TOTP）依赖设备时间，请在手机设置中开启自动设置日期、时间及时区，等待验证码刷新后重新输入。较新版本的 Authenticator 使用设备系统时间；如果应用版本提供时间校正选项，可按应用内提示操作。",
       "keywords": [
         "验证码不匹配",
         "TOTP",
@@ -1845,7 +1845,7 @@
       "id": "faq-070",
       "category": "11",
       "question": "添加账号时，2FA 密钥、动态码和备用码有什么区别？",
-      "answer": "三者用途不同：\n\n• 设置密钥（Secret Key）或二维码：由要保护的服务在绑定验证器时提供，添加到 Authenticator 后用于生成动态码。密钥的长度和格式由具体服务决定，截图中的 32 位格式不能视为通用标准。\n• 动态验证码（TOTP）：验证器根据密钥和设备时间生成的短时验证码，用于登录或完成绑定页面上的确认。\n• 备用码（Backup Code）：服务预先生成的应急登录码；Google 账号备用码为 8 位数字，每个只能使用一次，不能当成验证器密钥。\n\n不要把密钥、动态验证码或备用码发给他人或贴到公开页面。",
+      "answer": "设置密钥（Secret Key）由服务在绑定验证器时提供，也可能以二维码形式展示；添加到 Authenticator 后用于生成动态验证码。密钥长度和格式由服务决定，并非所有服务都使用 32 位密钥。动态验证码（TOTP）通常是短时有效的 6 位数字，用于登录验证或完成绑定确认。备用验证码（Backup Code）是在无法使用常规验证方式时应急使用的凭证；Google 账号备用码通常为 8 位数字，每个只能使用一次。绑定验证器时填写设置密钥，登录时输入动态验证码；只有页面明确要求备用码时才填写备用码。",
       "keywords": [
         "2FA 密钥",
         "Secret Key",
@@ -1869,7 +1869,7 @@
       "id": "faq-071",
       "category": "11",
       "question": "如何查看 Google Play 或 Gemini 订阅的实际到期时间？",
-      "answer": "先确认订阅是通过哪个 Google 账号、哪个渠道购买的，再打开对应的订阅管理页面。Google Play 订阅可以在订阅管理中查看当前状态和续费信息；如果仍在自动续费，显示的日期通常是下次续费日，不应直接当成已确认的最终到期日。\n\n若取消自动续费，Google Play 订阅通常仍可使用到当前已付费周期结束，页面会显示相应状态或可使用期限；查询日期本身不需要先取消订阅。若 Gemini / Google AI 方案是通过 Google One 订阅的，请在 Gemini 或 Google One 的“管理订阅”中查看。不同购买渠道和方案状态可能不同，以对应账号页面显示为准。",
+      "answer": "Google 账号开启自动扣费时，订阅页面通常显示下一次自动扣款或计费日期；这不一定等同于当前已付款周期的最终服务截止日期。打开 Google Play 订阅中心 https://play.google.com/store/account/subscriptions，确认登录的是购买订阅时使用的账号，找到目标 YouTube 或 Gemini / Google AI 套餐并打开“管理”（Manage）。页面会显示续费、取消或已到期状态及相应日期。若你决定停止后续自动续费，再按页面提示取消并确认；之后刷新订阅页面，核对“服务将在 YYYY-MM-DD 到期”等状态文案。取消自动续费通常不会立即结束当前已付款周期的服务，具体权益保留时间和到期规则以对应购买渠道页面说明为准。",
       "keywords": [
         "Gemini 订阅",
         "Google AI 方案",

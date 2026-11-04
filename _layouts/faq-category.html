@@ -22,17 +22,6 @@ layout: default
     </div>
   </header>
 
-  {% if category.tutorial_url %}
-    <a class="faq-category-guide-link" href="{{ category.tutorial_url | relative_url }}">
-      <span class="faq-category-guide-icon" aria-hidden="true">图</span>
-      <span class="faq-category-guide-copy">
-        <strong>{{ category.tutorial_label | default: '查看完整图文指南' | escape }}</strong>
-        <span>按步骤排查账号验证、付款资料与订阅到期问题</span>
-      </span>
-      <span class="faq-category-guide-action">打开指南</span>
-    </a>
-  {% endif %}
-
   <div class="faq-category-search">
     <label class="faq-live-search">
       <svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#ic-search"/></svg>
@@ -45,5 +34,15 @@ layout: default
   {% include faq-question-items.html questions=questions categories=site.data.faq.categories %}
   <p class="faq-empty-state" data-faq-empty hidden>没有找到匹配的问题，请换个关键词试试。</p>
   <button class="faq-load-more" type="button" data-faq-more hidden>显示更多问题</button>
+  {% if category.tutorial_url %}
+    <aside class="faq-category-guide-link" aria-label="配套图文教程">
+      <span class="faq-category-guide-icon" aria-hidden="true">文</span>
+      <span class="faq-category-guide-copy">
+        <strong>{{ category.tutorial_label | default: '配套图文教程' | escape }}</strong>
+        <span>完整图文教程位于飞书文档，点击即可查看。</span>
+      </span>
+      <a class="faq-category-guide-action" href="{{ category.tutorial_url | escape }}" target="_blank" rel="noopener noreferrer">查看飞书教程</a>
+    </aside>
+  {% endif %}
 </main>
 <script src="{{ '/assets/js/faq-browser.js' | relative_url }}" defer></script>

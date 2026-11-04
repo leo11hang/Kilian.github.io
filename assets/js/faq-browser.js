@@ -87,4 +87,31 @@
 
     update(false);
   });
+
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('[data-copy-url]');
+    if (!button) return;
+
+    var value = button.getAttribute('data-copy-url');
+    var status = button.parentNode.querySelector('.faq-google-copy-status');
+    var copyText = function () {
+      if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(value);
+      var field = document.createElement('textarea');
+      field.value = value;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      var copied = document.execCommand('copy');
+      document.body.removeChild(field);
+      return copied ? Promise.resolve() : Promise.reject(new Error('copy failed'));
+    };
+
+    copyText().then(function () {
+      if (status) status.textContent = '已复制';
+    }).catch(function () {
+      if (status) status.textContent = '复制失败，请手动复制链接';
+    });
+  });
 })();

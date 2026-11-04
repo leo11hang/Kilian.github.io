@@ -1,0 +1,136 @@
+- id: faq-067
+  badges:
+    - text: 两步验证机制
+      tone: blue
+    - text: 高频误区
+      tone: red
+  blocks:
+    - type: comparison
+      title: 关键概念避坑
+      items:
+        - tone: danger
+          text: 仅在 App 中添加绑定密钥
+        - tone: success
+          text: 账号总开关正式开启了两步验证
+    - type: callout
+      tone: warning
+      title: 注意
+      text: 添加了谷歌验证器，不等于已经开启两步验证。
+    - type: steps
+      title: 排查与解决步骤
+      items:
+        - title: 登录 Google 账号管理后台
+          text: 打开账号安全设置：
+          url: https://myaccount.google.com/security
+        - title: 找到两步验证
+          text: 在“登录 Google 的方式”中找到“两步验证”选项。
+        - title: 确认总开关状态
+          text: 确保两步验证总状态显示为“已开启（On）”。
+        - title: 完成最后确认
+          text: 扫描二维码或输入密钥后，还要在网页端输入验证码，并点击“开启”或“完成”保存；只扫码后关闭页面不会完成绑定。
+
+- id: faq-068
+  badges:
+    - text: 支付设置
+      tone: green
+    - text: 换区 / 解绑常见报错
+      tone: amber
+  blocks:
+    - type: callout
+      tone: neutral
+      title: 核心认知区别
+      text: 删除付款方式或银行卡，不等于关闭付款资料（Payments Profile）。单纯解绑卡片，付款资料主体仍然存在，因此相关区域或资料限制不一定会解除。
+    - type: action_link
+      title: 付款资料设置直达地址
+      url: https://payments.google.com/gp/w/home/settings
+      open_label: 前往设置
+      copy_label: 复制链接
+    - type: steps
+      title: 正确关闭操作流程
+      items:
+        - title: 打开付款资料设置
+          text: 打开上方链接，并确认当前登录的是需要处理的 Google 账号。
+        - title: 找到关闭入口
+          text: 在页面中找到“关闭付款资料”（Close payments profile）。入口位置可能随页面版本变化。
+        - title: 查看影响并确认
+          text: 阅读 Google 页面显示的影响，选择原因并按页面提示提交。
+    - type: callout
+      tone: purple
+      title: 页面仍提示报错时
+      text: 如果页面没有显示已绑定的付款方式，但换区或更改资料时仍出现该提示，请先核对账号和付款资料状态，并联系 Google 支持处理。不要添加虚假银行卡或测试卡，也不要为了绕过限制提交不真实的付款信息。
+
+- id: faq-069
+  badges:
+    - text: 验证码故障
+      tone: red
+    - text: TOTP 同步
+      tone: slate
+  intro: 输入 Authenticator 上显示的 6 位动态数字后，如果系统提示错误或不匹配，通常可以先检查下面两项。
+  blocks:
+    - type: numbered_cards
+      items:
+        - title: 未完成网页端的最后保存
+          text: 添加 Google Authenticator 后，必须回到发起绑定的网页点击“下一步”，输入新生成的验证码并完成确认。如果直接关闭网页，旧绑定可能没有建立，刚添加的验证码也不会被该账号接受。
+        - title: 手机系统时间不同步（时差误差）
+          text: 动态验证码（TOTP）依赖设备时间。请在手机设置中开启自动设置日期、时间及时区，再等待验证码刷新后重新输入。较新版本的 Authenticator 使用设备系统时间；如果你的应用版本提供时间校正选项，也可以按应用内提示操作。
+
+- id: faq-070
+  badges:
+    - text: 凭证格式规范
+      tone: blue
+    - text: 输入区别
+      tone: amber
+  intro: 在验证器、登录脚本或客户端中设置两步验证时，需要区分密钥、动态验证码和备用码这三类内容。
+  blocks:
+    - type: cards
+      items:
+        - badge: 设置密钥（Secret Key）
+          tone: blue
+          title: 用于添加 / 绑定账号
+          text: 由要保护的服务在绑定验证器时提供，也可能以二维码形式展示。添加到 Authenticator 后用于生成动态验证码。
+          example: 示例密钥：JBSWY3DPEHPK3PXP…
+        - badge: 动态验证码（TOTP）
+          tone: slate
+          title: 6 位数字
+          text: 验证器根据密钥和设备时间生成，短时间后会自动更换，用于登录验证或完成绑定确认。
+          example: 每次登录时输入当前显示的验证码
+        - badge: 备用验证码（Backup）
+          tone: green
+          title: Google 账号通常为 8 位数字
+          text: 手机丢失或无法使用常规验证方式时应急使用。每个备用码通常只能使用一次。
+          example: 请使用账号页面生成的个人备用码
+    - type: takeaway
+      text: 绑定验证器时填入服务提供的设置密钥；登录时填入动态验证码。只有在页面明确要求备用码时，才填写对应的备用码。密钥长度和格式由服务决定，并非所有服务都使用 32 位密钥。
+
+- id: faq-071
+  badges:
+    - text: Google Play 订阅
+      tone: green
+    - text: YouTube / Gemini Pro 套餐
+      tone: amber
+  blocks:
+    - type: callout
+      tone: neutral
+      title: 显示机制说明
+      text: Google 账号开启自动扣费时，订阅页面通常显示下一次自动扣款或计费日期；这不一定等同于当前已付款周期的最终服务截止日期。
+    - type: action_link
+      title: Google Play 订阅中心直达地址
+      url: https://play.google.com/store/account/subscriptions
+      open_label: 前往订阅管理
+      copy_label: 复制链接
+      tone: green
+    - type: steps
+      title: 查看订阅状态与日期
+      items:
+        - title: 打开订阅管理
+          text: 使用上方链接打开 Google Play 订阅中心，并确认登录的是购买订阅时使用的 Google 账号。
+        - title: 找到目标订阅
+          text: 找到对应的 YouTube 或 Gemini / Google AI 套餐，打开“管理”（Manage）。
+        - title: 查看当前状态
+          text: 页面会显示续费、取消或已到期状态及相应日期。若你决定停止后续自动续费，再按页面提示取消并确认。
+        - title: 核对服务截止日
+          text: 取消后刷新订阅页面，查看页面显示的“服务将在 YYYY-MM-DD 到期”等状态文案；以当前账号页面显示为准。
+    - type: callout
+      tone: green
+      title: 关于已付费权益
+      text: 取消自动续费通常不会立即结束当前已付款周期的服务；具体权益保留时间、退款和到期规则以 Google Play 或对应购买渠道的页面说明为准。只想查看续费信息时，不必先取消订阅。

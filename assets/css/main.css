@@ -1387,3 +1387,82 @@ input[type="search"]::-webkit-search-results-decoration {
   .gemini-guide-compare, .gemini-guide-subscription-paths { grid-template-columns: 1fr; }
   .gemini-guide-footer { align-items: flex-start; flex-direction: column; }
 }
+
+/* Google account FAQ answers: recreate the supplied reference layouts inside each expanded question. */
+.faq-google-answer { display: grid; gap: 14px; color: var(--text-2); font-size: 14px; line-height: 1.75; }
+.faq-google-answer-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.faq-google-badge { display: inline-flex; align-items: center; min-height: 27px; padding: 3px 10px; border-radius: 7px; background: #edf4ff; color: #2563eb; font-size: 12px; font-weight: 700; }
+.faq-google-badge-red { background: #fff0f1; color: #dc3545; }
+.faq-google-badge-green { background: #e8fbf2; color: #07875e; }
+.faq-google-badge-amber { background: #fff7e7; color: #b66a00; }
+.faq-google-badge-slate { background: #eef2f7; color: #52617a; }
+.faq-google-answer-intro { margin: 0; color: var(--text-2); font-size: 15px; }
+.faq-google-block { min-width: 0; }
+.faq-google-block h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 10px; color: var(--text-1); font-size: 15px; line-height: 1.5; }
+.faq-google-block-icon { display: inline-grid; flex: 0 0 auto; place-items: center; width: 19px; height: 19px; border-radius: 50%; background: #eaf1ff; color: #3578e5; font-size: 12px; font-weight: 800; }
+.faq-google-comparison { padding: 16px 18px; border: 1px solid #f4d46f; border-radius: 14px; background: #fffdf3; }
+.faq-google-comparison h3 .faq-google-block-icon { background: #fff0ca; color: #ce7900; }
+.faq-google-comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.faq-google-comparison-item { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 10px 13px; border: 1px solid; border-radius: 11px; }
+.faq-google-tone-danger { border-color: #ffc7c2; background: #fff0ee; color: #b42318; }
+.faq-google-tone-success { border-color: #a3ebc5; background: #e6fbef; color: #087b55; }
+.faq-google-status-icon { display: inline-grid; flex: 0 0 auto; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: currentColor; color: #fff; font-size: 14px; font-weight: 800; line-height: 1; }
+.faq-google-tone-danger .faq-google-status-icon { background: #ef4444; color: #fff; }
+.faq-google-tone-success .faq-google-status-icon { background: #079669; color: #fff; }
+.faq-google-tone-neutral { border-color: #dce5f1; background: #f7f9fc; color: #35506e; }
+.faq-google-tone-warning { border-color: #f4d46f; background: #fff9e9; color: #a25400; }
+.faq-google-tone-purple { border-color: #e4c9ff; background: #fbf6ff; color: #7024c7; }
+.faq-google-tone-green { border-color: #91ebd6; background: #effdfa; color: #078775; }
+.faq-google-callout { padding: 14px 16px; border: 1px solid; border-radius: 13px; }
+.faq-google-callout h3 { margin-bottom: 4px; }
+.faq-google-callout p { margin: 0; }
+.faq-google-callout.faq-google-tone-neutral .faq-google-block-icon { background: #dfeeff; color: #3d84ed; }
+.faq-google-callout.faq-google-tone-warning .faq-google-block-icon { background: #ffeab2; color: #c96e00; }
+.faq-google-callout.faq-google-tone-purple .faq-google-block-icon { background: #efdfff; color: #8128d8; }
+.faq-google-callout.faq-google-tone-green .faq-google-block-icon { background: #c9f8ec; color: #078775; }
+.faq-google-steps ol { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.faq-google-steps li { display: grid; grid-template-columns: 25px minmax(0, 1fr); gap: 9px; align-items: start; }
+.faq-google-step-number { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #e5efff; color: #2463d2; font-size: 12px; font-weight: 800; }
+.faq-google-steps li > div { display: flex; flex-wrap: wrap; gap: 4px 8px; min-width: 0; }
+.faq-google-steps li strong { color: var(--text-1); }
+.faq-google-steps li > div > span { min-width: 0; }
+.faq-google-inline-link { display: inline-block; overflow-wrap: anywhere; padding: 1px 7px; border-radius: 5px; background: #eef3f9; color: #244269; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; }
+.faq-google-action-link { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 13px 15px; border: 1px solid; border-radius: 13px; }
+.faq-google-action-link.faq-google-tone-blue { border-color: #bed3ff; background: #f4f8ff; color: #315b9c; }
+.faq-google-link-symbol { flex: 0 0 auto; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.faq-google-action-title { flex: 1 1 220px; color: inherit; }
+.faq-google-action-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.faq-google-action-buttons a, .faq-google-action-buttons button { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 0 12px; border: 1px solid #c8d8ff; border-radius: 9px; background: #fff; color: #2563eb; font: inherit; font-size: 12px; font-weight: 700; text-decoration: none; cursor: pointer; }
+.faq-google-action-buttons a { border-color: #2f69eb; background: #2f69eb; color: #fff; }
+.faq-google-tone-green .faq-google-action-buttons a { border-color: #099987; background: #099987; }
+.faq-google-action-buttons a:hover, .faq-google-action-buttons button:hover { filter: brightness(.96); }
+.faq-google-copy-status { color: var(--text-3); font-size: 11px; }
+.faq-google-numbered-cards { display: grid; gap: 12px; }
+.faq-google-numbered-cards article { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; align-items: start; padding: 14px 16px; border: 1px solid #dce5f1; border-radius: 13px; background: #f8fafd; }
+.faq-google-numbered-cards .faq-google-step-number { width: 30px; height: 30px; font-size: 14px; }
+.faq-google-numbered-cards h4 { margin: 0 0 3px; color: var(--text-1); font-size: 14px; }
+.faq-google-numbered-cards p { margin: 0; }
+.faq-google-info-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.faq-google-info-cards article { min-width: 0; padding: 15px; border: 1px solid #dce5f1; border-radius: 13px; background: #f8fafd; }
+.faq-google-info-cards article.faq-google-tone-blue { border-color: #b9d5ff; background: #f3f8ff; }
+.faq-google-info-cards article.faq-google-tone-green { border-color: #a8ecd2; background: #f2fcf8; }
+.faq-google-info-card-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 7px; margin-bottom: 8px; }
+.faq-google-info-card-heading h4 { margin: 0; color: var(--text-1); font-size: 13px; }
+.faq-google-info-card-heading > span { padding: 2px 7px; border-radius: 6px; background: #e4edfc; color: #34567b; font-size: 10px; white-space: nowrap; }
+.faq-google-info-cards article.faq-google-tone-blue .faq-google-info-card-heading > span { background: #cfe2ff; color: #24549a; }
+.faq-google-info-cards article.faq-google-tone-green .faq-google-info-card-heading > span { background: #c8f5e3; color: #087b58; }
+.faq-google-info-cards p { min-height: 66px; margin: 0 0 10px; font-size: 13px; }
+.faq-google-example { padding: 8px 9px; border: 1px solid rgba(100,120,150,.18); border-radius: 8px; background: rgba(255,255,255,.82); color: #40536d; font-size: 11px; }
+.faq-google-takeaway { display: flex; gap: 10px; padding: 14px 16px; border-radius: 12px; background: #111827; color: #fff; }
+.faq-google-takeaway > span { color: #ffd166; font-size: 17px; }
+.faq-google-takeaway p { margin: 0; }
+.faq-category-guide-link { margin: 24px 0 0; }
+.faq-category-guide-action { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; text-decoration: none; }
+@media (max-width: 700px) {
+  .faq-google-comparison-grid { grid-template-columns: 1fr; }
+  .faq-google-info-cards { grid-template-columns: 1fr; }
+  .faq-google-info-cards p { min-height: 0; }
+  .faq-google-action-title { flex-basis: 100%; }
+  .faq-category-guide-link { flex-wrap: wrap; }
+  .faq-category-guide-action { display: inline-flex !important; margin-left: 54px; }
+}
