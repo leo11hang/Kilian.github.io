@@ -22,6 +22,17 @@ layout: default
     </div>
   </header>
 
+  {% if category.tutorial_url %}
+    <a class="faq-category-guide-link" href="{{ category.tutorial_url | relative_url }}">
+      <span class="faq-category-guide-icon" aria-hidden="true">图</span>
+      <span class="faq-category-guide-copy">
+        <strong>{{ category.tutorial_label | default: '查看完整图文指南' | escape }}</strong>
+        <span>按步骤排查账号验证、付款资料与订阅到期问题</span>
+      </span>
+      <span class="faq-category-guide-action">打开指南</span>
+    </a>
+  {% endif %}
+
   <div class="faq-category-search">
     <label class="faq-live-search">
       <svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#ic-search"/></svg>
