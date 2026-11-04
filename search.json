@@ -34,4 +34,18 @@ layout: null
     "cover": ""
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
+  ,{
+    "kind": "faq",
+    "title": "Gemini 订阅与 Google 账号图文指南",
+    "url": {{ '/faq/google-account-security-guide/' | relative_url | jsonify }},
+    "excerpt": "按步骤处理 Google Authenticator、2FA 验证码、付款资料和 Google Play / Gemini 订阅到期问题。",
+    "categories": "faq",
+    "category_name": "Google 账号与安全验证常见排障",
+    "category_description": "Google 账号两步验证、付款资料，以及 Google Play / Gemini 订阅相关问题。",
+    "tags": "Gemini 订阅,Google Authenticator,2FA,Google Play,付款资料",
+    "search_text": "Gemini Google 订阅 图文指南 Google Authenticator 两步验证 2FA 验证码付款资料 Google Play 到期时间 续费",
+    "date": "2026-11-04",
+    "status": "published",
+    "cover": ""
+  }
 ]
