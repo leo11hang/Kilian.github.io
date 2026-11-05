@@ -10,7 +10,7 @@
     <div class="cc-download-heading">
       <div><h2>可下载插件</h2></div>
     </div>
-    <div class="download-source-note">插件压缩包支持 ZIP、TAR、TAR.GZ 和 TGZ。下载后解压，并在 Chrome 扩展程序页面手动加载。</div>
+    <div class="download-source-note">支持 ZIP、RAR、7Z、TAR，以及 GZ、BZ2、XZ、ZST 等 TAR 压缩包格式。下载后解压，并在 Chrome 扩展程序页面手动加载。</div>
 
     {% assign chrome_extension_files = site.static_files | sort: 'path' %}
     {% capture chrome_extension_items %}
@@ -18,13 +18,19 @@
         {% assign package_name_lower = extension_file.name | downcase %}
         {% assign package_ext = extension_file.extname | downcase %}
         {% assign supported_archive = false %}
-        {% if package_ext == '.zip' or package_ext == '.tar' or package_ext == '.tgz' %}
+        {% if package_ext == '.zip' or package_ext == '.rar' or package_ext == '.7z' or package_ext == '.tar' or package_ext == '.tgz' or package_ext == '.tbz' or package_ext == '.tbz2' or package_ext == '.txz' or package_ext == '.tzst' %}
           {% assign supported_archive = true %}
         {% elsif package_ext == '.gz' and package_name_lower contains '.tar.gz' %}
           {% assign supported_archive = true %}
+        {% elsif package_ext == '.bz2' and package_name_lower contains '.tar.bz2' %}
+          {% assign supported_archive = true %}
+        {% elsif package_ext == '.xz' and package_name_lower contains '.tar.xz' %}
+          {% assign supported_archive = true %}
+        {% elsif package_ext == '.zst' and package_name_lower contains '.tar.zst' %}
+          {% assign supported_archive = true %}
         {% endif %}
         {% if extension_file.path contains '/assets/chrome-extensions/' and supported_archive %}
-          {% assign extension_label = extension_file.name | replace: '.tar.gz', '' | replace: '.TAR.GZ', '' | replace: '.zip', '' | replace: '.ZIP', '' | replace: '.tar', '' | replace: '.TAR', '' | replace: '.tgz', '' | replace: '.TGZ', '' | replace: '-', ' ' | replace: '_', ' ' %}
+          {% assign extension_label = extension_file.name | replace: '.tar.bz2', '' | replace: '.TAR.BZ2', '' | replace: '.tar.gz', '' | replace: '.TAR.GZ', '' | replace: '.tar.xz', '' | replace: '.TAR.XZ', '' | replace: '.tar.zst', '' | replace: '.TAR.ZST', '' | replace: '.zip', '' | replace: '.ZIP', '' | replace: '.rar', '' | replace: '.RAR', '' | replace: '.7z', '' | replace: '.7Z', '' | replace: '.tar', '' | replace: '.TAR', '' | replace: '.tgz', '' | replace: '.TGZ', '' | replace: '.tbz2', '' | replace: '.TBZ2', '' | replace: '.tbz', '' | replace: '.TBZ', '' | replace: '.txz', '' | replace: '.TXZ', '' | replace: '.tzst', '' | replace: '.TZST', '' | replace: '-', ' ' | replace: '_', ' ' %}
           <article class="chrome-extension-package">
             <div class="chrome-extension-package-copy">
               <strong>{{ extension_label | escape }}</strong>
