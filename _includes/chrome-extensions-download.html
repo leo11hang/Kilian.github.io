@@ -1,0 +1,49 @@
+<details class="download-accordion chrome-extensions-accordion" name="download-products">
+  <summary>
+    <span class="download-product-icon chrome-extensions-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false"><path d="M20 13.1a2.9 2.9 0 1 0 0-5.8V4h-5.1a3.1 3.1 0 1 0-6.2 0H4v5.1a3.1 3.1 0 1 1 0 6.2V20h5.1a3.1 3.1 0 1 0 6.2 0H20z"/></svg>
+    </span>
+    <span class="download-summary-copy"><strong class="download-accordion-name">Chrome 插件</strong><span class="download-accordion-hint">实用扩展工具下载</span></span>
+    <span class="download-accordion-toggle" aria-hidden="true"></span>
+  </summary>
+  <section class="ai-tools-content chrome-extensions-content" aria-label="Chrome 插件下载选项">
+    <div class="cc-download-heading">
+      <div><h2>可下载插件</h2></div>
+    </div>
+    <div class="download-source-note">插件以 ZIP 压缩包提供。下载后解压，并在 Chrome 扩展程序页面手动加载。</div>
+
+    {% assign chrome_extension_files = site.static_files | sort: 'path' %}
+    {% capture chrome_extension_items %}
+      {% for extension_file in chrome_extension_files %}
+        {% if extension_file.path contains '/assets/chrome-extensions/' and extension_file.extname == '.zip' %}
+          {% assign extension_label = extension_file.name | remove: '.zip' | replace: '-', ' ' | replace: '_', ' ' %}
+          <article class="chrome-extension-package">
+            <div class="chrome-extension-package-copy">
+              <strong>{{ extension_label | escape }}</strong>
+              <span>Chrome 扩展 ZIP 安装包</span>
+            </div>
+            <a class="cc-download-button" href="{{ extension_file.path | relative_url }}" download>下载 ZIP</a>
+          </article>
+        {% endif %}
+      {% endfor %}
+    {% endcapture %}
+    {% assign chrome_extension_items = chrome_extension_items | strip %}
+    {% if chrome_extension_items != '' %}
+      <div class="chrome-extension-packages">{{ chrome_extension_items }}</div>
+      <details class="ai-cli-tutorial chrome-extension-install-guide">
+        <summary>手动安装说明</summary>
+        <ol>
+          <li>下载 ZIP 并解压到电脑上的固定文件夹。</li>
+          <li>在 Chrome 地址栏打开 <code>chrome://extensions</code>，开启「开发者模式」。</li>
+          <li>点击「加载已解压的扩展程序」，选择解压后直接包含 <code>manifest.json</code> 的文件夹。</li>
+          <li>以后更新插件时，下载新版 ZIP、解压到新文件夹，再到扩展程序页面重新加载。</li>
+        </ol>
+      </details>
+    {% else %}
+      <div class="chrome-extensions-empty" role="status">
+        <strong>插件包准备中</strong>
+        <span>后续上传的 Chrome 插件 ZIP 将显示在这里。</span>
+      </div>
+    {% endif %}
+  </section>
+</details>
