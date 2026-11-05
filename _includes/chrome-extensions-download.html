@@ -10,17 +10,25 @@
     <div class="cc-download-heading">
       <div><h2>可下载插件</h2></div>
     </div>
-    <div class="download-source-note">插件以 ZIP 压缩包提供。下载后解压，并在 Chrome 扩展程序页面手动加载。</div>
+    <div class="download-source-note">插件压缩包支持 ZIP、TAR、TAR.GZ 和 TGZ。下载后解压，并在 Chrome 扩展程序页面手动加载。</div>
 
     {% assign chrome_extension_files = site.static_files | sort: 'path' %}
     {% capture chrome_extension_items %}
       {% for extension_file in chrome_extension_files %}
-        {% if extension_file.path contains '/assets/chrome-extensions/' and extension_file.extname == '.zip' %}
-          {% assign extension_label = extension_file.name | remove: '.zip' | replace: '-', ' ' | replace: '_', ' ' %}
+        {% assign package_name_lower = extension_file.name | downcase %}
+        {% assign package_ext = extension_file.extname | downcase %}
+        {% assign supported_archive = false %}
+        {% if package_ext == '.zip' or package_ext == '.tar' or package_ext == '.tgz' %}
+          {% assign supported_archive = true %}
+        {% elsif package_ext == '.gz' and package_name_lower contains '.tar.gz' %}
+          {% assign supported_archive = true %}
+        {% endif %}
+        {% if extension_file.path contains '/assets/chrome-extensions/' and supported_archive %}
+          {% assign extension_label = extension_file.name | replace: '.tar.gz', '' | replace: '.TAR.GZ', '' | replace: '.zip', '' | replace: '.ZIP', '' | replace: '.tar', '' | replace: '.TAR', '' | replace: '.tgz', '' | replace: '.TGZ', '' | replace: '-', ' ' | replace: '_', ' ' %}
           <article class="chrome-extension-package">
             <div class="chrome-extension-package-copy">
               <strong>{{ extension_label | escape }}</strong>
-              <span>Chrome 扩展 ZIP 安装包</span>
+              <span>Chrome 扩展安装包</span>
             </div>
             <a class="cc-download-button" href="{{ extension_file.path | relative_url }}" download>下载 ZIP</a>
           </article>
