@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04",
+  "updated_at": "2026-11-22",
   "evidence_levels": {
     "S": "多源独立验证形成的稳定共识",
     "A": "官方或专业资料支持，结论适用范围明确",
@@ -76,6 +76,12 @@
       "description": "Google 账号两步验证、付款资料，以及 Google Play / Gemini 订阅相关问题。",
       "tutorial_url": "https://my.feishu.cn/wiki/YCC3wYDQ6iKtGzk4CYgcVOasnZg",
       "tutorial_label": "Google 账号与安全验证完整图文教程"
+    },
+    {
+      "id": "12",
+      "slug": "google-antigravity-login",
+      "name": "Google Antigravity 使用与登录排障",
+      "description": "产品与模型说明、账号资格、年龄验证、授权回跳及常见登录错误。"
     }
   ],
   "questions": [
@@ -1886,6 +1892,325 @@
       ],
       "confidence_level": "A",
       "last_verified": "2026-11-04",
+      "status": "published"
+    },
+    {
+      "id": "faq-072",
+      "category": "12",
+      "question": "浏览器显示成功登录，但没有跳回 Google Antigravity 怎么办？",
+      "answer": "PDF 把浏览器与 Antigravity 走不同网络路径列为一种可能原因，并记录了启用 TUN/虚拟网卡的尝试；这属于用户个案经验。另记录了第三方 Antigravity Tools 多账号 OAuth 切换，但 Google 官方不支持消费者方案下自动轮换账号。优先保持应用打开、用官方回跳入口完成授权并核对账号；网络测试不能改变资格限制。",
+      "keywords": [
+        "Antigravity",
+        "浏览器授权",
+        "OAuth",
+        "没有跳转",
+        "Awaiting Authentication",
+        "登录回跳"
+      ],
+      "related_questions": [
+        "faq-076",
+        "faq-077"
+      ],
+      "sources": [
+        "google-antigravity-authenticate",
+        "google-antigravity-faq",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "C",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-073",
+      "category": "12",
+      "question": "Google Antigravity 提示 account ineligible 怎么办？",
+      "answer": "account ineligible 可能与关联地区、年龄或账号类型有关。PDF 建议申请把账号地区改到支持范围，也记录了未经核实的个案说法。Google 官方仅建议在服务条款显示国家确实错误时申请更正；应如实填写，不能把虚报居住信息当作解决方案。",
+      "keywords": [
+        "Antigravity",
+        "account ineligible",
+        "账号资格",
+        "地区限制",
+        "Workspace",
+        "Enterprise",
+        "年龄要求"
+      ],
+      "related_questions": [
+        "faq-074",
+        "faq-075",
+        "faq-076"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-074",
+      "category": "12",
+      "question": "Google Antigravity 登录要求扫描二维码或验证年龄时怎么处理？",
+      "answer": "PDF 记录了使用手机相机或 Google App 扫描 Google 验证页二维码的个人经验，以及短信未通过时更换设备、网络或账号重试的做法。它们未经官方确认；只按 Google 当前页面提供的验证方式操作，不要反复换身份规避验证。",
+      "keywords": [
+        "Antigravity",
+        "二维码验证",
+        "扫码",
+        "Google 年龄验证",
+        "身份验证",
+        "手机验证"
+      ],
+      "related_questions": [
+        "faq-073",
+        "faq-075",
+        "faq-076"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "google-age-verification-help",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-075",
+      "category": "12",
+      "question": "浏览器验证成功后，Antigravity 仍要求 Verify 怎么办？",
+      "answer": "PDF 描述了通过自拍或证件完成年龄验证的经历，并声称其自拍方式可重复使用；后者没有官方依据。Google 提供哪些验证方式由账号与页面决定，验证通过后返回 Antigravity 选择 Sign in again。",
+      "keywords": [
+        "Antigravity",
+        "Verify",
+        "年龄验证成功",
+        "Further action is required",
+        "Sign in again"
+      ],
+      "related_questions": [
+        "faq-074",
+        "faq-076"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "google-age-verification-help",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "C",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-076",
+      "category": "12",
+      "question": "Google Antigravity 反复出现 Verify / Sign in again 登录循环怎么办？",
+      "answer": "验证后反复出现 Verify / Sign in again 时，先确认验证完成、年龄资格和授权账号。PDF 建议退出后重登并记录了第三方多账号切换经验；重登可按官方流程做一次，多账号轮换并非官方修复方式，消费者方案不支持自动轮换。",
+      "keywords": [
+        "Antigravity",
+        "Verify 循环",
+        "Sign in again",
+        "登录循环",
+        "重新授权",
+        "账号切换"
+      ],
+      "related_questions": [
+        "faq-072",
+        "faq-073",
+        "faq-075",
+        "faq-077",
+        "faq-080"
+      ],
+      "sources": [
+        "google-antigravity-authenticate",
+        "google-antigravity-faq",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "C",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-077",
+      "category": "12",
+      "question": "Google Antigravity 登录出现 daily-cloudcode EOF 怎么办？",
+      "answer": "PDF 记录的 daily-cloudcode onboardUser 请求 EOF，作者将其归因于网络并建议切换节点或开启 TUN/虚拟网卡；该根因未获官方确认。可在连接故障排查中一次只测试一个设置，但 EOF 不等于账号资格错误，也不能靠伪报地区解决。",
+      "keywords": [
+        "Antigravity",
+        "EOF",
+        "daily-cloudcode",
+        "onboardUser",
+        "Unexpected issue"
+      ],
+      "related_questions": [
+        "faq-076",
+        "faq-078",
+        "faq-079",
+        "faq-080"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "C",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-078",
+      "category": "12",
+      "question": "Google Antigravity 登录出现 invalid_grant 怎么办？",
+      "answer": "PDF 将 invalid_grant 归因于 OAuth 状态过期，并建议从 Continue with different account 重新选择目标账号登录；这是个案判断。若官方登录界面提供该入口，可用它重新选择本来有资格的账号；这不等于用账号轮换绕过限制。",
+      "keywords": [
+        "Antigravity",
+        "invalid_grant",
+        "Google OAuth",
+        "重新授权",
+        "登录错误"
+      ],
+      "related_questions": [
+        "faq-072",
+        "faq-076",
+        "faq-077"
+      ],
+      "sources": [
+        "google-antigravity-authenticate",
+        "google-antigravity-faq",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "C",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-079",
+      "category": "12",
+      "question": "Google Antigravity 登录出现 context deadline exceeded 怎么办？",
+      "answer": "context deadline exceeded 表示请求超时。PDF 建议重试，并在网络类报错中记录了切换节点或 TUN/虚拟网卡的个案经验；这不是已验证的根因。先稳定网络重试，再收集错误、时间、版本和系统信息。",
+      "keywords": [
+        "Antigravity",
+        "context deadline exceeded",
+        "请求超时",
+        "登录超时",
+        "网络错误"
+      ],
+      "related_questions": [
+        "faq-076",
+        "faq-077",
+        "faq-080"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "C",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-080",
+      "category": "12",
+      "question": "Google Antigravity 出现其他 Unexpected issue 怎么排查？",
+      "answer": "PDF 把通用 Unexpected issue 归为网络问题，并建议更换节点或开启 TUN/虚拟网卡；这些建议是作者经验而非官方诊断。按账号资格、官方登录、客户端与连接逐项排查；不要将网络设置、账号轮换或地区更改当作绕过资格的办法。",
+      "keywords": [
+        "Antigravity",
+        "Unexpected issue",
+        "Having trouble",
+        "登录错误",
+        "问题反馈"
+      ],
+      "related_questions": [
+        "faq-073",
+        "faq-076",
+        "faq-077",
+        "faq-078",
+        "faq-079"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "C",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-081",
+      "category": "12",
+      "question": "Google Antigravity 是什么？为什么模型列表和截图不一样？",
+      "answer": "PDF 将 Antigravity 介绍为用于 Vibe Coding 的桌面智能体。截图中的模型选择器当时列出 Gemini 3.5 Flash（Medium / High / Low）、Gemini 3.1 Pro（High / Low）、Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B（Medium）；首页还以 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）和 Gemini 3.1 Pro（High）作示例。这些是 PDF 截图内容，不代表当前每个账号都能使用这些模型。Antigravity 官方模型列表会随日期、订阅方案、账号类型和产品更新变化；请以应用模型选择器和官方“Choose a model”页面为准。官方页面还说明模型及推理等级按方案开放；如果某模型未出现，先核对账号方案、组织权限及当前官方可用列表。",
+      "keywords": [
+        "Antigravity 2.0",
+        "Vibe Coding",
+        "模型列表",
+        "Gemini 3.5 Flash",
+        "Claude Opus",
+        "GPT-OSS 120B",
+        "模型权限"
+      ],
+      "related_questions": [
+        "faq-073"
+      ],
+      "sources": [
+        "google-antigravity-models",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-082",
+      "category": "12",
+      "question": "Antigravity Tools 多账号切换能解决登录或资格问题吗？",
+      "answer": "PDF 记录了第三方 Antigravity Tools 通过 OAuth 添加多个账号并切换的做法。这是用户材料中的经验，不是 Google 官方登录流程。Google 当前 FAQ 表示，第三方软件或服务访问 Antigravity 可能违反服务条款并导致账号暂停或终止；消费者方案不支持自动轮换账号。该做法也不能修复地区、年龄、组织许可或订阅资格。排查时请通过 Antigravity 官方登录界面选择本来有资格的目标账号；若曾授权第三方工具，检查并撤销不再需要的账号连接。",
+      "keywords": [
+        "Antigravity Tools",
+        "多账号",
+        "账号轮换",
+        "OAuth",
+        "登录问题",
+        "第三方工具"
+      ],
+      "related_questions": [
+        "faq-072",
+        "faq-073",
+        "faq-076",
+        "faq-078"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "google-antigravity-authenticate",
+        "antigravity-login-case-notes",
+        "google-account-connections"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-22",
+      "status": "published"
+    },
+    {
+      "id": "faq-083",
+      "category": "12",
+      "question": "Antigravity 提示地区不支持，可以更改或虚报 Google 账号地区吗？",
+      "answer": "PDF 建议申请把账号关联地区改到 Antigravity 支持范围，也记录了用户声称用不准确居住信息或笼统理由成功的个案，但没有可核验记录。Google 官方 FAQ 说明应先查看服务条款显示的关联国家；只有国家显示错误时，才提交关联地区更正申请并如实填写。若本人实际所在地不在 Antigravity 支持范围，虚报居住地、付款地址或身份资料不是官方支持的解决方式，也不能保证获得使用资格。支持地区会变化，以官方 FAQ 为准。",
+      "keywords": [
+        "Antigravity",
+        "地区不支持",
+        "account ineligible",
+        "账号关联地区",
+        "虚报地区",
+        "地区更正申请"
+      ],
+      "related_questions": [
+        "faq-073",
+        "faq-074",
+        "faq-080"
+      ],
+      "sources": [
+        "google-antigravity-faq",
+        "google-country-association-form",
+        "antigravity-login-case-notes"
+      ],
+      "confidence_level": "A",
+      "last_verified": "2026-11-22",
       "status": "published"
     }
   ]

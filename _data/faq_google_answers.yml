@@ -134,3 +134,371 @@
       tone: green
       title: 关于已付费权益
       text: 取消自动续费通常不会立即结束当前已付款周期的服务；具体权益保留时间、退款和到期规则以 Google Play 或对应购买渠道的页面说明为准。只想查看续费信息时，不必先取消订阅。
+
+- id: faq-072
+  badges:
+    - text: 浏览器授权
+      tone: blue
+    - text: 回跳排查
+      tone: amber
+  intro: 浏览器已显示认证成功，但应用仍停留在等待状态时，优先完成官方回跳并核对授权账号。
+  blocks:
+    - type: steps
+      title: 排查步骤
+      items:
+        - title: 保持应用运行
+          text: 发起登录前先启动 Antigravity，完成浏览器授权后等待应用接收回跳。若成功页显示“Click here if not working”，可使用该页面提供的官方链接。
+        - title: 核对浏览器账号
+          text: 确认授权时选中的 Google 账号就是希望在应用中使用的账号，不要在授权过程中反复切换身份。
+        - title: 从官方入口重试一次
+          text: 仍未跳回时，关闭并重新打开 Antigravity，从应用内的官方登录按钮重新开始，并保持网络连接稳定。
+        - title: 记录并反馈
+          text: 持续失败时记录应用版本、系统和发生时间，遮住邮箱、令牌及个人资料后，通过官方支持渠道提交。
+    - type: callout
+      tone: warning
+      title: PDF 中记录的多账号切换做法
+      text: PDF 作者记载了使用第三方 Antigravity Tools，通过 OAuth 添加多个账号并切换的做法。这是来源中的用户经验，不是 Google 官方登录步骤；Google 官方 FAQ 说明第三方工具访问 Antigravity 可能违反服务条款并导致账号暂停或终止，消费者方案也不支持自动轮换账号。这里保留该做法及其风险供读者辨别，不提供第三方授权操作指南。
+    - type: callout
+      tone: neutral
+      title: PDF 中的网络路径建议
+      text: PDF 作者认为浏览器和 Antigravity 可能走了不同网络路径，并记录启用 TUN/虚拟网卡的尝试。这是未经官方确认的个案判断；可作为普通连接故障的排查线索，但网络设置不能改变地区、年龄或账号资格。
+    - type: action_link
+      title: Google Antigravity 官方认证说明
+      url: https://antigravity.google/docs/install
+      open_label: 查看认证指南
+      copy_label: 复制链接
+
+- id: faq-073
+  badges:
+    - text: 账号资格
+      tone: blue
+    - text: 地区与账号类型
+      tone: amber
+  intro: 官方列出的常见资格项包括地区、年龄和账号类型；请逐项核对，不要根据一条提示推断唯一原因。
+  blocks:
+    - type: numbered_cards
+      items:
+        - title: 个人 Google 账号
+          text: 核对 Antigravity 支持地区及最低年龄要求。官方目前说明 18 岁以下用户不能使用 Antigravity。
+        - title: Workspace 账号
+          text: 组织管理员可能关闭个人访问权限；Workspace 方案本身不等同于 Antigravity 高额度或 AI credits。无法使用时联系管理员确认访问设置。
+        - title: Gemini Enterprise 账号
+          text: 选择 Business Account，并确认管理员分配了许可或 IAM 权限、所在区域启用了 AI developer tools，且当前登录身份与许可匹配。
+        - title: 核对地区资料
+          text: 查看服务条款显示的账号关联国家或地区。PDF 建议申请改到 Antigravity 支持地区；Google 官方 FAQ 只建议在显示国家确实错误时提交关联地区更正申请。若确有搬迁或资料错误，按官方申请如实更正，结果以 Google 审核为准。
+    - type: callout
+      tone: warning
+      title: 地区更正不等于伪报地区
+      text: PDF 还记录了用户声称通过不准确居住信息或笼统理由提交申请的个案，但没有可核验的成功记录。不要填写虚假居住地、付款地址或身份资料；如果实际所在地不在支持范围，Google 官方没有提供通过改写资料绕过资格的办法。
+    - type: action_link
+      title: Google Antigravity 登录与地区说明
+      url: https://antigravity.google/docs/faq
+      open_label: 查看官方 FAQ
+      copy_label: 复制链接
+    - type: action_link
+      title: Google 账号关联地区更正申请
+      url: https://policies.google.com/country-association-form
+      open_label: 查看申请入口
+      copy_label: 复制链接
+
+- id: faq-074
+  badges:
+    - text: 年龄验证
+      tone: blue
+    - text: 二维码流程
+      tone: green
+  intro: 如果验证页要求手机继续或扫描二维码，按 Google 当前页面展示的步骤处理；选项会因账号、设备和地区不同。
+  blocks:
+    - type: callout
+      tone: warning
+      title: 不要分享验证凭证
+      text: 二维码、短信验证码、一次性链接、证件照片和自拍都可能包含敏感信息。只在 Google 官方验证页面提交，不要发给他人或贴到公开社区。
+    - type: steps
+      title: 完成手机验证
+      items:
+        - title: 使用自己的手机继续
+          text: 页面显示二维码时，按页面提示用手机相机或指定的 Google 应用打开验证流程；不要扫描来源不明的二维码。
+        - title: 完成页面要求的确认
+          text: 根据 Google 页面选择可用的年龄验证方式或确认步骤。若手机提示短信、自拍或证件验证，只按页面明确指示操作。
+        - title: 等待验证结果
+          text: 验证完成后留在页面，直到看到明确结果，再回到 Antigravity 继续登录。若当前方式不可用，查看页面是否提供其他选项。
+    - type: cards
+      items:
+        - badge: 政府证件
+          tone: blue
+          title: 上传证件
+          text: 仅在 Google 页面提供此选项时提交；确认上传目标是 Google 官方页面，并按页面的隐私说明操作。
+          example: 不要把证件照片发给教程作者或公开社区。
+        - badge: 自拍年龄估算
+          tone: green
+          title: 由页面指引的验证合作方处理
+          text: 若页面提供自拍选项，先阅读该流程展示的合作方条款和隐私说明，再决定是否继续。
+          example: 选项是否出现取决于账号、设备和地区。
+        - badge: 信用卡 / 邮箱
+          tone: slate
+          title: 只在页面显示时选择
+          text: Google 可能在部分地区或账号提供信用卡或邮箱验证；按页面解释的用途与隐私信息决定是否使用。
+          example: 不要为了出现该选项而提交不真实资料。
+        - badge: 数字身份证
+          tone: amber
+          title: 平台和地区有限制
+          text: Google 帮助说明数字身份证验证目前仅适用于部分 Android 设备和地区。
+          example: 若页面未显示，不要尝试第三方替代入口。
+    - type: callout
+      tone: warning
+      title: PDF 记录的扫码经验未经官方确认
+      text: PDF 作者提到使用手机原生相机或 Google App 扫码，并在短信验证未完成时尝试更换设备、网络或账号。这些是个案经验，不保证有效，也不能替代 Google 页面要求的验证；只用当前页面提供的方式，不要通过反复换身份来绕过验证。
+    - type: action_link
+      title: Google 年龄验证官方帮助
+      url: https://support.google.com/accounts/answer/10071085?hl=zh-CN
+      open_label: 查看可用方式
+      copy_label: 复制链接
+
+- id: faq-075
+  badges:
+    - text: 验证已完成
+      tone: green
+    - text: 仍提示 Verify
+      tone: amber
+  blocks:
+    - type: steps
+      title: 验证通过后的操作
+      items:
+        - title: 确认 Google 页面状态
+          text: 等待页面显示验证完成；仅扫描二维码或打开链接并不一定代表流程已提交成功。
+        - title: 返回 Antigravity
+          text: 在“Further action is required”页面选择“Sign in again”，然后使用完成验证的同一个 Google 账号继续。
+        - title: 仍要求 Verify 时
+          text: 关闭并重新打开应用，再按官方登录流程尝试一次。若继续循环，记录版本、时间和脱敏后的提示内容并提交官方反馈。
+    - type: callout
+      tone: neutral
+      title: 验证方式因人而异
+      text: Google 表示年龄验证方式并非对所有账号、设备和地区都开放；按当前账号页面提供的选项操作。
+    - type: callout
+      tone: warning
+      title: 关于 PDF 中的自拍经验
+      text: PDF 作者称其自拍验证经验可以反复使用；这不是 Google 的保证。验证方式与可重复次数由 Google 页面决定，证件或自拍只应在 Google 官方验证界面提交。
+
+- id: faq-076
+  badges:
+    - text: Sign in again
+      tone: blue
+    - text: 授权循环
+      tone: amber
+  intro: 反复在 Verify 和 Sign in again 之间返回时，先确认验证结果与授权身份，再最多重新开始一次完整登录流程。
+  blocks:
+    - type: steps
+      title: 逐项处理
+      items:
+        - title: 确认验证结果
+          text: 回到 Google 页面核对是否显示验证成功；没有明确成功状态时按页面提示完成剩余步骤。
+        - title: 固定使用同一个账号
+          text: 在浏览器授权页选择与应用预期一致的 Google 账号；不要在同一授权链路中反复切换账号。
+        - title: 重启后重新授权一次
+          text: 退出 Antigravity 并重新打开，再由应用内官方按钮发起登录。确认网络稳定，不要在流程中途切换网络。
+        - title: 仍未解决时提交信息
+          text: 记录应用版本、系统、发生时间和脱敏错误截图。组织账号另请管理员核对许可、IAM 与服务开放状态。
+    - type: callout
+      tone: warning
+      title: 资格限制无法靠重登解除
+      text: 如果账号关联地区、年龄或组织权限不符合要求，重复认证不会改变资格状态；请按 Google 官方流程处理。
+    - type: callout
+      tone: warning
+      title: 多账号工具不是官方修复方式
+      text: PDF 记录了第三方账号管理工具的切换体验；官方不支持消费者方案下自动轮换账号。详情与风险见“Antigravity Tools 多账号切换能解决登录问题吗？”
+
+- id: faq-077
+  badges:
+    - text: EOF
+      tone: amber
+    - text: 请求中断
+      tone: blue
+  intro: PDF 中的例子是 daily-cloudcode-pa.googleapis.com 的 onboardUser 请求返回 EOF。错误文本没有给出唯一原因。
+  blocks:
+    - type: steps
+      title: 低风险排查
+      items:
+        - title: 核对登录条件
+          text: 确认账号类型、年龄与服务地区符合官方要求；EOF 本身不代表资格错误。
+        - title: 稍后重试一次
+          text: 等待片刻，在稳定连接下重新从官方入口登录。PDF 作者把切换网络节点或启用 TUN/虚拟网卡列为网络尝试，但这只是个案经验，不能证明 EOF 一定由节点造成，也不会改变账号资格。
+        - title: 保留诊断信息
+          text: 若仍失败，记录完整提示、时间、版本和系统；遮住邮箱、令牌和个人资料后提交官方支持。
+    - type: action_link
+      title: Google Antigravity 官方 FAQ 与支持入口
+      url: https://antigravity.google/docs/faq
+      open_label: 打开官方说明
+      copy_label: 复制链接
+
+- id: faq-078
+  badges:
+    - text: invalid_grant
+      tone: amber
+    - text: 授权错误
+      tone: blue
+  intro: 官方文档没有说明 Antigravity 中该错误的单一根因，因此应重新走一次官方认证，而不是把它直接当作封号信号。
+  blocks:
+    - type: steps
+      title: 重新授权
+      items:
+        - title: 结束当前失败流程
+          text: 关闭当前错误页面，回到 Antigravity 应用。
+        - title: 从官方入口登录
+          text: 重新发起浏览器 OAuth，并选择预期使用的 Google 账号。PDF 将 invalid_grant 归因于 OAuth 状态过期，并建议重新选择目标账号登录；这是个案判断，不是官方确认的唯一原因。
+        - title: 持续失败时反馈
+          text: 如果官方登录界面提供“Continue with different account”，可用它重新选择本来有资格的目标账号以刷新登录；不要用多账号轮换绕过地区、年龄、许可或使用限制。记录错误、时间和应用版本，隐藏邮箱及授权信息后联系官方支持。
+    - type: action_link
+      title: Google Antigravity 官方认证说明
+      url: https://antigravity.google/docs/install
+      open_label: 查看认证指南
+      copy_label: 复制链接
+
+- id: faq-079
+  badges:
+    - text: 请求超时
+      tone: amber
+    - text: context deadline exceeded
+      tone: blue
+  intro: 这条报错说明请求没有在等待期限内完成，但不能仅凭文字断定网络或服务端是唯一原因。
+  blocks:
+    - type: numbered_cards
+      items:
+        - title: 等待后重试
+          text: 暂停片刻，在稳定连接下重新尝试一次。
+        - title: 确认客户端状态
+          text: 检查 Antigravity 是否为当前可用版本，并确认登录条件仍然满足。
+        - title: 收集可复现信息
+          text: 记录完整错误文本、出现时间、版本和系统；删除账号邮箱、令牌等个人信息后提交反馈。
+    - type: callout
+      tone: warning
+      title: PDF 中的网络排查经验
+      text: PDF 作者建议在 EOF 或超时场景尝试其他网络节点或 TUN/虚拟网卡。该经验没有证明错误一定由节点质量导致；需要排查连接时可在遵守当地规则和服务条款的前提下单变量测试，并还原无效设置。它不能修复账号资格或地区限制。
+    - type: action_link
+      title: Google Antigravity 官方 FAQ 与支持入口
+      url: https://antigravity.google/docs/faq
+      open_label: 打开官方说明
+      copy_label: 复制链接
+
+- id: faq-080
+  badges:
+    - text: Unexpected issue
+      tone: amber
+    - text: 通用排查
+      tone: blue
+  blocks:
+    - type: steps
+      title: 从账号到应用逐项确认
+      items:
+        - title: 核对账号与资格
+          text: 检查个人 / 组织账号类型、年龄资格及官方支持地区；组织账号联系管理员确认权限。
+        - title: 重新发起一次官方登录
+          text: 更新并重启应用，在稳定连接下从官方登录入口重新认证。
+        - title: 向官方报告
+          text: 使用页面“Having trouble? Let us know”入口，提供脱敏截图、时间和版本信息，不要附二维码或验证码。
+        - title: 评估来源中的网络建议
+          text: PDF 把其他网络节点或 TUN/虚拟网卡列为通用 Unexpected issue 的尝试，但没有提供可复现证据。先完成账号资格与官方登录检查；网络设置只用于定位连接问题，不要用于伪装账号所在地。
+    - type: callout
+      tone: warning
+      title: 不公开验证材料
+      text: 不要发布邮箱、短信验证码、二维码、访问令牌或证件影像；这些资料不需要出现在公开问题报告中。
+    - type: action_link
+      title: Google Antigravity 官方 FAQ 与支持入口
+      url: https://antigravity.google/docs/faq
+      open_label: 打开官方说明
+      copy_label: 复制链接
+
+- id: faq-081
+  badges:
+    - text: 产品简介
+      tone: blue
+    - text: 模型名单会变化
+      tone: amber
+  intro: PDF 介绍了 Antigravity 2.0 和 Vibe Coding，并截取了当时的模型选择器。下面保留这份资料中的模型名称，同时标明它不是实时清单。
+  blocks:
+    - type: cards
+      items:
+        - badge: PDF 截图名单
+          tone: blue
+          title: 截图所示，不代表当前全部可用
+          text: 截图展示了 Gemini 3.5 Flash（Medium / High / Low）、Gemini 3.1 Pro（High / Low）、Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B（Medium）。首页另用 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）与 Gemini 3.1 Pro（High）举例。
+          example: 实际能否选择，取决于当前账号方案和官方产品调整。
+        - badge: 以官方实时文档为准
+          tone: green
+          title: 查看模型与方案权限
+          text: 官方模型页面说明模型清单、思考等级及不同 Google AI 方案 / Enterprise 的开放范围会变化。
+          example: 模型选择器未显示时，先核对账号方案与组织权限。
+    - type: action_link
+      title: Google Antigravity 官方模型列表
+      url: https://antigravity.google/docs/models
+      open_label: 查看当前模型
+      copy_label: 复制链接
+
+- id: faq-082
+  badges:
+    - text: 第三方账号工具
+      tone: amber
+    - text: 多账号切换
+      tone: blue
+  intro: PDF 记录了第三方工具通过 OAuth 管理多个账号并切换的做法。需要把这条经验与 Google 官方规则分开阅读。
+  blocks:
+    - type: callout
+      tone: warning
+      title: 来源中的做法
+      text: PDF 作者称可通过第三方 Antigravity Tools 添加多个账号，再从工具中切换身份打开 Antigravity。这是用户材料里的经验记录，未作为官方流程核验；本文不附该工具的下载、授权或令牌导入步骤。
+    - type: callout
+      tone: warning
+      title: Google 官方规则
+      text: Google 当前 FAQ 表示，第三方软件或服务访问 Antigravity 可能违反服务条款并导致账号暂停或终止；消费者方案不支持自动轮换账号。轮换身份不能修复年龄、地区、组织许可或订阅资格。
+    - type: steps
+      title: 安全的登录排查方式
+      items:
+        - title: 固定目标账号
+          text: 在 Antigravity 官方登录页选择本来有资格使用的账号，并确认浏览器授权的账号与应用预期一致。
+        - title: 重新进行官方认证
+          text: OAuth 状态异常时，从应用内官方入口退出并重新登录；如果使用的是组织账号，联系管理员核对权限。
+        - title: 检查已授予的第三方访问
+          text: 如果曾把 Google 账号授权给第三方工具，检查账号安全设置中的第三方连接，撤销不再需要的权限。
+    - type: action_link
+      title: Google Antigravity 官方 FAQ
+      url: https://antigravity.google/docs/faq
+      open_label: 查看账号与第三方工具规则
+      copy_label: 复制链接
+    - type: action_link
+      title: Google 账号第三方连接管理
+      url: https://myaccount.google.com/connections
+      open_label: 检查已授权应用
+      copy_label: 复制链接
+
+- id: faq-083
+  badges:
+    - text: 账号关联地区
+      tone: blue
+    - text: 资格排查
+      tone: amber
+  intro: PDF 建议把账号地区改到 Antigravity 支持范围；先区分真实的账号地区资料错误与服务当前不可用的情况。
+  blocks:
+    - type: steps
+      title: 核对并处理地区信息
+      items:
+        - title: 查看官方支持范围
+          text: 打开 Antigravity FAQ，确认当前产品支持的国家或地区。该列表会更新，以官方页面为准。
+        - title: 查看账号关联国家
+          text: 按官方 FAQ 查看 Google 服务条款页列出的关联国家；如果确实显示错误，可通过 Google 的关联地区申请入口提出更正。
+        - title: 如实提交资料
+          text: 只有账号地区确实错误或本人实际搬迁等情况才申请更正，按表单要求填写真实信息并等待 Google 处理。申请不保证获批，也不保证立即获得 Antigravity 资格。
+        - title: 当前所在地不在支持范围时
+          text: PDF 中有用户声称使用不准确的居住信息或笼统理由后成功，但没有可核验记录。虚报居住地、付款地址或身份资料不是官方支持的解决方式；当前所在地不受支持时，应等待服务开放或使用当地可用的产品。
+    - type: callout
+      tone: neutral
+      title: PDF 提到的申请频率说法
+      text: PDF 称关联地区更改一年只能申请一次，但这是作者对表单规则的转述，本次无法从需登录的申请页独立核验。提交前请以表单当前显示的条件为准，不要为了测试反复提交。
+    - type: action_link
+      title: Antigravity 官方地区与账号资格说明
+      url: https://antigravity.google/docs/faq
+      open_label: 查看支持地区
+      copy_label: 复制链接
+    - type: action_link
+      title: Google 账号关联地区更正申请
+      url: https://policies.google.com/country-association-form
+      open_label: 查看官方申请入口
+      copy_label: 复制链接
