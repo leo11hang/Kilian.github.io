@@ -1325,9 +1325,9 @@
       "verified_at": "2026-11-22",
       "product": "Google Antigravity",
       "version": "",
-      "supporting_claim": "PDF 引用该官方 FAQ，用于查看 Antigravity 的支持地区，并作为年龄验证与 Sign in again 排障的参考页面。",
-      "counter_evidence": "PDF 截图及其描述反映文档整理时的内容；官方支持地区和页面内容可能变化，应以所链接页面当时显示的信息为准。",
-      "verification_status": "link_listed_in_user_pdf",
+      "supporting_claim": "用于核对 Antigravity 当前支持地区，并参考年龄验证与 Sign in again 的官方排障说明。",
+      "counter_evidence": "官方支持地区与页面内容可能变化，应以该页面当前显示的信息为准。",
+      "verification_status": "reference_link_not_independently_verified",
       "question_refs": [
         "faq-073",
         "faq-074",
@@ -1337,15 +1337,15 @@
     {
       "id": "antigravity-login-case-notes",
       "source_url": "",
-      "source_type": "user_provided_document",
-      "author": "用户提供的《反重力登录问题.pdf》",
+      "source_type": "user_experience_notes",
+      "author": "Google Antigravity 排障经验整理",
       "published_at": null,
       "verified_at": "2026-11-22",
       "product": "Google Antigravity 登录排障案例",
       "version": "",
-      "supporting_claim": "用户提供的《反重力登录问题.pdf》记录了浏览器登录回跳、TUN/网络节点、Antigravity Tools 账号切换、地区申请、扫码/短信验证、年龄验证及 daily-cloudcode 错误处理经验。",
-      "counter_evidence": "个人整理的排障材料，文中步骤和成功结果均为作者或用户经验描述；不代表每个账号、设备和网络都能复现。原 PDF 的个人信息、验证码和二维码不纳入网站文件。",
-      "verification_status": "user_provided_document_reviewed",
+      "supporting_claim": "整理浏览器登录回跳、TUN/网络节点、账号切换、地区申请、扫码/短信验证、年龄验证及 daily-cloudcode 错误处理经验。",
+      "counter_evidence": "其中操作过程与成功结果属于个案经验，不代表每个账号、设备和网络环境都能复现。",
+      "verification_status": "experience_notes_reviewed",
       "question_refs": [
         "faq-072",
         "faq-073",
@@ -1368,9 +1368,9 @@
       "verified_at": null,
       "product": "Google Account associated country",
       "version": "",
-      "supporting_claim": "PDF 提供此 Google 账号关联地区申请表链接。",
-      "counter_evidence": "仅记录 PDF 中的申请入口，不对申请条件或结果作额外说明。",
-      "verification_status": "link_listed_in_user_pdf",
+      "supporting_claim": "Google 账号关联地区更正申请入口。",
+      "counter_evidence": "申请资格、频率与审批结果以 Google 申请页面及后续通知为准。",
+      "verification_status": "reference_link_not_independently_verified",
       "question_refs": [
         "faq-073"
       ]
@@ -1384,9 +1384,9 @@
       "verified_at": null,
       "product": "Google Account associated country",
       "version": "",
-      "supporting_claim": "PDF 引用此页面查看 Google 账号关联地区。",
-      "counter_evidence": "仅记录 PDF 中的链接用途，不扩展解释页面规则。",
-      "verification_status": "link_listed_in_user_pdf",
+      "supporting_claim": "Google 服务条款页面，可用于查看账号关联地区信息。",
+      "counter_evidence": "页面内容与账号适用条款可能变化，应以页面当前显示的信息为准。",
+      "verification_status": "reference_link_not_independently_verified",
       "question_refs": [
         "faq-073"
       ]
@@ -1400,9 +1400,9 @@
       "verified_at": null,
       "product": "Google Account age verification",
       "version": "",
-      "supporting_claim": "PDF 提供此 Google 账号年龄验证页面链接。",
-      "counter_evidence": "登录后页面呈现的验证方式以账号当时看到的页面为准。",
-      "verification_status": "link_listed_in_user_pdf",
+      "supporting_claim": "Google 账号年龄验证入口。",
+      "counter_evidence": "登录后可用的验证方式以账号当时显示的页面为准。",
+      "verification_status": "reference_link_not_independently_verified",
       "question_refs": [
         "faq-075",
         "faq-076"
@@ -1417,9 +1417,9 @@
       "verified_at": null,
       "product": "Antigravity Tools",
       "version": "",
-      "supporting_claim": "PDF 将此 Release 页面作为 Antigravity Tools 下载入口，并描述了 OAuth 添加账号和切换账号的使用方式。",
-      "counter_evidence": "页面与工具属于 PDF 引用的第三方项目；文档中的使用结果为作者经验。",
-      "verification_status": "link_listed_in_user_pdf",
+      "supporting_claim": "Antigravity Tools 项目的公开版本与安装包发布页；该工具可用于 OAuth 账号添加和切换。",
+      "counter_evidence": "这是第三方开源项目；工具功能和使用结果以项目当前发布说明为准。",
+      "verification_status": "reference_link_not_independently_verified",
       "question_refs": [
         "faq-072"
       ]

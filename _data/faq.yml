@@ -1898,7 +1898,7 @@
       "id": "faq-072",
       "category": "12",
       "question": "浏览器显示成功登录，但没有跳回 Google Antigravity 怎么办？",
-      "answer": "PDF 将浏览器登录成功但没有跳回 Antigravity 归因于浏览器与应用使用了不同网络通路，建议启用 TUN/虚拟网卡。若仍不跳转，PDF 建议从 Antigravity Tools Release 下载对应系统安装包，通过 OAuth 添加账号并切换；平时在账号管理中勾选账号后点击转换。PDF 还建议遇到应用错误时从 Settings → Account → Sign out 退出，再重新登录。",
+      "answer": "浏览器显示登录成功但没有跳回 Antigravity，可能是浏览器与应用走了不同的网络通路。先在网络工具中启用 TUN/虚拟网卡模式，让两者使用同一通路后重试。仍无法回跳时，可使用 Antigravity Tools 的账号添加与切换功能；如果应用内报错，可在 Settings → Account → Sign out 退出，再重新登录。",
       "keywords": [
         "Antigravity",
         "浏览器授权",
@@ -1923,7 +1923,7 @@
       "id": "faq-073",
       "category": "12",
       "question": "Google Antigravity 提示 account ineligible 怎么办？",
-      "answer": "PDF 将 account ineligible 归因于账号地区不符合。先在 Google 服务条款页查看账号地区，再在 Antigravity FAQ 对照支持地区；随后通过 Google 账号关联地区申请表提交申请并等待回复。PDF 称该地区更改每年仅能一次，并转述两种用户经验：直接填写“我住这”后申请通过；或选择“以上都不是”并说明工作需要。",
+      "answer": "account ineligible 可能与 Google 账号关联地区不在 Antigravity 当前支持范围有关。先在 Google 服务条款页查看账号关联地区，再对照 Antigravity FAQ；如需更正，可通过 Google 账号关联地区申请表提交请求。相关说明提到地区更改每年仅可申请一次，实际规则以申请页面为准。用户也分享过填写“我住这”或选择“以上都不是”并说明工作需要后申请通过的经历；这属于个案经验，不代表官方建议，也不能保证申请通过。",
       "keywords": [
         "Antigravity",
         "account ineligible",
@@ -1950,7 +1950,7 @@
       "id": "faq-074",
       "category": "12",
       "question": "Google Antigravity 登录要求扫描二维码或验证年龄时怎么处理？",
-      "answer": "PDF 记录的扫码经验包括：先用手机原生相机扫描 Google 验证二维码；若仍要求短信，则在手机或 iPad 的 Google App 中登录一个可用账号，再用 App 内扫码功能尝试。PDF 还提到检查 Google 基础服务设置；短信仍未完成时，尝试更换网络节点、Google App 中的账号或设备后重试。",
+      "answer": "遇到 Google 登录扫码、短信验证收不到或验证没有反应时，可先用手机自带相机扫描页面上的二维码；有用户反馈小米设备上这样可以继续验证。若仍要求短信，可在手机或 iPad 的 Google App 中登录可用账号，再尝试使用 App 内扫码功能，并检查 Google 基础服务设置。仍无法完成时，可更换网络节点、Google App 中的账号或设备后重试。验证成功后返回 Antigravity，选择“Sign in again”登录目标账号。以上为设备与网络相关的排查经验，结果可能因环境不同而异。",
       "keywords": [
         "Antigravity",
         "二维码验证",
@@ -1976,7 +1976,7 @@
       "id": "faq-075",
       "category": "12",
       "question": "浏览器验证成功后，Antigravity 仍要求 Verify 怎么办？",
-      "answer": "PDF 建议打开 Google 账号年龄验证页面，可选择自拍或上传证件；作者推荐自拍。自拍流程会显示二维码，也可复制页面链接到手机浏览器打开并完成识别。PDF 作者称同一张脸可以反复扫描通过；验证成功后返回 Antigravity 选择 Sign in again。",
+      "answer": "如果 Antigravity 仍提示 Verify，可打开 Google 账号年龄验证页面，按页面提供的方式完成自拍验证或证件验证。若页面提供二维码或链接，可在手机浏览器中继续验证。部分用户反馈同一张脸可以重复进行自拍扫描；这属于个人经验，是否可用以验证页面当前规则为准。验证成功后返回 Antigravity，选择“Sign in again”重新登录。",
       "keywords": [
         "Antigravity",
         "Verify",
@@ -2000,7 +2000,7 @@
       "id": "faq-076",
       "category": "12",
       "question": "Google Antigravity 反复出现 Verify / Sign in again 登录循环怎么办？",
-      "answer": "PDF 对 Verify → Sign in again 循环的处理是：打开 Google 年龄验证页面并完成验证，返回 Antigravity 再次 Sign in again；如果仍循环，从 Settings → Account → Sign out 退出后重新登录。",
+      "answer": "浏览器验证成功后，若 Antigravity 仍反复要求 Verify 或 Sign in again，可先打开 Google 年龄验证页面确认验证已完成，再返回应用选择“Sign in again”。若仍循环，在 Settings → Account → Sign out 退出账号，然后重新登录。",
       "keywords": [
         "Antigravity",
         "Verify 循环",
@@ -2029,7 +2029,7 @@
       "id": "faq-077",
       "category": "12",
       "question": "Google Antigravity 登录出现 daily-cloudcode EOF 怎么办？",
-      "answer": "PDF 将 daily-cloudcode-pa.googleapis.com 的 onboardUser 请求返回 EOF 归因于网络节点质量，并建议切换其他节点或开启 TUN/虚拟网卡模式后重试。",
+      "answer": "Google Antigravity 登录过程中，若 daily-cloudcode-pa.googleapis.com 的 onboardUser 请求返回 EOF，可先从网络连接排查：切换到其他网络节点，再次尝试；也可以启用网络工具的 TUN/虚拟网卡模式后重试。",
       "keywords": [
         "Antigravity",
         "EOF",
@@ -2054,7 +2054,7 @@
       "id": "faq-078",
       "category": "12",
       "question": "Google Antigravity 登录出现 invalid_grant 怎么办？",
-      "answer": "PDF 将 invalid_grant 归因于 Antigravity 中该账号的 OAuth 登录状态过期；建议在应用中选择 Continue with different account，然后重新登录出现错误的同一个账号。",
+      "answer": "invalid_grant 表示当前 OAuth 授权无法继续使用。可在 Antigravity 中选择“Continue with different account”，再重新登录出现错误的原 Google 账号。",
       "keywords": [
         "Antigravity",
         "invalid_grant",
@@ -2078,7 +2078,7 @@
       "id": "faq-079",
       "category": "12",
       "question": "Google Antigravity 登录出现 context deadline exceeded 怎么办？",
-      "answer": "PDF 将 context deadline exceeded 归纳为请求超时，并建议重试。",
+      "answer": "context deadline exceeded 表示请求等待超时。先重新尝试一次；如果多次出现，可检查网络连接并更换节点，或启用 TUN/虚拟网卡模式后重试。",
       "keywords": [
         "Antigravity",
         "context deadline exceeded",
@@ -2102,7 +2102,7 @@
       "id": "faq-080",
       "category": "12",
       "question": "Google Antigravity 出现其他 Unexpected issue 怎么排查？",
-      "answer": "PDF 将其他 daily-cloudcode Unexpected issue 归纳为网络问题，并建议切换其他节点或开启 TUN/虚拟网卡模式后重试。",
+      "answer": "遇到 daily-cloudcode 的 Unexpected issue，可先切换到其他网络节点后重试；如果问题仍在，启用网络工具的 TUN/虚拟网卡模式，再重新登录或发起请求。",
       "keywords": [
         "Antigravity",
         "Unexpected issue",
@@ -2127,8 +2127,8 @@
     {
       "id": "faq-081",
       "category": "12",
-      "question": "PDF 介绍的 Antigravity 是什么？展示了哪些模型？",
-      "answer": "PDF 将 Antigravity 介绍为用于 Vibe Coding 的桌面智能体，并展示了当时的模型名单：Gemini 3.5 Flash（Medium / High / Low）、Gemini 3.1 Pro（High / Low）、Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B（Medium）。首页示例为 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）和 Gemini 3.1 Pro（High）。",
+      "question": "Antigravity 是什么？界面中展示了哪些模型？",
+      "answer": "Antigravity 2.0 是面向 Vibe Coding 的桌面智能体。提供的界面截图中列出 Gemini 3.5 Flash（Medium / High / Low）、Gemini 3.1 Pro（High / Low）、Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B（Medium）；首页示例还展示 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）和 Gemini 3.1 Pro（High）。界面与可用模型可能随产品更新而变化。",
       "keywords": [
         "Antigravity 2.0",
         "Vibe Coding",

@@ -141,21 +141,21 @@
       tone: blue
     - text: 回跳排查
       tone: amber
-  intro: PDF 将浏览器已登录但 Antigravity 仍转圈归因于浏览器与应用使用的网络通路不同，并给出 TUN 和账号切换工具的处理经验。
+  intro: 浏览器显示登录成功但 Antigravity 仍在等待时，可先检查浏览器与应用是否使用了不同网络通路。
   blocks:
     - type: steps
-      title: PDF 中记录的处理流程
+      title: 处理步骤
       items:
         - title: 启用 TUN / 虚拟网卡
-          text: PDF 建议打开网络工具的 TUN 模式或虚拟网卡模式，让浏览器与 Antigravity 使用同一网络通路后重试。
+          text: 在网络工具中启用 TUN/虚拟网卡模式，让浏览器与 Antigravity 使用同一网络通路，然后重新授权。
         - title: 下载 Antigravity Tools
-          text: 如果仍未跳回，PDF 建议从下方 Release 页面下载与系统对应的安装包。
+          text: 如果仍未跳回，可从下方项目 Release 页面获取与系统对应的 Antigravity Tools 安装包。
         - title: 添加并切换账号
-          text: PDF 记录的操作是打开工具，点击右上角添加账号并进行 OAuth 授权，然后使用一键切换；平时可在账号管理中勾选账号后点击转换。
+          text: 打开工具后，点击右上角添加账号并完成 OAuth 授权，再使用账号切换功能；日常切换时可在账号管理中选择账号并执行切换。
         - title: 退出后重新登录
-          text: PDF 建议遇到 Antigravity 内的错误时，在 Settings → Account → Sign out 退出，再重新登录并重试。
+          text: 如果 Antigravity 内仍报错，在 Settings → Account → Sign out 退出账号，然后重新登录。
     - type: action_link
-      title: PDF 提到的 Antigravity Tools Release
+      title: Antigravity Tools 项目 Release
       url: https://github.com/lbjlaq/Antigravity-Manager/releases
       open_label: 打开 Release 页面
       copy_label: 复制链接
@@ -166,25 +166,25 @@
       tone: blue
     - text: 账号地区
       tone: amber
-  intro: PDF 将 account ineligible 归因于 Google 账号关联地区不在 Antigravity 支持范围，并列出了查看地区和提交申请的办法。
+  intro: account ineligible 可能与 Google 账号关联地区不在 Antigravity 当前支持范围有关，可按以下步骤核对并提交地区更正申请。
   blocks:
     - type: steps
-      title: PDF 中记录的地区排查
+      title: 地区排查与申请
       items:
         - title: 查看 Google 账号地区
           text: 在 Google 服务条款页面查看账号当前关联地区。
         - title: 对照 Antigravity 支持地区
-          text: 打开 Antigravity FAQ，检查账号关联地区是否在 PDF 所引用的支持地区列表中。
+          text: 打开 Antigravity FAQ，核对账号关联地区是否在当前支持地区范围内。
         - title: 提交地区申请
-          text: PDF 建议通过 Google 关联地区申请表提交更改请求，并等待 Google 回复。
+          text: 如需更正账号关联地区，可通过 Google 申请表提交请求，并留意 Google 的后续回复。
     - type: callout
       tone: neutral
-      title: PDF 对申请频率的说明
-      text: PDF 称该地区更改每年只允许一次，并提醒提交后等待 Google 回复。
+      title: 申请频率
+      text: 相关说明提到地区更改每年仅可申请一次；具体频率以申请页面当前规则为准。
     - type: callout
       tone: neutral
-      title: PDF 转述的用户申请经验
-      text: 文档记录了两种用户说法：一种称直接填写“我住这”后申请通过，另一种称选择“以上都不是”并说明工作需要；作者还称有 4–5 个账号采用第一种方式通过。
+      title: 用户申请经验
+      text: 有用户分享过填写“我住这”后申请通过，也有人选择“以上都不是”并说明工作需要；经验整理者还提到，自己接触的 4–5 个账号采用第一种方式后都通过了。这些是个案经验，不代表官方建议，也不能保证申请通过。
     - type: action_link
       title: Google Antigravity 登录与地区说明
       url: https://antigravity.google/docs/faq
@@ -207,21 +207,21 @@
       tone: blue
     - text: 二维码流程
       tone: green
-  intro: PDF 记录了 Google 登录要求扫描二维码、短信验证码收不到或验证流程没有反应时的处理经验。
+  intro: Google 登录要求扫码、短信验证码收不到或验证没有反应时，可依次尝试以下方法。
   blocks:
     - type: steps
-      title: PDF 中记录的扫码尝试
+      title: 扫码与验证排查
       items:
         - title: 先试手机原生相机
-          text: PDF 作者称用手机自带相机扫描二维码，有时可以继续验证而不进入短信步骤，并举了小米设备作为个案。
+          text: 先用手机自带相机扫描二维码。有用户反馈小米设备上这样可以继续验证，但不同设备的结果可能不同。
         - title: 再试 Google App 扫码
-          text: PDF 建议在手机或 iPad 的 Google App 中登录一个可用的 Google 账号，再用 App 内扫码功能扫描页面二维码；原文还提到 Google 基础服务设置。
+          text: 若仍要求短信验证，可在手机或 iPad 的 Google App 中登录可用账号，再用 App 内扫码功能扫描页面二维码，并检查 Google 基础服务设置。
         - title: 短信仍未完成时
-          text: PDF 记录的尝试包括更换网络节点、Google App 中的账号或设备后重试；作者没有提供可复现的成功条件。
+          text: 仍无法完成时，可尝试更换网络节点、Google App 中的账号或设备；这些方法的效果会因环境而异。
         - title: 验证通过后返回应用
           text: Google 页面显示身份认证成功后，返回 Antigravity 选择“Sign in again”，再登录目标账号。
     - type: action_link
-      title: PDF 引用的 Antigravity 官方 FAQ
+      title: Antigravity 官方 FAQ
       url: https://antigravity.google/docs/faq
       open_label: 打开官方 FAQ
       copy_label: 复制链接
@@ -232,25 +232,25 @@
       tone: green
     - text: 仍提示 Verify
       tone: amber
-  intro: PDF 记录了通过 Antigravity FAQ 打开年龄验证页面、完成验证后返回应用继续登录的流程。
+  intro: 如果 Antigravity 仍要求 Verify，可完成 Google 账号年龄验证后返回应用继续登录。
   blocks:
     - type: steps
-      title: PDF 中记录的年龄验证流程
+      title: 年龄验证流程
       items:
         - title: 打开年龄验证
-          text: 按 PDF 提供的链接打开 Google 账号年龄验证页面。
+          text: 打开 Google 账号年龄验证页面。
         - title: 选择页面提供的方式
-          text: PDF 记录了自拍验证和上传证件两种方式，并推荐自拍验证；可按页面当时提供的选项继续。
+          text: 按页面提供的选项完成自拍验证或证件验证。
         - title: 手机扫码完成人脸验证
-          text: PDF 称自拍流程会显示二维码，也可以选择链接并在手机浏览器打开，随后按页面完成验证。
+          text: 如果自拍流程提供二维码或链接，可在手机浏览器中继续，并按页面提示完成验证。
         - title: 返回 Antigravity
           text: 页面显示身份验证成功后，返回 Antigravity 选择“Sign in again”，重新登录目标账号。
     - type: callout
       tone: neutral
-      title: PDF 中的经验说法
-      text: PDF 作者称同一张脸可以反复通过自拍扫描；这是文档中的个人经验描述。
+      title: 用户经验
+      text: 有用户反馈同一张脸可以重复进行自拍扫描；这是个案经验，是否可用以验证页面当前规则为准。
     - type: action_link
-      title: PDF 引用的 Google 年龄验证页面
+      title: Google 账号年龄验证页面
       url: https://myaccount.google.com/age-verification
       open_label: 打开年龄验证
       copy_label: 复制链接
@@ -261,24 +261,24 @@
       tone: blue
     - text: 授权循环
       tone: amber
-  intro: PDF 记录了浏览器身份验证成功后，Antigravity 仍反复要求 Verify 或 Sign in again 的情况。
+  intro: 浏览器验证成功后，若 Antigravity 仍反复要求 Verify 或 Sign in again，可重新完成年龄验证并刷新应用登录状态。
   blocks:
     - type: steps
-      title: PDF 中记录的处理流程
+      title: 处理步骤
       items:
         - title: 打开年龄验证页面
-          text: PDF 建议通过 Antigravity FAQ 进入 Google 账号年龄验证页面，按页面完成验证。
+          text: 打开 Google 账号年龄验证页面，按页面提示完成验证。
         - title: 再次登录
           text: 验证成功后返回 Antigravity，选择“Sign in again”并重新登录。
         - title: 仍在循环时
-          text: PDF 建议在应用 Settings → Account → Sign out 退出账号，再重新登录并重试。
+          text: 如果仍在循环，在 Settings → Account → Sign out 退出账号，再重新登录。
     - type: action_link
-      title: PDF 引用的 Antigravity 官方 FAQ
+      title: Antigravity 官方 FAQ
       url: https://antigravity.google/docs/faq
       open_label: 打开官方 FAQ
       copy_label: 复制链接
     - type: action_link
-      title: PDF 引用的 Google 年龄验证页面
+      title: Google 账号年龄验证页面
       url: https://myaccount.google.com/age-verification
       open_label: 打开年龄验证
       copy_label: 复制链接
@@ -289,15 +289,15 @@
       tone: amber
     - text: 请求中断
       tone: blue
-  intro: PDF 中的 daily-cloudcode-pa.googleapis.com onboardUser 请求返回 EOF；PDF 将其归因于网络错误和节点质量。
+  intro: 如果 daily-cloudcode-pa.googleapis.com 的 onboardUser 请求返回 EOF，可先检查网络连接并尝试切换网络通路。
   blocks:
     - type: steps
-      title: PDF 中给出的尝试
+      title: 网络排查
       items:
         - title: 更换网络节点
-          text: PDF 建议切换到其他节点后再次尝试。
+          text: 切换到其他网络节点后重试。
         - title: 启用 TUN / 虚拟网卡
-          text: PDF 建议开启网络工具的 TUN 模式或虚拟网卡模式后重试。
+          text: 启用网络工具的 TUN/虚拟网卡模式后重试。
 
 - id: faq-078
   badges:
@@ -305,15 +305,15 @@
       tone: amber
     - text: 授权错误
       tone: blue
-  intro: PDF 将 invalid_grant 解释为 Antigravity 中该账号的 OAuth 登录状态过期。
+  intro: invalid_grant 表示当前 OAuth 授权无法继续使用，可重新授权受影响的 Google 账号。
   blocks:
     - type: steps
-      title: PDF 中给出的重新登录方式
+      title: 重新登录
       items:
         - title: 重新选择账号入口
           text: 在 Antigravity 中点击“Continue with different account”。
         - title: 登录原账号
-          text: 按 PDF 说明重新登录出现错误的那个 Google 账号。
+          text: 选择出现错误的原 Google 账号并重新登录。
 
 - id: faq-079
   badges:
@@ -321,17 +321,17 @@
       tone: amber
     - text: context deadline exceeded
       tone: blue
-  intro: PDF 将 context deadline exceeded 归纳为请求超时，并建议重新尝试。
+  intro: context deadline exceeded 表示请求等待超时，可先重新尝试一次。
   blocks:
     - type: steps
-      title: PDF 中的处理方式
+      title: 处理方式
       items:
         - title: 重试
-          text: 按 PDF 建议重新尝试请求。
+          text: 重新发起请求；若连续超时，可切换网络节点或启用 TUN/虚拟网卡后再试。
     - type: callout
       tone: neutral
-      title: PDF 中其他错误的网络尝试
-      text: PDF 在 EOF 和其他 Unexpected issue 段落中还建议切换节点或开启 TUN/虚拟网卡。
+      title: 仍然超时时
+      text: 如果其他 daily-cloudcode 错误也同时出现，可尝试切换网络节点或启用 TUN/虚拟网卡模式。
 
 - id: faq-080
   badges:
@@ -339,29 +339,29 @@
       tone: amber
     - text: 通用排查
       tone: blue
-  intro: PDF 将其他 daily-cloudcode Unexpected issue 归纳为网络问题，并建议更换节点或开启 TUN/虚拟网卡。
+  intro: 遇到 daily-cloudcode 的 Unexpected issue，可先尝试切换网络节点或启用 TUN/虚拟网卡模式。
   blocks:
     - type: steps
-      title: PDF 中给出的网络尝试
+      title: 网络排查
       items:
         - title: 更换网络节点
-          text: PDF 建议切换到其他节点后重试。
+          text: 切换到其他网络节点后重试。
         - title: 启用 TUN / 虚拟网卡
-          text: PDF 建议开启网络工具的 TUN 模式或虚拟网卡模式后再试。
+          text: 启用网络工具的 TUN/虚拟网卡模式后重试。
 
 - id: faq-081
   badges:
     - text: 产品简介
       tone: blue
-    - text: PDF 模型截图
+    - text: 模型界面截图
       tone: amber
-  intro: PDF 介绍了 Antigravity 2.0 和 Vibe Coding，并列出首页与模型选择器截图中的模型。
+  intro: Antigravity 2.0 是面向 Vibe Coding 的桌面智能体；以下为界面截图中展示的模型。
   blocks:
     - type: cards
       items:
-        - badge: PDF 截图名单
+        - badge: 截图中显示
           tone: blue
-          title: PDF 截图中的模型选择器
+          title: 模型选择器
           text: 截图展示了 Gemini 3.5 Flash（Medium / High / Low）、Gemini 3.1 Pro（High / Low）、Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B（Medium）。
-          example: PDF 首页还列出 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）和 Gemini 3.1 Pro（High）。
+          example: 首页示例展示 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）和 Gemini 3.1 Pro（High）。
 
