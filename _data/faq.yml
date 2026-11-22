@@ -2127,21 +2127,25 @@
     {
       "id": "faq-081",
       "category": "12",
-      "question": "Antigravity 是什么？界面中展示了哪些模型？",
-      "answer": "Antigravity 2.0 是面向 Vibe Coding 的桌面智能体。提供的界面截图中列出 Gemini 3.5 Flash（Medium / High / Low）、Gemini 3.1 Pro（High / Low）、Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B（Medium）；首页示例还展示 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）和 Gemini 3.1 Pro（High）。界面与可用模型可能随产品更新而变化。",
+      "question": "Google Antigravity 目前支持哪些模型？",
+      "answer": "截至 2026 年 11 月 22 日，Google Antigravity 官方模型目录列出 Gemini 4 Neon、Gemini 4 Carbon、Gemini 4 Argon、Gemini 4 Hydrogen，以及 Orchestrator 协作选项。目录还列出 Gemini 3.8 Flash、Claude Sonnet 5.5 和 Claude Opus 5.5 等模型；具体可用项取决于账号套餐，完整名单与变动请查看官方模型目录。",
       "keywords": [
-        "Antigravity 2.0",
-        "Vibe Coding",
-        "模型列表",
-        "Gemini 3.5 Flash",
-        "Claude Opus",
-        "GPT-OSS 120B"
+        "Google Antigravity",
+        "Gemini 4",
+        "Gemini 4 Carbon",
+        "Gemini 4 Neon",
+        "Gemini 4 Argon",
+        "Gemini 4 Hydrogen",
+        "Orchestrator",
+        "Claude Sonnet 5.5",
+        "Claude Opus 5.5",
+        "模型列表"
       ],
       "related_questions": [
         "faq-073"
       ],
       "sources": [
-        "antigravity-login-case-notes"
+        "google-antigravity-models"
       ],
       "confidence_level": "C",
       "last_verified": "2026-11-22",

@@ -351,17 +351,31 @@
 
 - id: faq-081
   badges:
-    - text: 产品简介
+    - text: 官方模型目录
       tone: blue
-    - text: 模型界面截图
-      tone: amber
-  intro: Antigravity 2.0 是面向 Vibe Coding 的桌面智能体；以下为界面截图中展示的模型。
+    - text: Gemini 4 系列
+      tone: green
+  intro: 官方模型选择器已更新到 Gemini 4 系列。可见模型和套餐权限会变化，请以账号内选择器及官方模型目录为准。
   blocks:
     - type: cards
       items:
-        - badge: 截图中显示
+        - badge: Google DeepMind
           tone: blue
-          title: 模型选择器
-          text: 截图展示了 Gemini 3.5 Flash（Medium / High / Low）、Gemini 3.1 Pro（High / Low）、Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B（Medium）。
-          example: 首页示例展示 Gemini 3.5 Flash、Claude Opus 4.6（Thinking）和 Gemini 3.1 Pro（High）。
-
+          title: Gemini 4
+          text: Gemini 4 Neon、Gemini 4 Carbon、Gemini 4 Argon、Gemini 4 Hydrogen。不同套餐可用范围不同。
+          example: Google AI Ultra 与 Enterprise 可用 Gemini 4 Carbon；其他型号按官方套餐表开放。
+        - badge: 多模型协作
+          tone: green
+          title: Orchestrator
+          text: 可选 Neon、Carbon 或 Argon 作为规划模型，并与 Gemini 4 Hydrogen 执行模型配合；可用选项取决于套餐。
+          example: Gemini Enterprise 的 Orchestrator 使用 Gemini 4 Carbon + Gemini 4 Hydrogen。
+        - badge: 其他官方模型
+          tone: slate
+          title: Gemini、Claude 与 GPT
+          text: 官方目录还列有 Gemini 3.8 Flash、Enterprise 可用的 Gemini 3.7 Flash / 3.6 Flash / 3.1 Pro，以及 Claude Sonnet 5.5、Claude Opus 5.5、Claude 4.6 和 GPT-OSS 120B。
+          example: Claude 4.6 与 GPT-OSS 120B 标注计划于 2026 年 11 月 30 日移除；以官方目录后续更新为准。
+    - type: action_link
+      title: Google Antigravity 官方模型目录
+      url: https://antigravity.google/docs/models
+      open_label: 查看当前模型
+      copy_label: 复制链接
