@@ -63,13 +63,18 @@ layout: default
               {% if source %}
                 <li class="faq-source-item">
                   <div class="faq-source-heading">
-                    <a href="{{ source.source_url | escape }}" target="_blank" rel="noopener noreferrer">{{ source.author | default: source.product | default: source.source_url | escape }}</a>
+                    {% if source.source_url and source.source_url != '' %}
+                      <a href="{{ source.source_url | escape }}" target="_blank" rel="noopener noreferrer">{{ source.author | default: source.product | default: source.source_url | escape }}</a>
+                    {% else %}
+                      <span>{{ source.author | default: source.product | escape }}</span>
+                    {% endif %}
                     {% case source.source_type %}
                       {% when 'community_reddit' %}<span class="faq-source-type">Reddit 讨论</span>
                       {% when 'community_github' %}<span class="faq-source-type">GitHub 社区</span>
                       {% when 'social_x_expert_commentary' %}<span class="faq-source-type">{% if source.verification_status == 'search_snippet_only_direct_open_403' %}X 搜索线索{% else %}X 专业观点{% endif %}</span>
                       {% when 'technical_standard' %}<span class="faq-source-type">技术标准</span>
                       {% when 'research_paper' %}<span class="faq-source-type">研究论文</span>
+                      {% when 'user_experience_notes' %}<span class="faq-source-type">用户经验</span>
                       {% else %}<span class="faq-source-type">官方资料</span>
                     {% endcase %}
                   </div>
@@ -85,6 +90,8 @@ layout: default
                       {% when 'official_search_excerpt' %}<span>搜索摘要核验</span>
                       {% when 'public_page_opened' %}<span>已打开公开页面</span>
                       {% when 'search_snippet_only_direct_open_403' %}<span>原页面 403，待核验</span>
+                      {% when 'reference_link_not_independently_verified' %}<span>来源链接已收录，页面内容未独立核验</span>
+                      {% when 'experience_notes_reviewed' %}<span>经验内容已整理</span>
                       {% else %}<span>{{ source.verification_status | replace: '_', ' ' | escape }}</span>
                     {% endcase %}
                   </div>
