@@ -1325,38 +1325,13 @@
       "verified_at": "2026-11-22",
       "product": "Google Antigravity",
       "version": "",
-      "supporting_claim": "官方 FAQ 说明支持地区与年龄要求、个人/组织账号登录条件；同时明确第三方软件访问限制、自动账号轮换在消费者方案中不受支持，以及关联地区显示错误时可申请更正。",
-      "counter_evidence": "官方页面没有为 EOF、invalid_grant 或 context deadline exceeded 给出统一根因；地区更正申请也不保证 Antigravity 一定可用。",
-      "verification_status": "official_page_opened",
+      "supporting_claim": "PDF 引用该官方 FAQ，用于查看 Antigravity 的支持地区，并作为年龄验证与 Sign in again 排障的参考页面。",
+      "counter_evidence": "PDF 截图及其描述反映文档整理时的内容；官方支持地区和页面内容可能变化，应以所链接页面当时显示的信息为准。",
+      "verification_status": "link_listed_in_user_pdf",
       "question_refs": [
-        "faq-072",
         "faq-073",
         "faq-074",
-        "faq-075",
-        "faq-076",
-        "faq-077",
-        "faq-078",
-        "faq-079",
-        "faq-080",
-        "faq-082",
-        "faq-083"
-      ]
-    },
-    {
-      "id": "google-age-verification-help",
-      "source_url": "https://support.google.com/accounts/answer/10071085?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-22",
-      "product": "Google Account age verification",
-      "version": "",
-      "supporting_claim": "Google 账号帮助说明年龄验证的方式并非对所有账号、设备和地区开放，用户应按账号页面实际显示的步骤完成验证。",
-      "counter_evidence": "具体可用方式和页面流程会因账号、设备及地区变化；不应将某一种验证方式描述为所有用户都可用。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-074",
-        "faq-075"
+        "faq-076"
       ]
     },
     {
@@ -1368,8 +1343,8 @@
       "verified_at": "2026-11-22",
       "product": "Google Antigravity 登录排障案例",
       "version": "",
-      "supporting_claim": "用户提供的 PDF 记录浏览器登录回跳、TUN/网络节点尝试、第三方 Antigravity Tools 多账号 OAuth 切换、地区更正申请、手机扫码/短信验证和各类错误码排障经验。",
-      "counter_evidence": "用户个案材料而非 Google 官方结论；其中居住地区申报、反复切换账号/设备/网络及自拍可重复使用等说法未经独立核验。原 PDF 含个人信息和验证码/二维码，不公开原件或敏感影像；第三方账号轮换与 Google 官方规则冲突。",
+      "supporting_claim": "用户提供的《反重力登录问题.pdf》记录了浏览器登录回跳、TUN/网络节点、Antigravity Tools 账号切换、地区申请、扫码/短信验证、年龄验证及 daily-cloudcode 错误处理经验。",
+      "counter_evidence": "个人整理的排障材料，文中步骤和成功结果均为作者或用户经验描述；不代表每个账号、设备和网络都能复现。原 PDF 的个人信息、验证码和二维码不纳入网站文件。",
       "verification_status": "user_provided_document_reviewed",
       "question_refs": [
         "faq-072",
@@ -1381,42 +1356,6 @@
         "faq-078",
         "faq-079",
         "faq-080",
-        "faq-081",
-        "faq-082",
-        "faq-083"
-      ]
-    },
-    {
-      "id": "google-antigravity-authenticate",
-      "source_url": "https://antigravity.google/docs/install",
-      "source_type": "official_developer_docs",
-      "author": "Google Antigravity Docs",
-      "published_at": null,
-      "verified_at": "2026-11-22",
-      "product": "Google Antigravity authentication",
-      "version": "",
-      "supporting_claim": "官方认证指南说明应用使用浏览器 OAuth 登录，并在授权完成后返回 Antigravity；不同使用界面共享本地认证层。",
-      "counter_evidence": "官方指南没有保证所有浏览器、设备或网络环境都能无故障完成回跳。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-072",
-        "faq-076",
-        "faq-078"
-      ]
-    },
-    {
-      "id": "google-antigravity-models",
-      "source_url": "https://antigravity.google/docs/models",
-      "source_type": "official_developer_docs",
-      "author": "Google Antigravity Docs",
-      "published_at": null,
-      "verified_at": "2026-11-22",
-      "product": "Google Antigravity model availability",
-      "version": "",
-      "supporting_claim": "官方模型文档列出模型选择方式、各方案可用范围及推理等级；可用模型会随方案不同。",
-      "counter_evidence": "模型名单、方案权限和产品版本会更新，具体账号以应用中的模型选择器和当日官方文档为准。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
         "faq-081"
       ]
     },
@@ -1424,33 +1363,65 @@
       "id": "google-country-association-form",
       "source_url": "https://policies.google.com/country-association-form",
       "source_type": "official_account_form",
-      "author": "Google Policies",
+      "author": "Google",
       "published_at": null,
-      "verified_at": "2026-11-22",
-      "product": "Google Account associated country/region",
+      "verified_at": null,
+      "product": "Google Account associated country",
       "version": "",
-      "supporting_claim": "Google Antigravity FAQ 指向此官方表单，用于 Google 账号关联国家显示错误时提交地区更正请求。",
-      "counter_evidence": "表单需要登录且申请结果由 Google 决定；更正地区不保证 Antigravity 资格，不能作为虚报所在地或绕过支持地区限制的承诺。",
-      "verification_status": "official_link_referenced_by_antigravity_faq",
+      "supporting_claim": "PDF 提供此 Google 账号关联地区申请表链接。",
+      "counter_evidence": "仅记录 PDF 中的申请入口，不对申请条件或结果作额外说明。",
+      "verification_status": "link_listed_in_user_pdf",
       "question_refs": [
-        "faq-073",
-        "faq-083"
+        "faq-073"
       ]
     },
     {
-      "id": "google-account-connections",
-      "source_url": "https://myaccount.google.com/connections",
-      "source_type": "official_account_security_settings",
+      "id": "google-account-terms",
+      "source_url": "https://policies.google.com/terms",
+      "source_type": "official_policy_page",
+      "author": "Google",
+      "published_at": null,
+      "verified_at": null,
+      "product": "Google Account associated country",
+      "version": "",
+      "supporting_claim": "PDF 引用此页面查看 Google 账号关联地区。",
+      "counter_evidence": "仅记录 PDF 中的链接用途，不扩展解释页面规则。",
+      "verification_status": "link_listed_in_user_pdf",
+      "question_refs": [
+        "faq-073"
+      ]
+    },
+    {
+      "id": "google-age-verification-page",
+      "source_url": "https://myaccount.google.com/age-verification",
+      "source_type": "official_account_page",
       "author": "Google Account",
       "published_at": null,
-      "verified_at": "2026-11-22",
-      "product": "Google Account third-party connections",
+      "verified_at": null,
+      "product": "Google Account age verification",
       "version": "",
-      "supporting_claim": "Google 账号连接管理页可用于检查已授权的第三方应用和服务。",
-      "counter_evidence": "需要登录相应 Google 账号；页面选项会因账号状态调整。",
-      "verification_status": "official_account_page_link",
+      "supporting_claim": "PDF 提供此 Google 账号年龄验证页面链接。",
+      "counter_evidence": "登录后页面呈现的验证方式以账号当时看到的页面为准。",
+      "verification_status": "link_listed_in_user_pdf",
       "question_refs": [
-        "faq-082"
+        "faq-075",
+        "faq-076"
+      ]
+    },
+    {
+      "id": "antigravity-tools-releases",
+      "source_url": "https://github.com/lbjlaq/Antigravity-Manager/releases",
+      "source_type": "third_party_project_releases",
+      "author": "Antigravity Tools GitHub repository",
+      "published_at": null,
+      "verified_at": null,
+      "product": "Antigravity Tools",
+      "version": "",
+      "supporting_claim": "PDF 将此 Release 页面作为 Antigravity Tools 下载入口，并描述了 OAuth 添加账号和切换账号的使用方式。",
+      "counter_evidence": "页面与工具属于 PDF 引用的第三方项目；文档中的使用结果为作者经验。",
+      "verification_status": "link_listed_in_user_pdf",
+      "question_refs": [
+        "faq-072"
       ]
     }
   ]
