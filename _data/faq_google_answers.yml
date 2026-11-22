@@ -143,7 +143,7 @@
       tone: amber
   intro: 浏览器显示登录成功但 Antigravity 仍在等待时，可先检查浏览器与应用是否使用了不同网络通路。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 处理步骤
       items:
         - title: 启用 TUN / 虚拟网卡
@@ -168,7 +168,7 @@
       tone: amber
   intro: account ineligible 可能与 Google 账号关联地区不在 Antigravity 当前支持范围有关，可按以下步骤核对并提交地区更正申请。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 地区排查与申请
       items:
         - title: 查看 Google 账号地区
@@ -209,7 +209,7 @@
       tone: green
   intro: Google 登录要求扫码、短信验证码收不到或验证没有反应时，可依次尝试以下方法。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 扫码与验证排查
       items:
         - title: 先试手机原生相机
@@ -234,7 +234,7 @@
       tone: amber
   intro: 如果 Antigravity 仍要求 Verify，可完成 Google 账号年龄验证后返回应用继续登录。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 年龄验证流程
       items:
         - title: 打开年龄验证
@@ -263,7 +263,7 @@
       tone: amber
   intro: 浏览器验证成功后，若 Antigravity 仍反复要求 Verify 或 Sign in again，可重新完成年龄验证并刷新应用登录状态。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 处理步骤
       items:
         - title: 打开年龄验证页面
@@ -291,7 +291,7 @@
       tone: blue
   intro: 如果 daily-cloudcode-pa.googleapis.com 的 onboardUser 请求返回 EOF，可先检查网络连接并尝试切换网络通路。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 网络排查
       items:
         - title: 更换网络节点
@@ -307,7 +307,7 @@
       tone: blue
   intro: invalid_grant 表示当前 OAuth 授权无法继续使用，可重新授权受影响的 Google 账号。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 重新登录
       items:
         - title: 重新选择账号入口
@@ -323,7 +323,7 @@
       tone: blue
   intro: context deadline exceeded 表示请求等待超时，可先重新尝试一次。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 处理方式
       items:
         - title: 重试
@@ -341,7 +341,7 @@
       tone: blue
   intro: 遇到 daily-cloudcode 的 Unexpected issue，可先尝试切换网络节点或启用 TUN/虚拟网卡模式。
   blocks:
-    - type: steps
+    - type: numbered_cards
       title: 网络排查
       items:
         - title: 更换网络节点
