@@ -3,6 +3,7 @@ layout: "post"
 title: "Grok 注册教程：xAI 旗下 AI 助手完整注册指南"
 date: "2025-08-28 12:00:00 +0800"
 categories: "tutorial"
+model_provider: "xai"
 tags: [Grok, xAI, SpaceXAI, 马斯克, 注册教程, AI助手, X Subscription]
 excerpt: "手把手教你注册 Grok 账号，包括注册方式、免费版与付费版对比及常见问题解答。"
 cover: "https://github.com/user-attachments/assets/47741f05-3af8-45bf-9ef0-f1482909b246"
@@ -13,7 +14,7 @@ pinned: false
 
 Grok 是马斯克旗下 xAI 公司（已并入 SpaceXAI）开发的 AI 助手，深度集成 X（原 Twitter）平台，
 能够实时获取 X 上的最新信息，风格幽默犀利，是目前少数能够访问实时网络数据的 AI 产品之一。
-当前最新旗舰为 **Grok 4.7**（2026年9月21日发布），支持 Expert 推理模式、视频生成、AI 语音伴侣及 500K tokens 超长上下文，在 Grok Build、Cursor 和 API 全面可用。Grok 4.6（2026年8月12日）为上一代旗舰。
+当前 Grok 官方旗舰型号及发布日期见页面上方自动同步状态。不同产品入口和订阅计划的模型可用范围，以账号模型选择器显示为准。
 
 ---
 
@@ -56,7 +57,7 @@ Grok 目前有两个访问入口：
 
 | 功能 | Free（$0）| Plus（$8/月）| Premium（$30/月）| Super（$100/月）| Ultra（$200/月）|
 |------|-----------|-------------|-----------------|----------------|----------------|
-| 主力模型 | Grok（基础额度）| Grok 4.7 | Grok 4.7（最新旗舰）| Grok 4.7（高峰期优先）| Grok 4.7（最早新品访问）|
+| 主力模型 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 |
 | 周共享使用额度 | 有限 | 1x（基准）| 4x Plus | 15x Plus | 50x Plus |
 | 图像生成（Imagine）| ❌ | ✅ 基础版 | ✅ 完整版 | ✅ 完整版 | ✅ 最高额度 |
 | 视频生成 | ❌ | ❌ | ✅ 支持 | ✅ 支持 | ✅ 最高额度 |
@@ -70,7 +71,7 @@ Grok 目前有两个访问入口：
 | X 平台权益 | 标准 | 蓝标 + 减少广告 | 无广告 + 完整 X 权益 | 无广告 + 完整 X 权益 | 无广告 + 完整 X 权益 |
 | 年付 | — | 暂无 | 暂无 | 暂无 | 暂无 |
 
-> 📌 **Grok 4.7**（2026年9月21日发布）是当前最新旗舰，知识截止日期 2026年5月，在 Grok Build、Cursor 和 API 全面可用。**Premium（$30/月）**是 SpaceXAI 标注的「最受欢迎」档位，也是最低包含 Grok Bot 和视频生成的档位，与旧版 SuperGrok（$30）功能相当。
+> 📌 当前 Grok 旗舰型号与发布日期见页面上方自动同步状态。模型在 Grok、Grok Build、Cursor 和 API 等入口的开放范围可能不同，请以对应产品页面为准。**Premium（$30/月）**是 The X Subscription 的订阅档位之一。
 >
 > 📌 **与旧 SuperGrok 对应关系**：Plus $8 ≈ 旧 X Premium；Premium $30 ≈ 旧 SuperGrok $30；Super $100 ≈ 旧 SuperGrok Plus $100；Ultra $200 为新增最高档（旧 Heavy $300 已停售）。已有旧 SuperGrok 订阅的用户可保留原套餐，账单设置中可自助切换至新体系并获得按比例退款。
 
@@ -84,7 +85,7 @@ Grok 目前有两个访问入口：
 
 **DeepSearch**：联网深度搜索，自动整合多个来源，给出有引用的详细报告。
 
-**超长上下文**：Grok 4.7 支持 500K tokens 上下文窗口，处理超长文档毫无压力。
+**超长上下文**：不同 Grok 模型的上下文窗口不同，请以官方模型说明及当前账号选择器为准。
 
 **Grok Build**：面向开发者的编程助手，Premium 及以上可访问更强大的工具集；The X Subscription 同时捆绑 Cursor 编程工具。
 

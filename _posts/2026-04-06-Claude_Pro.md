@@ -3,6 +3,7 @@ layout: "post"
 title: "Claude Pro 自助激活教程：卡密激活全流程详解"
 date: "2026-08-01 14:00:00 +0800"
 categories: "activation"
+model_provider: "anthropic"
 tags: [Claude, Claude Pro, 激活码, 自助激活, 卡密]
 excerpt: "图文详解 Claude Pro 卡密自助激活全流程，无需信用卡，十分钟内完成激活。"
 cover: "https://github.com/user-attachments/assets/ee58d2f3-7c03-4769-8c9e-cc704eb6e5f7"
@@ -64,8 +65,8 @@ https://claude.ai/settings/account
 
 ## 激活完成后可享受的功能
 
-- **Claude Sonnet 5.5**（2026年9月28日）、**Opus 5.5**（2026年9月22日）、**Fable 5.1**（2026年9月1日）完整访问（约为免费版5倍使用量）
-- **Fable 5.1** 通过用量积分访问（Pro 用量充裕时可用）
+- 当前 Claude Fable 旗舰型号与发布日期见页面上方自动同步状态；Pro 计划的模型开放范围以账号选择器为准，Fable 使用规则以官方计划说明为准。
+- Claude **Opus 5.5、Sonnet 5.5 和 Haiku 5.5** 的可用范围以账号模型选择器为准。
 - 1M tokens 超长上下文窗口
 - Projects、Artifacts、Memory、Connectors 全功能支持
 - Claude Code、Deep Research、Cowork、Design 完整工具集
@@ -73,7 +74,7 @@ https://claude.ai/settings/account
 - 高峰期优先响应，新功能抢先体验
 
 > 📌 **2026年10月最新模型**：5.5 系列（Haiku 5.5、Sonnet 5.5、Opus 5.5）已全面取代旧版成为当前主力。
-> Opus 5.5 在大多数任务上接近 Fable 5.1 水准，且比旧版 Opus 5 便宜约40%，是 Pro 用户处理复杂任务的首选。
+> Opus 5.5 在大多数任务上接近 Fable 5.2 水准，且比旧版 Opus 5 便宜约40%，是 Pro 用户处理复杂任务的首选。
 >
 > 📌 **2026年5月6日更新**：Anthropic 将 Pro 的 5 小时滚动窗口额度翻倍，并取消了峰值时段限速。
 

@@ -1,10 +1,11 @@
 ---
 layout: "post"
-title: "Grok X Subscription 自助激活教程：卡密激活全流程详解"
+title: "The X Subscription 自助激活教程：卡密激活全流程详解"
 date: "2026-07-15 15:00:00 +0800"
 categories: "activation"
+model_provider: "xai"
 tags: [Grok, X Subscription, SpaceXAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 Grok X Subscription 卡密自助激活全流程，无需信用卡，十分钟内完成激活，支持最新 Grok 4.7 模型。"
+excerpt: "图文详解 The X Subscription 卡密自助激活全流程，无需信用卡，十分钟内完成激活；当前旗舰型号与发布日期自动同步。"
 cover: "https://github.com/user-attachments/assets/13a368d2-53c7-4101-b0b0-12bda2bcd647"
 pinned: false
 ---
@@ -14,7 +15,7 @@ pinned: false
 在开始激活前，请确保你已经：
 
 - 拥有一个正常可登录的 Grok 账号（可用 X 账号或邮箱独立注册）
-- 已购买 Grok X Subscription 激活卡密（购买地址见文末）
+- 已购买 The X Subscription 激活卡密（购买地址见文末）
 - 保持稳定的网络连接
 
 > ⚠️ **2026年10月12日起**，SpaceXAI 已将 Grok 订阅体系全面升级为「The X Subscription」，新用户激活后享有的是新体系套餐（Free / Plus $8 / Premium $30 / Super $100 / Ultra $200），旧 SuperGrok 系列已停止向新用户销售。
@@ -66,9 +67,9 @@ https://grok.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-以 **Premium（$30/月）** 为例（最受欢迎档位，对应旧 SuperGrok $30）：
+以 **The X Subscription Premium（$30/月）** 为例（最受欢迎档位）：
 
-- **Grok 4.7**（2026年9月21日发布）完整访问——当前最新旗舰，知识截止日期 2026年5月
+- 当前 Grok 旗舰型号与发布日期见页面上方自动同步状态；具体模型选项以账号模型选择器显示为准。
 - **Expert 深度推理模式**完整支持
 - **DeepSearch 联网深度搜索**完整支持
 - **Imagine 图像生成**（完整版）+ **视频生成**
@@ -86,7 +87,7 @@ https://grok.com/api/auth/session
 > - Super $100/月：Premium 全部功能 + 高峰期优先访问，15x 额度
 > - Ultra $200/月：最高额度（50x）+ 最早新品访问权
 >
-> 📌 **Grok 4.7** API 定价：输入 $2/百万 tokens，输出 $6/百万 tokens（快速版 $4/$12）。
+> 📌 xAI API 定价会随模型与服务模式变化，请查看 [官方模型与定价说明](https://docs.x.ai/developers/models)。
 
 ---
 

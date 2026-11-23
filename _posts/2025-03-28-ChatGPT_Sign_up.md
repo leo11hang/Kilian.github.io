@@ -3,6 +3,7 @@ layout: "post"
 title: "ChatGPT 注册教程：2026年最新国内注册全流程"
 date: "2025-08-28 10:00:00 +0800"
 categories: "tutorial"
+model_provider: "openai"
 tags: [ChatGPT, OpenAI, 注册教程, GPT-6]
 excerpt: "手把手教你完成 ChatGPT 账号注册，包括网络环境准备、邮箱验证、手机号验证及常见问题解决。"
 cover: "https://github.com/user-attachments/assets/fcf1e289-8945-46ea-a053-ac87f056600a"
@@ -12,7 +13,7 @@ pinned: false
 ## ChatGPT 是什么？
 
 ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的 AI 产品之一，支持写作、
-编程、分析、翻译等几乎所有文字类任务。2026年已全面升级至 GPT-6 系列模型，能力大幅提升。
+编程、分析、翻译等任务。当前官方旗舰模型及发布日期会从 OpenAI 官方公告自动同步显示；不同计划、地区和入口可用的模型以账号内模型选择器为准。
 
 ---
 
@@ -54,8 +55,8 @@ ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的
 
 | 功能 | Free（$0）| Go（$8/月）| Plus（$20/月）| Pro 100（$100/月）| Pro 200（$200/月）| Pro 500（$500/月）|
 |------|-----------|-----------|--------------|-----------------|-----------------|-----------------|
-| Chat 主力模型 | GPT-6 Luna | GPT-6 Luna | GPT-6 Sol | GPT-6 Sol + Astra（「GPT-6 Pro」）| GPT-6 Sol + Astra | GPT-6 Sol + Astra |
-| Work/Codex 模型 | 有限 | 有限 | GPT-6.1 Sol + Astra（有限）| GPT-6.1 Sol + Astra | GPT-6.1 Sol + Astra | GPT-6.1 Sol Ultrafast + Astra Ultrafast |
+| Chat 主力模型 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 |
+| Work/Codex 模型 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 |
 | 使用额度（相对 Plus）| — | — | 1x | 约5x | 约10x | 约25x |
 | 图像生成 | 每天约2～3张 | 更高额度 | 更高额度 | 无限制 | 无限制 | 无限制 |
 | Deep Research | 有限 | 有限 | ✅ 完整版 | ✅ 更高配额 | ✅ 更高配额 | ✅ 最高配额 |
@@ -67,13 +68,12 @@ ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的
 
 > 📌 **套餐层级**：Free（$0）→ Go（$8/月）→ Plus（$20/月）→ Pro 100（$100/月）→ Pro 200（$200/月）→ Pro 500（$500/月，2026年9月29日 DevDay 新增）。个人套餐均为月付，无年付优惠。
 >
-> 📌 **2026年10月最新模型**：
-> - **GPT-6 Luna**：Free/Go 默认（2026年10月8日起）
-> - **GPT-6 Sol**：Plus/Pro Chat 主力（2026年10月7日起）
-> - **GPT-6.1 Sol**：2026年9月29日发布，在 Work 和 Codex 中可用（Plus 及以上），普通 Chat 中暂不开放
-> - **GPT-6 Astra**：Pro 100 及以上在 Chat 中可用（显示为「GPT-6 Pro」标签）；Plus 用户限于 Work/Codex 有限使用
+> 📌 **2026年11月最新模型**：
+> - **普通 Chat 模型**：具体名称与可用范围以账号内模型选择器显示为准。
+> - **GPT-6.2 系列**：2026年11月17日发布。当前旗舰型号与发布日期见页面上方自动同步状态；各入口的可用模型以账号模型选择器显示为准。
+> - **普通 Chat 与 Work/Codex**：模型选择入口和可用范围不同；以账号内各自的模型选择器为准。
 > - **GPT-6.1 Terra**：2026年10月26日发布，中阶 computer use 模型，速度较 GPT-5.6 Terra 提升约3倍，价格较 GPT-6.1 Sol 低50%，在 Work 和 Codex 中可用
-> - **Astra Ultrafast**：Pro 500 专属，约8倍标准速度
+> - **Ultrafast**：支持的模型与订阅计划以账号内模型选择器显示为准。
 >
 > 📌 **Pro 200 注意**：2026年9月29日起重新开放注册，但新订阅者 Work 和 Codex 额度已从20倍降至约10倍（自2026年10月30日起生效，2026年10月29日前的老订户不受影响）。
 
@@ -93,8 +93,8 @@ ChatGPT 是 OpenAI 开发的 AI 对话助手，目前是全球用户量最大的
 **Q：免费版也有广告了？**  
 是的，自 2026年2月9日起，美区免费用户在对话中会看到广告，升级至 Plus 或以上套餐可去除广告。
 
-**Q：GPT-6 Sol、GPT-6.1 Sol、GPT-6 Astra 有什么区别？**  
-三者定位不同：**GPT-6 Sol** 是 Plus/Pro Chat 日常对话主力（2026年10月7日起）；**GPT-6.1 Sol**（2026年9月29日发布）是中阶高性价比模型，性能接近 Astra 但价格仅为其五分之一，目前只在 Work 和 Codex 中可用（Plus 及以上），普通 Chat 暂不开放；**GPT-6 Astra** 是当前旗舰，Pro 100 及以上用户可在 Chat 中直接使用（显示为「GPT-6 Pro」标签），Plus 用户只能在 Work/Codex 中有限使用。**GPT-6.1 Terra**（2026年10月26日发布）则是专为 computer use 设计的中阶模型，在 Work 和 Codex 中可用。
+**Q：GPT-6.2 Astra、GPT-6.2 Sol 和 GPT-6 Astra 有什么区别？**  
+这两个名称对应 2026 年 11 月发布的一代模型。该发布时间属于历史记录；当前旗舰型号与发布日期见页面上方自动同步状态，当前可选模型以账号内相应入口的模型选择器为准。 [查看 OpenAI 官方模型说明](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex)
 
 ---
 

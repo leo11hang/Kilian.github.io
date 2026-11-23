@@ -1,32 +1,33 @@
 ---
 layout: "post"
-title: "ChatGPT Pro 10x 自助激活教程：卡密激活全流程详解"
+title: "ChatGPT Pro 200 自助激活教程：卡密激活全流程详解"
 date: "2026-09-02 10:30:00 +0800"
 categories: "activation"
+model_provider: "openai"
 tags: [ChatGPT, Pro, OpenAI, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 ChatGPT Pro 10x（$200/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，解锁约10倍 Plus 额度（2026年10月30日起）、更高 Deep Research 配额及 Sora 视频生成。"
+excerpt: "图文详解 ChatGPT Pro 200（$200/月）卡密自助激活全流程；套餐名称及模型说明按 OpenAI 当前官方命名整理。"
 cover: "https://raw.githubusercontent.com/leo11hang/Kilian.github.io/main/assets/ChatGPT Pro 10x 3D App Banner.png"
 pinned: false
 ---
 
-## 什么是 ChatGPT Pro 10x？
+## 什么是 ChatGPT Pro 200？
 
-ChatGPT Pro 10x（官方名称 **Pro $200/月**）是 OpenAI 面向个人用户的高档位订阅，
+ChatGPT Pro 200（官方计划名称 **Pro 200**）是 OpenAI 面向个人用户的高档位订阅，
 定价 **$200/月**。前身是 2024年底推出的原版 $200 Pro 计划，于 **2026年4月9日** 改版为三档 Pro 体系的中间层。
 
 > ⚠️ **2026年9月29日重要变更**：OpenAI 于 DevDay 将 Pro 200 重新开放订阅（此前自2026年9月10日起暂停新用户注册），
 > 但自 **2026年10月30日**起，新订阅者的 ChatGPT Work 和 Codex 使用额度从原20倍降至**约10倍** Plus 额度；
 > 2026年10月29日前的老订户在当前计费周期内可继续享受原有额度。
 
-**Pro 10x vs Plus vs Pro 5x vs Pro 25x 快速对比：**
+**Pro 200 vs Plus vs Pro 100 vs Pro 500 快速对比：**
 
-| 功能 | Plus ($20) | Pro 5x ($100) | **Pro 10x ($200)** | Pro 25x ($500) |
+| 功能 | Plus ($20) | Pro 100 ($100) | **Pro 200 ($200)** | Pro 500 ($500) |
 |------|------------|----------------|---------------------|----------------|
 | 使用额度 | 1x | 约5x | **约10x** | 约25x |
-| GPT-6 Astra（对话框）| Work/Codex 有限 | ✅ 周限额 | ✅ 更高周限额 | ✅ 最高，无5小时限制 |
-| Astra Ultrafast | ❌ | ❌ | ❌ | ✅ 专属 |
+| Chat 模型 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 |
+| Work/Codex 模型 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 | 以账号模型选择器为准 |
 | Sora 视频生成 | 有限 | ✅ | ✅ | ✅ |
-| Deep Research | 完整版 | 更高 | **更高（超过 Pro 5x）** | 最高 |
+| Deep Research | 完整版 | 更高 | **更高（超过 Pro 100）** | 最高 |
 | 优先计算资源 | ❌ | ✅ | ✅ | ✅ 最高 |
 
 ---
@@ -36,7 +37,7 @@ ChatGPT Pro 10x（官方名称 **Pro $200/月**）是 OpenAI 面向个人用户�
 在开始激活前，请确保你已经：
 
 - 拥有一个正常可登录的 ChatGPT 账号
-- 已购买 ChatGPT Pro 10x 激活卡密（购买地址见文末）
+- 已购买 ChatGPT Pro 200 激活卡密（购买地址见文末）
 - 保持稳定的网络连接
 
 ---
@@ -87,19 +88,15 @@ https://chatgpt.com/api/auth/session
 
 ## 激活完成后可享受的功能
 
-- **GPT-6 Astra** 在 Chat 对话框中直接访问（以「GPT-6 Pro」标签呈现，比 Pro 5x 更高周限额）
-- **GPT-6 Sol** 完整访问（Chat 日常对话主力，2026年10月7日起）
-- **GPT-6.1 Sol** 在 Work 和 Codex 中可用（2026年9月29日发布；**普通 Chat 暂不开放**）
+- 当前官方旗舰型号及发布日期见页面上方自动同步状态；普通 Chat、Work 和 Codex 的模型选项分别以账号内模型选择器为准。
 - **GPT-6.1 Terra** 在 Work 和 Codex 中可用（2026年10月26日发布，computer use 中阶模型，速度提升约3倍）
 - **约10倍 Plus 使用额度**（2026年10月30日起新订阅者）
-- **Deep Research** 高配额（超过 Pro 5x）
+- **Deep Research** 高配额（超过 Pro 100）
 - **Sora 视频生成**（完整访问）
 - **Agent Mode / Operator / Codex** 高配额
 - 优先级计算资源，高峰期不排队
 
-> 📌 **与 Pro 500 的区别**：Pro 500（$500/月）是唯一包含 Astra Ultrafast（约8倍标准速度）和 GPT-6.1 Sol Ultrafast 的消费者套餐，且无每5小时限制，额度约为25倍。如每天全天重度使用 Work/Codex，可考虑升级；中度重度用户 Pro 200 性价比更高。
->
-> 📌 **Pro 200 重要提示**：新订阅者自2026年10月30日起 Work/Codex 额度从20倍降至约10倍，2026年10月29日前的老订户当前计费周期内可继续享受原额度。
+> 📌 **Pro 计划名称**：Pro 100（$100/月）、Pro 200（$200/月）和 Pro 500（$500/月）。各计划支持的模型与高速模式以官方计划说明和账号模型选择器为准。
 
 ---
 

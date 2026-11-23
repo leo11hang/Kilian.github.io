@@ -1,25 +1,26 @@
 ---
 layout: "post"
-title: "Claude Max 5x 自助激活教程：卡密激活全流程详解"
+title: "Claude Max 自助激活教程：卡密激活全流程详解"
 date: "2026-10-29 11:00:00 +0800"
 categories: "activation"
+model_provider: "anthropic"
 tags: [Claude, Max, Anthropic, 激活码, 自助激活, 卡密]
-excerpt: "图文详解 Claude Max 5x（$100/月）卡密自助激活全流程，无需信用卡，十分钟内完成激活，享受 Pro 5 倍使用额度，支持最新 5.5 系列模型。"
+excerpt: "图文详解 Claude Max（$100/月）卡密自助激活全流程；订阅名称与模型说明按 Anthropic 当前官方信息整理。"
 cover: "https://github.com/user-attachments/assets/c30eaa3c-4575-402f-a8c5-5c57502a0cd1"
 pinned: false
 ---
 
-## 什么是 Claude Max 5x？
+## 什么是 Claude Max？
 
-Claude Max 5x 是 Anthropic 于 **2025年4月9日** 推出的高用量个人订阅，定价 **$100/月**，提供相当于 Claude Pro 计划 **5 倍**的使用额度。当前最新可用模型包括 **Claude Fable 5.1**（2026年9月1日）、**Claude Opus 5.5**（2026年9月22日）、**Claude Sonnet 5.5**（2026年9月28日）和 **Claude Haiku 5.5**（2026年10月7日）。
+Claude **Max** 是 Anthropic 的高用量个人订阅计划，网页月付价格为 **$100**，包含 Pro 计划 5 倍的每 5 小时及每周用量。当前 Claude Fable 旗舰型号及发布日期见页面上方自动同步状态；其他模型的开放范围以官方公告和账号选择器为准。
 
-Max 计划不提供比 Pro 更强的模型——Pro、Max 5x、Max 20x 用户都能访问相同的 Claude 模型。**Max 买的是容量，而不是更聪明的 AI。**
+Pro、Max 和 Ultra 的模型选择会因计划和账号开放范围而异；Max 的计划名称不再带“5x”后缀。
 
 **各方案快速对比：**
 
-| 功能 | Pro ($20) | **Max 5x ($100)** | Max 20x ($200) |
+| 功能 | Pro ($20/月) | **Max ($100/月)** | Ultra ($200/月) |
 |------|-----------|-------------------|----------------|
-| 模型访问（Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5） | ✅ | ✅ | ✅ |
+| 模型访问 | 可用模型以账号显示为准 | 可用模型以账号显示为准 | 可用模型以账号显示为准 |
 | 5小时滚动窗口额度 | 1x | **5x** | 20x |
 | Opus 5.5 每周专属额度 | 有限 | ✅ 约15–35小时/周 | ✅ 更多 |
 | Claude Code / Cowork / Design | ✅ | ✅ | ✅ |
@@ -32,7 +33,7 @@ Max 计划不提供比 Pro 更强的模型——Pro、Max 5x、Max 20x 用户都
 在开始激活前，请确保你已经：
 
 - 拥有一个正常可登录的 Claude 账号
-- 已购买 Claude Max 5x 激活卡密（购买地址见文末）
+- 已购买 Claude Max 激活卡密（购买地址见文末）
 - 保持稳定的网络连接
 
 ---
@@ -82,7 +83,8 @@ https://claude.ai/settings/account
 
 ## 激活完成后可享受的功能
 
-- **Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5** 完整访问（与 Pro 相同模型，更多额度）
+- 当前 Claude Fable 旗舰型号与发布日期见页面上方自动同步状态；Max/Ultra 计划可用范围以账号模型选择器为准。
+- Claude Mythos 属于受限开放的模型系列，不属于普通 Max 订阅的常规模型；当前开放条件以 Anthropic 官方公告为准。
 - **5 倍 Pro 使用额度**（每个 5 小时滚动窗口大幅提升，约 140–280 小时 Sonnet 5.5/周）
 - **Opus 5.5 独立每周配额**（约15–35小时/周）
 - **Claude Code**（更高额度，适合中大型项目）
@@ -90,10 +92,9 @@ https://claude.ai/settings/account
 - **Microsoft 365 集成**（Excel、Word、PowerPoint）
 - **峰值时段优先响应**，高峰期不降速
 
-> 📌 **2026年10月最新**：Haiku 5.5（10月7日）正式加入 5.5 系列阵容，Anthropic 五周内发布四款新模型，
-> Max 5x 用户均可访问完整 5.5 系列。
+> 📌 **订阅计划名称**：Claude Max 为 $100/月；Claude Ultra 为 $200/月。Max 包含 5 倍 Pro 的每 5 小时和每周用量；Ultra 提供 10 倍 Pro 每周用量，已验证账号不受 5 小时限额约束。权益以官方计划页面为准。
 >
-> 📌 **2026年5月6日更新**：Anthropic 将 Max 的 5 小时滚动窗口额度翻倍，并取消峰值时段限速，Max 5x 用户高峰期不再被降速。
+> 📌 **2026年5月6日更新**：Anthropic 将 Max 的 5 小时滚动窗口额度翻倍，并取消峰值时段限速，Max 用户高峰期不再被降速。
 
 ---
 
