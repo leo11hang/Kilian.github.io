@@ -75,8 +75,6 @@
         link.className = 'cc-download-button';
         link.href = asset.browser_download_url;
         link.textContent = '下载';
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
         item.append(detail, link);
         list.appendChild(item);
       });
