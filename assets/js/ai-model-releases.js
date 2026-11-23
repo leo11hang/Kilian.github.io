@@ -11,10 +11,6 @@
     var endpoint = modelElement.getAttribute('data-worker-url');
     if (!endpoint) return;
 
-    var content = modelElement.closest('.ai-tools-content');
-    var statusElement = content && content.querySelector('[data-model-status]');
-    var sourceLink = content && content.querySelector('[data-model-release-link]');
-
     fetch(endpoint, { headers: { Accept: 'application/json' }, cache: 'no-store' })
       .then(function (response) {
         if (!response.ok) throw new Error('Model release feed returned ' + response.status);
@@ -27,15 +23,14 @@
         }
 
         modelElement.textContent = release.model + ' · 发布于 ' + date;
-        if (sourceLink && typeof release.url === 'string' && /^https:\/\//i.test(release.url)) {
-          sourceLink.href = release.url;
+        var announcementLink = modelElement.parentElement && modelElement.parentElement.querySelector('[data-model-announcement]');
+        if (announcementLink && typeof release.url === 'string') {
+          try {
+            var url = new URL(release.url);
+            if (url.protocol === 'https:') announcementLink.href = url.href;
+          } catch (_) {}
         }
-        if (statusElement) statusElement.firstChild.textContent = '旗舰模型与发布日期每日同步自官方公告。';
       })
-      .catch(function () {
-        if (statusElement) {
-          statusElement.firstChild.textContent = '暂时无法刷新模型信息，当前保留最近同步的数据。';
-        }
-      });
+      .catch(function () {});
   });
 })();
