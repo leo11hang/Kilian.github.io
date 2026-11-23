@@ -1474,6 +1474,11 @@ input[type="search"]::-webkit-search-results-decoration {
 .faq-category-guide-link { margin: 24px 0 0; }
 .faq-category-guide-link[hidden] { display: none; }
 .faq-category-guide-action { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; text-decoration: none; }
+.article-model-status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 24px; padding: 12px 15px; border: 1px solid #e2d9ff; border-radius: 12px; background: linear-gradient(115deg, #fff 0%, #f8f5ff 100%); color: var(--text-2); font-size: 13px; }
+.article-model-status-label { color: var(--accent); font-weight: 700; }
+.article-model-status-value { color: var(--text-1); font-weight: 650; }
+.article-model-status-link { margin-left: auto; color: var(--accent); text-decoration: none; font-weight: 650; }
+.article-model-status-link:hover { text-decoration: underline; }
 @media (max-width: 700px) {
   .faq-google-comparison-grid { grid-template-columns: 1fr; }
   .faq-google-info-cards { grid-template-columns: 1fr; }
@@ -1481,4 +1486,5 @@ input[type="search"]::-webkit-search-results-decoration {
   .faq-google-action-title { flex-basis: 100%; }
   .faq-category-guide-link { flex-wrap: wrap; }
   .faq-category-guide-action { display: inline-flex !important; margin-left: 54px; }
+  .article-model-status-link { margin-left: 0; }
 }
