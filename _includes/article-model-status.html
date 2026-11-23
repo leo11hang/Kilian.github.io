@@ -1,0 +1,28 @@
+{% assign model_feed_url = '' %}
+{% assign model_name_fallback = '' %}
+{% assign model_announcement_fallback = '' %}
+{% case page.model_provider %}
+  {% when 'openai' %}
+    {% assign model_feed_url = 'https://cc-switch-release.leowishe.workers.dev/openai-model' %}
+    {% assign model_name_fallback = 'GPT-6.2 Astra · 发布于 2026年11月17日' %}
+    {% assign model_announcement_fallback = 'https://openai.com/index/introducing-gpt-6-2-astra-sol/' %}
+  {% when 'anthropic' %}
+    {% assign model_feed_url = 'https://cc-switch-release.leowishe.workers.dev/claude-model' %}
+    {% assign model_name_fallback = 'Claude Fable 5.2 · 发布于 2026年11月9日' %}
+    {% assign model_announcement_fallback = 'https://www.anthropic.com/claude/fable' %}
+  {% when 'google' %}
+    {% assign model_feed_url = 'https://cc-switch-release.leowishe.workers.dev/gemini-model' %}
+    {% assign model_name_fallback = 'Gemini 4 Carbon · 查看 Google 官方公告' %}
+    {% assign model_announcement_fallback = 'https://blog.google/' %}
+  {% when 'xai' %}
+    {% assign model_feed_url = 'https://cc-switch-release.leowishe.workers.dev/grok-model' %}
+    {% assign model_name_fallback = 'Grok 4.7 · 发布于 2026年9月21日' %}
+    {% assign model_announcement_fallback = 'https://x.ai/news/grok-4-7' %}
+{% endcase %}
+{% if model_feed_url != '' %}
+<aside class="article-model-status" aria-label="当前官方旗舰模型">
+  <span class="article-model-status-label">当前官方旗舰模型</span>
+  <span class="article-model-status-value" data-model-release data-worker-url="{{ model_feed_url }}" aria-live="polite">{{ model_name_fallback }}</span>
+  <a class="article-model-status-link" data-model-announcement href="{{ model_announcement_fallback }}" target="_blank" rel="noopener noreferrer">官方公告</a>
+</aside>
+{% endif %}
