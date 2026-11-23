@@ -52,6 +52,8 @@ layout: default
     <a class="btn-cta-box" href="{{ site.activation_site }}" target="_blank" rel="noopener">立即购买</a>
   </div>
 
+  {% if page.model_provider %}{% include article-model-status.html %}{% endif %}
+
   <div class="article-content">{{ content }}</div>
 
   <div class="cta-box" style="margin-top:48px">
@@ -102,6 +104,10 @@ layout: default
     <nav class="toc-nav" id="tocNavMobile"></nav>
   </div>
 </div>
+
+{% if page.model_provider %}
+<script src="{{ '/assets/js/ai-model-releases.js' | relative_url }}" defer></script>
+{% endif %}
 <div class="toc-overlay" id="tocOverlay"></div>
 
 <style>
