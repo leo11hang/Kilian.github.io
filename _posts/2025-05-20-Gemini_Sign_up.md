@@ -12,8 +12,7 @@ pinned: false
 
 ## Gemini 是什么？
 
-Gemini 是 Google 开发的 AI 对话助手，是目前 ChatGPT 最强劲的竞争对手之一，支持写作、编程、
-分析、多模态理解等任务。当前 Google 官方旗舰模型及发布日期会自动同步显示；模型在 Gemini 应用中的开放范围取决于 Google AI 计划与账号地区。
+Gemini 是 Google 开发的 AI 助手，支持写作、编程、分析和多模态输入。
 
 ---
 
@@ -45,7 +44,7 @@ Google 账号完成授权。
 
 ### 第四步：选择使用模式
 
-免费账户及各订阅计划可使用的 Gemini 模型以账号内模型选择器显示为准。当前旗舰型号与发布日期见页面上方自动同步状态；模型开放范围与价格可能因地区而异。
+登录后即可开始使用 Gemini。免费版与 Google AI 订阅计划的功能和使用额度有所不同，具体计划权益因地区而异。
 
 ### 第五步：开始使用
 
@@ -53,21 +52,11 @@ Google 账号完成授权。
 
 ---
 
-## Google AI 订阅计划与模型
+## Google AI 订阅计划
 
 Google 当前个人订阅计划名称为 **Google AI Plus、Google AI Pro、Google AI Ultra**；可用功能和价格因国家/地区而异，订阅前请查看 [Google AI 计划官方页面](https://one.google.com/about/google-ai-plans/)。
 
-| 计划 | Gemini 应用模型信息（截至 2026 年 11 月）|
-|------|-----------------------------------------|
-| 免费版 | 可用模型以账号内模型选择器显示为准 |
-| Google AI Plus | 可用模型以账号内模型选择器显示为准 |
-| Google AI Pro | 可用模型以账号内模型选择器显示为准 |
-| Google AI Ultra | 可用模型以账号内模型选择器显示为准 |
-| 上下文窗口 | 标准 | 标准 | 1M tokens（Argon）| 1M tokens | 1M tokens |
-| Google One 存储 | 15GB | 400GB | 5TB | 更多 | 更多 |
-| 优先响应 | ❌ | ❌ | ✅ | ✅ 最高优先 | ✅ 最高优先 |
-
-> 📌 **模型与计划**：当前旗舰型号及发布日期见上方同步状态。各计划、地区和产品入口的可用模型可能不同，请以账号内模型选择器及 Google AI 计划页面为准。
+免费版、Google AI Plus、Google AI Pro 与 Google AI Ultra 的功能和额度因地区而异，订阅前可查看 [Google AI 计划官方页面](https://one.google.com/about/google-ai-plans/)了解所在地区的具体权益。
 
 ---
 
@@ -76,11 +65,11 @@ Google 当前个人订阅计划名称为 **Google AI Plus、Google AI Pro、Goog
 **Q：打开 gemini.google.com 显示「该服务在你所在地区不可用」怎么办？**
 切换网络节点后刷新页面，选择美国、日本或新加坡节点成功率较高。
 
-**Q：为什么我的 Gemini 模型列表和这里不同？**  
-Google 会按计划、地区和逐步开放情况提供不同模型。请以账号内模型选择器及 Google AI 计划页面显示为准；当前旗舰型号与发布日期见页面上方同步状态。
+**Q：为什么不同账号看到的 Gemini 模型不一样？**  
+Google 会按地区、订阅计划和分阶段开放安排提供模型，因此不同账号可能在同一时间看到不同型号。
 
 **Q：Google AI Plus、Google AI Pro 和 Google AI Ultra 有什么区别？**  
-三者提供的模型访问级别和用量不同，且具体权益因地区而异。可用模型请以账号内模型选择器为准；当前旗舰型号与发布日期见页面上方同步状态。请查看官方计划页面了解你所在地区的价格与权益。
+三者在功能、使用额度和价格上有所区别，具体权益因地区而异。请查看 [Google AI 计划官方页面](https://one.google.com/about/google-ai-plans/)了解所在地区的当前价格与权益。
 
 **Q：免费版每天能发多少消息？**
 免费版采用按算力消耗的动态限额，每5小时刷新一次，简单对话次数较多，

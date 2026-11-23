@@ -69,7 +69,6 @@ https://grok.com/api/auth/session
 
 以 **The X Subscription Premium（$30/月）** 为例（最受欢迎档位）：
 
-- 当前 Grok 旗舰型号与发布日期见页面上方自动同步状态；具体模型选项以账号模型选择器显示为准。
 - **Expert 深度推理模式**完整支持
 - **DeepSearch 联网深度搜索**完整支持
 - **Imagine 图像生成**（完整版）+ **视频生成**
