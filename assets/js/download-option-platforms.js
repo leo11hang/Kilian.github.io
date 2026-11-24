@@ -9,6 +9,7 @@
     android: { label: 'Android', order: 5 },
     tv: { label: 'TV', order: 6 }
   };
+  var svgNamespace = 'http://www.w3.org/2000/svg';
 
   function detectPlatform(link) {
     var label = (link.textContent || '').toLowerCase();
@@ -25,9 +26,68 @@
     return '';
   }
 
+  function createSvg(key, viewBox, paths) {
+    var svg = document.createElementNS(svgNamespace, 'svg');
+    svg.setAttribute('viewBox', viewBox);
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    svg.classList.add('download-platform-icon', 'download-platform-icon-' + key);
+    paths.forEach(function (definition) {
+      var shape = document.createElementNS(svgNamespace, definition.tag || 'path');
+      Object.keys(definition).forEach(function (attribute) {
+        if (attribute !== 'tag') shape.setAttribute(attribute, definition[attribute]);
+      });
+      svg.appendChild(shape);
+    });
+    return svg;
+  }
+
+  function platformIcon(key) {
+    if (key === 'windows') {
+      return createSvg('windows', '0 0 24 24', [
+        { d: 'M2 4.2 10.7 3v8H2V4.2Zm10.3-1.4L22 1.4V11h-9.7V2.8ZM2 12.8h8.7v8L2 19.5v-6.7Zm10.3 0H22v9.8l-9.7-1.4v-8.4Z' }
+      ]);
+    }
+    if (key === 'macos') {
+      return createSvg('macos', '0 0 384 512', [
+        { d: 'M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-27-47.2-41.8-85.2-44.7-36-2.8-75.4 21.1-89.8 21.1-15.2 0-50.1-20.1-77.5-20.1C59 141.6 0 184.4 0 274.2c0 26.5 4.9 53.9 14.8 82.1 13.2 37 60.7 127.7 74.5 127.7 18.7 0 33.4-4 44.2-20.4 9.9-15.1 23.2-22.7 40-22.7 17.8 0 31.1 7.6 40 22.7 11.5 16.6 26.4 23.2 44.7 20.4 55-9 99.1-65 114.5-116.3-69.2-32.6-94-93-94-154.3zM258.9 95c27.6-34.6 25.1-66.4 24.4-78.6-24.5 1.4-52.9 17.4-69 36-17.8 19.8-28.2 44.4-26.2 70.9 26.5 2 51.1-11.1 70.8-28.3z' }
+      ]);
+    }
+    if (key === 'linux') {
+      return createSvg('linux', '0 0 64 64', [
+        { tag: 'ellipse', cx: '32', cy: '37', rx: '21', ry: '24', fill: '#202124' },
+        { tag: 'ellipse', cx: '32', cy: '42', rx: '12', ry: '16', fill: '#f8fafc' },
+        { tag: 'ellipse', cx: '32', cy: '17', rx: '15', ry: '14', fill: '#202124' },
+        { tag: 'ellipse', cx: '26', cy: '15', rx: '4', ry: '5', fill: '#fff' },
+        { tag: 'ellipse', cx: '38', cy: '15', rx: '4', ry: '5', fill: '#fff' },
+        { tag: 'circle', cx: '27', cy: '16', r: '1.8', fill: '#202124' },
+        { tag: 'circle', cx: '37', cy: '16', r: '1.8', fill: '#202124' },
+        { d: 'm25 22 7 6 7-6-7-2-7 2Z', fill: '#f4b400' },
+        { d: 'M12 57c5-1 9-1 14 1l-2 4H10l2-5Zm40 0c-5-1-9-1-14 1l2 4h14l-2-5Z', fill: '#f4b400' }
+      ]);
+    }
+    return null;
+  }
+
+  function normalizeLabel(link, key) {
+    if (link.dataset.platformLabelNormalized === 'true') return;
+    var label = link.textContent || '';
+    if (key === 'macos') {
+      label = label.replace(/\bARM64\b/gi, 'Apple 芯片').replace(/\bx64\b/gi, 'Intel');
+    }
+    if (link.closest('.cc-platform-tabs')) {
+      var separator = label.indexOf(' · ');
+      if (separator >= 0) {
+        var suffix = packageVariant(link, label.slice(separator + 3));
+        if (suffix) label = label.slice(0, separator) + ' · ' + suffix;
+      }
+    }
+    if (label !== link.textContent) link.textContent = label;
+    link.dataset.platformLabelNormalized = 'true';
+  }
+
   function packageVariant(link, fallback) {
-    var name = (link.title || '').toLowerCase();
-    var value = name + ' ' + (fallback || '').toLowerCase();
+    var value = ((link.title || '') + ' ' + (fallback || '')).toLowerCase();
     if (/webview2/.test(value)) return '内置 WebView2';
     if (/portable|standalone|便携/.test(value)) return '便携版';
     if (/\.app\.tar\.(gz|zst)|app\.?tar\.?gz/.test(value)) return '应用压缩包';
@@ -41,27 +101,6 @@
     if (/\.flatpak|\bflatpak\b/.test(value)) return 'Flatpak 安装包';
     if (/\.pkg|\bpkg\b/.test(value)) return 'PKG 安装包';
     return '';
-  }
-
-  function normalizeLabel(link, key) {
-    if (link.dataset.platformLabelNormalized === 'true') return;
-    var label = link.textContent || '';
-    if (key === 'macos') {
-      label = label.replace(/\bARM64\b/gi, 'Apple 芯片').replace(/\bx64\b/gi, 'Intel');
-    }
-    if (containerHasReleaseOptions(link)) {
-      var separator = label.indexOf(' · ');
-      if (separator >= 0) {
-        var suffix = packageVariant(link, label.slice(separator + 3));
-        if (suffix) label = label.slice(0, separator) + ' · ' + suffix;
-      }
-    }
-    if (label !== link.textContent) link.textContent = label;
-    link.dataset.platformLabelNormalized = 'true';
-  }
-
-  function containerHasReleaseOptions(link) {
-    return !!link.closest('.cc-platform-tabs');
   }
 
   function architectureOrder(link, key) {
@@ -83,22 +122,34 @@
     return 99;
   }
 
-  function sortPlatformOptions(container) {
+  function sortOptions(container) {
     var links = Array.from(container.children).filter(function (child) { return child.tagName === 'A'; });
     if (links.length !== container.children.length) return;
-    var order = links.map(function (link, index) {
+    var sorted = links.map(function (link, index) {
       var key = detectPlatform(link);
       return { link: link, index: index, platform: key ? platforms[key].order : 99, arch: architectureOrder(link, key) };
     }).sort(function (a, b) {
       return a.platform - b.platform || a.arch - b.arch || a.index - b.index;
     });
-    if (order.some(function (entry, index) { return entry.link !== links[index]; })) {
-      order.forEach(function (entry) { container.appendChild(entry.link); });
+    if (sorted.some(function (entry, index) { return entry.link !== links[index]; })) {
+      sorted.forEach(function (entry) { container.appendChild(entry.link); });
     }
   }
 
+  function applyPlatformIcon(link, key) {
+    if (!key || link.dataset.platformIconAdded === 'true') return;
+    var icon = platformIcon(key);
+    if (!icon) return;
+
+    var existingIcon = link.querySelector('.uu-platform-icon');
+    if (existingIcon) existingIcon.replaceChildren(icon);
+    else link.prepend(icon);
+    link.classList.add('download-platform-button', 'download-platform-' + key);
+    link.dataset.platformIconAdded = 'true';
+  }
+
   function setupOptionGroup(container) {
-    if (container.dataset.platformLayoutReady === 'true' || !container.parentNode) return;
+    if (container.dataset.platformLayoutReady === 'true') return;
     container.dataset.platformLayoutReady = 'true';
 
     var layout = document.createElement('div');
@@ -106,29 +157,23 @@
     if (container.matches('.cc-platform-tabs')) layout.classList.add('download-option-layout-release');
     var legend = document.createElement('aside');
     legend.className = 'download-platform-legend';
-    legend.setAttribute('aria-label', '下载按钮颜色对应的操作系统');
-
+    legend.setAttribute('aria-label', '下载按钮图标对应的操作系统');
     container.parentNode.insertBefore(layout, container);
     layout.append(container, legend);
 
     function refresh() {
-      var links = Array.from(container.querySelectorAll('a'));
       var found = Object.create(null);
-
-      links.forEach(function (link) {
+      Array.from(container.querySelectorAll('a')).forEach(function (link) {
         var key = detectPlatform(link);
         normalizeLabel(link, key);
-        link.classList.add('download-platform-button');
-        Object.keys(platforms).forEach(function (platform) {
-          link.classList.remove('download-platform-' + platform);
-        });
-        if (!key) return;
-        link.classList.add('download-platform-' + key);
-        found[key] = true;
+        applyPlatformIcon(link, key);
+        if (key) found[key] = true;
       });
-      sortPlatformOptions(container);
+      sortOptions(container);
 
-      var keys = Object.keys(found).sort(function (a, b) {
+      var keys = Object.keys(found).filter(function (key) {
+        return !!platformIcon(key);
+      }).sort(function (a, b) {
         return platforms[a].order - platforms[b].order;
       });
       legend.replaceChildren();
@@ -138,19 +183,18 @@
 
       var title = document.createElement('strong');
       title.className = 'download-platform-legend-title';
-      title.textContent = '系统颜色';
+      title.textContent = '系统图标';
       legend.appendChild(title);
 
       var list = document.createElement('div');
       list.className = 'download-platform-legend-list';
       keys.forEach(function (key) {
         var item = document.createElement('span');
-        item.className = 'download-platform-legend-item download-platform-' + key;
-        var dot = document.createElement('i');
-        dot.setAttribute('aria-hidden', 'true');
+        item.className = 'download-platform-legend-item';
+        item.append(platformIcon(key));
         var label = document.createElement('span');
         label.textContent = platforms[key].label;
-        item.append(dot, label);
+        item.appendChild(label);
         list.appendChild(item);
       });
       legend.appendChild(list);
