@@ -47,41 +47,17 @@
     return /\.(exe|msi|msix|dmg|pkg|appimage|deb|rpm|flatpak)$/.test(name) || /\.app\.tar\.(gz|zst)$/.test(name);
   }
 
-  function makePlatformCard(os, architectures) {
-    var card = document.createElement('article');
-    card.className = 'cc-platform-card';
-    var title = document.createElement('h3');
-    title.textContent = os;
-    card.appendChild(title);
-    Object.keys(architectures).forEach(function (archName) {
-      var group = document.createElement('div');
-      group.className = 'cc-arch-group';
-      var arch = document.createElement('h4');
-      arch.className = 'cc-arch';
-      arch.textContent = archName;
-      var list = document.createElement('div');
-      list.className = 'cc-asset-list';
-      architectures[archName].forEach(function (asset) {
-        var item = document.createElement('div');
-        item.className = 'cc-asset-item';
-        var detail = document.createElement('div');
-        detail.className = 'cc-asset-detail';
-        var format = document.createElement('strong');
-        format.textContent = asset.name.match(/\.(appimage|deb|rpm|flatpak|dmg|pkg|msi|msix|exe)(?:$|\.)/i)?.[1]?.toUpperCase() || '安装包';
-        var filename = document.createElement('span');
-        filename.textContent = asset.name;
-        detail.append(format, filename);
-        var link = document.createElement('a');
-        link.className = 'cc-download-button';
-        link.href = asset.browser_download_url;
-        link.textContent = '下载';
-        item.append(detail, link);
-        list.appendChild(item);
-      });
-      group.append(arch, list);
-      card.appendChild(group);
-    });
-    return card;
+  function packageFormat(name) {
+    var match = name.match(/\.(app\.tar\.(?:gz|zst)|appimage|deb|rpm|flatpak|dmg|pkg|msi|msix|exe)$/i);
+    return match ? match[1].toUpperCase() : '安装包';
+  }
+
+  function packageVariant(name) {
+    if (/webview2/i.test(name)) return 'WebView2 版';
+    if (/portable|standalone/i.test(name)) return '便携版';
+    if (/fixed|bundled|bundle/i.test(name)) return '完整包';
+    if (/setup|installer/i.test(name)) return '安装包';
+    return packageFormat(name);
   }
 
   function fetchRelease(url) {
@@ -94,18 +70,22 @@
   (workerUrl ? fetchRelease(workerUrl).catch(function () { return fetchRelease(apiUrl); }) : fetchRelease(apiUrl))
     .then(function (release) {
       var assets = (release.assets || []).filter(isInstaller);
-      var groups = { Windows: {}, macOS: {}, Linux: {} };
-      assets.forEach(function (asset) {
+      var entries = assets.map(function (asset) {
         var os = platform(asset.name);
-        if (!os) return;
+        if (!os) return null;
         var arch = architecture(asset.name);
-        if (!groups[os][arch]) groups[os][arch] = [];
-        groups[os][arch].push(asset);
+        return { asset: asset, os: os, arch: arch, baseLabel: os + ' ' + (arch === '通用架构' ? '通用版' : arch) };
+      }).filter(Boolean);
+      if (!entries.length) throw new Error('此 Release 暂无可识别的安装包');
+
+      var labelCounts = {};
+      var variantCounts = {};
+      entries.forEach(function (entry) {
+        labelCounts[entry.baseLabel] = (labelCounts[entry.baseLabel] || 0) + 1;
+        entry.variantLabel = packageVariant(entry.asset.name);
+        var variantKey = entry.baseLabel + '|' + entry.variantLabel;
+        variantCounts[variantKey] = (variantCounts[variantKey] || 0) + 1;
       });
-      var count = Object.keys(groups).reduce(function (total, os) {
-        return total + Object.keys(groups[os]).reduce(function (subtotal, arch) { return subtotal + groups[os][arch].length; }, 0);
-      }, 0);
-      if (!count) throw new Error('此 Release 暂无可识别的安装包');
 
       var version = release.tag_name || release.name || '最新版本';
       var published = release.published_at ? new Date(release.published_at) : null;
@@ -113,31 +93,28 @@
         ? new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }).format(published)
         : '';
       meta.textContent = version + (publishedText ? ' · 发布于 ' + publishedText : '');
+      tabs.replaceChildren();
       grid.replaceChildren();
-      var availablePlatforms = Object.keys(groups).filter(function (os) { return Object.keys(groups[os]).length; });
-      availablePlatforms.forEach(function (os, index) {
-        var tab = document.createElement('button');
-        tab.type = 'button';
-        tab.className = 'cc-platform-tab' + (index === 0 ? ' is-active' : '');
-        tab.setAttribute('role', 'tab');
-        tab.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
-        tab.textContent = os;
-        var card = makePlatformCard(os, groups[os]);
-        card.classList.add('cc-platform-panel');
-        card.setAttribute('role', 'tabpanel');
-        card.hidden = index !== 0;
-        tab.addEventListener('click', function () {
-          tabs.querySelectorAll('.cc-platform-tab').forEach(function (button) {
-            var active = button === tab;
-            button.classList.toggle('is-active', active);
-            button.setAttribute('aria-selected', active ? 'true' : 'false');
-          });
-          grid.querySelectorAll('.cc-platform-panel').forEach(function (panelCard) {
-            panelCard.hidden = panelCard !== card;
-          });
-        });
-      tabs.appendChild(tab);
-        grid.appendChild(card);
+      grid.hidden = true;
+      var renderedVariants = {};
+      entries.forEach(function (entry) {
+        var link = document.createElement('a');
+        link.className = 'cc-download-option';
+        link.href = entry.asset.browser_download_url;
+        link.title = entry.asset.name;
+        link.setAttribute('aria-label', entry.baseLabel + '，下载 ' + entry.asset.name);
+
+        var label = entry.baseLabel;
+        if (labelCounts[entry.baseLabel] > 1) {
+          label += ' · ' + entry.variantLabel;
+          var variantKey = entry.baseLabel + '|' + entry.variantLabel;
+          if (variantCounts[variantKey] > 1) {
+            renderedVariants[variantKey] = (renderedVariants[variantKey] || 0) + 1;
+            label += ' ' + renderedVariants[variantKey];
+          }
+        }
+        link.textContent = label;
+        tabs.appendChild(link);
       });
       status.textContent = '选择对应系统与架构的安装包；下载地址来自 GitHub 官方 Release。';
       status.classList.add('is-success');
