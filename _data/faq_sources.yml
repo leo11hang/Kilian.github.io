@@ -1232,9 +1232,7 @@
       "question_refs": [
         "faq-067",
         "faq-069",
-        "faq-070",
-        "faq-085",
-        "faq-093"
+        "faq-070"
       ]
     },
     {
@@ -1267,8 +1265,7 @@
       "counter_evidence": "各地区的付款资料功能与页面可能有差异；该说明不代表付款资料必须关闭才能解决订阅错误。",
       "verification_status": "official_page_opened",
       "question_refs": [
-        "faq-068",
-        "faq-084"
+        "faq-068"
       ]
     },
     {
@@ -1284,9 +1281,7 @@
       "counter_evidence": "备用码规则特指 Google 账号；其他网站或服务的备用码格式可能不同。",
       "verification_status": "official_page_opened",
       "question_refs": [
-        "faq-070",
-        "faq-085",
-        "faq-093"
+        "faq-070"
       ]
     },
     {
@@ -1336,8 +1331,7 @@
       "question_refs": [
         "faq-073",
         "faq-074",
-        "faq-076",
-        "faq-092"
+        "faq-076"
       ]
     },
     {
@@ -1410,8 +1404,7 @@
       "verification_status": "reference_link_not_independently_verified",
       "question_refs": [
         "faq-075",
-        "faq-076",
-        "faq-092"
+        "faq-076"
       ]
     },
     {
@@ -1427,9 +1420,7 @@
       "counter_evidence": "这是第三方开源项目；工具功能和使用结果以项目当前发布说明为准。",
       "verification_status": "reference_link_not_independently_verified",
       "question_refs": [
-        "faq-072",
-        "faq-094",
-        "faq-095"
+        "faq-072"
       ]
     },
     {
@@ -1446,272 +1437,6 @@
       "verification_status": "official_page_opened",
       "question_refs": [
         "faq-081"
-      ]
-    },
-    {
-      "id": "google-account-recovery",
-      "source_url": "https://support.google.com/accounts/answer/7682439?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account recovery",
-      "version": "",
-      "supporting_claim": "提供 Google 账号官方恢复流程，并说明恢复资料变更在部分情况下最多可能需要 7 天生效；Google 不与账号或密码找回服务机构合作。",
-      "counter_evidence": "可用验证步骤和恢复结果由 Google 根据账号情况决定；不能保证每次都能恢复成功。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-082",
-        "faq-083",
-        "faq-085",
-        "faq-088",
-        "faq-090",
-        "faq-091"
-      ]
-    },
-    {
-      "id": "google-recovery-tips",
-      "source_url": "https://support.google.com/accounts/answer/7299973?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account recovery",
-      "version": "",
-      "supporting_claim": "Google 建议使用平时登录的设备、浏览器和地点进行账号恢复，并尽量准确填写近期记得的密码和账号信息。",
-      "counter_evidence": "熟悉的设备和地点只是官方建议，不能保证恢复一定通过。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-082",
-        "faq-087",
-        "faq-091"
-      ]
-    },
-    {
-      "id": "google-signin-prompts",
-      "source_url": "https://support.google.com/accounts/answer/7026266?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google sign-in prompts",
-      "version": "",
-      "supporting_claim": "说明 Google 登录提示未到达时的检查步骤，并可在无法使用当前验证方法时尝试其他验证方式。",
-      "counter_evidence": "提示和备用验证方式会因设备、账号状态及安全设置而异。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-082",
-        "faq-086",
-        "faq-087",
-        "faq-091"
-      ]
-    },
-    {
-      "id": "google-account-security-checkup",
-      "source_url": "https://support.google.com/accounts/answer/46526?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account Security Checkup",
-      "version": "",
-      "supporting_claim": "建议检查恢复方式、两步验证、已连接的应用和账号安全设置。",
-      "counter_evidence": "安全检查中的选项随账号类型、地区和 Google 产品界面变化。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-083",
-        "faq-085",
-        "faq-089",
-        "faq-090",
-        "faq-094"
-      ]
-    },
-    {
-      "id": "google-account-devices",
-      "source_url": "https://support.google.com/accounts/answer/3067630?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account devices and sessions",
-      "version": "",
-      "supporting_claim": "说明如何查看近期登录设备与会话，并退出丢失、不再使用或无法识别的设备。",
-      "counter_evidence": "同一设备可能显示多个会话；应查看设备详情和最近活动后再判断。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-083",
-        "faq-089",
-        "faq-090"
-      ]
-    },
-    {
-      "id": "google-play-family-requirements",
-      "source_url": "https://support.google.com/googleplay/answer/7007852?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Play Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Play family group",
-      "version": "",
-      "supporting_claim": "说明 Google Play 家庭组成员与管理员需要满足同国家/地区等加入条件，且成员不能同时属于其他家庭组。",
-      "counter_evidence": "家庭组功能和资格要求可能因国家/地区而异；以账号页面当前提示为准。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-084"
-      ]
-    },
-    {
-      "id": "google-play-country",
-      "source_url": "https://support.google.com/googleplay/answer/7431675?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Play Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Play country and profiles",
-      "version": "",
-      "supporting_claim": "说明更改 Google Play 国家/地区需要实际位于新地区并满足付款方式要求，且有变更间隔和资料更新时间限制。",
-      "counter_evidence": "可用选项、等待时间和变更资格会因账号状态及地区而异；以 Google Play 当前说明为准。",
-      "verification_status": "official_page_opened",
-      "question_refs": [
-        "faq-084"
-      ]
-    },
-    {
-      "id": "google-phone-verification",
-      "source_url": "https://support.google.com/accounts/answer/114129?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account phone verification",
-      "version": "",
-      "supporting_claim": "说明登录或创建账号时可能要求手机验证；短信可能延迟，且手机号有验证次数限制。",
-      "counter_evidence": "可用验证方式和号码限制按 Google 页面及账号状态决定；不保证每个号码都能用于验证。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-086"]
-    },
-    {
-      "id": "google-2step-troubleshooting",
-      "source_url": "https://support.google.com/accounts/answer/185834?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google 2-Step Verification troubleshooting",
-      "version": "",
-      "supporting_claim": "列出收不到短信验证码、登录环境变化导致短信选项不可用，以及备用验证方式的排查建议。",
-      "counter_evidence": "具体选项会依账号启用的验证方法和当前风险状态变化。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-086"]
-    },
-    {
-      "id": "google-qr-signin",
-      "source_url": "https://support.google.com/accounts/answer/9283368?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google QR sign-in verification",
-      "version": "",
-      "supporting_claim": "说明使用已登录设备扫描 Google 登录二维码，也可通过 g.co/verifyaccount 或其他验证方式完成登录。",
-      "counter_evidence": "扫码选项取决于账号与设备状态；如果页面未提供该选项，应使用页面显示的其他方式。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-087"]
-    },
-    {
-      "id": "google-recovery-options",
-      "source_url": "https://support.google.com/accounts/answer/183723?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account recovery options",
-      "version": "",
-      "supporting_claim": "说明恢复邮箱和手机号的用途，并指出部分恢复信息或身份验证方式变更最多可能需要 7 天生效。",
-      "counter_evidence": "生效时间和可用恢复选项以当前账号页面提示为准。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-088", "faq-093"]
-    },
-    {
-      "id": "google-unfamiliar-activity",
-      "source_url": "https://support.google.com/accounts/answer/7305876?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account unfamiliar activity alerts",
-      "version": "",
-      "supporting_claim": "说明如何核对新设备登录提醒；本人操作可确认，非本人操作应拒绝并继续保护账号。",
-      "counter_evidence": "地点可能只是估算信息，应综合设备、时间和用户本人是否发起登录判断。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-089"]
-    },
-    {
-      "id": "google-account-compromised",
-      "source_url": "https://support.google.com/accounts/answer/6294825?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account compromised recovery",
-      "version": "",
-      "supporting_claim": "指导用户在怀疑账号被盗时检查安全事件、设备、恢复信息、第三方授权与 Gmail 规则；无法登录时使用官方恢复流程。",
-      "counter_evidence": "不同账号和服务可能展示不同安全入口；恢复结果取决于 Google 的账号验证。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-090"]
-    },
-    {
-      "id": "google-age-requirements",
-      "source_url": "https://support.google.com/accounts/answer/1333913?hl=en",
-      "source_type": "official_help_center",
-      "author": "Google Account Help",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google Account age requirements",
-      "version": "",
-      "supporting_claim": "说明 Google 账号最低年龄要求与年龄验证、家长监督选项；验证方式并非所有地区和账号都相同。",
-      "counter_evidence": "最低年龄及可用验证方式以账号关联国家/地区和 Google 当前页面为准。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-092"]
-    },
-    {
-      "id": "google-oauth-best-practices",
-      "source_url": "https://developers.google.com/identity/protocols/oauth2/resources/best-practices",
-      "source_type": "official_developer_docs",
-      "author": "Google for Developers",
-      "published_at": null,
-      "verified_at": "2026-11-24",
-      "product": "Google OAuth 2.0",
-      "version": "",
-      "supporting_claim": "Google 建议安全存储 OAuth 凭证；Refresh Token 可在用户不在场时继续获取访问能力，应按敏感凭证保护。",
-      "counter_evidence": "OAuth 凭证的权限与风险取决于应用请求的范围和具体实现；此建议不能证明任一第三方工具安全或不安全。",
-      "verification_status": "official_page_opened",
-      "question_refs": ["faq-094"]
-    },
-    {
-      "id": "aizhanghao-gmail-practice",
-      "source_url": "https://www.aizhanghao.com/user/help/article.16",
-      "source_type": "user_experience_notes",
-      "author": "爱账号 Gmail 登录与安全教程",
-      "published_at": "2026-11-24 02:11:42",
-      "verified_at": "2026-11-24",
-      "product": "Gmail / Google Account / Antigravity Tools",
-      "version": "",
-      "supporting_claim": "用户提供的完整教程，整理了 Gmail 登录、手机号和二维码验证、账号安全设置、日常使用、家庭组地区排查，以及 Antigravity Tools 添加和切换账号的实践流程。",
-      "counter_evidence": "这是单篇教程的实践经验，操作结果会受账号、设备、网络和地区等因素影响；具体经验不保证适用于所有人。",
-      "verification_status": "experience_notes_reviewed",
-      "question_refs": [
-        "faq-068",
-        "faq-082",
-        "faq-083",
-        "faq-084",
-        "faq-086",
-        "faq-087",
-        "faq-091",
-        "faq-092",
-        "faq-093",
-        "faq-094",
-        "faq-095"
       ]
     }
   ]
