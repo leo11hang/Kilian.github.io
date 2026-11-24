@@ -992,6 +992,24 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-download-button { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-width: 76px; min-height: 32px; padding: 6px 12px; color: white; background: var(--grad); border-radius: 8px; font-size: 12px; font-weight: 750; text-align: center; text-decoration: none; transition: transform var(--transition), box-shadow var(--transition); }
 .cc-download-button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(109,40,217,.24); }
 .cc-platform-grid[hidden] { display: none; }
+.download-option-layout { min-width: 0; }
+.download-option-layout.has-platform-legend { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; gap: 18px; }
+.download-platform-windows { --option-color: #2563eb; --option-bg: #eff6ff; --option-border: #bfdbfe; }
+.download-platform-macos { --option-color: #475569; --option-bg: #f1f5f9; --option-border: #cbd5e1; }
+.download-platform-linux { --option-color: #c2410c; --option-bg: #fff7ed; --option-border: #fed7aa; }
+.download-platform-ios { --option-color: #0f766e; --option-bg: #f0fdfa; --option-border: #99f6e4; }
+.download-platform-android { --option-color: #15803d; --option-bg: #f0fdf4; --option-border: #bbf7d0; }
+.download-platform-tv { --option-color: #7c3aed; --option-bg: #f5f3ff; --option-border: #ddd6fe; }
+.ai-download-options a.download-platform-button, .cc-platform-tabs a.download-platform-button, .uu-platform-card.download-platform-button { color: var(--option-color, var(--accent)); border-color: var(--option-border, #d8ccff); background: var(--option-bg, #fff); }
+.ai-download-options a.download-platform-button:hover, .cc-platform-tabs a.download-platform-button:hover, .uu-platform-card.download-platform-button:hover { border-color: var(--option-color, var(--accent-dim)); background: var(--option-bg, var(--accent-lt)); }
+.uu-platform-card.download-platform-button .uu-platform-icon { color: var(--option-color, var(--accent)); background: var(--option-bg, var(--accent-lt)); }
+.uu-platform-card.download-platform-button .uu-platform-name { color: var(--option-color, var(--text-1)); }
+.download-platform-legend { display: flex; flex-direction: column; justify-content: center; gap: 8px; min-width: 106px; padding-left: 16px; border-left: 1px solid var(--border); }
+.download-platform-legend[hidden] { display: none; }
+.download-platform-legend-title { color: var(--text-3); font-size: 10px; font-weight: 700; white-space: nowrap; }
+.download-platform-legend-list { display: grid; gap: 7px; }
+.download-platform-legend-item { display: inline-flex; align-items: center; gap: 7px; color: var(--text-2); font-size: 11px; line-height: 1.3; white-space: nowrap; }
+.download-platform-legend-item i { display: block; width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: var(--option-color, var(--accent)); }
 @media (max-width: 600px) {
   .download-accordions { grid-template-columns: minmax(0, 1fr); }
   .download-accordion > summary { min-height: 82px; padding: 12px 14px; gap: 12px; }
@@ -1007,6 +1025,9 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
   .cc-download-heading h2 { font-size: 19px; }
   .cc-platform-tabs { width: 100%; gap: 8px; }
   .cc-download-option { min-height: 36px; padding: 7px 10px; }
+  .download-option-layout.has-platform-legend { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .download-platform-legend { flex-direction: row; align-items: center; min-width: 0; padding: 10px 0 0; border-top: 1px solid var(--border); border-left: 0; }
+  .download-platform-legend-list { display: flex; flex-wrap: wrap; gap: 8px 12px; }
 }
 
 /* ── AI Knowledge Base ───────────────────────── */
