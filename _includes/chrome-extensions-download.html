@@ -14,6 +14,13 @@
 
     {% assign chrome_extension_files = site.static_files | sort: 'path' %}
     {% capture chrome_extension_items %}
+      <article class="chrome-extension-package">
+        <div class="chrome-extension-package-copy">
+          <strong>Google QR SMS Helper v1.1.0</strong>
+          <span>ZIP 压缩包 · Chrome 扩展 · 项目 GitHub Release</span>
+        </div>
+        <a class="cc-download-button" href="https://github.com/havenicec/google-qr-sms-helper/releases/download/v1.1.0/google-qr-sms-helper-v1.1.0.zip">下载 ZIP</a>
+      </article>
       {% for extension_file in chrome_extension_files %}
         {% assign package_name_lower = extension_file.name | downcase %}
         {% assign package_ext = extension_file.extname | downcase %}
