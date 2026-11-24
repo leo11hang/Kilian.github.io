@@ -25,11 +25,22 @@
 
   function architecture(name) {
     var value = name.toLowerCase();
-    if (/(arm64|aarch64|apple.?silicon)/.test(value)) return 'ARM64';
     if (/(armv7|armhf|armhfp)/.test(value)) return 'ARMv7';
+    if (/(arm64|aarch64|armv8|apple.?silicon)/.test(value)) return 'ARM64';
     if (/(x64|x86_64|amd64|64.?bit)/.test(value)) return 'x64';
     if (/(x86|i[3-6]86|32.?bit)/.test(value)) return 'x86';
     return '通用架构';
+  }
+
+  function platformLabel(os, arch) {
+    if (os === 'macOS') {
+      if (arch === 'ARM64') return 'macOS Apple 芯片';
+      if (arch === 'x64') return 'macOS Intel';
+      return 'macOS 通用版';
+    }
+    if (os === 'Linux' && arch === 'ARMv7') return 'Linux ARM 32 位';
+    if (arch === '通用架构') return os + ' 通用版';
+    return os + ' ' + arch;
   }
 
   function platform(name) {
@@ -49,15 +60,38 @@
 
   function packageFormat(name) {
     var match = name.match(/\.(app\.tar\.(?:gz|zst)|appimage|deb|rpm|flatpak|dmg|pkg|msi|msix|exe)$/i);
-    return match ? match[1].toUpperCase() : '安装包';
+    if (!match) return '安装包';
+    var formats = {
+      'app.tar.gz': '应用压缩包',
+      'app.tar.zst': '应用压缩包',
+      appimage: 'AppImage 安装包',
+      deb: 'DEB 安装包',
+      rpm: 'RPM 安装包',
+      flatpak: 'Flatpak 安装包',
+      dmg: 'DMG 安装包',
+      pkg: 'PKG 安装包',
+      msi: 'MSI 安装程序',
+      msix: 'MSIX 安装包',
+      exe: 'EXE 安装程序'
+    };
+    return formats[match[1].toLowerCase()] || '安装包';
   }
 
   function packageVariant(name) {
-    if (/webview2/i.test(name)) return 'WebView2 版';
+    if (/webview2/i.test(name)) return '内置 WebView2';
     if (/portable|standalone/i.test(name)) return '便携版';
-    if (/fixed|bundled|bundle/i.test(name)) return '完整包';
-    if (/setup|installer/i.test(name)) return '安装包';
+    if (/fixed|bundled|bundle/i.test(name)) return '完整安装包';
+    if (/setup|installer/i.test(name)) return packageFormat(name);
     return packageFormat(name);
+  }
+
+  function architectureOrder(os, arch) {
+    var order = {
+      Windows: { x64: 1, ARM64: 2, x86: 3, ARMv7: 4, '通用架构': 5 },
+      macOS: { ARM64: 1, x64: 2, '通用架构': 3, x86: 4, ARMv7: 5 },
+      Linux: { x64: 1, ARM64: 2, ARMv7: 3, x86: 4, '通用架构': 5 }
+    };
+    return (order[os] && order[os][arch]) || 99;
   }
 
   function fetchRelease(url) {
@@ -74,9 +108,15 @@
         var os = platform(asset.name);
         if (!os) return null;
         var arch = architecture(asset.name);
-        return { asset: asset, os: os, arch: arch, baseLabel: os + ' ' + (arch === '通用架构' ? '通用版' : arch) };
+        return { asset: asset, os: os, arch: arch, baseLabel: platformLabel(os, arch) };
       }).filter(Boolean);
       if (!entries.length) throw new Error('此 Release 暂无可识别的安装包');
+
+      var platformOrder = { Windows: 1, macOS: 2, Linux: 3 };
+      entries.sort(function (a, b) {
+        return (platformOrder[a.os] || 99) - (platformOrder[b.os] || 99) ||
+          architectureOrder(a.os, a.arch) - architectureOrder(b.os, b.arch);
+      });
 
       var labelCounts = {};
       var variantCounts = {};
