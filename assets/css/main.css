@@ -915,9 +915,6 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .uu-platform-card { display: grid; grid-template-columns: 42px 1fr; grid-template-rows: 1fr; align-items: center; column-gap: 12px; min-width: 0; min-height: 86px; padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: white; box-shadow: var(--sh); transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition); }
 .uu-platform-card:hover { transform: translateY(-2px); border-color: var(--accent-dim); box-shadow: var(--sh-lg); }
 .uu-platform-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #f4f5f7; color: #1d1d1f; }
-.uu-platform-icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.uu-platform-card:first-child .uu-platform-icon svg { fill: currentColor; stroke: none; }
-.uu-platform-card:nth-child(2) .uu-platform-icon svg, .uu-platform-card:nth-child(3) .uu-platform-icon svg { fill: currentColor; stroke: none; }
 .uu-platform-card:nth-child(4) .uu-platform-icon { color: #15803d; background: #dcfce7; }
 .uu-platform-card:nth-child(5) .uu-platform-icon { color: #1d4ed8; background: #dbeafe; }
 .uu-platform-name { color: var(--text-1); font-size: 14px; font-weight: 800; }
@@ -994,13 +991,12 @@ mark { background: #fef08a; color: var(--text-1); border-radius: 3px; padding: 0
 .cc-platform-grid[hidden] { display: none; }
 .download-platform-button { color: var(--accent); }
 .download-platform-button:hover { color: var(--accent); }
-.download-platform-icon { display: block; width: 16px; height: 16px; flex: 0 0 16px; fill: currentColor; }
-.download-platform-icon-windows { color: #0078d4; }
-.download-platform-icon-macos { width: 15px; height: 20px; flex-basis: 15px; color: #1d1d1f; }
+.download-platform-icon { display: block; width: 18px; height: 18px; flex: 0 0 18px; object-fit: contain; }
+.download-platform-icon-windows { width: 18px; height: 18px; flex-basis: 18px; }
+.download-platform-icon-macos { width: 14px; height: 18px; flex-basis: 14px; }
 .download-platform-icon-linux { width: 20px; height: 20px; flex-basis: 20px; }
 .uu-platform-icon .download-platform-icon { width: 24px; height: 24px; flex-basis: 24px; }
-.uu-platform-icon .download-platform-icon-macos { width: 20px; height: 24px; flex-basis: 20px; }
-.uu-platform-icon .download-platform-icon { fill: currentColor; stroke: none; }
+.uu-platform-icon .download-platform-icon-macos { width: 17px; height: 24px; flex-basis: 17px; }
 @media (max-width: 600px) {
   .download-accordions { grid-template-columns: minmax(0, 1fr); }
   .download-accordion > summary { min-height: 82px; padding: 12px 14px; gap: 12px; }
