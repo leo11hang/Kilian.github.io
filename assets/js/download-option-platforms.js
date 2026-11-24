@@ -54,16 +54,17 @@
       ]);
     }
     if (key === 'linux') {
-      return createSvg('linux', '0 0 64 64', [
-        { tag: 'ellipse', cx: '32', cy: '37', rx: '21', ry: '24', fill: '#202124' },
-        { tag: 'ellipse', cx: '32', cy: '42', rx: '12', ry: '16', fill: '#f8fafc' },
-        { tag: 'ellipse', cx: '32', cy: '17', rx: '15', ry: '14', fill: '#202124' },
-        { tag: 'ellipse', cx: '26', cy: '15', rx: '4', ry: '5', fill: '#fff' },
-        { tag: 'ellipse', cx: '38', cy: '15', rx: '4', ry: '5', fill: '#fff' },
-        { tag: 'circle', cx: '27', cy: '16', r: '1.8', fill: '#202124' },
-        { tag: 'circle', cx: '37', cy: '16', r: '1.8', fill: '#202124' },
+      return createSvg('linux', '4 0 56 64', [
+        { d: 'M16 29c-5 1-9 6-10 12-1 5 1 9 5 10 4 1 7-3 10-7l4-7-9-8Zm32 0c5 1 9 6 10 12 1 5-1 9-5 10-4 1-7-3-10-7l-4-7 9-8Z', fill: '#202124' },
+        { tag: 'ellipse', cx: '32', cy: '39', rx: '19', ry: '23', fill: '#202124' },
+        { tag: 'ellipse', cx: '32', cy: '43', rx: '11', ry: '16', fill: '#fff' },
+        { tag: 'ellipse', cx: '32', cy: '16', rx: '14', ry: '14', fill: '#202124' },
+        { tag: 'ellipse', cx: '26.5', cy: '14.5', rx: '4', ry: '5', fill: '#fff' },
+        { tag: 'ellipse', cx: '37.5', cy: '14.5', rx: '4', ry: '5', fill: '#fff' },
+        { tag: 'circle', cx: '27.5', cy: '15.5', r: '1.8', fill: '#202124' },
+        { tag: 'circle', cx: '36.5', cy: '15.5', r: '1.8', fill: '#202124' },
         { d: 'm25 22 7 6 7-6-7-2-7 2Z', fill: '#f4b400' },
-        { d: 'M12 57c5-1 9-1 14 1l-2 4H10l2-5Zm40 0c-5-1-9-1-14 1l2 4h14l-2-5Z', fill: '#f4b400' }
+        { d: 'M17 58c5-2 10-2 15 0l-2 5H14l3-5Zm30 0c-5-2-10-2-15 0l2 5h16l-3-5Z', fill: '#f4b400' }
       ]);
     }
     return null;
@@ -149,55 +150,16 @@
   }
 
   function setupOptionGroup(container) {
-    if (container.dataset.platformLayoutReady === 'true') return;
-    container.dataset.platformLayoutReady = 'true';
-
-    var layout = document.createElement('div');
-    layout.className = 'download-option-layout';
-    if (container.matches('.cc-platform-tabs')) layout.classList.add('download-option-layout-release');
-    var legend = document.createElement('aside');
-    legend.className = 'download-platform-legend';
-    legend.setAttribute('aria-label', '下载按钮图标对应的操作系统');
-    container.parentNode.insertBefore(layout, container);
-    layout.append(container, legend);
+    if (container.dataset.platformIconsReady === 'true') return;
+    container.dataset.platformIconsReady = 'true';
 
     function refresh() {
-      var found = Object.create(null);
       Array.from(container.querySelectorAll('a')).forEach(function (link) {
         var key = detectPlatform(link);
         normalizeLabel(link, key);
         applyPlatformIcon(link, key);
-        if (key) found[key] = true;
       });
       sortOptions(container);
-
-      var keys = Object.keys(found).filter(function (key) {
-        return !!platformIcon(key);
-      }).sort(function (a, b) {
-        return platforms[a].order - platforms[b].order;
-      });
-      legend.replaceChildren();
-      layout.classList.toggle('has-platform-legend', keys.length > 1);
-      legend.hidden = keys.length < 2;
-      if (keys.length < 2) return;
-
-      var title = document.createElement('strong');
-      title.className = 'download-platform-legend-title';
-      title.textContent = '系统图标';
-      legend.appendChild(title);
-
-      var list = document.createElement('div');
-      list.className = 'download-platform-legend-list';
-      keys.forEach(function (key) {
-        var item = document.createElement('span');
-        item.className = 'download-platform-legend-item';
-        item.append(platformIcon(key));
-        var label = document.createElement('span');
-        label.textContent = platforms[key].label;
-        item.appendChild(label);
-        list.appendChild(item);
-      });
-      legend.appendChild(list);
     }
 
     refresh();
