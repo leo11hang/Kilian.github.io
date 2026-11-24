@@ -25,6 +25,47 @@
     return '';
   }
 
+  function normalizeLabel(link, key) {
+    if (key !== 'macos' || link.dataset.platformLabelNormalized === 'true') return;
+    var label = link.textContent || '';
+    label = label.replace(/\bARM64\b/gi, 'Apple 芯片').replace(/\bx64\b/gi, 'Intel');
+    if (label !== link.textContent) link.textContent = label;
+    link.dataset.platformLabelNormalized = 'true';
+  }
+
+  function architectureOrder(link, key) {
+    var label = (link.textContent || '').toLowerCase();
+    if (key === 'macos') {
+      if (/apple|arm64|aarch64/.test(label)) return 1;
+      if (/intel|x64/.test(label)) return 2;
+      if (/通用|universal/.test(label)) return 3;
+    } else if (key === 'windows') {
+      if (/x64|amd64/.test(label)) return 1;
+      if (/arm64/.test(label)) return 2;
+      if (/x86|32 位/.test(label)) return 3;
+    } else if (key === 'linux') {
+      if (/x64|amd64/.test(label)) return 1;
+      if (/arm64/.test(label)) return 2;
+      if (/armv7|arm 32|armhf/.test(label)) return 3;
+      if (/x86|32 位/.test(label)) return 4;
+    }
+    return 99;
+  }
+
+  function sortStaticOptions(container) {
+    if (!container.matches('.ai-download-options, .uu-platform-grid')) return;
+    var links = Array.from(container.querySelectorAll(':scope > a'));
+    var order = links.map(function (link, index) {
+      var key = detectPlatform(link);
+      return { link: link, index: index, platform: key ? platforms[key].order : 99, arch: architectureOrder(link, key) };
+    }).sort(function (a, b) {
+      return a.platform - b.platform || a.arch - b.arch || a.index - b.index;
+    });
+    if (order.some(function (entry, index) { return entry.link !== links[index]; })) {
+      order.forEach(function (entry) { container.appendChild(entry.link); });
+    }
+  }
+
   function setupOptionGroup(container) {
     if (container.dataset.platformLayoutReady === 'true' || !container.parentNode) return;
     container.dataset.platformLayoutReady = 'true';
@@ -44,6 +85,7 @@
 
       links.forEach(function (link) {
         var key = detectPlatform(link);
+        normalizeLabel(link, key);
         link.classList.add('download-platform-button');
         Object.keys(platforms).forEach(function (platform) {
           link.classList.remove('download-platform-' + platform);
@@ -81,6 +123,7 @@
       legend.appendChild(list);
     }
 
+    sortStaticOptions(container);
     refresh();
     new MutationObserver(refresh).observe(container, { childList: true, subtree: true });
   }
