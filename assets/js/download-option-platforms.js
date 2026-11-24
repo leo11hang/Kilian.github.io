@@ -25,12 +25,43 @@
     return '';
   }
 
+  function packageVariant(link, fallback) {
+    var name = (link.title || '').toLowerCase();
+    var value = name + ' ' + (fallback || '').toLowerCase();
+    if (/webview2/.test(value)) return '内置 WebView2';
+    if (/portable|standalone|便携/.test(value)) return '便携版';
+    if (/\.app\.tar\.(gz|zst)|app\.?tar\.?gz/.test(value)) return '应用压缩包';
+    if (/\.dmg|\bdmg\b/.test(value)) return 'DMG 安装包';
+    if (/\.msix|\bmsix\b/.test(value)) return 'MSIX 安装包';
+    if (/\.msi|\bmsi\b/.test(value)) return 'MSI 安装程序';
+    if (/\.exe|\bexe\b/.test(value)) return 'EXE 安装程序';
+    if (/\.appimage|\bappimage\b/.test(value)) return 'AppImage 安装包';
+    if (/\.deb|\bdeb\b/.test(value)) return 'DEB 安装包';
+    if (/\.rpm|\brpm\b/.test(value)) return 'RPM 安装包';
+    if (/\.flatpak|\bflatpak\b/.test(value)) return 'Flatpak 安装包';
+    if (/\.pkg|\bpkg\b/.test(value)) return 'PKG 安装包';
+    return '';
+  }
+
   function normalizeLabel(link, key) {
-    if (key !== 'macos' || link.dataset.platformLabelNormalized === 'true') return;
+    if (link.dataset.platformLabelNormalized === 'true') return;
     var label = link.textContent || '';
-    label = label.replace(/\bARM64\b/gi, 'Apple 芯片').replace(/\bx64\b/gi, 'Intel');
+    if (key === 'macos') {
+      label = label.replace(/\bARM64\b/gi, 'Apple 芯片').replace(/\bx64\b/gi, 'Intel');
+    }
+    if (containerHasReleaseOptions(link)) {
+      var separator = label.indexOf(' · ');
+      if (separator >= 0) {
+        var suffix = packageVariant(link, label.slice(separator + 3));
+        if (suffix) label = label.slice(0, separator) + ' · ' + suffix;
+      }
+    }
     if (label !== link.textContent) link.textContent = label;
     link.dataset.platformLabelNormalized = 'true';
+  }
+
+  function containerHasReleaseOptions(link) {
+    return !!link.closest('.cc-platform-tabs');
   }
 
   function architectureOrder(link, key) {
@@ -52,9 +83,9 @@
     return 99;
   }
 
-  function sortStaticOptions(container) {
-    if (!container.matches('.ai-download-options, .uu-platform-grid')) return;
-    var links = Array.from(container.querySelectorAll(':scope > a'));
+  function sortPlatformOptions(container) {
+    var links = Array.from(container.children).filter(function (child) { return child.tagName === 'A'; });
+    if (links.length !== container.children.length) return;
     var order = links.map(function (link, index) {
       var key = detectPlatform(link);
       return { link: link, index: index, platform: key ? platforms[key].order : 99, arch: architectureOrder(link, key) };
@@ -72,6 +103,7 @@
 
     var layout = document.createElement('div');
     layout.className = 'download-option-layout';
+    if (container.matches('.cc-platform-tabs')) layout.classList.add('download-option-layout-release');
     var legend = document.createElement('aside');
     legend.className = 'download-platform-legend';
     legend.setAttribute('aria-label', '下载按钮颜色对应的操作系统');
@@ -94,6 +126,7 @@
         link.classList.add('download-platform-' + key);
         found[key] = true;
       });
+      sortPlatformOptions(container);
 
       var keys = Object.keys(found).sort(function (a, b) {
         return platforms[a].order - platforms[b].order;
@@ -123,7 +156,6 @@
       legend.appendChild(list);
     }
 
-    sortStaticOptions(container);
     refresh();
     new MutationObserver(refresh).observe(container, { childList: true, subtree: true });
   }
