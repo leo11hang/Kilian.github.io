@@ -65,7 +65,7 @@ https://chatgpt.com/api/auth/session
 
 ### 第四步：前往激活站
 
-打开激活站地址：[keyvault.686985.xyz](https://keyvault.686985.xyz)
+打开激活站地址：[激活站]({{ site.activation_site }})
 
 ### 第五步：输入卡密并激活
 
@@ -98,7 +98,7 @@ https://chatgpt.com/api/auth/session
 
 ## 如何购买卡密
 
-**购买地址**：[keyvault.686985.xyz](https://keyvault.686985.xyz)
+**购买地址**：[激活站]({{ site.activation_site }})
 
 支持多种支付方式，自动发货，购买后即时收到卡密。
 
